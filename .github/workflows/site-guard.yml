@@ -1,0 +1,47 @@
+# KGX's Dev Library - site layout guard. After every push, puts files that a web
+# upload placed in the wrong folder back where site-manifest.json says they
+# belong, then asks GitHub Pages to rebuild. See .github/site_guard.py.
+name: Site layout guard
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: site-guard
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main          # the newest main (uploads in a row: each run sees the last)
+          fetch-depth: 0     # the history: files overwritten by a same-named upload
+
+      - name: Put misplaced files back
+        id: fix
+        run: python3 .github/site_guard.py .
+
+      - name: Commit the repair
+        if: steps.fix.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Site guard: files put back where they belong" -m "$(cat "$RUNNER_TEMP/site_guard_report.txt")"
+          for i in 1 2 3; do git push && exit 0; git pull --rebase origin main; done
+          exit 1
+
+      - name: Rebuild the site
+        if: steps.fix.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "::warning::Pages rebuild request failed; the next push rebuilds the site."
