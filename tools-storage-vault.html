@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Storage Vault — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Server vaults: everyone opens their own personal vault at them.">
+<meta property="og:title" content="Storage Vault — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Server vaults: everyone opens their own personal vault at them.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/tools-storage-vault.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/tools-storage-vault.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html" aria-current="page">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-tools-storage-vault-what-it-does">What it does</a><a class="filter" href="#help-tools-storage-vault-where-to-find-it">Where to find it</a><a class="filter" href="#help-tools-storage-vault-controls">Controls</a><a class="filter" href="#help-tools-storage-vault-options">Options</a><a class="filter" href="#help-tools-storage-vault-how-to-use-it">How to use it</a><a class="filter" href="#help-tools-storage-vault-settings-and-commands">Settings and commands</a><a class="filter" href="#help-tools-storage-vault-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-tools.html">Tools</a><i aria-hidden="true">/</i><span aria-current="page">Storage Vault</span></nav><article class="help-view help-article" aria-labelledby="help-tools-storage-vault-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Tools &gt; World</p><h1 id="help-tools-storage-vault-title">Storage Vault</h1><p class="help-article-sum">Server vaults: everyone opens their own personal vault at them.</p><p class="help-article-meta mono">Tool / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-tools-storage-vault-what-it-does">What it does</a></li><li><a href="#help-tools-storage-vault-where-to-find-it">Where to find it</a></li><li><a href="#help-tools-storage-vault-controls">Controls</a></li><li><a href="#help-tools-storage-vault-options">Options</a></li><li><a href="#help-tools-storage-vault-how-to-use-it">How to use it</a></li><li><a href="#help-tools-storage-vault-settings-and-commands">Settings and commands</a></li><li><a href="#help-tools-storage-vault-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-tools-storage-vault-what-it-does">What it does</h4>
+<p>Storage Vault sets up server vaults. Everyone who presses E on a server vault opens their own personal vault. Only they see their things in it, and it is kept for every map.</p>
+<p>Nobody can lockpick, move or break a server vault. You can place a new one, or turn any prop, entity or NPC into one.</p>
+<p>Players can also buy their own vault in a store (item type "Storage Vault"). The panel holds the settings for both kinds.</p>
+<h4 id="help-tools-storage-vault-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; World &gt; Storage Vault.</p>
+<p>Superadmins only. Other admins, and players given the tool, get "Only superadmins set up server vaults." The settings in the panel are also superadmin only.</p>
+<p><strong>Admins only (v3.6.11.3):</strong> this tool sets up the server, so it cannot be given to players; it is greyed out in Settings &gt; Player Access.</p>
+<h4 id="help-tools-storage-vault-controls">Controls</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left-click</td>
+<td>Place a server vault (the style picked below)</td>
+</tr>
+<tr>
+<td>Right-click</td>
+<td>Make the aimed prop, entity or NPC a server vault</td>
+</tr>
+<tr>
+<td>Reload</td>
+<td>Take the aimed vault away</td>
+</tr>
+</tbody>
+</table></div>
+<p>The screen shows <strong>Server vault</strong>, <strong>A player's own vault</strong> or <strong>Not a vault</strong> for the entity under your crosshair.</p>
+<h4 id="help-tools-storage-vault-options">Options</h4>
+<h5>Style</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model icons</td>
+<td>Click a model to use it for new server vaults. Models of games you do not have (Counter-Strike, Left 4 Dead) are not shown.</td>
+<td><code>models/props_c17/lockers001a.mdl</code></td>
+</tr>
+<tr>
+<td><strong>Scan map props (pick one the map uses)</strong></td>
+<td>Lists safes, lockers, cabinets, crates and similar props the map uses, and sets the one you pick.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Bought vaults and settings</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Storage Vaults work</strong></td>
+<td>Server vaults and bought ones. <code>kgxat_vault</code>.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Slots in everyone's personal vault</strong></td>
+<td><code>kgxat_vault_slots</code>.</td>
+<td>20</td>
+<td>1 to 60</td>
+</tr>
+<tr>
+<td><strong>Players may buy their own vault</strong></td>
+<td>Store item type Storage Vault. <code>kgxat_vault_buy</code>.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Slots in a bought vault</strong></td>
+<td><code>kgxat_vault_home_slots</code>.</td>
+<td>16</td>
+<td>1 to 60</td>
+</tr>
+<tr>
+<td><strong>Bought vaults can be lockpicked</strong></td>
+<td>Others can open them with the Lockpick. <code>kgxat_vault_pick</code>.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Seconds the Lockpick needs on a vault</strong></td>
+<td><code>kgxat_vault_pick_time</code>.</td>
+<td>25</td>
+<td>3 to 300</td>
+</tr>
+<tr>
+<td><strong>Seconds a picked vault stays open</strong></td>
+<td>For the one who picked it. <code>kgxat_vault_pick_open</code>.</td>
+<td>60</td>
+<td>10 to 600</td>
+</tr>
+<tr>
+<td><strong>Picking a placed vault back into the Pockets</strong></td>
+<td>Only when it is empty (default), Never (it stays where it was put down), or Any time (the old way: not safe, see below). <code>kgxat_vault_repocket</code>.</td>
+<td>Only when it is empty</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Seconds after putting it down before it can be picked up again</strong></td>
+<td><code>kgxat_vault_move_wait</code>. 0 = no wait.</td>
+<td>120</td>
+<td>0 to 3600</td>
+</tr>
+<tr>
+<td><strong>Bought vaults cannot be put down in spawn zones</strong></td>
+<td><code>kgxat_vault_no_spawnzone</code>.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Owners can throw their empty vault away (Alt + E on it, or !vault remove)</strong></td>
+<td><code>kgxat_vault_discard</code>.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Apply the numbers above</strong></td>
+<td>Saves the slider values.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-tools-storage-vault-how-to-use-it">How to use it</h4>
+<h5>Place a bank vault</h5>
+<ol>
+<li>Click a model in the panel, such as a safe or locker.</li>
+<li>Aim at the floor and left-click. The vault stands on the spot, facing you.</li>
+<li>Players press E on it to open their personal vault.</li>
+</ol>
+<h5>Turn a map prop into a vault</h5>
+<ol>
+<li>Aim at a safe or locker that is part of the map.</li>
+<li>Right-click. It stays a map prop and becomes a server vault, kept for this map.</li>
+</ol>
+<h5>Take a vault away</h5>
+<ol>
+<li>Aim at the vault and press reload.</li>
+<li>A server vault stops being a vault. The things in it stay in everyone's personal vault.</li>
+<li>On a player's bought vault, it is removed. They get it back with <code>!vault</code>, with its contents.</li>
+</ol>
+<h5>Let players buy their own vault</h5>
+<ol>
+<li>Make sure <strong>Players may buy their own vault</strong> is ticked.</li>
+<li>Add a store item of type "Storage Vault" (Economy &gt; Store Maker).</li>
+<li>A bought vault goes into the buyer's Pockets. They take it out where they like (not in a spawn zone); Alt + E on it picks its style.</li>
+<li>Leave <strong>Picking a placed vault back into the Pockets</strong> on <strong>Only when it is empty</strong>. A vault's things are saved for its owner, not inside the vault, so a vault that goes back into the Pockets full is a stash the player carries everywhere. With <strong>Never</strong> it stays where it was first put down.</li>
+</ol>
+<h5>Get rid of a bought vault (players)</h5>
+<ol>
+<li>Take everything out of the vault.</li>
+<li>Alt + E on it and click <strong>Throw this vault away</strong>, then <strong>Throw it away</strong>. Or type <code>!vault remove</code> (also works while it is in the Pockets).</li>
+<li>It is gone from the world and the Pockets, and <code>!vault</code> or joining no longer hands it out. Buying one again gives a new one.</li>
+</ol>
+<h4 id="help-tools-storage-vault-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting or command</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_vault</code></td>
+<td>1 = Storage Vaults work (server vaults and bought ones).</td>
+<td>1</td>
+<td>0 to 1</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_slots</code></td>
+<td>Slots in everyone's personal vault.</td>
+<td>20</td>
+<td>1 to 60</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_buy</code></td>
+<td>1 = players may buy their own vault.</td>
+<td>1</td>
+<td>0 to 1</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_home_slots</code></td>
+<td>Slots in a vault a player bought.</td>
+<td>16</td>
+<td>1 to 60</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_pick</code></td>
+<td>1 = bought vaults can be opened by others with the Lockpick.</td>
+<td>1</td>
+<td>0 to 1</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_pick_time</code></td>
+<td>Seconds the Lockpick needs on a vault.</td>
+<td>25</td>
+<td>3 to 300</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_pick_open</code></td>
+<td>Seconds a picked vault stays open for the one who picked it.</td>
+<td>60</td>
+<td>10 to 600</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_repocket</code></td>
+<td>A placed bought vault back into the Pockets: 0 = never, 1 = only when empty, 2 = any time.</td>
+<td>1</td>
+<td>0 to 2</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_move_wait</code></td>
+<td>Seconds after putting a bought vault down before it can be picked up again.</td>
+<td>120</td>
+<td>0 to 3600</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_no_spawnzone</code></td>
+<td>1 = bought vaults cannot be put down in spawn zones.</td>
+<td>1</td>
+<td>0 to 1</td>
+</tr>
+<tr>
+<td><code>kgxat_vault_discard</code></td>
+<td>1 = owners can throw their empty bought vault away.</td>
+<td>1</td>
+<td>0 to 1</td>
+</tr>
+<tr>
+<td><code>!vault</code></td>
+<td>Chat. Puts your bought vault back in your pockets after a restart or cleanup (not while Storage Vaults are off).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>!vault remove</code></td>
+<td>Chat. Throws your empty bought vault away (from the world or the Pockets).</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-tools-storage-vault-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Personal vaults are kept for every map in <code>vaults.json</code>.</li>
+<li>Spawned props made vaults become a vault of their own. Map props and permanent props are kept for the map. Other things stay a vault only until a restart.</li>
+<li>Each player can own one bought vault. With no room in their Pockets, the sale fails.</li>
+<li>Only the owner puts things in a bought vault. Others open it only with the Lockpick, and the owner is told.</li>
+<li>A bought vault stays in the pockets on death. After a restart or cleanup, <code>!vault</code> (also on joining) puts it back. While Storage Vaults are off nothing is handed out.</li>
+<li>Trying to pick a vault up too early or full says why: "You can pick your vault up again in ...", "Empty your vault first: only an empty vault goes back into your Pockets." or "Your vault stays where you put it."</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="tools-spawn-points.html"><small class="mono">Previous</small><strong>Spawn Points</strong></a><a class="help-pager-next" href="tools-talking-npc.html"><small class="mono">Next</small><strong>Talking NPC</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-tools.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Tools</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
