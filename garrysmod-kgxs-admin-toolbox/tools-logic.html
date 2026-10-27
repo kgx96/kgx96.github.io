@@ -47,8 +47,8 @@
   <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
 </div></header>
 <main class="container" id="main">
-<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html" aria-current="page">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-tools-logic-getting-started">Getting started</a><a class="filter" href="#help-tools-logic-how-logic-works">How logic works</a><a class="filter" href="#help-tools-logic-node-reference">Node reference</a><a class="filter" href="#help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</a><a class="filter" href="#help-tools-logic-actions-do">Actions (Do)</a><a class="filter" href="#help-tools-logic-variables-votes-and-windows">Variables, votes and windows</a><a class="filter" href="#help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</a><a class="filter" href="#help-tools-logic-recipes">Recipes</a><a class="filter" href="#help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-tools.html">Tools</a><i aria-hidden="true">/</i><span aria-current="page">Logic: the complete guide</span></nav><article class="help-view help-article" aria-labelledby="help-tools-logic-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Tools &gt; World</p><h1 id="help-tools-logic-title">Logic: the complete guide</h1><p class="help-article-sum">Triggers and logic for RP and PVP: buttons, switches, plates, trigger boxes, timers, counters, gates... wired to doors, messages, sounds, teleports, spawners and each other.</p><p class="help-article-meta mono">Tool / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-tools-logic-getting-started">Getting started</a></li><li><a href="#help-tools-logic-how-logic-works">How logic works</a></li><li><a href="#help-tools-logic-node-reference">Node reference</a></li><li><a href="#help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</a></li><li><a href="#help-tools-logic-actions-do">Actions (Do)</a></li><li><a href="#help-tools-logic-variables-votes-and-windows">Variables, votes and windows</a></li><li><a href="#help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</a></li><li><a href="#help-tools-logic-recipes">Recipes</a></li><li><a href="#help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</a></li></ol></nav><h4 id="help-tools-logic-getting-started">Getting started</h4>
-<p>Logic is built with one tool: <strong>Q menu &gt; KGX's Admin Toolbox &gt; World &gt; Logic</strong>. You place <strong>nodes</strong> (buttons, trigger boxes, timers, counters and so on), then give each node <strong>outputs</strong>: "When this happens, do that". Everything is saved per map in <code>data/kgx_admin_toolbox/logic_&lt;map&gt;.json</code> and comes back after a restart. This guide covers v3.6.9.4.</p>
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html" aria-current="page">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-tools-logic-getting-started">Getting started</a><a class="filter" href="#help-tools-logic-how-logic-works">How logic works</a><a class="filter" href="#help-tools-logic-node-reference">Node reference</a><a class="filter" href="#help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</a><a class="filter" href="#help-tools-logic-actions-do">Actions (Do)</a><a class="filter" href="#help-tools-logic-variables-votes-and-windows">Variables, votes and windows</a><a class="filter" href="#help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</a><a class="filter" href="#help-tools-logic-recipes">Recipes</a><a class="filter" href="#help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-tools.html">Tools</a><i aria-hidden="true">/</i><span aria-current="page">Logic: the complete guide</span></nav><article class="help-view help-article" aria-labelledby="help-tools-logic-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Tools &gt; World</p><h1 id="help-tools-logic-title">Logic: the complete guide</h1><p class="help-article-sum">Triggers and logic for RP and PVP: buttons, switches, plates, trigger boxes, timers, counters, gates... wired to doors, messages, sounds, teleports, spawners and each other.</p><p class="help-article-meta mono">Tool / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-tools-logic-getting-started">Getting started</a></li><li><a href="#help-tools-logic-how-logic-works">How logic works</a></li><li><a href="#help-tools-logic-node-reference">Node reference</a></li><li><a href="#help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</a></li><li><a href="#help-tools-logic-actions-do">Actions (Do)</a></li><li><a href="#help-tools-logic-variables-votes-and-windows">Variables, votes and windows</a></li><li><a href="#help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</a></li><li><a href="#help-tools-logic-recipes">Recipes</a></li><li><a href="#help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</a></li></ol></nav><h4 id="help-tools-logic-getting-started">Getting started</h4>
+<p>Logic is built with one tool: <strong>Q menu &gt; KGX's Admin Toolbox &gt; World &gt; Logic</strong>. You place <strong>nodes</strong> (buttons, trigger boxes, timers, counters and so on), then give each node <strong>outputs</strong>: "When this happens, do that". Everything is saved per map in <code>data/kgx_admin_toolbox/logic_&lt;map&gt;.json</code> and comes back after a restart. This guide covers v3.6.21.6.1, which adds event nodes and actions for every part of the toolbox: the economy, the police and the Mayor, staff, day and night, progression, the phone and more.</p>
 <h5>Tool controls</h5>
 <div class="help-table"><table>
 <thead>
@@ -224,7 +224,7 @@
 </ul>
 <h5>Safety limits</h5>
 <ul>
-<li><strong>Chain depth:</strong> a chain stops after 24 steps (node → node → node…), so two nodes triggering each other can't freeze the server. A delay starts a fresh chain.</li>
+<li><strong>Chain depth:</strong> a chain stops after 24 steps (node → node → node…), so two nodes triggering each other can't freeze the server. The count goes on through delays and through the events an action sets off (an action that wants someone, which fires OnWanted again; one that sets the time or noclip, which fires OnNight or OnNoclipOn again…), so a loop with a delay in it stops too. For something that should repeat forever, use a Timer node: each tick starts a fresh chain.</li>
 <li><strong>Rate:</strong> at most <code>kgxat_logic_rate</code> actions per second on the whole server (default 400, range 50–5000). Above that, the rest are skipped and the server log says "a loop?".</li>
 <li><strong>Master switch:</strong> <code>kgxat_logic 0</code> stops all logic from running. The nodes stay saved.</li>
 <li><strong>Map cleanup:</strong> a cleanup resets every node's live state: switches go back to their start, counters to their start value, timers to their "Runs from the start" setting. Map start nodes then fire OnCleanup. Variables are not reset by a cleanup.</li>
@@ -352,8 +352,50 @@
 <td><strong>Match watcher</strong></td>
 <td>Game Modes matches.</td>
 <td>Enable, Disable</td>
-<td>OnLobby, OnPrep, OnRoundStart, OnRoundEnd, OnMatchStart, OnMatchEnd, OnPlayerOut, OnPointCaptured, OnFlagCaptured, OnBombPlanted, OnBombDefused, OnBombExploded, OnEscortArrived, OnBodyFound</td>
-<td>Only this mode (mode id; empty = any). Activator: the player who did it, or the round's best player</td>
+<td>OnLobby, OnPrep, OnRoundStart, OnRoundEnd, OnMatchStart, OnMatchEnd, OnPlayerOut, OnPointCaptured, OnFlagCaptured, OnBombPlanted, OnBombDefused, OnBombExploded, OnEscortArrived, OnBodyFound, OnWaveStart, OnWaveCleared (Waves, v3.6.21.6.1)</td>
+<td>Only this mode (mode id; empty = any; the built-in waves mode is <code>survival</code>). Activator: the player who did it, or the round's best player</td>
+</tr>
+<tr>
+<td><strong>Economy events</strong> (admins, v3.6.21.6.1)</td>
+<td>Money anywhere on the server.</td>
+<td>Enable, Disable</td>
+<td>OnPaycheck, OnStoreBought, OnStoreSold, OnPropertyBought, OnPropertySold, OnTreasuryIn, OnTreasuryOut, OnRobberyStarted, OnRobbed, OnPrinterHacked, OnMoneyAlert</td>
+<td>Only amounts of at least (the paycheck, price, robbery or treasury amount; 0 = any); Only (team, job or rank). Activator: the player (none for the treasury)</td>
+</tr>
+<tr>
+<td><strong>Police &amp; Mayor events</strong> (admins, v3.6.21.6.1)</td>
+<td>The law.</td>
+<td>Enable, Disable</td>
+<td>OnWanted, OnWantedCleared, OnWarrant, OnWarrantLifted, OnJailed, OnUnjailed, OnCuffed, OnUncuffed, OnLockpicked, OnDoorBreached, OnLockdownStart, OnLockdownEnd, OnLawsChanged</td>
+<td>Only (team, job or rank). Activator: the player it happened to (the lock picker for OnLockpicked; nobody for a door blown open or the laws)</td>
+</tr>
+<tr>
+<td><strong>Staff events</strong> (admins, v3.6.21.6.1)</td>
+<td>Moderation.</td>
+<td>Enable, Disable</td>
+<td>OnReport, OnWarned, OnAntiCheat, OnRevived, OnRulesAccepted, OnBanned, OnAdminAction</td>
+<td>Only admin actions with the word (OnAdminAction: e.g. <code>kicked</code>, <code>jailed</code>, <code>money</code>); Only (team, job or rank). Activator: the player; for OnBanned and OnAdminAction the admin (staff only: police and Mayor lines in the Action Log do not count)</td>
+</tr>
+<tr>
+<td><strong>Day, night &amp; weather events</strong> (admins, v3.6.21.6.1)</td>
+<td>The toolbox's day and night (Utilities &gt; Day/Night &amp; Weather, while it is on).</td>
+<td>Enable, Disable</td>
+<td>OnHour, OnTimeOfDay, OnDawn (5:00), OnDay (8:00), OnDusk (17:00), OnNight (20:00), OnWeatherChanged</td>
+<td>Hour for OnTimeOfDay (0–23); OnWeatherChanged only for (a weather, or any). No activator</td>
+</tr>
+<tr>
+<td><strong>Progression &amp; server events</strong> (admins, v3.6.21.6.1)</td>
+<td>Players and the server.</td>
+<td>Enable, Disable</td>
+<td>OnLevelUp, OnAchievement, OnSeasonEnded, OnVoteStarted, OnVoteEnded (activator: who started the vote), OnServerModeChanged, OnBuff (a buff, food or drug), OnVoiceLine</td>
+<td>Only (team, job or rank)</td>
+</tr>
+<tr>
+<td><strong>Phone &amp; player activity events</strong> (admins, v3.6.21.6.1)</td>
+<td>What players do.</td>
+<td>Enable, Disable</td>
+<td>OnCall (the caller), OnText (the sender; not what was written), OnPropSpawned, OnVehicleEnter, OnVehicleExit, OnNoclipOn, OnNoclipOff (checked twice a second; not while dead or in a vehicle)</td>
+<td>Only (team, job or rank)</td>
 </tr>
 <tr>
 <td><strong>Map start</strong></td>
@@ -375,6 +417,8 @@
 <li>An entity watcher on something that isn't permanent (not a map entity, perma prop or saved toolbox entity) works until that entity is removed or the map restarts.</li>
 <li><strong>OnPlayerHurt</strong> fires at most once a second per player.</li>
 <li><strong>OnChatWord</strong> matches the word anywhere in the message, ignoring case. <strong>Hide</strong> only works when a word is set, and never hides commands (<code>/</code>, <code>!</code>, <code>@</code>). Gagged players' messages don't count.</li>
+<li>The v3.6.21.6.1 event nodes hear the whole server, so only admins place them. An output that sets off its own event (OnWanted → make the activator wanted) stops after 4 rounds.</li>
+<li><strong>Day, night &amp; weather</strong> is checked every second and only while the toolbox's day / night is on. Setting the time with a node fires OnHour for the new hour, and the phase event of the part of the day it lands in (a jump from 3:00 to 12:00 fires OnDay).</li>
 <li><strong>Clock</strong> uses the server's local time. It is checked every 10 seconds and fires once per due minute. "Every N minutes" counts from midnight, so 30 fires at :00 and :30.</li>
 </ul>
 <h5>Timing</h5>
@@ -620,6 +664,72 @@
 <td>Random roll, 25% of the time</td>
 <td>Yes</td>
 </tr>
+<tr>
+<td>They are wanted / They have a search warrant / They are in jail / They are handcuffed (v3.6.21.6.1)</td>
+<td>None</td>
+<td>That is true for the activator</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They are police / They are the Mayor (v3.6.21.6.1)</td>
+<td>None</td>
+<td>Their job has the police / Mayor ability</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They are in a Game Modes match / They are in build mode (v3.6.21.6.1)</td>
+<td>None</td>
+<td>That is true for the activator</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Their level is at least (v3.6.21.6.1)</td>
+<td>A level: <code>10</code></td>
+<td>Match stats level ≥ the value</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Their bank has at least (v3.6.21.6.1)</td>
+<td>An amount</td>
+<td>Bank ≥ the value</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>There is a lockdown (v3.6.21.6.1)</td>
+<td>None</td>
+<td>A Mayor's lockdown is on</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>It is day / It is night (v3.6.21.6.1)</td>
+<td>None</td>
+<td>The in-game hour is 8:00–17:00 / 20:00–5:00</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The in-game hour is between (v3.6.21.6.1)</td>
+<td><code>18-6</code> (over midnight works)</td>
+<td>The in-game hour is in that range</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The weather is (v3.6.21.6.1)</td>
+<td><code>clear</code>, <code>cloudy</code>, <code>fog</code>, <code>rain</code>, <code>storm</code> or <code>snow</code></td>
+<td>The toolbox's weather</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>At least players are online (v3.6.21.6.1)</td>
+<td>A number</td>
+<td>That many players (not bots) are on</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The treasury has at least (v3.6.21.6.1)</td>
+<td>An amount</td>
+<td>The treasury ≥ the value</td>
+<td>Admins' nodes only</td>
+</tr>
 </tbody>
 </table></div>
 <ul>
@@ -629,7 +739,7 @@
 <li>Players' own nodes can't use the admin-only conditions, because those read other people's money, licenses, ranks or switches. If such a node is saved with them, those conditions are dropped.</li>
 </ul>
 <h4 id="help-tools-logic-actions-do">Actions (Do)</h4>
-<p>An output's <strong>Do</strong> button opens a searchable list of every action, grouped into 14 categories. The list only shows the actions you may use. <strong>Who</strong> in the tables below means whose nodes may run the action: <em>Anyone</em> (players with the tool too), <em>Admins</em> or <em>Superadmins</em>.</p>
+<p>An output's <strong>Do</strong> button opens a searchable list of every action, grouped into 18 categories (v3.6.21.6.1: Economy, Menus &amp; screens, Police &amp; Mayor and World are new, and the Game modes action shows in the list again). The list only shows the actions you may use. <strong>Who</strong> in the tables below means whose nodes may run the action: <em>Anyone</em> (players with the tool too), <em>Admins</em> or <em>Superadmins</em>.</p>
 <p>An admin action runs only while the node was <strong>last saved by a toolbox admin</strong>. If a player edits and saves their own node, the admin actions are dropped from it. The editor warns you under such actions.</p>
 <h5>Audiences ("To", "Who", "For", "Shown to")</h5>
 <div class="help-table"><table>
@@ -890,6 +1000,54 @@
 <td>Player model</td>
 <td>Model path</td>
 </tr>
+<tr>
+<td>Bank money (v3.6.21.6.1)</td>
+<td>Plus or minus amount</td>
+</tr>
+<tr>
+<td>Give XP / Give match credits (v3.6.21.6.1)</td>
+<td>Amount (match stats XP / Armory credits)</td>
+</tr>
+<tr>
+<td>Give a buff / food / drug effect, Give food to eat later (v3.6.21.6.1)</td>
+<td>The buff or food id (<code>burger</code>, <code>meth</code>...; Furniture &amp; Buffs)</td>
+</tr>
+<tr>
+<td>Revive where they died (v3.6.21.6.1)</td>
+<td>None (dead players only)</td>
+</tr>
+<tr>
+<td>Ragdoll / Blind / Invisible / Infinite ammo for N s / Make sick for N s (v3.6.21.6.1)</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td>Noclip on / off, Build mode on / off (v3.6.21.6.1)</td>
+<td><code>1</code> on, <code>0</code> off</td>
+</tr>
+<tr>
+<td>Gag / Mute for N minutes (v3.6.21.6.1)</td>
+<td>Minutes (0 = until lifted); Ungag and Unmute take nothing</td>
+</tr>
+<tr>
+<td>Warn (v3.6.21.6.1)</td>
+<td>The reason. The Warning Ladder applies</td>
+</tr>
+<tr>
+<td>Title (v3.6.21.6.1)</td>
+<td>The title (empty = none)</td>
+</tr>
+<tr>
+<td>Rocket them into the sky (v3.6.21.6.1)</td>
+<td><code>1</code> = they explode at the top</td>
+</tr>
+<tr>
+<td>Slap, Put out the fire, Their own model back, Give keys, Give their loadout again (v3.6.21.6.1)</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Max health to / Set armor to (v3.6.21.6.1)</td>
+<td>A number</td>
+</tr>
 </tbody>
 </table></div>
 <h5>NPCs, props, entities, vehicles (admins)</h5>
@@ -920,7 +1078,22 @@
 <tr>
 <td>An entity: remove, ignite, hide, color, input…</td>
 <td>An entity (Scan / pick, with a map scan)</td>
-<td><strong>Do:</strong> Remove, Ignite (value = seconds), Put out, Freeze, Unfreeze, Hide (no collision), Show, Color (<code>r g b</code> or a name), Set health, Break / kill, Fire an input (value = <code>Input, param</code>)</td>
+<td><strong>Do:</strong> Remove, Ignite (value = seconds), Put out, Freeze, Unfreeze, Hide (no collision), Show, Color (<code>r g b</code> or a name), Set health, Break / kill, Fire an input (value = <code>Input, param</code>), Unbreakable (value 1 / 0, until the map restarts; not players; v3.6.21.6.1)</td>
+</tr>
+<tr>
+<td>NPC orders: follow, attack, hold, wander (v3.6.21.6.1)</td>
+<td>None</td>
+<td><strong>Do:</strong> Follow the activator, Attack the activator, Hold at the place, Wander, Back to their own AI. <strong>NPC class</strong> (empty = any), <strong>NPC tag</strong>, <strong>Place</strong>, <strong>Only within</strong> (0 = the whole map)</td>
+</tr>
+<tr>
+<td>Media players &amp; radios nearby (v3.6.21.6.1)</td>
+<td>None</td>
+<td><strong>Do:</strong> Play a link (YouTube, a stream, a web page...), Stop, Pause, Resume, Turn off, Turn on. <strong>Which</strong> (both, media players, radios), <strong>Place</strong>, <strong>Nearby = within</strong></td>
+</tr>
+<tr>
+<td>Toolbox lights nearby: on / off (v3.6.21.6.1)</td>
+<td>None</td>
+<td><strong>Do:</strong> Turn on, Turn off, Toggle. <strong>Place</strong>, <strong>Nearby = within</strong>. Not saved: lights come back as placed after a restart</td>
 </tr>
 <tr>
 <td>Map entity: fire an input by name</td>
@@ -953,6 +1126,94 @@
 <td>Effect</td>
 <td>Anyone</td>
 <td><strong>Effect:</strong> explosion, big explosion, energy ball burst, sparks, metal sparks, electric spark, water splash, dust ring, strider blood, blood, glass, balloon pop, tesla zap, magic puff, vortigaunt dispel. <strong>Place</strong>, <strong>Size</strong> (1–10)</td>
+</tr>
+<tr>
+<td>Lightning strike (v3.6.21.6.1)</td>
+<td>Admins</td>
+<td><strong>Place</strong>, <strong>Damage</strong> (0–1000), <strong>Hits within</strong> (0–1000)</td>
+</tr>
+<tr>
+<td>Fireworks (v3.6.21.6.1)</td>
+<td>Admins</td>
+<td><strong>Do:</strong> A firework rocket, A fountain of sparks, A show. <strong>Place</strong>, <strong>Color</strong>, <strong>Height</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Economy (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Money: wallet, bank, treasury, cash</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Wallet: add (a minus takes), Bank: add, Wallet: set to, Bank: set to, Treasury: put in (a minus takes out), Drop cash at the place. <strong>Amount</strong>, <strong>Who</strong> (wallet / bank), <strong>Place</strong> (cash). Shown as "Logic" in the Money Log</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Menus &amp; screens (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open a menu or window</td>
+<td>Anyone (players' nodes: for the activator only, one window per 10 seconds; not the bank or a store)</td>
+<td><strong>Open:</strong> F3 hub (or its Jobs, Store, Stats or Help tab), Loadout screen (F4), Backpack, Pockets, Phone Book, Mail, The rules, Armory / Create a Class, Citizen look, Treasury (who may open it), Black market (dealers), Bank (admins' nodes: only for players within 300 units of the node, and only for 5 minutes), A store (value: its id; admins' nodes: like the bank, near the node for 5 minutes). <strong>For</strong> (audience). Each window keeps its own rules (a phone needs the Phone License, the treasury its ability)</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Police &amp; Mayor (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Police &amp; Mayor</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Make wanted (value: reason), Clear wanted, Search warrant (value: reason), Lift the warrant, Handcuff, Take off the handcuffs, Start a lockdown (value: reason), End the lockdown, Add a law (value: the law), Remove a law (value: its number; empty = the newest), Back to the server's laws. <strong>Who</strong> (wanted, warrant, cuffs). Needs the Mayor features on (Settings &gt; Mayor &amp; Laws). The chat names no player: "X is wanted: reason"</td>
+</tr>
+</tbody>
+</table></div>
+<h5>World (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Day, night &amp; weather</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Set the time (value: hour 0–24, e.g. <code>20.5</code>), Stop the clock, Let the clock run, Set the weather (<strong>Weather</strong> below)</td>
+</tr>
+<tr>
+<td>Every door on the map: open / close (in Doors)</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Open or Close. <strong>Which doors:</strong> every door, doors nobody bought, bought doors</td>
+</tr>
+<tr>
+<td>Mail (in Messages &amp; HUD)</td>
+<td>Admins</td>
+<td><strong>Title</strong>, <strong>Text</strong> (<code>{name}</code> = the activator), <strong>To</strong>. Lands in the mailbox (<code>!mail</code>) from "Server"</td>
 </tr>
 </tbody>
 </table></div>
@@ -1010,7 +1271,17 @@
 <tr>
 <td>Admin: clean up, kill all, freeze all, time…</td>
 <td>Admins</td>
-<td><strong>Do:</strong> Remove every player's props, Clean up the whole map, Clear decals, Kill every player (not admins), Kill every NPC, Freeze / Unfreeze every player, Take everyone's weapons (not admins), Heal everyone, Respawn every dead player, Time scale (0.1–2), World gravity (600 = normal). <strong>Value</strong></td>
+<td><strong>Do:</strong> Remove every player's props, Clean up the whole map, Clear decals, Kill every player (not admins), Kill every NPC, Freeze / Unfreeze every player, Take everyone's weapons (not admins), Heal everyone, Respawn every dead player, Time scale (0.1–2), World gravity (600 = normal); v3.6.21.6.1: Remove corpses and clear decals, Clear every decal (also the kept ones), Let everyone out of jail, Lock / Unlock the server, Server mode (value 0 Sandbox, 1 Build / PvP, 2 RP), Make a backup of the toolbox's data, Collect the property tax now. <strong>Value</strong></td>
+</tr>
+<tr>
+<td>Write to the Action Log (v3.6.21.6.1)</td>
+<td>Admins</td>
+<td><strong>Text</strong> (<code>{name}</code> = the activator), <strong>Also post it to the Discord logs</strong> (the Server category)</td>
+</tr>
+<tr>
+<td>Kick from the server (v3.6.21.6.1)</td>
+<td>Superadmins</td>
+<td><strong>Reason</strong>, <strong>Who</strong>. Never kicks staff or the node's owner</td>
 </tr>
 <tr>
 <td>Change the map</td>
@@ -1331,6 +1602,28 @@
 </ol>
 <h5>14. Spam protection for anything</h5>
 <p>Put a <strong>Cooldown (debounce)</strong> between a source and what it drives. Send <strong>Trigger</strong> to it, and put the real action on <strong>OnPass</strong>. Set Per to <strong>Each player</strong> so one player spamming doesn't block the others. On <strong>OnBlocked</strong>, show "Wait a moment" to the activator.</p>
+<h5>15. Remove corpses and decals during a Waves match (admins, v3.6.21.6.1)</h5>
+<ol>
+<li>Place a <strong>Match watcher</strong>: Only this mode <code>survival</code> (the built-in waves mode).</li>
+<li>When <strong>OnWaveCleared</strong> → <strong>Admin</strong> Remove corpses and clear decals. Between waves the ground is clean again.</li>
+<li>For a long wave too: place a <strong>Timer</strong> (Every 30 s, Runs from the start off). Match watcher <strong>OnRoundStart</strong> → the timer <strong>Start</strong>, <strong>OnMatchEnd</strong> → the timer <strong>Stop</strong>; Timer <strong>OnTimer</strong> → <strong>Admin</strong> Remove corpses and clear decals.</li>
+</ol>
+<h5>16. Wanted alerts and a jail welcome (admins, v3.6.21.6.1)</h5>
+<ol>
+<li>Place a <strong>Police &amp; Mayor events</strong> node.</li>
+<li><strong>OnWanted</strong> → <strong>Show text on the HUD</strong> "{name} is WANTED" To Everyone, Color red; and <strong>Play a sound</strong> For everyone (2D).</li>
+<li><strong>OnJailed</strong> → <strong>Open a menu or window</strong> The rules, For the one who set it off (the jailed player); <strong>OnUnjailed</strong> → <strong>Player</strong> Give their loadout again.</li>
+</ol>
+<h5>17. Night shift (admins, v3.6.21.6.1)</h5>
+<ol>
+<li>Place a <strong>Day, night &amp; weather events</strong> node.</li>
+<li><strong>OnNight</strong> → <strong>Toolbox lights nearby</strong> Turn on (Nearby 8000) and <strong>NPC spawner</strong> Turn on; <strong>OnDay</strong> → the same Turn off.</li>
+<li><strong>OnWeatherChanged</strong> (only for Thunderstorm) → <strong>Lightning strike</strong> at a warp, a few outputs with delays.</li>
+</ol>
+<h5>18. A lockdown siren (admins, v3.6.21.6.1)</h5>
+<ol>
+<li><strong>Police &amp; Mayor events</strong>: <strong>OnLockdownStart</strong> → <strong>Music</strong> Play on loop (a siren) For Everyone, <strong>Every door on the map</strong> Close (Doors nobody bought); <strong>OnLockdownEnd</strong> → <strong>Music</strong> Stop.</li>
+</ol>
 <h4 id="help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</h4>
 <div class="help-table"><table>
 <thead>
@@ -1366,7 +1659,7 @@
 </tr>
 <tr>
 <td>A chain stops after a while</td>
-<td>The 24-step depth limit, or the rate limit (console: "more than 400 actions in one second"). Break loops with a Delay, Cooldown or Only once.</td>
+<td>The 24-step depth limit, or the rate limit (console: "more than 400 actions in one second"). Break loops with a Cooldown or Only once; for something that repeats forever, use a Timer node.</td>
 </tr>
 <tr>
 <td>A trigger fires for the wrong people</td>
