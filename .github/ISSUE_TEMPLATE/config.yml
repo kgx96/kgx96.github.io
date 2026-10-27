@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and help (toolbox FAQ and tutorials)
+    url: https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/faq.html
+    about: The FAQ and a tutorial for every tool, setting and panel of KGX's Admin Toolbox.
+  - name: gmpub-tool bugs and ideas
+    url: https://github.com/kgx96/gmpub-tool/issues/new/choose
+    about: gmpub-tool has its own repository.
+  - name: KGX's Gmod Mod Collection
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192
+    about: Every KGX addon on the Steam Workshop, with comments and the newest versions.
