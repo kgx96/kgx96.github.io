@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>KGX Core — Roadmap | KGX&#x27;s Dev Library</title>
+<meta name="description" content="The shared library every KGX addon runs on: one language, one set of settings, safe networking and data files. KGX Core roadmap: the current release, the next update and what&#x27;s planned.">
+<meta property="og:title" content="KGX Core — Roadmap | KGX&#x27;s Dev Library">
+<meta property="og:description" content="The shared library every KGX addon runs on: one language, one set of settings, safe networking and data files. KGX Core roadmap: the current release, the next update and what&#x27;s planned.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Dev Library">
+<meta property="og:image" content="https://kgx96.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="https://kgx96.github.io/apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M11 12h7v24h-7zM21 12h7v24h-7zM30.5 13.5l6-1.6 5.6 21.6-6 1.6' fill='none' stroke='white' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/kgx-core.html">
+<meta property="og:url" content="https://kgx96.github.io/kgx-core.html">
+</head>
+<body id="top" class="page-home page-project page-core">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-library" viewBox="0 0 32 32"><path d="M5 6h5v20H5zM12 6h5v20h-5zM19.5 7.2l4.8-1.3 4.6 17.6-4.8 1.3zM5 11h5M12 11h5M5 21h5M12 21h5"/></symbol>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-gear" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/><circle cx="16" cy="16" r="9"/></symbol>
+<symbol id="i-throw" viewBox="0 0 32 32"><path d="M4 26c6-1 10-6 12-12"/><path d="M14 9l6-4 2 3-6 4z"/><path d="M21 14l3 1M23 10l4 0M22 18l3 3"/></symbol>
+<symbol id="i-hand" viewBox="0 0 32 32"><path d="M10 17V8a2 2 0 0 1 4 0v7M14 15V6a2 2 0 0 1 4 0v9M18 15V8a2 2 0 0 1 4 0v9M22 17v-4a2 2 0 0 1 4 0v6c0 6-4 10-9 10h-1c-4 0-6-2-8-5l-3-5a2 2 0 0 1 3-2l2 2"/></symbol>
+<symbol id="i-terminal" viewBox="0 0 32 32"><rect x="3" y="6" width="26" height="20" rx="2"/><path d="m8 13 4 3-4 3M15 20h8"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Dev Library home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-library"/></svg></span><span class="brand-name">KGX'S DEV LIBRARY<small>KGX PRODUCTIONS</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html">Home</a><a href="atb.html">ATB</a><a href="index.html#mods" class="is-section">Mods</a><a href="index.html#programs">Programs</a><a href="index.html#games">Games</a><a href="index.html#about">About</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="hero" aria-labelledby="hero-title"><div class="hero-topline"><p class="eyebrow hero-label">KGX'S DEV LIBRARY / GARRY'S MOD / ROADMAP</p><span class="mono hero-number">ONE LIBRARY. EVERY KGX ADDON.</span></div>
+    <div class="hero-grid"><div><p class="project-kicker mono"><svg aria-hidden="true"><use href="#i-gear"/></svg> GARRY'S MOD LIBRARY</p><h1 id="hero-title">KGX Core.<span>The road ahead.</span></h1><p class="hero-description">The shared library every KGX addon runs on: one language, one set of settings, safe networking and data files.</p><div class="hero-actions"><a class="button button-primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX mods on Steam <svg aria-hidden="true"><use href="#i-external"/></svg></a><a class="text-link" href="#roadmap">Explore the roadmap <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a></div></div>
+    <aside class="release-summary" aria-label="Release overview"><div class="summary-head"><span class="eyebrow">Release overview</span><span class="summary-mark">CORE / 2026</span></div><div class="summary-current"><div><span class="status status-current"><i aria-hidden="true"></i>Current release</span><p class="summary-version">v1.0.0</p></div><svg aria-hidden="true"><use href="#i-check"/></svg></div><a class="summary-next" href="#release-1"><span class="eyebrow">Up next / In progress</span><strong>v1.1.0 ↗</strong></a><div class="summary-bottom">Updated October 26, 2026</div></aside></div>
+  </section>
+<div class="principles" aria-label="How releases work"><div class="principle"><svg aria-hidden="true"><use href="#i-steps"/></svg><span><strong>One release</strong> per step</span></div><div class="principle"><svg aria-hidden="true"><use href="#i-shield"/></svg><span><strong>Tested</strong> before release</span></div><div class="principle"><svg aria-hidden="true"><use href="#i-calendar"/></svg><span><strong>Ready when ready.</strong> No dates.</span></div></div>
+<section id="roadmap" aria-labelledby="roadmap-title"><div class="roadmap-heading"><div><p class="eyebrow">01 / Development</p><h2 class="section-title" id="roadmap-title">A better addon, step by step.</h2></div><p>What is coming after v1.0.0.<br>Here’s the plan. Follow along.</p></div>
+  <div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Roadmap controls"><p class="eyebrow sidebar-label">View releases</p><div class="filters" role="group" aria-label="Filter releases"><button class="filter" data-filter="all" aria-pressed="true">All releases <span class="filter-count">04</span></button><button class="filter" data-filter="current" aria-pressed="false">Out now <span class="filter-count">01</span></button><button class="filter" data-filter="next" aria-pressed="false">In progress <span class="filter-count">01</span></button><button class="filter" data-filter="planned" aria-pressed="false">Planned <span class="filter-count">02</span></button></div><div class="search-wrap"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="release-search" type="search" aria-label="Search releases" placeholder="Search the roadmap…" autocomplete="off"></div><div class="sidebar-note"><span class="eyebrow">A note on the plan</span><p>Each release ships only after its tests pass, so there are no dates; plans can change along the way.</p><p>These are planned improvements. KGX Core comes with the KGX addons that need it.</p></div><p class="updated"><svg aria-hidden="true"><use href="#i-calendar"/></svg>Last updated Oct 26, 2026</p></aside>
+  <div class="timeline"><div class="timeline-topline"><span class="mono" id="release-count" data-label="RELEASES">04 RELEASES</span><div class="legend" aria-hidden="true"><span><i></i>Out now</span><span><i></i>In progress</span></div></div>
+  <article class="release current" data-status="current" id="release-0">
+      <div class="release-side"><span class="release-number">v1.0.0</span><span class="rail-dot" aria-hidden="true"></span></div>
+      <div class="release-main"><div class="release-meta"><span class="status status-current"><i aria-hidden="true"></i>Out now</span><span class="release-index">/ 01</span></div>
+      <h3>Foundation</h3><div class="release-content"><p>The first release: the shared library under Throw Equipped, Pickup Equipped and KGX's Admin Toolbox.</p><ul><li>Registry with version checks: an addon that needs a newer Core says so instead of erroring</li><li>One language (six to pick from), theme and NEW / UPDATE marks for every KGX addon</li><li>Q menu &gt; Utilities &gt; KGX &gt; KGX Core: the installed KGX addons, with a note when a newer version is out</li><li>Safe net messages, data files with backups, staff permissions through your admin mod</li></ul></div></div>
+    </article>
+<article class="release next" data-status="next" id="release-1">
+      <div class="release-side"><span class="release-number">v1.1.0</span><span class="rail-dot" aria-hidden="true"></span></div>
+      <div class="release-main"><div class="release-meta"><span class="status status-next"><i aria-hidden="true"></i>Next update, in progress</span><span class="release-index">/ 02</span></div>
+      <h3>Access for every addon</h3><div class="release-content"><ul><li>The KGX Core page lists every KGX addon's access keys</li><li>Give a key to everyone, to ranks or to single players from one place</li></ul></div></div>
+    </article>
+<article class="release planned" data-status="planned" id="release-2">
+      <div class="release-side"><span class="release-number">v1.2.0</span><span class="rail-dot" aria-hidden="true"></span></div>
+      <div class="release-main"><div class="release-meta"><span class="status status-planned"><i aria-hidden="true"></i>Planned</span><span class="release-index">/ 03</span></div>
+      <h3>Shared screens</h3><div class="release-content"><ul><li>The toolbox's 3D screens move into Core so other KGX addons can show pages in the world</li></ul></div></div>
+    </article>
+<article class="release planned" data-status="planned" id="release-3">
+      <div class="release-side"><span class="release-number">v1.3.0</span><span class="rail-dot" aria-hidden="true"></span></div>
+      <div class="release-main"><div class="release-meta"><span class="status status-planned"><i aria-hidden="true"></i>Planned</span><span class="release-index">/ 04</span></div>
+      <h3>Translations for every addon</h3><div class="release-content"><ul><li>Server owners edit any KGX addon's phrases in game, like the toolbox's Settings &gt; Translations</li></ul></div></div>
+    </article>
+  <div class="no-results" id="no-results" hidden><strong>No matching releases.</strong><p>Try another version or keyword.</p><button id="reset-filters">Clear search and filters</button></div><p class="result-announcement" role="status" id="result-announcement"></p>
+  </div></div></section>
+<div class="home-links home-links-1" aria-label="More"><a class="link-card" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/kgx-core.html" target="_blank" rel="noopener noreferrer"><strong>API reference <svg aria-hidden="true"><use href="#i-external"/></svg></strong><span>What Core is, its settings, and the API for addon developers.</span><small>ATB WEBSITE</small></a></div>
+<section class="about" id="about" aria-labelledby="about-title"><div><p class="eyebrow">02 / About the project</p><h2 id="about-title">Made for<br>Garry’s Mod.</h2></div><div class="about-body"><div><h3>KGX Core</h3><p>KGX Core holds what every KGX addon needs: the registry with version checks, safe net messages, data files that never save half a file, staff permissions, translations in six languages, the action log and the settings kit. Install it once; the addons that need it list it as a required item.</p><p>Copyright © KGX PRODUCTIONS. All rights reserved: the code is not open source; please don't copy or re-upload it.</p><a class="text-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">View the collection on Steam <svg aria-hidden="true"><use href="#i-external"/></svg></a></div><div><h3>Getting started</h3><p>KGX Core comes with every KGX addon as a required item: subscribe to any of them and Steam adds Core too. Its page is in Q menu &gt; Utilities &gt; KGX &gt; KGX Core.</p></div><div class="link-row" aria-label="Links"><h3>Links</h3><div class="link-cards"><a class="link-card" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer"><strong>KGX's Gmod Mod Collection <svg aria-hidden="true"><use href="#i-external"/></svg></strong><span>Every KGX addon for Garry's Mod in one Workshop collection.</span><small>steamcommunity.com</small></a><a class="link-card" href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer"><strong>KGX on Steam <svg aria-hidden="true"><use href="#i-external"/></svg></strong><span>KGX's Steam profile.</span><small>steamcommunity.com</small></a><a class="link-card" href="index.html"><strong>Every KGX project <svg aria-hidden="true"><use href="#i-arrow"/></svg></strong><span>Back to KGX's Dev Library: mods, programs and games.</span><small>KGX'S DEV LIBRARY</small></a></div></div></div></section>
+<section class="install-banner" aria-labelledby="install-title"><div><p class="eyebrow">KGX CORE / STEAM WORKSHOP</p><h2 id="install-title">Your next session starts here.</h2></div><a class="button" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">Open the collection <svg aria-hidden="true"><use href="#i-external"/></svg></a></section>
+
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-note">KGX mods and games are not open source; gmpub-tool is (MIT License).</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/" target="_blank" rel="noopener noreferrer">KGX's Admin Toolbox website</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX's Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://github.com/kgx96" target="_blank" rel="noopener noreferrer">KGX on GitHub</a><a href="https://github.com/kgx96/gmpub-tool" target="_blank" rel="noopener noreferrer">gmpub-tool</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search projects, roadmaps and toolbox help..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every project, roadmap and toolbox tutorial.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

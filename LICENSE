@@ -1,0 +1,19 @@
+Copyright (c) 2026 KGX PRODUCTIONS. All rights reserved.
+
+This repository contains the website "KGX's Dev Library" (https://kgx96.github.io/):
+its text, design, images, HTML, CSS, JavaScript and data files.
+
+No license is granted. You may view the website in a web browser and link to it.
+You may not copy, modify, re-host, redistribute or re-upload any part of this
+repository or of the KGX PRODUCTIONS projects it describes (Garry's Mod addons,
+games and their assets) without written permission from KGX PRODUCTIONS.
+
+The KGX PRODUCTIONS mods and games are closed source. Their code is not in
+this repository.
+
+Exception: gmpub-tool is open source under the MIT License, published in its
+own repository: https://github.com/kgx96/gmpub-tool
+
+Third-party names (Garry's Mod, Steam, Steam Workshop, Godot) are trademarks of
+their owners. Fonts are loaded from Google Fonts under their own licenses
+(SIL Open Font License). Visit counts use GoatCounter.
