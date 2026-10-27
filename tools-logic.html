@@ -1,0 +1,1704 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Logic: the complete guide — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Triggers and logic for RP and PVP: buttons, switches, plates, trigger boxes, timers, counters, gates... wired to doors, messages, sounds, teleports, spawners and each other.">
+<meta property="og:title" content="Logic: the complete guide — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Triggers and logic for RP and PVP: buttons, switches, plates, trigger boxes, timers, counters, gates... wired to doors, messages, sounds, teleports, spawners and each other.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/tools-logic.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/tools-logic.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html" aria-current="page">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-tools-logic-getting-started">Getting started</a><a class="filter" href="#help-tools-logic-how-logic-works">How logic works</a><a class="filter" href="#help-tools-logic-node-reference">Node reference</a><a class="filter" href="#help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</a><a class="filter" href="#help-tools-logic-actions-do">Actions (Do)</a><a class="filter" href="#help-tools-logic-variables-votes-and-windows">Variables, votes and windows</a><a class="filter" href="#help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</a><a class="filter" href="#help-tools-logic-recipes">Recipes</a><a class="filter" href="#help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-tools.html">Tools</a><i aria-hidden="true">/</i><span aria-current="page">Logic: the complete guide</span></nav><article class="help-view help-article" aria-labelledby="help-tools-logic-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Tools &gt; World</p><h1 id="help-tools-logic-title">Logic: the complete guide</h1><p class="help-article-sum">Triggers and logic for RP and PVP: buttons, switches, plates, trigger boxes, timers, counters, gates... wired to doors, messages, sounds, teleports, spawners and each other.</p><p class="help-article-meta mono">Tool / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-tools-logic-getting-started">Getting started</a></li><li><a href="#help-tools-logic-how-logic-works">How logic works</a></li><li><a href="#help-tools-logic-node-reference">Node reference</a></li><li><a href="#help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</a></li><li><a href="#help-tools-logic-actions-do">Actions (Do)</a></li><li><a href="#help-tools-logic-variables-votes-and-windows">Variables, votes and windows</a></li><li><a href="#help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</a></li><li><a href="#help-tools-logic-recipes">Recipes</a></li><li><a href="#help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</a></li></ol></nav><h4 id="help-tools-logic-getting-started">Getting started</h4>
+<p>Logic is built with one tool: <strong>Q menu &gt; KGX's Admin Toolbox &gt; World &gt; Logic</strong>. You place <strong>nodes</strong> (buttons, trigger boxes, timers, counters and so on), then give each node <strong>outputs</strong>: "When this happens, do that". Everything is saved per map in <code>data/kgx_admin_toolbox/logic_&lt;map&gt;.json</code> and comes back after a restart. This guide covers v3.6.21.6.1, which adds event nodes and actions for every part of the toolbox: the economy, the police and the Mayor, staff, day and night, progression, the phone and more.</p>
+<h5>Tool controls</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left-click</td>
+<td>Places the node picked in <strong>Node to place</strong> and opens its editor. A trigger box or invisible wall needs two clicks, one for each opposite corner. In Paste mode, left-click pastes instead.</td>
+</tr>
+<tr>
+<td>Right-click</td>
+<td>Opens the editor of the node you aim at.</td>
+</tr>
+<tr>
+<td>E + right-click</td>
+<td>Copies the aimed node. Switch to Paste mode and left-click to place copies.</td>
+</tr>
+<tr>
+<td>Shift + E + right-click</td>
+<td>Adds the aimed node to a group copy, or takes it out.</td>
+</tr>
+<tr>
+<td>Reload (R)</td>
+<td>Removes the aimed node.</td>
+</tr>
+<tr>
+<td>E + reload</td>
+<td>Cancels a first box corner you already clicked.</td>
+</tr>
+</tbody>
+</table></div>
+<p>While the tool is out, every node is drawn with lines to whatever its outputs drive. The HUD shows what you are placing ("Placing: Trigger box").</p>
+<h5>The tool panel</h5>
+<ul>
+<li><strong>Mode:</strong> <em>Place a new node</em>, or <em>Paste</em> (the copied node, or the preset picked further down).</li>
+<li><strong>Node to place:</strong> every node kind, with its help text shown under the list.</li>
+<li><strong>Trigger box / wall height:</strong> if both corners you click are on the floor, the box is made this tall (16–4096; players' own boxes up to 2048).</li>
+<li><strong>New buttons / switches / plates: silent</strong>, <strong>Confirmation on</strong> and <strong>Their sound:</strong> the defaults for new bodies. Each node's own editor can change them later.</li>
+<li><strong>Show nodes and fires without the tool (debug):</strong> see Debugging, further down.</li>
+<li><strong>Nodes on this map:</strong> a list of every node. Double-click to edit. Right-click to go to the node, copy it, save it as a preset or delete it. Ctrl or Shift + click selects several nodes.</li>
+<li><strong>Presets:</strong> saved node templates you can paste anywhere.</li>
+</ul>
+<h5>Where nodes go</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Placement</th>
+<th>Nodes</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>On a surface (a body you can see)</td>
+<td>Button, Switch, Button (multiple), Pressure plate</td>
+<td>Stuck to the wall or floor you aim at, facing out. A plate lies flat and faces you.</td>
+</tr>
+<tr>
+<td>A box (two corners)</td>
+<td>Trigger box, Invisible wall</td>
+<td>Click two opposite corners.</td>
+</tr>
+<tr>
+<td>A marker</td>
+<td>Everything else (timers, counters, relays, gates, pages, delays…)</td>
+<td>A small marker 12 units off the surface you aim at. Players don't see markers; only the tool and debug view draw them.</td>
+</tr>
+<tr>
+<td>An entity</td>
+<td>Entity watcher</td>
+<td>Aim at the entity to watch: a map button or door, a toolbox button, keypad or teleporter, a talking NPC or a prop.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A <strong>Zone watcher</strong> must be placed inside a World &gt; Zones zone, and only admins can place one.</p>
+<h5>The node editor</h5>
+<p>The editor opens when you place a node, or when you right-click one. From top to bottom it has:</p>
+<ol>
+<li><strong>The node's help</strong>, and its <strong>Name</strong> (shown in lists and pickers).</li>
+<li><strong>Runs:</strong> off means the node is disabled until something sends it an <strong>Enable</strong> input.</li>
+<li><strong>The node's settings.</strong> Hover any field for a tooltip.</li>
+<li><strong>Body position and angle</strong> (buttons, switches, Button (multiple)): six sliders that move and turn the body live, plus <strong>Reset position</strong>, <strong>Flip</strong> and <strong>Turn 90 degrees</strong>. The new position is kept only when you click Save.</li>
+<li><strong>Now:</strong> the node's live state, such as enabled or disabled, on or off, a counter's value, a timer running, or how many things are inside.</li>
+<li><strong>The output list</strong>, with the columns When · Do · Target · Delay · Once. Double-click a row to edit it.</li>
+<li><strong>Buttons:</strong> <strong>Add output</strong>, <strong>Edit</strong>, <strong>Duplicate output</strong>, <strong>Remove</strong>, a list of events and <strong>Test</strong>, <strong>Copy node</strong>, <strong>Save as preset…</strong>, <strong>Save</strong> and <strong>Delete node</strong>.</li>
+</ol>
+<p><strong>Test</strong> fires the chosen event right away, with you as the activator. It only runs outputs that are already saved, so click Save first. Nothing is stored until you click <strong>Save</strong>; closing the window throws the changes away.</p>
+<h5>Limits</h5>
+<ul>
+<li>Up to 400 nodes per map, and up to 32 outputs per node.</li>
+<li>Each node gets an id: L1, L2, L3… Other nodes, conditions and talking NPCs use that id to point at it.</li>
+<li>Players can't physgun node bodies. Only the Logic, Inspect and Remover tools work on them. A body removed some other way comes back in 2 seconds.</li>
+</ul>
+<h4 id="help-tools-logic-how-logic-works">How logic works</h4>
+<p>Every piece of logic follows one sentence: <strong>when an event happens on a node, do an action, after a delay, if the conditions hold.</strong> A node sending an input to another node is just one of those actions, so you can chain nodes as far as you like.</p>
+<figure class="help-figure"><div class="help-figure-scroll"><svg viewBox="0 44 760 264" role="img" aria-label="Every output runs the same path: event, condition, delay, action">
+<defs><marker id="hf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="hf-head" d="M0 0L10 5L0 10z"/></marker></defs>
+<g class="hf-lines"><path d="M188 130H220" marker-end="url(#hf-arrow)"/><path d="M384 130H412" marker-end="url(#hf-arrow)"/><path d="M508 130H540" marker-end="url(#hf-arrow)"/><path d="M622 158V232" marker-end="url(#hf-arrow)"/><path d="M540 260H384" marker-end="url(#hf-arrow)"/><path d="M302 232V158" marker-end="url(#hf-arrow)"/><path d="M460 90V76"/></g>
+<rect class="hf-box" x="24" y="102" width="164" height="56" rx="8"/><text class="hf-name" x="106" y="126">Something happens</text><text class="hf-sub" x="106" y="144">E, entering, a timer</text>
+<rect class="hf-box" x="220" y="102" width="164" height="56" rx="8"/><text class="hf-name" x="302" y="126">Node fires an event</text><text class="hf-sub" x="302" y="144">OnPressed, OnEnter</text>
+<polygon class="hf-box" points="412,130 460,90 508,130 460,170"/><text class="hf-plain" x="460" y="134">Only if?</text>
+<rect class="hf-box" x="540" y="102" width="164" height="56" rx="8"/><text class="hf-name" x="622" y="126">Wait the delay</text><text class="hf-sub" x="622" y="144">0 s = right away</text>
+<rect class="hf-box hf-main" x="540" y="232" width="164" height="56" rx="8"/><text class="hf-name" x="622" y="256">Run the action</text><text class="hf-sub" x="622" y="274">door, message, vote</text>
+<rect class="hf-box" x="220" y="232" width="164" height="56" rx="8"/><text class="hf-name" x="302" y="256">Send an input</text><text class="hf-sub" x="302" y="274">to another node</text>
+<text class="hf-sub" x="524" y="122">yes</text><text class="hf-sub" x="460" y="66">no: output skipped</text><text class="hf-sub" x="462" y="252">if Do = send an input</text><text class="hf-sub hf-left" x="312" y="200">its event fires (up to 24 steps)</text>
+</svg></div></figure>
+<p>Each output takes this path on its own. When the action sends an input to another node, that node's event starts the path again, one step deeper.</p>
+<h5>The parts</h5>
+<ul>
+<li><strong>Node:</strong> a thing on the map with a kind (Button, Timer, Counter…), its settings and up to 32 outputs.</li>
+<li><strong>Event ("When"):</strong> something that happened to the node, such as OnPressed, OnEnter, OnTimer or OnHitMax. Each kind has its own list (see Node reference). Every kind also has OnEnabled, OnDisabled, OnVoteWin and OnVoteLose.</li>
+<li><strong>Output:</strong> one line in the editor: When, Do, Target, the action's fields, Delay, Only once and Only if. A node can have several outputs for the same event, and they all run.</li>
+<li><strong>Action ("Do"):</strong> what happens: open a door, show a message, teleport, send an input to another node, start a vote, and so on (see Actions).</li>
+<li><strong>Input:</strong> a command one node sends to another with the action <strong>Logic node: send an input</strong> (Press, Trigger, Add, SetA, Start, Open…). Some inputs take a <strong>value</strong>: Add 5, SetA on, Value 3.</li>
+<li><strong>Activator:</strong> whoever set the chain off. It is passed down the chain and kept through delays, so "the activator" in an action five nodes later is still the person who pressed the first button. <code>{name}</code> in texts becomes the activator's name, or "someone" when there is none.</li>
+</ul>
+<h5>Who the activator is</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Activator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Button, switch, Button (multiple), page buttons</td>
+<td>The player who pressed</td>
+</tr>
+<tr>
+<td>Trigger box, sphere, plate, zone watcher</td>
+<td>The one who came in or left. For OnOccupied it's the first one in; for OnEmpty, the last one out.</td>
+</tr>
+<tr>
+<td>Entity watcher</td>
+<td>Who used, damaged, broke, talked to it or got teleported</td>
+</tr>
+<tr>
+<td>Timer, Clock, Map start</td>
+<td>Nobody</td>
+</tr>
+<tr>
+<td>Delay, Countdown</td>
+<td>Whoever started it</td>
+</tr>
+<tr>
+<td>Server events</td>
+<td>Whoever joined, left, spawned, died or chatted. For OnPlayerKill and OnNPCKilled, the killer.</td>
+</tr>
+<tr>
+<td>Vote results (OnVoteWin / OnVoteLose)</td>
+<td>Whoever set off the output that started the vote</td>
+</tr>
+<tr>
+<td>Test button</td>
+<td>You</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Enabled and disabled</h5>
+<p>Most nodes take <strong>Enable</strong> and <strong>Disable</strong> inputs. Timer, Counter and Logic gate don't list them in the input picker: stop a timer with Stop, or untick Runs in the editor. A disabled node ignores every other input and fires nothing on its own. A disabled trigger also forgets who was inside.</p>
+<p>Trigger boxes, spheres, relays and walls also take <strong>Toggle</strong>, which switches between enabled and disabled. For a switch, a branch or a timer, Toggle works on the node's own state instead.</p>
+<p>Disabling a running Delay or Countdown cancels it, and it fires OnCanceled.</p>
+<h5>Delay, Only once and Random</h5>
+<ul>
+<li><strong>Delay (0–3600 s):</strong> the action runs that many seconds later. If you edit and save the node before the delay ends, the waiting action is dropped.</li>
+<li><strong>Only once:</strong> the output runs the first time only, until the map restarts. Saving the node resets it.</li>
+<li>A <strong>Random</strong> node runs <strong>one</strong> of the outputs that match its event, picked at random. Every other node runs all of them.</li>
+</ul>
+<h5>Safety limits</h5>
+<ul>
+<li><strong>Chain depth:</strong> a chain stops after 24 steps (node → node → node…), so two nodes triggering each other can't freeze the server. The count goes on through delays and through the events an action sets off (an action that wants someone, which fires OnWanted again; one that sets the time or noclip, which fires OnNight or OnNoclipOn again…), so a loop with a delay in it stops too. For something that should repeat forever, use a Timer node: each tick starts a fresh chain.</li>
+<li><strong>Rate:</strong> at most <code>kgxat_logic_rate</code> actions per second on the whole server (default 400, range 50–5000). Above that, the rest are skipped and the server log says "a loop?".</li>
+<li><strong>Master switch:</strong> <code>kgxat_logic 0</code> stops all logic from running. The nodes stay saved.</li>
+<li><strong>Map cleanup:</strong> a cleanup resets every node's live state: switches go back to their start, counters to their start value, timers to their "Runs from the start" setting. Map start nodes then fire OnCleanup. Variables are not reset by a cleanup.</li>
+</ul>
+<h4 id="help-tools-logic-node-reference">Node reference</h4>
+<p>There are 26 node kinds in six groups. Every kind also fires <strong>OnEnabled</strong>, <strong>OnDisabled</strong>, <strong>OnVoteWin</strong> and <strong>OnVoteLose</strong> (see Votes), and every kind has a <strong>Name</strong> and a <strong>Runs</strong> box. The tables below leave those out.</p>
+<h5>Things players use</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Node</th>
+<th>What it does</th>
+<th>Inputs</th>
+<th>Events (When)</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Button</strong></td>
+<td>Pressed with E.</td>
+<td>Press, Enable, Disable</td>
+<td>OnPressed; OnLocked (pressed while disabled); OnTooSoon (pressed during its cooldown)</td>
+<td>Cooldown 0–60 s (default 1, never below 0.2); Text on it; Look (11 models, plus Custom model and Invisible for admins); Custom model path; HUD prompt, second line and color; Silent; Press sound; Confirmation and its question; body position</td>
+</tr>
+<tr>
+<td><strong>Switch</strong></td>
+<td>Flipped on or off with E.</td>
+<td>TurnOn, TurnOff, Toggle, Enable, Disable</td>
+<td>OnOn, OnOff, OnToggled (either way), OnLocked, OnTooSoon</td>
+<td>Starts on; Cooldown (default 0.5); Text; Look (lever, slider, cage light, power switch, custom, invisible); HUD prompt; Silent; Flip sound; Confirmation; body position</td>
+</tr>
+<tr>
+<td><strong>Button (multiple)</strong></td>
+<td>E opens a window with a title, text and up to 8 buttons. Each button fires its own event.</td>
+<td>Open (opens for the activator), Enable, Disable</td>
+<td>OnOpened, OnOption1–8, OnAnyOption, OnClosed, OnLocked, OnTooSoon</td>
+<td>Cooldown; Text on it; Window title; Text in the window (up to 1000 characters); Button 1–8 labels (empty = no button); Each button asks "Are you sure?"; The window closes after a button; Window color; Look; HUD prompt; Silent; sound; body position</td>
+</tr>
+<tr>
+<td><strong>Pressure plate</strong></td>
+<td>Pressed while something stands on it.</td>
+<td>Enable, Disable</td>
+<td>OnPressed (the first one steps on), OnReleased (the last one steps off), OnPlayerEnter</td>
+<td>Pressed by: Players, NPCs, Players and NPCs, Props, or Anything; Silent; Step sound</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>OnLocked and OnTooSoon fire at most once a second per player, so mashing E doesn't spam.</li>
+<li><strong>Confirmation</strong> shows an "Are you sure?" box (or your own question). The button fires only on Yes, and only if the player is still alive and within 200 units.</li>
+<li><strong>Invisible</strong> buttons draw nothing for players, but E and the HUD prompt still work. It's good for "press E on the painting".</li>
+<li><strong>HUD prompt:</strong> the text players see when they look at the body, such as "Elevator" / "Press E to call".</li>
+<li><strong>Sounds:</strong> a game sound (<code>buttons/button9.wav</code>, <code>.mp3</code> or <code>.ogg</code>) or a sound script (<code>Weapon_Pistol.Single</code>). Empty means the normal click. Links are not allowed here.</li>
+</ul>
+<h5>Areas</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Node</th>
+<th>What it does</th>
+<th>Inputs</th>
+<th>Events (When)</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trigger box</strong></td>
+<td>An invisible box (two corners). Checked 5 times a second.</td>
+<td>Enable, Disable, Toggle</td>
+<td>OnEnter, OnExit (each one), OnOccupied (first in), OnEmpty (last out), OnPlayerEnter, OnNPCEnter, OnPropEnter, OnPlayerExit</td>
+<td>Reacts to (Players, NPCs, both, Props, Anything); Only (team, job, rank or NPC tag, comma separated; empty = everyone)</td>
+</tr>
+<tr>
+<td><strong>Trigger sphere</strong></td>
+<td>An invisible ball around the marker.</td>
+<td>Enable, Disable, Toggle</td>
+<td>Same as the trigger box</td>
+<td>Radius 16–4000 (default 128); Reacts to; Only</td>
+</tr>
+<tr>
+<td><strong>Zone watcher</strong></td>
+<td>Watches the World &gt; Zones zone it was placed in (players only). Admins only.</td>
+<td>ZoneOn, ZoneOff, ZoneToggle (turn that zone's effect on or off), Enable, Disable</td>
+<td>OnEnter, OnExit, OnOccupied, OnEmpty, OnPlayerEnter, OnPlayerExit</td>
+<td>Only (team, job or rank)</td>
+</tr>
+<tr>
+<td><strong>Invisible wall</strong></td>
+<td>A solid invisible box: nothing walks, drives or shoots through it while it's on.</td>
+<td>Enable (on), Disable (off), Toggle</td>
+<td>OnTurnedOn, OnTurnedOff</td>
+<td>Starts on; Players see a faint outline</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Watchers</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Node</th>
+<th>What it does</th>
+<th>Inputs</th>
+<th>Events (When)</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity watcher</strong></td>
+<td>Watches the entity you aimed at. Players may only watch their own things.</td>
+<td>Enable, Disable</td>
+<td>OnUsed (E), OnButton (a toolbox button pressed), OnCodeRight / OnCodeWrong (keypad), OnTeleported (teleporter), OnDamaged, OnBroken, OnTalk (talking NPC)</td>
+<td>Cooldown 0–60 s for OnUsed and OnDamaged (default 0.5)</td>
+</tr>
+<tr>
+<td><strong>Server events</strong> (admins)</td>
+<td>Players and NPCs anywhere on the server.</td>
+<td>Enable, Disable</td>
+<td>OnPlayerJoin, OnPlayerLeave, OnPlayerSpawn, OnPlayerDeath (activator: who died), OnPlayerKill (the killer), OnPlayerHurt, OnNPCKilled (the killer), OnChatWord, OnJobChanged</td>
+<td>Chat word for OnChatWord (empty = any message); Hide that chat message; Only (team, job or rank)</td>
+</tr>
+<tr>
+<td><strong>Match watcher</strong></td>
+<td>Game Modes matches.</td>
+<td>Enable, Disable</td>
+<td>OnLobby, OnPrep, OnRoundStart, OnRoundEnd, OnMatchStart, OnMatchEnd, OnPlayerOut, OnPointCaptured, OnFlagCaptured, OnBombPlanted, OnBombDefused, OnBombExploded, OnEscortArrived, OnBodyFound, OnWaveStart, OnWaveCleared (Waves, v3.6.21.6.1)</td>
+<td>Only this mode (mode id; empty = any; the built-in waves mode is <code>survival</code>). Activator: the player who did it, or the round's best player</td>
+</tr>
+<tr>
+<td><strong>Economy events</strong> (admins, v3.6.21.6.1)</td>
+<td>Money anywhere on the server.</td>
+<td>Enable, Disable</td>
+<td>OnPaycheck, OnStoreBought, OnStoreSold, OnPropertyBought, OnPropertySold, OnTreasuryIn, OnTreasuryOut, OnRobberyStarted, OnRobbed, OnPrinterHacked, OnMoneyAlert</td>
+<td>Only amounts of at least (the paycheck, price, robbery or treasury amount; 0 = any); Only (team, job or rank). Activator: the player (none for the treasury)</td>
+</tr>
+<tr>
+<td><strong>Police &amp; Mayor events</strong> (admins, v3.6.21.6.1)</td>
+<td>The law.</td>
+<td>Enable, Disable</td>
+<td>OnWanted, OnWantedCleared, OnWarrant, OnWarrantLifted, OnJailed, OnUnjailed, OnCuffed, OnUncuffed, OnLockpicked, OnDoorBreached, OnLockdownStart, OnLockdownEnd, OnLawsChanged</td>
+<td>Only (team, job or rank). Activator: the player it happened to (the lock picker for OnLockpicked; nobody for a door blown open or the laws)</td>
+</tr>
+<tr>
+<td><strong>Staff events</strong> (admins, v3.6.21.6.1)</td>
+<td>Moderation.</td>
+<td>Enable, Disable</td>
+<td>OnReport, OnWarned, OnAntiCheat, OnRevived, OnRulesAccepted, OnBanned, OnAdminAction</td>
+<td>Only admin actions with the word (OnAdminAction: e.g. <code>kicked</code>, <code>jailed</code>, <code>money</code>); Only (team, job or rank). Activator: the player; for OnBanned and OnAdminAction the admin (staff only: police and Mayor lines in the Action Log do not count)</td>
+</tr>
+<tr>
+<td><strong>Day, night &amp; weather events</strong> (admins, v3.6.21.6.1)</td>
+<td>The toolbox's day and night (Utilities &gt; Day/Night &amp; Weather, while it is on).</td>
+<td>Enable, Disable</td>
+<td>OnHour, OnTimeOfDay, OnDawn (5:00), OnDay (8:00), OnDusk (17:00), OnNight (20:00), OnWeatherChanged</td>
+<td>Hour for OnTimeOfDay (0–23); OnWeatherChanged only for (a weather, or any). No activator</td>
+</tr>
+<tr>
+<td><strong>Progression &amp; server events</strong> (admins, v3.6.21.6.1)</td>
+<td>Players and the server.</td>
+<td>Enable, Disable</td>
+<td>OnLevelUp, OnAchievement, OnSeasonEnded, OnVoteStarted, OnVoteEnded (activator: who started the vote), OnServerModeChanged, OnBuff (a buff, food or drug), OnVoiceLine</td>
+<td>Only (team, job or rank)</td>
+</tr>
+<tr>
+<td><strong>Phone &amp; player activity events</strong> (admins, v3.6.21.6.1)</td>
+<td>What players do.</td>
+<td>Enable, Disable</td>
+<td>OnCall (the caller), OnText (the sender; not what was written), OnPropSpawned, OnVehicleEnter, OnVehicleExit, OnNoclipOn, OnNoclipOff (checked twice a second; not while dead or in a vehicle)</td>
+<td>Only (team, job or rank)</td>
+</tr>
+<tr>
+<td><strong>Map start</strong></td>
+<td>Runs once when the logic is up.</td>
+<td>Enable, Disable</td>
+<td>OnMapStart (3 s after the map loads), OnCleanup (2 s after a map cleanup)</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Clock (real time)</strong> (admins)</td>
+<td>The server's own clock.</td>
+<td>FireNow, Enable, Disable</td>
+<td>OnTime</td>
+<td>When: Every day at the time, Every hour at the minute, or Every N minutes; Hour; Minute; Every N minutes (1–1440)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>An entity watcher on something that isn't permanent (not a map entity, perma prop or saved toolbox entity) works until that entity is removed or the map restarts.</li>
+<li><strong>OnPlayerHurt</strong> fires at most once a second per player.</li>
+<li><strong>OnChatWord</strong> matches the word anywhere in the message, ignoring case. <strong>Hide</strong> only works when a word is set, and never hides commands (<code>/</code>, <code>!</code>, <code>@</code>). Gagged players' messages don't count.</li>
+<li>The v3.6.21.6.1 event nodes hear the whole server, so only admins place them. An output that sets off its own event (OnWanted → make the activator wanted) stops after 4 rounds.</li>
+<li><strong>Day, night &amp; weather</strong> is checked every second and only while the toolbox's day / night is on. Setting the time with a node fires OnHour for the new hour, and the phase event of the part of the day it lands in (a jump from 3:00 to 12:00 fires OnDay).</li>
+<li><strong>Clock</strong> uses the server's local time. It is checked every 10 seconds and fires once per due minute. "Every N minutes" counts from midnight, so 30 fires at :00 and :30.</li>
+</ul>
+<h5>Timing</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Node</th>
+<th>What it does</th>
+<th>Inputs</th>
+<th>Events (When)</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Timer</strong></td>
+<td>Fires over and over while running.</td>
+<td>Start, Stop, Toggle, FireNow, Enable, Disable</td>
+<td>OnTimer, OnStarted, OnStopped, OnFinished (after its last time)</td>
+<td>Every 0.5–3600 s (default 10); Plus up to N s at random; Runs from the start; Stop after this many (0 = never)</td>
+</tr>
+<tr>
+<td><strong>Delay</strong></td>
+<td>Waits, then fires OnDone with the same activator.</td>
+<td>Start, Cancel, Restart, Enable, Disable</td>
+<td>OnStarted, OnDone, OnCanceled</td>
+<td>Delay 0.1–3600 s (default 5); Start while running starts over (off = a second Start is ignored)</td>
+</tr>
+<tr>
+<td><strong>Cooldown (debounce)</strong></td>
+<td>Lets Trigger through at most once per cooldown.</td>
+<td>Trigger, Reset, Enable, Disable</td>
+<td>OnPass, OnBlocked (too soon)</td>
+<td>Cooldown 0.1–3600 s (default 5); Per: Everyone (one cooldown) or Each player</td>
+</tr>
+<tr>
+<td><strong>Countdown (on screen)</strong></td>
+<td>Shows a countdown on screens, then fires OnFinished.</td>
+<td>Start, Cancel, Enable, Disable</td>
+<td>OnStarted, OnFinished, OnCanceled</td>
+<td>Seconds 1–3600 (default 10); Text (<code>{time}</code> = the time left, default "Starting in {time}"); Shown to (audience); Color</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Restart</strong> on a Delay always starts it over, whatever the setting.</li>
+<li>Starting a Countdown that is already running replaces the old one on screen.</li>
+</ul>
+<h5>Logic and memory</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Node</th>
+<th>What it does</th>
+<th>Inputs</th>
+<th>Events (When)</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Relay</strong></td>
+<td>Passes Trigger on to its outputs. Use it as a hub: one input, many outputs with different delays.</td>
+<td>Trigger, Enable, Disable, Toggle</td>
+<td>OnTrigger</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Random</strong></td>
+<td>Trigger runs one of its OnPick outputs, picked at random.</td>
+<td>Trigger, Enable, Disable</td>
+<td>OnPick</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Logic gate</strong></td>
+<td>Two on/off inputs, A and B, combined by a gate.</td>
+<td>SetA, SetB (value: on, off or toggle; also 1/0, true, yes), Check, Enable, Disable</td>
+<td>OnTrue, OnFalse (when the result changes), OnChanged</td>
+<td>Gate: AND, OR, XOR, NAND, NOR, NOT (A off)</td>
+</tr>
+<tr>
+<td><strong>Counter</strong></td>
+<td>A number.</td>
+<td>Add, Subtract (value = amount; empty = 1), Set (value), Reset, Enable, Disable</td>
+<td>OnChanged, OnHitMax, OnHitMin, OnIncreased, OnDecreased, OnReset</td>
+<td>Starts at; Lowest; Highest (default 0–10); Back to the start after the highest</td>
+</tr>
+<tr>
+<td><strong>Compare</strong></td>
+<td>Compares a variable with a number.</td>
+<td>Check, Enable, Disable</td>
+<td>OnTrue, OnFalse, OnChanged</td>
+<td>Variable; Is: equal to, not equal to, more than, less than, at least, at most; Value</td>
+</tr>
+<tr>
+<td><strong>Branch (true / false)</strong></td>
+<td>Remembers true or false.</td>
+<td>SetTrue, SetFalse, Toggle, SetValue (on / off / toggle), Test, Enable, Disable</td>
+<td>OnTrue, OnFalse (on Test), OnChanged</td>
+<td>Starts true; Also fire OnTrue / OnFalse on every change</td>
+</tr>
+<tr>
+<td><strong>Case (switch)</strong></td>
+<td>Matches a value against up to 8 cases.</td>
+<td>Value (the value to check), Enable, Disable</td>
+<td>OnCase1–8, OnDefault (no match)</td>
+<td>Case 1–8 (a number or word; empty = unused). Defaults 1, 2, 3</td>
+</tr>
+<tr>
+<td><strong>Sequence (steps)</strong></td>
+<td>Steps through outputs, one per Next.</td>
+<td>Next, Previous, Reset, Enable, Disable</td>
+<td>OnStep1–8, OnLoop, OnEnd</td>
+<td>Steps 2–8 (default 3); Back to step 1 after the last</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Gate:</strong> the first time A or B is set, it fires OnTrue or OnFalse. After that it fires only when the result flips. <strong>Check</strong> fires the current result even if it hasn't changed. OnChanged fires only on a real flip.</li>
+<li><strong>Counter:</strong> values are kept between Lowest and Highest. Reaching Highest fires OnHitMax; with "Back to the start" it then jumps back to Starts at. <strong>Reset</strong> sets it to Starts at and also fires OnReset.</li>
+<li><strong>Compare</strong> checks by itself whenever its variable changes, and fires only when the result flips. <strong>Check</strong> always fires.</li>
+<li><strong>Case:</strong> numbers match as numbers (<code>3</code> = <code>3.0</code>), words match ignoring case. Feed it a vote's winner number, a counter's value or a word from a page.</li>
+<li><strong>Sequence:</strong> Next goes 1 → 2 → 3. After the last step it either loops (OnLoop, then OnStep1 again) or stops and fires OnEnd once, until Reset. Previous goes back one step and fires that step again; at step 1 it does nothing.</li>
+</ul>
+<h5>Windows</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Node</th>
+<th>What it does</th>
+<th>Inputs</th>
+<th>Events (When)</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Custom page</strong></td>
+<td>A window that opens on players' screens when its Open input fires (from a button, trigger, timer, chat word…).</td>
+<td>Open, Close, Enable, Disable</td>
+<td>OnOpened, OnOption1–8, OnAnyOption, OnClosed</td>
+<td>Opens for (audience); Window title; Text in the window; Button 1–8 labels; Each button asks "Are you sure?"; The window closes after a button; Window color</td>
+</tr>
+</tbody>
+</table></div>
+<p>Button (multiple), above, is the same window opened by pressing E on a body. Windows are covered in more detail under Votes and windows.</p>
+<h4 id="help-tools-logic-only-if-conditions-on-outputs">Only if: conditions on outputs</h4>
+<p>Any output can have up to three conditions. It runs only when they hold, so one button can do different things for different people. Conditions are checked against the <strong>activator</strong> at the moment the output fires, before its delay.</p>
+<p>In the output editor:</p>
+<ol>
+<li><strong>Only if</strong> sets the mode: <strong>ALL of them are true (AND)</strong> or <strong>ANY of them is true (OR)</strong>.</li>
+<li><strong>If 1, If 2, If 3:</strong> pick a condition. "(no condition)" leaves that row empty.</li>
+<li><strong>value:</strong> what the condition checks against. Not every condition needs one.</li>
+<li><strong>NOT:</strong> flips that one row, so "not an admin" or "does not hold a crowbar".</li>
+</ol>
+<p>The output list shows the conditions after the action, for example <code>[only if rank vip and not crouch]</code>.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>value</th>
+<th>True when</th>
+<th>Players' own nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The activator is an admin</td>
+<td>None</td>
+<td>A toolbox admin set it off</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The activator is a player</td>
+<td>None</td>
+<td>A player (not an NPC, prop or nobody)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The activator is alive</td>
+<td>None</td>
+<td>They are alive</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Their rank is</td>
+<td>Ranks, comma separated: <code>vip, moderator</code></td>
+<td>Their user group is one of them</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>Their job is</td>
+<td>Jobs, comma separated: <code>Police, Chief</code></td>
+<td>Their job (or team) name is one of them</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>They have the license</td>
+<td>A license id: <code>gun</code></td>
+<td>They own it</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>They have at least money</td>
+<td>An amount: <code>500</code></td>
+<td>They can afford it (nothing is taken)</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>Their health is at least</td>
+<td>A number: <code>50</code></td>
+<td>Health ≥ the value</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They hold the weapon</td>
+<td>A class: <code>weapon_crowbar</code></td>
+<td>It's their active weapon</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They crouch</td>
+<td>None</td>
+<td>They are crouching</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>A variable</td>
+<td><code>name &gt;= 5</code>, or <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code></td>
+<td>The variable compares true</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>A switch node is on</td>
+<td>A node id: <code>L12</code></td>
+<td>That switch is on</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>Chance</td>
+<td>A percent: <code>25</code></td>
+<td>Random roll, 25% of the time</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They are wanted / They have a search warrant / They are in jail / They are handcuffed (v3.6.21.6.1)</td>
+<td>None</td>
+<td>That is true for the activator</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They are police / They are the Mayor (v3.6.21.6.1)</td>
+<td>None</td>
+<td>Their job has the police / Mayor ability</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>They are in a Game Modes match / They are in build mode (v3.6.21.6.1)</td>
+<td>None</td>
+<td>That is true for the activator</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Their level is at least (v3.6.21.6.1)</td>
+<td>A level: <code>10</code></td>
+<td>Match stats level ≥ the value</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Their bank has at least (v3.6.21.6.1)</td>
+<td>An amount</td>
+<td>Bank ≥ the value</td>
+<td>Admins' nodes only</td>
+</tr>
+<tr>
+<td>There is a lockdown (v3.6.21.6.1)</td>
+<td>None</td>
+<td>A Mayor's lockdown is on</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>It is day / It is night (v3.6.21.6.1)</td>
+<td>None</td>
+<td>The in-game hour is 8:00–17:00 / 20:00–5:00</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The in-game hour is between (v3.6.21.6.1)</td>
+<td><code>18-6</code> (over midnight works)</td>
+<td>The in-game hour is in that range</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The weather is (v3.6.21.6.1)</td>
+<td><code>clear</code>, <code>cloudy</code>, <code>fog</code>, <code>rain</code>, <code>storm</code> or <code>snow</code></td>
+<td>The toolbox's weather</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>At least players are online (v3.6.21.6.1)</td>
+<td>A number</td>
+<td>That many players (not bots) are on</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The treasury has at least (v3.6.21.6.1)</td>
+<td>An amount</td>
+<td>The treasury ≥ the value</td>
+<td>Admins' nodes only</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Names and ranks are matched ignoring case. Spaces after commas are fine.</li>
+<li>With no activator (a Timer, Clock or Map start), the player-based conditions are false. Use NOT, or variable, switch and chance conditions, for those.</li>
+<li>To get <strong>if / else</strong>, make two outputs for the same event with the same condition, one with NOT ticked.</li>
+<li>Players' own nodes can't use the admin-only conditions, because those read other people's money, licenses, ranks or switches. If such a node is saved with them, those conditions are dropped.</li>
+</ul>
+<h4 id="help-tools-logic-actions-do">Actions (Do)</h4>
+<p>An output's <strong>Do</strong> button opens a searchable list of every action, grouped into 18 categories (v3.6.21.6.1: Economy, Menus &amp; screens, Police &amp; Mayor and World are new, and the Game modes action shows in the list again). The list only shows the actions you may use. <strong>Who</strong> in the tables below means whose nodes may run the action: <em>Anyone</em> (players with the tool too), <em>Admins</em> or <em>Superadmins</em>.</p>
+<p>An admin action runs only while the node was <strong>last saved by a toolbox admin</strong>. If a player edits and saves their own node, the admin actions are dropped from it. The editor warns you under such actions.</p>
+<h5>Audiences ("To", "Who", "For", "Shown to")</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Audience</th>
+<th>Who gets it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The one who set it off</td>
+<td>The activator only</td>
+</tr>
+<tr>
+<td>Everyone (admins and players)</td>
+<td>Every player on the server</td>
+</tr>
+<tr>
+<td>Players only (not admins)</td>
+<td>Everyone except toolbox admins</td>
+</tr>
+<tr>
+<td>Admins only</td>
+<td>Toolbox admins only</td>
+</tr>
+<tr>
+<td>Everyone near the node (1000)</td>
+<td>Players within 1000 units of the node</td>
+</tr>
+<tr>
+<td>Everyone inside this trigger</td>
+<td>Players inside the node. This works on trigger boxes, spheres, plates and zone watchers; anywhere else it means "near".</td>
+</tr>
+<tr>
+<td>The activator's team / job</td>
+<td>Everyone on the activator's team or job</td>
+</tr>
+</tbody>
+</table></div>
+<p>On players' own nodes, every audience reaches only players near the node (1000 units): <strong>Everyone</strong> and <strong>Players only</strong> become <strong>Everyone near the node</strong>, and <strong>Admins only</strong> and <strong>The activator's team</strong> count only the ones nearby. Players' own nodes also have size caps (boxes and walls 2048 units a side, spheres and "nearby" 1024), a quarter of the server's logic budget each second, and at most 100 outputs waiting on a delay (300 for all players together; admins' nodes are not limited).</p>
+<h5>Places ("Place" fields)</h5>
+<ul>
+<li><strong>At the node:</strong> the node's body, box centre or marker.</li>
+<li><strong>At the activator:</strong> 80 units in front of them.</li>
+<li><strong>At the warp: name:</strong> a World &gt; Warps warp point. Players' own nodes may only use public warps.</li>
+</ul>
+<h5>Logic</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Target</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logic node: send an input</td>
+<td>Anyone</td>
+<td>A node (players: their own)</td>
+<td><strong>Input:</strong> picked from the target's inputs. <strong>Value:</strong> for Add / Subtract / Set (a number), SetA / SetB / SetValue (on, off, toggle), Value (a number or word).</td>
+</tr>
+<tr>
+<td>Change a variable</td>
+<td>Admins</td>
+<td>None</td>
+<td><strong>Variable</strong>, <strong>Do</strong> (Set to, Add, Subtract), <strong>Value</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Doors</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Target</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door / mover / elevator</td>
+<td>Anyone</td>
+<td>A door, mover or elevator near the node (players: their own, not map doors)</td>
+<td><strong>Do:</strong> Open, Close, Toggle, Lock, Unlock</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Messages &amp; HUD</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show a message</td>
+<td>Anyone</td>
+<td><strong>Text</strong> (<code>{name}</code> = the activator), <strong>To</strong> (audience), <strong>As:</strong> Notice, Chat line or Big text</td>
+</tr>
+<tr>
+<td>Show text on the HUD</td>
+<td>Anyone</td>
+<td><strong>Title</strong>, <strong>Second line</strong>, <strong>To</strong>, <strong>Seconds</strong> (1–60), <strong>Color</strong>, <strong>Where:</strong> top, middle or bottom of the screen</td>
+</tr>
+<tr>
+<td>Announcement (big, with sound)</td>
+<td>Admins</td>
+<td><strong>Text</strong>, <strong>To</strong>, <strong>Seconds</strong> (2–30)</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Sounds &amp; music</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Target</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Play a sound</td>
+<td>Anyone</td>
+<td>None</td>
+<td><strong>Sound</strong> (with a browser and a Play button), <strong>Where:</strong> At the node, At the activator, For everyone (2D; admins' nodes only, otherwise it plays at the node), or For the audience below (2D); <strong>Audience</strong>; <strong>Volume %</strong>; <strong>Pitch %</strong> (30–255)</td>
+</tr>
+<tr>
+<td>Music: play or stop</td>
+<td>Anyone</td>
+<td>None</td>
+<td><strong>Do:</strong> Play, Play on loop, Stop. <strong>Sound or mp3/ogg link</strong> (links only on admins' nodes). <strong>For</strong> (audience); <strong>Volume %</strong></td>
+</tr>
+<tr>
+<td>Sound emitter on / off</td>
+<td>Anyone</td>
+<td>A World &gt; Sounds emitter</td>
+<td><strong>Do:</strong> Turn on, Turn off, Toggle, Play once now</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Players</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player: health, weapons, speed, freeze, job…</td>
+<td>Anyone (players: Shake, Flash and Push only, on the activator)</td>
+<td><strong>Do</strong> (list below), <strong>Value</strong>, <strong>Who</strong> (audience)</td>
+</tr>
+<tr>
+<td>Teleport to a warp</td>
+<td>Anyone (players: public warps, the activator only)</td>
+<td><strong>Warp point name</strong>, <strong>Who</strong>. NPCs can be teleported too.</td>
+</tr>
+<tr>
+<td>Give the activator…</td>
+<td>Admins</td>
+<td><strong>What:</strong> Weapon (class), Health, Armor, Money, Ammo for the held weapon. <strong>Class or amount</strong></td>
+</tr>
+<tr>
+<td>Take the activator's weapons</td>
+<td>Admins</td>
+<td>None</td>
+</tr>
+<tr>
+<td>License: give or take</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Give or Take. <strong>License id:</strong> gun, driver, food, medical, business, general, property, tool, or a custom id. <strong>Who</strong></td>
+</tr>
+<tr>
+<td>Hurt the activator</td>
+<td>Admins</td>
+<td><strong>Damage</strong> (0 = kill). Works on NPCs too.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <strong>Player</strong> action's "Do" list, and what its Value means:</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Do</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heal by / Give armor</td>
+<td>Amount (default 25), up to their max</td>
+</tr>
+<tr>
+<td>Set health to</td>
+<td>Health (default 100)</td>
+</tr>
+<tr>
+<td>Kill, Respawn, Take all weapons, Unfreeze, Unjail</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Give weapon</td>
+<td>Weapon class (<code>weapon_crowbar</code>)</td>
+</tr>
+<tr>
+<td>Give ammo for the held weapon</td>
+<td>Amount (default 30)</td>
+</tr>
+<tr>
+<td>Freeze for N s / God mode for N s / Set on fire for N s</td>
+<td>Seconds (defaults 5 / 10 / 5)</td>
+</tr>
+<tr>
+<td>Speed % / Jump % / Gravity % for 30 s</td>
+<td>Percent (defaults 150 / 150 / 50), then back to normal</td>
+</tr>
+<tr>
+<td>Size % for 60 s</td>
+<td>Percent, 25–300 (default 50)</td>
+</tr>
+<tr>
+<td>Shake the screen</td>
+<td>Strength 1–50 (default 8)</td>
+</tr>
+<tr>
+<td>Flash the screen</td>
+<td>A color: red, green, blue, white, black, yellow, orange, purple, or <code>r g b</code></td>
+</tr>
+<tr>
+<td>Push</td>
+<td>Force (default 600; up to 1500 on players' nodes, 5000 on admins'). Pushes along the node's facing; trigger areas push up.</td>
+</tr>
+<tr>
+<td>Money</td>
+<td>Plus or minus amount</td>
+</tr>
+<tr>
+<td>Set job</td>
+<td>Job name (<code>unemployed</code> = none)</td>
+</tr>
+<tr>
+<td>Jail for N s</td>
+<td>Seconds, 5–86400 (default 60)</td>
+</tr>
+<tr>
+<td>Player model</td>
+<td>Model path</td>
+</tr>
+<tr>
+<td>Bank money (v3.6.21.6.1)</td>
+<td>Plus or minus amount</td>
+</tr>
+<tr>
+<td>Give XP / Give match credits (v3.6.21.6.1)</td>
+<td>Amount (match stats XP / Armory credits)</td>
+</tr>
+<tr>
+<td>Give a buff / food / drug effect, Give food to eat later (v3.6.21.6.1)</td>
+<td>The buff or food id (<code>burger</code>, <code>meth</code>...; Furniture &amp; Buffs)</td>
+</tr>
+<tr>
+<td>Revive where they died (v3.6.21.6.1)</td>
+<td>None (dead players only)</td>
+</tr>
+<tr>
+<td>Ragdoll / Blind / Invisible / Infinite ammo for N s / Make sick for N s (v3.6.21.6.1)</td>
+<td>Seconds</td>
+</tr>
+<tr>
+<td>Noclip on / off, Build mode on / off (v3.6.21.6.1)</td>
+<td><code>1</code> on, <code>0</code> off</td>
+</tr>
+<tr>
+<td>Gag / Mute for N minutes (v3.6.21.6.1)</td>
+<td>Minutes (0 = until lifted); Ungag and Unmute take nothing</td>
+</tr>
+<tr>
+<td>Warn (v3.6.21.6.1)</td>
+<td>The reason. The Warning Ladder applies</td>
+</tr>
+<tr>
+<td>Title (v3.6.21.6.1)</td>
+<td>The title (empty = none)</td>
+</tr>
+<tr>
+<td>Rocket them into the sky (v3.6.21.6.1)</td>
+<td><code>1</code> = they explode at the top</td>
+</tr>
+<tr>
+<td>Slap, Put out the fire, Their own model back, Give keys, Give their loadout again (v3.6.21.6.1)</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Max health to / Set armor to (v3.6.21.6.1)</td>
+<td>A number</td>
+</tr>
+</tbody>
+</table></div>
+<h5>NPCs, props, entities, vehicles (admins)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Target</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPCs: spawn, kill, remove, attitude, send</td>
+<td>None</td>
+<td><strong>Do:</strong> Spawn, Kill all, Remove all, Make them hostile to players, Make them friendly to players, Send them to the place. <strong>NPC class</strong>, <strong>Weapon</strong>, <strong>How many</strong> (1–20), <strong>NPC tag</strong> (given on spawn; otherwise only NPCs with that tag are affected), <strong>Place</strong></td>
+</tr>
+<tr>
+<td>Props: spawn, remove, freeze, break, ignite</td>
+<td>None</td>
+<td><strong>Do:</strong> Spawn, or Remove / Freeze / Unfreeze / Break / Ignite props nearby. <strong>Model</strong>, <strong>Place</strong>, <strong>Nearby = within</strong> (16–4000), <strong>Spawn frozen</strong>. Map props and perma props are never removed or broken.</td>
+</tr>
+<tr>
+<td>Spawn an entity</td>
+<td>None</td>
+<td><strong>Entity class</strong> (searchable), <strong>Place</strong>, <strong>Remove after</strong> (s, 0 = keep)</td>
+</tr>
+<tr>
+<td>An entity: remove, ignite, hide, color, input…</td>
+<td>An entity (Scan / pick, with a map scan)</td>
+<td><strong>Do:</strong> Remove, Ignite (value = seconds), Put out, Freeze, Unfreeze, Hide (no collision), Show, Color (<code>r g b</code> or a name), Set health, Break / kill, Fire an input (value = <code>Input, param</code>), Unbreakable (value 1 / 0, until the map restarts; not players; v3.6.21.6.1)</td>
+</tr>
+<tr>
+<td>NPC orders: follow, attack, hold, wander (v3.6.21.6.1)</td>
+<td>None</td>
+<td><strong>Do:</strong> Follow the activator, Attack the activator, Hold at the place, Wander, Back to their own AI. <strong>NPC class</strong> (empty = any), <strong>NPC tag</strong>, <strong>Place</strong>, <strong>Only within</strong> (0 = the whole map)</td>
+</tr>
+<tr>
+<td>Media players &amp; radios nearby (v3.6.21.6.1)</td>
+<td>None</td>
+<td><strong>Do:</strong> Play a link (YouTube, a stream, a web page...), Stop, Pause, Resume, Turn off, Turn on. <strong>Which</strong> (both, media players, radios), <strong>Place</strong>, <strong>Nearby = within</strong></td>
+</tr>
+<tr>
+<td>Toolbox lights nearby: on / off (v3.6.21.6.1)</td>
+<td>None</td>
+<td><strong>Do:</strong> Turn on, Turn off, Toggle. <strong>Place</strong>, <strong>Nearby = within</strong>. Not saved: lights come back as placed after a restart</td>
+</tr>
+<tr>
+<td>Map entity: fire an input by name</td>
+<td>None</td>
+<td><strong>Map entity name</strong> (targetname), <strong>Input</strong> (Open, Toggle, TurnOn…), <strong>Parameter</strong>. Hits every entity with that name.</td>
+</tr>
+<tr>
+<td>Vehicles: spawn, lock, unlock, eject, remove</td>
+<td>None</td>
+<td><strong>Do:</strong> Spawn, Lock nearby, Unlock nearby, Throw out the drivers nearby, Remove nearby, Put the activator in the nearest. <strong>Vehicle</strong> (searchable), <strong>Place</strong>, <strong>Nearby = within</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h5>At a place</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explosion</td>
+<td>Admins</td>
+<td><strong>Place</strong>, <strong>Size / damage</strong> (0–500), <strong>Hurts</strong> (off = only a show)</td>
+</tr>
+<tr>
+<td>Effect</td>
+<td>Anyone</td>
+<td><strong>Effect:</strong> explosion, big explosion, energy ball burst, sparks, metal sparks, electric spark, water splash, dust ring, strider blood, blood, glass, balloon pop, tesla zap, magic puff, vortigaunt dispel. <strong>Place</strong>, <strong>Size</strong> (1–10)</td>
+</tr>
+<tr>
+<td>Lightning strike (v3.6.21.6.1)</td>
+<td>Admins</td>
+<td><strong>Place</strong>, <strong>Damage</strong> (0–1000), <strong>Hits within</strong> (0–1000)</td>
+</tr>
+<tr>
+<td>Fireworks (v3.6.21.6.1)</td>
+<td>Admins</td>
+<td><strong>Do:</strong> A firework rocket, A fountain of sparks, A show. <strong>Place</strong>, <strong>Color</strong>, <strong>Height</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Economy (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Money: wallet, bank, treasury, cash</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Wallet: add (a minus takes), Bank: add, Wallet: set to, Bank: set to, Treasury: put in (a minus takes out), Drop cash at the place. <strong>Amount</strong>, <strong>Who</strong> (wallet / bank), <strong>Place</strong> (cash). Shown as "Logic" in the Money Log</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Menus &amp; screens (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open a menu or window</td>
+<td>Anyone (players' nodes: for the activator only, one window per 10 seconds; not the bank or a store)</td>
+<td><strong>Open:</strong> F3 hub (or its Jobs, Store, Stats or Help tab), Loadout screen (F4), Backpack, Pockets, Phone Book, Mail, The rules, Armory / Create a Class, Citizen look, Treasury (who may open it), Black market (dealers), Bank (admins' nodes: only for players within 300 units of the node, and only for 5 minutes), A store (value: its id; admins' nodes: like the bank, near the node for 5 minutes). <strong>For</strong> (audience). Each window keeps its own rules (a phone needs the Phone License, the treasury its ability)</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Police &amp; Mayor (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Police &amp; Mayor</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Make wanted (value: reason), Clear wanted, Search warrant (value: reason), Lift the warrant, Handcuff, Take off the handcuffs, Start a lockdown (value: reason), End the lockdown, Add a law (value: the law), Remove a law (value: its number; empty = the newest), Back to the server's laws. <strong>Who</strong> (wanted, warrant, cuffs). Needs the Mayor features on (Settings &gt; Mayor &amp; Laws). The chat names no player: "X is wanted: reason"</td>
+</tr>
+</tbody>
+</table></div>
+<h5>World (v3.6.21.6.1)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Day, night &amp; weather</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Set the time (value: hour 0–24, e.g. <code>20.5</code>), Stop the clock, Let the clock run, Set the weather (<strong>Weather</strong> below)</td>
+</tr>
+<tr>
+<td>Every door on the map: open / close (in Doors)</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Open or Close. <strong>Which doors:</strong> every door, doors nobody bought, bought doors</td>
+</tr>
+<tr>
+<td>Mail (in Messages &amp; HUD)</td>
+<td>Admins</td>
+<td><strong>Title</strong>, <strong>Text</strong> (<code>{name}</code> = the activator), <strong>To</strong>. Lands in the mailbox (<code>!mail</code>) from "Server"</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Spawners &amp; zones</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Target</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPC spawner on / off</td>
+<td>Anyone (players: their own)</td>
+<td>A World &gt; NPC spawner</td>
+<td><strong>Do:</strong> Turn on, Turn off, Toggle, Spawn now</td>
+</tr>
+<tr>
+<td>Item spawner on / off</td>
+<td>Anyone (players: their own)</td>
+<td>An item spawner</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td>Zone on / off</td>
+<td>Admins</td>
+<td>A World &gt; Zones zone</td>
+<td><strong>Do:</strong> Turn on, Turn off, Toggle. Off is not saved; it resets with a cleanup.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Votes, Game modes, Admin</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Who</th>
+<th>Fields and notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vote</td>
+<td>Admins</td>
+<td>See Votes and windows below</td>
+</tr>
+<tr>
+<td>Game mode</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Open a lobby for the mode, Start now (skip the lobby wait), End the round (draw), End the match, Add score to a team (team 0 = the activator's), Put the activator in a team, The activator joins / leaves the match. <strong>Mode id</strong>, <strong>Team</strong>, <strong>Value</strong></td>
+</tr>
+<tr>
+<td>Admin: clean up, kill all, freeze all, time…</td>
+<td>Admins</td>
+<td><strong>Do:</strong> Remove every player's props, Clean up the whole map, Clear decals, Kill every player (not admins), Kill every NPC, Freeze / Unfreeze every player, Take everyone's weapons (not admins), Heal everyone, Respawn every dead player, Time scale (0.1–2), World gravity (600 = normal); v3.6.21.6.1: Remove corpses and clear decals, Clear every decal (also the kept ones), Let everyone out of jail, Lock / Unlock the server, Server mode (value 0 Sandbox, 1 Build / PvP, 2 RP), Make a backup of the toolbox's data, Collect the property tax now. <strong>Value</strong></td>
+</tr>
+<tr>
+<td>Write to the Action Log (v3.6.21.6.1)</td>
+<td>Admins</td>
+<td><strong>Text</strong> (<code>{name}</code> = the activator), <strong>Also post it to the Discord logs</strong> (the Server category)</td>
+</tr>
+<tr>
+<td>Kick from the server (v3.6.21.6.1)</td>
+<td>Superadmins</td>
+<td><strong>Reason</strong>, <strong>Who</strong>. Never kicks staff or the node's owner</td>
+</tr>
+<tr>
+<td>Change the map</td>
+<td>Admins</td>
+<td><strong>Map</strong>, <strong>In seconds</strong> (0–600)</td>
+</tr>
+<tr>
+<td>Server console command</td>
+<td>Superadmins</td>
+<td><strong>Command</strong>, run on the server console</td>
+</tr>
+<tr>
+<td>Custom script (Lua)</td>
+<td>Superadmins, and only with <code>kgxat_logic_script 1</code></td>
+<td><strong>Lua</strong>. It can use <code>activator</code>, <code>node</code> (its id), <code>depth</code> and <code>fire(id, input, value)</code> to send an input to another node. Errors go to the server console.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-tools-logic-variables-votes-and-windows">Variables, votes and windows</h4>
+<h5>Variables</h5>
+<p>Variables are named numbers shared by the whole server. Use them for scores, stages, how many keys were found, or whether the vault is open.</p>
+<ul>
+<li><strong>Set them</strong> with the admin action <strong>Change a variable</strong> (Set to, Add, Subtract).</li>
+<li><strong>Read them</strong> with a <strong>Compare</strong> node (fires OnTrue / OnFalse when the result flips), or the <strong>A variable</strong> condition (<code>keys &gt;= 3</code>).</li>
+<li><strong>Show them</strong> on the HUD with the token <code>{x:lv_name}</code> in Settings &gt; HUD, for example "Keys: {x:lv_keys}".</li>
+<li><strong>Names:</strong> letters, digits, <code>_</code> and <code>-</code>, lower case, up to 32 characters. Anything else is stripped. A variable never set counts as 0.</li>
+<li>Up to 64 variables per map. They last until the map changes or the server restarts; a cleanup doesn't reset them. Values run from −1,000,000,000 to 1,000,000,000, and decimals work.</li>
+</ul>
+<p>Use a <strong>Counter</strong> instead when you only need a number inside one puzzle: it has limits, OnHitMax and Reset. Use a variable when several nodes, conditions or the HUD need to read it.</p>
+<h5>Votes</h5>
+<p>The <strong>Vote</strong> action (admins' nodes) starts a server vote. Every player sees the normal vote panel.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Vote</th>
+<th>What it asks</th>
+<th>Options field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yes or no</td>
+<td>Your question. Passes when Yes reaches <strong>Yes needed %</strong> (with at least one Yes).</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td>A poll</td>
+<td>Your question, with your answers</td>
+<td>Answers, comma separated (up to 9)</td>
+</tr>
+<tr>
+<td>The next map</td>
+<td>Which map next; the winner is loaded</td>
+<td>Maps, comma separated, or empty = the map pool</td>
+</tr>
+<tr>
+<td>The server mode</td>
+<td>Sandbox, Build / PvP, RP…; the winner is switched to</td>
+<td>Not used</td>
+</tr>
+<tr>
+<td>A Game Modes match</td>
+<td>Which mode to play; the winner's match starts</td>
+<td>Mode ids, comma separated, or empty = every mode (up to 9)</td>
+</tr>
+<tr>
+<td>A job election</td>
+<td>Who becomes the <strong>Job name</strong></td>
+<td>Not used. <strong>Candidates:</strong> the activator (a yes / no vote), everyone online, or everyone near the node (up to 9). The winner becomes the job if it isn't full.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Other fields: <strong>Question</strong> (<code>{name}</code> = the activator), <strong>Seconds</strong> (10–300, default 30), <strong>Yes needed %</strong> (yes / no votes and one-candidate elections).</p>
+<p><strong>Reacting to the result</strong> works in two ways. You can use both.</p>
+<ol>
+<li><strong>On the node that started the vote:</strong> add outputs for <strong>OnVoteWin</strong> (passed, or has a winner) and <strong>OnVoteLose</strong> (failed, or nobody voted). The activator is the person who set off the vote. This is the easy way: When OnVoteWin, Do Teleport to a warp.</li>
+<li><strong>A result node (optional target):</strong> pick a node. It gets <strong>Result node: input on yes / a winner</strong> (default Trigger), with the <strong>winning option's number</strong> as the value, or <strong>input on no / nobody</strong> (empty = none). Send the winner into a <strong>Case</strong> node (input Value) to branch on which option won: OnCase1 for option 1, OnCase2 for option 2, and so on.</li>
+</ol>
+<p>If a vote can't start (another vote is running, or the job doesn't exist), OnVoteLose fires right away. Each node runs one vote at a time.</p>
+<h5>Windows: Button (multiple) and Custom page</h5>
+<p>Both show the same window: a <strong>title</strong>, a <strong>text</strong> (up to 1000 characters, multiple lines) and up to <strong>8 buttons</strong>. A button with an empty label isn't shown.</p>
+<ul>
+<li><strong>Button (multiple)</strong> is a body players press with E. The window opens for whoever pressed. Its <strong>Open</strong> input opens it for the activator.</li>
+<li><strong>Custom page</strong> has no body. Its <strong>Open</strong> input opens it for its <strong>Opens for</strong> audience, and <strong>Close</strong> closes it for them. Open it from anything: a trigger box ("Welcome to the shop"), a timer, a chat word, a Map start, a vote.</li>
+</ul>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OnOpened</td>
+<td>The window opened. Fires once per player it opened for; that player is the activator.</td>
+</tr>
+<tr>
+<td>OnOption1 … OnOption8</td>
+<td>That button was clicked. The activator is who clicked.</td>
+</tr>
+<tr>
+<td>OnAnyOption</td>
+<td>Any button was clicked (fires along with OnOptionN)</td>
+</tr>
+<tr>
+<td>OnClosed</td>
+<td>The player closed the window themselves</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Each button asks "Are you sure?" first:</strong> a Yes / No box before the click counts.</li>
+<li><strong>The window closes after a button:</strong> off keeps it open, so players can click several buttons (a jukebox, a shop).</li>
+<li>A click only counts from the window the server opened for that player, while they're alive and the node is enabled. For Button (multiple), they also have to stay within 250 units of the body.</li>
+<li>Combine the buttons with <strong>Only if</strong> conditions to make a shop: Option 1 "Buy armor (500)" → Give armor <em>only if they have at least 500</em>, plus Player: Money −500 with the same condition.</li>
+</ul>
+<h5>Countdown on screen</h5>
+<p>A <strong>Countdown</strong> node shows big text with the time left (<code>{time}</code>) to its audience, in its color. Then it fires OnFinished, with whoever started it as the activator. Cancel or Disable removes it from screens and fires OnCanceled. A map cleanup clears every countdown.</p>
+<h4 id="help-tools-logic-copy-presets-debugging-and-permissions">Copy, presets, debugging and permissions</h4>
+<h5>Copy and paste</h5>
+<ul>
+<li><strong>Copy one node:</strong> E + right-click it, or click <strong>Copy node</strong> in its editor, or right-click it in the node list.</li>
+<li><strong>Paste:</strong> set Mode to <em>Paste</em> and left-click. The copy keeps the kind, name, settings, outputs and facing, and a box keeps its size. Outputs that pointed at other nodes still point at those same nodes.</li>
+<li><strong>Players</strong> (not admins) paste by the same rules as saving: outputs to doors, nodes, spawners or sound emitters that are not theirs are left out, an Entity watcher must watch something of theirs, and they cannot paste a Zone watcher. This holds for presets too.</li>
+<li>Pasting an <strong>Entity watcher</strong> needs you to aim at the new entity to watch. A <strong>Zone watcher</strong> must be pasted inside a zone.</li>
+</ul>
+<h5>Group copy</h5>
+<p>A group copy keeps a whole build together, such as a door puzzle with its buttons, relay and counter. Make one in any of these ways:</p>
+<ul>
+<li>Ctrl / Shift + click nodes in the node list, then <strong>Copy the selected nodes together</strong> (up to 64).</li>
+<li><strong>Copy every node within 256 units of me.</strong></li>
+<li>With the tool: <strong>Shift + E + right-click</strong> each node to add it (again to remove it).</li>
+</ul>
+<p>When you paste a group, the nodes are placed around where you aim and keep their spacing. Outputs <strong>between</strong> the copied nodes are rewired to the new copies, so the pasted puzzle is a separate working puzzle, not a remote control for the old one.</p>
+<h5>Presets</h5>
+<ul>
+<li><strong>Save as preset…</strong> in a node's editor saves the node as it was last saved, so click Save first.</li>
+<li>Presets work on every map and anyone with the Logic tool can paste them. Up to 200, kept in <code>data/kgx_admin_toolbox/logic_presets.json</code>.</li>
+<li>Saving under an existing name replaces it, if it's yours. Admins may replace or delete anyone's.</li>
+<li>To use one, pick it in the panel's <strong>Presets</strong> list, click <strong>Paste the selected preset</strong>, then left-click. <strong>Paste the copied node instead</strong> switches back to your clipboard.</li>
+</ul>
+<h5>Debugging</h5>
+<ul>
+<li>With the Logic tool out, every node is drawn, with lines to everything its outputs drive.</li>
+<li><strong>Show nodes and fires without the tool</strong> (<code>kgxat_logic_debug 1</code>) keeps that view without the tool. It also shows a feed of the last 8 fires on screen ("Vault button: OnPressed (Kris)") and prints them to your console as <code>[Logic]</code>. Only players who may use the Logic tool get it.</li>
+<li>The editor's <strong>Now:</strong> line shows the live state, and <strong>Test</strong> fires any event with you as the activator.</li>
+<li>If a chain stops halfway, look at the server console for "more than 400 actions in one second" (a loop) or a "logic action …" error. Then check the Only if conditions, and whether a node is disabled.</li>
+</ul>
+<h5>Who may use Logic</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Who</th>
+<th>Can do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toolbox admins</td>
+<td>Every node on the map, every kind and action except the superadmin ones</td>
+</tr>
+<tr>
+<td>Superadmins</td>
+<td>Also Server console command and Custom script (the script also needs <code>kgxat_logic_script 1</code>). With a server owner set (v3.6.12, <code>kgxat_owner add &lt;SteamID&gt;</code> in the server console), only owners' nodes may; nodes saved before keep working until someone else saves them.</td>
+</tr>
+<tr>
+<td>Players given the tool in <strong>Player Access</strong>, or everyone with <code>kgxat_logic_players 1</code></td>
+<td>Their own nodes only, up to their limit (Settings &gt; Limits &gt; "Logic nodes (Logic tool)", default 20)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Tool Visibility and the Tool license can hide or gate the Logic tool like any other tool.</p>
+<p><strong>What players' own nodes cannot do:</strong></p>
+<ul>
+<li>Use admin actions, or the Server events and Clock kinds. Zone watchers, custom models and invisible looks are admin-only too.</li>
+<li>The Player action is limited to Shake, Flash and Push, on the activator.</li>
+<li>Reach everyone: Everyone and Players only become "near the node". "For everyone (2D)" sounds play at the node instead, and music links don't play.</li>
+<li>Teleport anyone but the activator, or use warps that aren't public.</li>
+<li>Drive things that aren't theirs: doors (their own, never map doors), other nodes, spawners, or watched entities. Outputs aimed at someone else's things are dropped when they save, with a notice saying how many.</li>
+<li>Use the admin-only conditions (rank, job, license, money, switch).</li>
+<li>Edit an admin's node.</li>
+</ul>
+<h5>Other ways into logic</h5>
+<ul>
+<li><strong>Talking NPCs:</strong> a dialogue choice set to <strong>Fire logic</strong> with the value <code>L12</code> (or <code>L12:Input</code>) sends an input to that node, with the talking player as the activator. Without an input it sends the node's usual one: Press for a button, Toggle for a switch, FireNow for a timer, Add for a counter, Check for a gate or compare, Trigger for everything else. A talking NPC placed by a player only drives that player's nodes.</li>
+<li><strong>Entity watchers</strong> on toolbox buttons, keypads and teleporters turn those tools into logic sources.</li>
+<li>Every node placed, edited, pasted or removed is written to the admin log.</li>
+</ul>
+<h5>Settings at a glance</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_logic</code></td>
+<td>1</td>
+<td>0 = no logic runs</td>
+</tr>
+<tr>
+<td><code>kgxat_logic_rate</code></td>
+<td>400</td>
+<td>Most actions per second, server-wide (50–5000)</td>
+</tr>
+<tr>
+<td><code>kgxat_logic_players</code></td>
+<td>0</td>
+<td>1 = every player may use the Logic tool for their own nodes</td>
+</tr>
+<tr>
+<td><code>kgxat_logic_script</code></td>
+<td>0</td>
+<td>1 = Custom script outputs run</td>
+</tr>
+<tr>
+<td><code>kgxat_logic_debug</code> (your own)</td>
+<td>0</td>
+<td>1 = see nodes and fires without the tool</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-tools-logic-recipes">Recipes</h4>
+<p>Each recipe is a full build. <strong>Bold</strong> words are what you pick in the editor. "Add output" means: in the node's editor, click Add output, set <strong>When</strong>, pick <strong>Do</strong>, pick the <strong>Target</strong>, then fill in the fields. Click <strong>Save</strong> on every node when you're done.</p>
+<h5>1. A button that opens a door for 5 seconds</h5>
+<ol>
+<li>Place a <strong>Button</strong> next to the door. Set <strong>Cooldown</strong> to 6 so it can't be pressed while the door is open.</li>
+<li>Add output: When <strong>OnPressed</strong> → Do <strong>Door / mover / elevator</strong> → Target: the door → Do <strong>Open</strong>.</li>
+<li>Add output: When <strong>OnPressed</strong> → the same door → <strong>Close</strong>, <strong>Delay 5</strong>.</li>
+<li>Optional: When <strong>OnTooSoon</strong> → <strong>Show a message</strong> "Wait for the door" To <strong>The one who set it off</strong>.</li>
+</ol>
+<h5>2. A VIP-only door, with an answer for everyone else</h5>
+<ol>
+<li>Place a <strong>Button</strong>. Add output: When <strong>OnPressed</strong> → door <strong>Open</strong>. Only if: <strong>If 1</strong> = Their rank is, value <code>vip, superadmin</code>.</li>
+<li>Add output: When <strong>OnPressed</strong> → <strong>Show a message</strong> "VIP only" To the activator. Only if: the same condition with <strong>NOT</strong> ticked.</li>
+</ol>
+<p>That is the pattern for <strong>if / else</strong> with any condition: job, license, weapon, health, money or a variable.</p>
+<h5>3. An elevator panel</h5>
+<ol>
+<li>Make warp points with World &gt; Warps: <code>floor1</code>, <code>floor2</code>, <code>roof</code>. An admin's node can use any warp. A player's own node can only use public warps.</li>
+<li>Place a <strong>Button (multiple)</strong>. Set Window title "Elevator", Button 1 "Ground floor", Button 2 "Second floor", Button 3 "Roof", and HUD prompt "Elevator".</li>
+<li>Add outputs: When <strong>OnOption1</strong> → <strong>Teleport to a warp</strong> <code>floor1</code>, <strong>Who</strong> the activator; OnOption2 → <code>floor2</code>; OnOption3 → <code>roof</code>.</li>
+<li>Optional: When <strong>OnAnyOption</strong> → <strong>Play a sound</strong> <code>plats/elevbell1.wav</code> At the activator.</li>
+</ol>
+<h5>4. Find the three hidden switches</h5>
+<ol>
+<li>Place a <strong>Counter</strong>: Starts at 0, Lowest 0, Highest 3.</li>
+<li>Place three <strong>Buttons</strong> with Look <strong>Invisible</strong> behind paintings, each with HUD prompt "Something's here".</li>
+<li>On each button add output: When <strong>OnPressed</strong> → <strong>Logic node: send an input</strong> → the counter → Input <strong>Add</strong>. Tick <strong>Only once</strong>.</li>
+<li>On the counter add outputs: When <strong>OnHitMax</strong> → vault door <strong>Open</strong>, and When <strong>OnHitMax</strong> → <strong>Announcement</strong> "{name} opened the vault!" To Everyone.</li>
+<li>Nothing more is needed for a restart: a map cleanup resets the counter and the <strong>Only once</strong> marks by itself. For a reset without a cleanup, add an admin button that sends <strong>Reset</strong> to the counter.</li>
+</ol>
+<h5>5. Two players must stand on two plates</h5>
+<ol>
+<li>Place two <strong>Pressure plates</strong> (A and B) and a <strong>Logic gate</strong> with Gate <strong>AND (both)</strong>.</li>
+<li>Plate A: OnPressed → gate <strong>SetA</strong>, Value <code>on</code>; OnReleased → gate SetA, Value <code>off</code>. Do the same on plate B with <strong>SetB</strong>.</li>
+<li>Gate: When <strong>OnTrue</strong> → door <strong>Open</strong>; When <strong>OnFalse</strong> → door <strong>Close</strong>.</li>
+</ol>
+<h5>6. Vote to go to the arena</h5>
+<ol>
+<li>Make a warp called <code>arena</code>. Place a <strong>Button</strong> with label "Vote: arena" and Cooldown 60.</li>
+<li>Add output: When <strong>OnPressed</strong> → <strong>Vote</strong> → Vote <strong>Yes or no</strong>, Question "{name} wants to go to the arena. Go?", Seconds 30, Yes needed 50. Leave the result node empty.</li>
+<li>Add output on the same button: When <strong>OnVoteWin</strong> → <strong>Teleport to a warp</strong> <code>arena</code>, <strong>Who</strong> Everyone.</li>
+<li>Add output: When <strong>OnVoteLose</strong> → <strong>Show a message</strong> "The vote failed" To Everyone near the node.</li>
+</ol>
+<h5>7. A poll that branches with Case</h5>
+<ol>
+<li>Place a <strong>Case</strong> node with Case 1 = <code>1</code>, Case 2 = <code>2</code>, Case 3 = <code>3</code> (the defaults).</li>
+<li>On a button: When OnPressed → <strong>Vote</strong> → <strong>A poll</strong>, Options <code>Arena, Race track, Hide and seek</code>. <strong>Target:</strong> the Case node. Result input on a winner: <strong>Value</strong>.</li>
+<li>On the Case node: <strong>OnCase1</strong> → teleport everyone to <code>arena</code>, <strong>OnCase2</strong> → <code>race</code>, <strong>OnCase3</strong> → <strong>Game mode</strong> Open a lobby for <code>hideseek</code>, <strong>OnDefault</strong> → a message "Nobody voted". The OnDefault only fires if you also set Result input on no / nobody to <strong>Value</strong>.</li>
+</ol>
+<h5>8. A round start with a countdown and a barrier</h5>
+<ol>
+<li>Place an <strong>Invisible wall</strong> across the spawn exit, with Starts on.</li>
+<li>Place a <strong>Countdown (on screen)</strong>: Seconds 10, Text "Round starts in {time}", Shown to Everyone, Color Red.</li>
+<li>Place a <strong>Switch</strong> for the admin, labelled "Start round". When <strong>OnOn</strong> → countdown <strong>Start</strong>.</li>
+<li>Countdown: When <strong>OnFinished</strong> → wall <strong>Disable</strong>; When OnFinished → <strong>Announcement</strong> "GO!"; When OnFinished → <strong>Play a sound</strong> For everyone.</li>
+<li>Switch: When <strong>OnOff</strong> → countdown <strong>Cancel</strong>, and wall <strong>Enable</strong>.</li>
+</ol>
+<h5>9. A shop counter (Custom page)</h5>
+<ol>
+<li>Place a <strong>Trigger box</strong> in front of the counter, Reacts to Players.</li>
+<li>Place a <strong>Custom page</strong>: Opens for <strong>The one who set it off</strong>, title "Gun shop", text "Pick an item", Button 1 "Pistol (200)", Button 2 "Armor (500)". Untick <strong>The window closes after a button</strong>.</li>
+<li>Box: When <strong>OnPlayerEnter</strong> → page <strong>Open</strong>; When <strong>OnPlayerExit</strong> → page <strong>Close</strong>.</li>
+<li>Page: OnOption1 → <strong>Give the activator…</strong> Weapon <code>weapon_pistol</code>, only if <strong>They have at least money</strong> <code>200</code>. Add a second output: OnOption1 → <strong>Player</strong> Money <code>-200</code>, with the same condition.</li>
+<li>Do the same for armor. Add NOT-condition outputs that show "Not enough money".</li>
+</ol>
+<p>All conditions are checked before any output of that click runs, so taking the money can't block the item.</p>
+<h5>10. An alarm</h5>
+<ol>
+<li>Place a <strong>Switch</strong> ("Alarm") and a <strong>Timer</strong> with Every 2 s and Runs from the start <strong>off</strong>.</li>
+<li>Switch: <strong>OnOn</strong> → timer <strong>Start</strong>; <strong>OnOff</strong> → timer <strong>Stop</strong>.</li>
+<li>Timer: <strong>OnTimer</strong> → <strong>Play a sound</strong> <code>ambient/alarms/alarm1.wav</code> At the node; OnTimer → <strong>Show text on the HUD</strong> "LOCKDOWN" To Everyone near the node, Color Red, 2 seconds.</li>
+<li>Optional: on the switch, When OnOn → <strong>Door / mover / elevator</strong> Lock, for each door.</li>
+</ol>
+<h5>11. A daily event (admins)</h5>
+<ol>
+<li>Place a <strong>Clock (real time)</strong>: When <strong>Every day at the time</strong>, Hour 20, Minute 0 (server time).</li>
+<li>Clock: <strong>OnTime</strong> → <strong>Announcement</strong> "The zombie night starts in 1 minute!"; OnTime → an <strong>NPC spawner on / off</strong> Turn on, <strong>Delay 60</strong>; OnTime → the same spawner Turn off, <strong>Delay 960</strong>.</li>
+<li>Use the editor's <strong>Test</strong> with OnTime to try it now.</li>
+</ol>
+<h5>12. Rewards and chat commands (admins)</h5>
+<ol>
+<li>Place a <strong>Server events</strong> node.</li>
+<li>When <strong>OnPlayerKill</strong> → <strong>Player</strong> Money <code>50</code>, Who the activator (the killer). Add Only if Their job is <code>Hitman</code> to pay only that job.</li>
+<li>A second Server events node with Chat word <code>rules</code> and <strong>Hide that chat message</strong>: When <strong>OnChatWord</strong> → a <strong>Custom page</strong> <strong>Open</strong> (Opens for the one who set it off) holding your rules.</li>
+</ol>
+<h5>13. A story that advances step by step</h5>
+<ol>
+<li>Place a <strong>Sequence (steps)</strong>: Steps 3, Back to step 1 after the last <strong>off</strong>.</li>
+<li>Place a button "Next" that sends <strong>Next</strong> to the sequence.</li>
+<li>Sequence: <strong>OnStep1</strong> → HUD text "Find the generator"; <strong>OnStep2</strong> → HUD text "Fix the fuse"; <strong>OnStep3</strong> → HUD text "Escape!" and the exit door <strong>Open</strong>; <strong>OnEnd</strong> → <strong>Announcement</strong> "{name} escaped".</li>
+<li>A map cleanup puts the sequence back to the start by itself. To restart it without a cleanup, add a button that sends <strong>Reset</strong>.</li>
+</ol>
+<h5>14. Spam protection for anything</h5>
+<p>Put a <strong>Cooldown (debounce)</strong> between a source and what it drives. Send <strong>Trigger</strong> to it, and put the real action on <strong>OnPass</strong>. Set Per to <strong>Each player</strong> so one player spamming doesn't block the others. On <strong>OnBlocked</strong>, show "Wait a moment" to the activator.</p>
+<h5>15. Remove corpses and decals during a Waves match (admins, v3.6.21.6.1)</h5>
+<ol>
+<li>Place a <strong>Match watcher</strong>: Only this mode <code>survival</code> (the built-in waves mode).</li>
+<li>When <strong>OnWaveCleared</strong> → <strong>Admin</strong> Remove corpses and clear decals. Between waves the ground is clean again.</li>
+<li>For a long wave too: place a <strong>Timer</strong> (Every 30 s, Runs from the start off). Match watcher <strong>OnRoundStart</strong> → the timer <strong>Start</strong>, <strong>OnMatchEnd</strong> → the timer <strong>Stop</strong>; Timer <strong>OnTimer</strong> → <strong>Admin</strong> Remove corpses and clear decals.</li>
+</ol>
+<h5>16. Wanted alerts and a jail welcome (admins, v3.6.21.6.1)</h5>
+<ol>
+<li>Place a <strong>Police &amp; Mayor events</strong> node.</li>
+<li><strong>OnWanted</strong> → <strong>Show text on the HUD</strong> "{name} is WANTED" To Everyone, Color red; and <strong>Play a sound</strong> For everyone (2D).</li>
+<li><strong>OnJailed</strong> → <strong>Open a menu or window</strong> The rules, For the one who set it off (the jailed player); <strong>OnUnjailed</strong> → <strong>Player</strong> Give their loadout again.</li>
+</ol>
+<h5>17. Night shift (admins, v3.6.21.6.1)</h5>
+<ol>
+<li>Place a <strong>Day, night &amp; weather events</strong> node.</li>
+<li><strong>OnNight</strong> → <strong>Toolbox lights nearby</strong> Turn on (Nearby 8000) and <strong>NPC spawner</strong> Turn on; <strong>OnDay</strong> → the same Turn off.</li>
+<li><strong>OnWeatherChanged</strong> (only for Thunderstorm) → <strong>Lightning strike</strong> at a warp, a few outputs with delays.</li>
+</ol>
+<h5>18. A lockdown siren (admins, v3.6.21.6.1)</h5>
+<ol>
+<li><strong>Police &amp; Mayor events</strong>: <strong>OnLockdownStart</strong> → <strong>Music</strong> Play on loop (a siren) For Everyone, <strong>Every door on the map</strong> Close (Doors nobody bought); <strong>OnLockdownEnd</strong> → <strong>Music</strong> Stop.</li>
+</ol>
+<h4 id="help-tools-logic-troubleshooting-and-tips">Troubleshooting and tips</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Likely cause and fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nothing happens at all</td>
+<td><code>kgxat_logic</code> is 0, or the node is disabled ("Now: disabled" in its editor; tick <strong>Runs</strong>). Turn on debug to see whether the event fires.</td>
+</tr>
+<tr>
+<td>The event fires but the output doesn't run</td>
+<td>An <strong>Only if</strong> condition is false for that activator. Timers and clocks have no activator, so player conditions fail there. Or <strong>Only once</strong> already ran: save the node or clean up the map to reset it.</td>
+</tr>
+<tr>
+<td>"Saved … (N output(s) left out)"</td>
+<td>Those outputs used an action you may not use, or aimed at something that isn't yours or no longer exists.</td>
+</tr>
+<tr>
+<td>An admin action stopped working</td>
+<td>A player saved the node after you did. Admin actions run only while an admin saved the node last. Re-save it as an admin.</td>
+</tr>
+<tr>
+<td>Test does nothing</td>
+<td>Test only runs saved outputs. Click Save, reopen, then Test.</td>
+</tr>
+<tr>
+<td>A delayed output never ran</td>
+<td>The node was saved during the delay, which drops waiting actions.</td>
+</tr>
+<tr>
+<td>A chain stops after a while</td>
+<td>The 24-step depth limit, or the rate limit (console: "more than 400 actions in one second"). Break loops with a Cooldown or Only once; for something that repeats forever, use a Timer node.</td>
+</tr>
+<tr>
+<td>A trigger fires for the wrong people</td>
+<td>Check <strong>Reacts to</strong> and <strong>Only</strong> (team, job, rank or NPC tag). Remember OnEnter fires for every entity, while OnPlayerEnter is players only.</td>
+</tr>
+<tr>
+<td>"Everyone" only reaches people nearby</td>
+<td>It's a player's own node, so Everyone becomes near the node. Have an admin save it.</td>
+</tr>
+<tr>
+<td>A teleport does nothing</td>
+<td>The warp name is wrong, or it isn't public and the node isn't an admin's.</td>
+</tr>
+<tr>
+<td>A button's sound doesn't change</td>
+<td>Silent is ticked, or the path isn't a game sound. Use <code>.wav</code> / <code>.mp3</code> / <code>.ogg</code> files from the game, or a sound script name; links don't work for button sounds.</td>
+</tr>
+<tr>
+<td>A Compare node never fires</td>
+<td>It fires only when the result flips, or on Check. Send <strong>Check</strong> from a Map start node to get the first result.</td>
+</tr>
+<tr>
+<td>Two nodes need the same "if"</td>
+<td>Put the condition on a <strong>Branch</strong>: set it from one place, and send <strong>Test</strong> where you need it. Or use a variable and the variable condition.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Tips</strong></p>
+<ul>
+<li><strong>Name every node.</strong> The pickers and the node list show names, and "Vault counter" is easier to find than "Counter".</li>
+<li><strong>Use a Relay as a hub.</strong> Point many sources at one relay and give the relay all the outputs. One place to edit, and you can disable the whole contraption with one Disable.</li>
+<li><strong>Delays make sequences.</strong> One event with five outputs at 0, 1, 2, 3 and 4 seconds is a scripted scene.</li>
+<li><strong>Invisible buttons and HUD prompts</strong> make any wall, painting or prop interactive without a visible button.</li>
+<li><strong>Group-copy finished builds</strong> and save the key node as a preset, so you can rebuild a puzzle on another map in seconds.</li>
+<li><strong>Watch it live:</strong> keep <code>kgxat_logic_debug 1</code> on while you build, and turn it off for players.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="tools-item-spawner.html"><small class="mono">Previous</small><strong>Item Spawner</strong></a><a class="help-pager-next" href="tools-make-trashcan.html"><small class="mono">Next</small><strong>Make Trashcan</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-tools.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Tools</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
