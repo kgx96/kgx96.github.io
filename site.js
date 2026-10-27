@@ -1,23 +1,8 @@
-/* KGX's Admin Toolbox website. Copyright (c) KGX PRODUCTIONS 2026. All rights reserved. */
+/* KGX's Dev Library website. Copyright (c) KGX PRODUCTIONS 2026. All rights reserved. */
 (function(){
   'use strict';
   var root=document.documentElement;
   function $(id){return document.getElementById(id);}
-
-  // Links of the old one-page site (#help/tutorials/..., #history, #build-...) go to the new pages.
-  function legacy(){
-    var h=window.location.hash;
-    var page=window.location.pathname.split('/').pop();
-    if(page!==''&&page!=='index.html')return;
-    var m;
-    if((m=/^#help\/tutorials\/([a-z]+)\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(h))){window.location.replace(m[1]+'-'+m[2]+'.html'+(m[3]?'#help-'+m[1]+'-'+m[2]+'-'+m[3]:''));return;}
-    if((m=/^#help\/tutorials\/([a-z]+)$/.exec(h))){window.location.replace('help-'+m[1]+'.html');return;}
-    if(/^#help(\/tutorials)?$/.test(h)){window.location.replace('help.html');return;}
-    if(h==='#history'){window.location.replace('releases.html');return;}
-    if(/^#(build|series)-[a-z0-9-]+$/.test(h)){window.location.replace('releases.html'+h);}
-  }
-  legacy();
-  window.addEventListener('hashchange',legacy);
 
   // Light / dark.
   var themeButton=$('theme-toggle');
@@ -44,7 +29,7 @@
   if(releases.length&&releaseSearch){
     var filters=Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
     var active='all';
-    var updateReleases=function(){var term=releaseSearch.value.trim().toLocaleLowerCase();var count=0;releases.forEach(function(r){var show=(active==='all'||r.dataset.status===active)&&r.textContent.toLocaleLowerCase().indexOf(term)!==-1;r.hidden=!show;if(show)count++;});filters.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.filter===active));});$('release-count').textContent=String(count).padStart(2,'0')+' RELEASE'+(count===1?'':'S');$('no-results').hidden=count!==0;$('result-announcement').textContent=count+' release'+(count===1?'':'s')+' shown';};
+    var updateReleases=function(){var term=releaseSearch.value.trim().toLocaleLowerCase();var count=0;releases.forEach(function(r){var show=(active==='all'||r.dataset.status===active||r.dataset.group===active)&&r.textContent.toLocaleLowerCase().indexOf(term)!==-1;r.hidden=!show;if(show)count++;});filters.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.filter===active));});$('release-count').textContent=String(count).padStart(2,'0')+' RELEASE'+(count===1?'':'S');$('no-results').hidden=count!==0;$('result-announcement').textContent=count+' release'+(count===1?'':'s')+' shown';};
     filters.forEach(function(b){b.addEventListener('click',function(){active=b.dataset.filter;updateReleases();});});
     releaseSearch.addEventListener('input',updateReleases);
     $('reset-filters').addEventListener('click',function(){active='all';releaseSearch.value='';updateReleases();releaseSearch.focus();});
@@ -157,8 +142,8 @@
   (function(){
     var dlg=$('site-search'),open=$('search-open');
     if(!dlg||!open)return;
-    // (no <dialog> in this browser: the button goes to Help, which has its own search)
-    if(typeof dlg.showModal!=='function'){open.addEventListener('click',function(){window.location.href=(dlg.getAttribute('data-root')||'')+'help.html';});return;}
+    // (no <dialog> in this browser: the button goes to the toolbox Help, which has its own search)
+    if(typeof dlg.showModal!=='function'){open.addEventListener('click',function(){window.location.href='https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/help.html';});return;}
     var input=$('site-search-input'),list=$('site-search-results'),hint=$('site-search-hint'),root=dlg.getAttribute('data-root')||'';
     var index=null,loading=null;
     function load(){
@@ -178,17 +163,17 @@
     function search(){
       var q=input.value.trim().toLowerCase();
       list.innerHTML='';
-      if(!q){hint.textContent='Type to search every tool, panel, setting, FAQ answer and release.';return Promise.resolve();}
+      if(!q){hint.textContent='Type to search every project, roadmap and toolbox tutorial.';return Promise.resolve();}
       return load().then(function(d){
         if(input.value.trim().toLowerCase()!==q)return;
         var words=q.split(/\s+/).filter(Boolean);
         var hits=d.filter(function(e){return words.every(function(w){return e.l.indexOf(w)>=0;});});
-        hits.forEach(function(e){e.s=words.reduce(function(n,w){return n+(e.tl.indexOf(w)>=0?10:0);},0)+(e.u.indexOf('#')<0?3:0)+(e.c==='Releases'?-2:0);});
+        hits.forEach(function(e){e.s=words.reduce(function(n,w){return n+(e.tl.indexOf(w)>=0?10:0);},0)+(e.u.indexOf('#')<0?3:0)+(/Releases$/.test(e.c)?-2:0);});
         hits.sort(function(a,b){return b.s-a.s;});
         hint.textContent=hits.length?(hits.length>40?'40 of '+hits.length+' results':hits.length+' result'+(hits.length===1?'':'s')):'Nothing found. Try another word.';
         hits.slice(0,40).forEach(function(e){
           var li=document.createElement('li');
-          li.innerHTML='<a href="'+esc(root+e.u)+'"><small class="mono">'+esc(e.c)+'</small><strong>'+mark(e.t,words)+'</strong><span>'+mark(snippet(e.x,words),words)+'</span></a>';
+          li.innerHTML='<a href="'+esc((/^https?:/.test(e.u)?'':root)+e.u)+'"><small class="mono">'+esc(e.c)+'</small><strong>'+mark(e.t,words)+'</strong><span>'+mark(snippet(e.x,words),words)+'</span></a>';
           list.appendChild(li);
         });
       }).catch(function(){hint.textContent='The search could not load. Try again in a moment.';});
