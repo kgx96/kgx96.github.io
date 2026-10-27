@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Taxes &amp; Treasury — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Income tax on paychecks, sales tax on store and shipment prices, transfer fees and property tax, collected into a server treasury that admins and Treasury jobs (a Mayor) pay players out of.">
+<meta property="og:title" content="Taxes &amp; Treasury — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Income tax on paychecks, sales tax on store and shipment prices, transfer fees and property tax, collected into a server treasury that admins and Treasury jobs (a Mayor) pay players out of.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-taxes-and-treasury.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-taxes-and-treasury.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-taxes-and-treasury-what-it-does">What it does</a><a class="filter" href="#help-settings-taxes-and-treasury-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-taxes-and-treasury-the-panel">The panel</a><a class="filter" href="#help-settings-taxes-and-treasury-the-treasury-window">The treasury window</a><a class="filter" href="#help-settings-taxes-and-treasury-the-treasury-log">The treasury log</a><a class="filter" href="#help-settings-taxes-and-treasury-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-taxes-and-treasury-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-taxes-and-treasury-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Taxes &amp; Treasury</span></nav><article class="help-view help-article" aria-labelledby="help-settings-taxes-and-treasury-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-taxes-and-treasury-title">Taxes &amp; Treasury</h1><p class="help-article-sum">Income tax on paychecks, sales tax on store and shipment prices, transfer fees and property tax, collected into a server treasury that admins and Treasury jobs (a Mayor) pay players out of.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-taxes-and-treasury-what-it-does">What it does</a></li><li><a href="#help-settings-taxes-and-treasury-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-taxes-and-treasury-the-panel">The panel</a></li><li><a href="#help-settings-taxes-and-treasury-the-treasury-window">The treasury window</a></li><li><a href="#help-settings-taxes-and-treasury-the-treasury-log">The treasury log</a></li><li><a href="#help-settings-taxes-and-treasury-how-to-use-it">How to use it</a></li><li><a href="#help-settings-taxes-and-treasury-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-taxes-and-treasury-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-taxes-and-treasury-what-it-does">What it does</h4>
+<p>Taxes &amp; Treasury (v3.6.20) takes money out of the economy in four ways and keeps it in one server account, the <strong>treasury</strong>:</p>
+<ul>
+<li><strong>Income tax</strong>: a percent of every toolbox paycheck.</li>
+<li><strong>Sales tax</strong>: a percent added on top of store and shipment prices.</li>
+<li><strong>Transfer fee</strong>: a percent (with a minimum) of money given with !give or sent by bank transfer; the sender pays it.</li>
+<li><strong>Property tax</strong>: a percent of a bought property's price, charged every tax period (counted for each property from when it was bought).</li>
+</ul>
+<p>Everything is <strong>off (0) by default</strong>. With all taxes at 0, nothing changes on your server.</p>
+<p>The treasury is spent by admins and by jobs with the <strong>Treasury</strong> ability (for example a Mayor): they pay players out of it with a reason (a bonus, a reward, a job well done). Every tax, fee and payment is in Utilities &gt; Money Log as its own source, and the treasury shows there as the player <strong>Treasury</strong>.</p>
+<h4 id="help-settings-taxes-and-treasury-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Taxes &amp; Treasury. Only superadmins change the settings.</p>
+<p>The treasury window: <strong>!treasury</strong> in chat, <code>kgxat_treasury_open</code> in the console, or <strong>Open the treasury</strong> on this page. Admins with the Economy panel and players whose job has the <strong>Treasury</strong> ability (Settings &gt; Jobs) can open it.</p>
+<h4 id="help-settings-taxes-and-treasury-the-panel">The panel</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Income tax: % of every paycheck</strong></td>
+<td>Taken from each toolbox paycheck (Settings &gt; Paychecks). The player is paid the rest and told how much tax was taken.</td>
+<td>0</td>
+<td>0-90</td>
+</tr>
+<tr>
+<td><strong>Sales tax: % added to store and shipment prices</strong></td>
+<td>Added on top of the price at the Server Store (F3), NPC and player stores, shipments and shipment boxes. Buyers see the price with the tax; the store window says "Prices include N% sales tax." Sellers get the price without it. At least 1 per purchase.</td>
+<td>0</td>
+<td>0-50</td>
+</tr>
+<tr>
+<td><strong>Transfer fee: % of !give and bank transfers</strong></td>
+<td>The sender pays it on top of what they send.</td>
+<td>0</td>
+<td>0-50</td>
+</tr>
+<tr>
+<td><strong>Transfer fee: at least</strong></td>
+<td>The smallest fee per transfer. With the percent at 0, this is a flat fee.</td>
+<td>0</td>
+<td>0-1000000</td>
+</tr>
+<tr>
+<td><strong>Property tax: % of a bought property's price per period</strong></td>
+<td>Charged from the owner while they are online: from the wallet, then the bank. Rented property (it pays rent) and server property pay none.</td>
+<td>0</td>
+<td>0-25</td>
+</tr>
+<tr>
+<td><strong>Property tax: period (minutes)</strong></td>
+<td>How often property tax is charged. Each property has its own: the first tax comes one period after it was bought (or after property tax was turned on), then every period. An owner who is away pays when they are back (once). The treasury window shows when the next one is due (v3.6.21.3).</td>
+<td>60</td>
+<td>5-1440</td>
+</tr>
+<tr>
+<td><strong>Property tax: unpaid periods before it is sold back</strong></td>
+<td>An owner who cannot pay owes the tax (it adds up and is told each time). After this many unpaid periods in a row the property is sold back: they get half of what they paid, minus what they owe.</td>
+<td>3</td>
+<td>1-20</td>
+</tr>
+<tr>
+<td><strong>Keep taxes and fees in the treasury</strong></td>
+<td>Off = taxes and fees are removed from the economy (a money sink) instead.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Treasury jobs: pay at most (per payment)</strong></td>
+<td>The most a Treasury job pays out at once. Admins: no limit.</td>
+<td>5000</td>
+<td>0-100000000</td>
+</tr>
+<tr>
+<td><strong>Treasury jobs: seconds between payments</strong></td>
+<td>Admins: no wait. Treasury jobs cannot pay themselves.</td>
+<td>30</td>
+<td>0-3600</td>
+</tr>
+<tr>
+<td><strong>Bank vaults: % of every tax and fee that goes into the bank vaults</strong> (v3.6.21)</td>
+<td>That share of each tax goes to the banks and ATMs set as a bank vault (Store Maker &gt; Bank vault, or Money Generator &gt; Money comes from: Bank vault), split by each vault's own share, up to each vault's most; the rest goes to the treasury. Robbing a vault takes its money. Admin deposits, payments back and rollbacks are never split.</td>
+<td>0</td>
+<td>0-100 (2 decimals)</td>
+</tr>
+<tr>
+<td><strong>Bank vaults only hold money: nobody (admins too) deposits or withdraws at them</strong> (v3.6.21.2)</td>
+<td>A bank or ATM set as a bank vault opens no bank window: it only holds the bank's money and shows its robbery sign. Players use another bank, an ATM or !bank. Off: vault banks are also normal banks. v3.6.21.3: E on a vault opens a window with its money and whether it can be robbed.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Screens on treasury nodes and stores</strong> (v3.6.21.5)</td>
+<td>Off: no treasury node or store shows its screen. Each screen is set on its own: Economy &gt; Treasury Node (right-click a node) and Store Maker &gt; Screen.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Charge property tax now (owners who are online)</strong> (v3.6.21.3)</td>
+<td>Charges every owned property now, due or not (to test it, or start a period for all).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Open the treasury</strong></td>
+<td>Opens the treasury window.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-taxes-and-treasury-the-treasury-window">The treasury window</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it shows or does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Balance</td>
+<td>What the treasury holds, with the amount in words under it. "Taxes are not kept right now" when the treasury box is off.</td>
+</tr>
+<tr>
+<td><strong>Refresh</strong></td>
+<td>Loads the window again.</td>
+</tr>
+<tr>
+<td><strong>Copy the log</strong> (v3.6.21.4.1)</td>
+<td>Copies every line shown in the log to the clipboard (with "the last N of M lines" when the log has more). Also in the right-click menu.</td>
+</tr>
+<tr>
+<td><strong>Clear the log...</strong> (v3.6.21.4.1, superadmins)</td>
+<td>The same as <strong>Clear the log...</strong> in the right-click menu, as a button.</td>
+</tr>
+<tr>
+<td><strong>Live (update while open)</strong></td>
+<td>On: the open window updates by itself (within a second) when the treasury changes. Your typed amounts stay. Remembered per player (<code>kgxat_treasury_live</code>). On by default.</td>
+</tr>
+<tr>
+<td>Rates</td>
+<td>The tax rates of the server. Under them (v3.6.21.4.1), what the property tax is doing: how many bought properties are taxed, when the next one is due and how many owners are offline; or why nothing is taxed: the economy is off, RP mode or Property is off (Settings &gt; Gameplay), DarkRP runs, or only rented or server property is owned (those pay none).</td>
+</tr>
+<tr>
+<td><strong>In today, from</strong></td>
+<td>Today's income per source (Sales tax, Income tax...) and <strong>Paid out today</strong>; with bank vaults (v3.6.21) also <strong>To bank vaults today</strong> and <strong>In the bank vaults now</strong>.</td>
+</tr>
+<tr>
+<td>The log</td>
+<td>Every treasury change (v3.6.20.2): <strong>When</strong>, <strong>Change</strong>, <strong>Balance</strong> after it, <strong>What</strong> (the source, its detail and any note) and <strong>By</strong> (who did it). The newest 200 lines are shown; hover a line to see the amounts in words.</td>
+</tr>
+<tr>
+<td><strong>Pay a player...</strong></td>
+<td>Pick an online player, an amount and <strong>What it is for</strong>, then <strong>Pay from the treasury</strong>. The money goes to their wallet; they see who paid and why. A reason is needed. The amount in words shows under the box.</td>
+</tr>
+<tr>
+<td>Deposit / Withdraw (admins)</td>
+<td>Put money into the treasury or take it out (never below 0), with a reason or note for the log and the Money Log. The amount in words shows under the box.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-taxes-and-treasury-the-treasury-log">The treasury log</h4>
+<p>The log keeps the last 1000 changes in <code>treasury.json</code>. Right-click a line or the empty part of the log:</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Who</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Copy this line</strong>, <strong>Copy the amount</strong>, <strong>Copy the amount in words</strong>, <strong>Copy the detail</strong>, <strong>Copy the note</strong></td>
+<td>Everyone who can open the window</td>
+<td>Copies to the clipboard.</td>
+</tr>
+<tr>
+<td><strong>Deposit...</strong>, <strong>Withdraw...</strong></td>
+<td>Admins with the Economy panel</td>
+<td>Asks for the amount, shows it in words, then asks for a reason or note.</td>
+</tr>
+<tr>
+<td><strong>Add a note line...</strong></td>
+<td>Superadmins</td>
+<td>A line of its own with your note (up to 120 letters), for example "Server grant for the police budget".</td>
+</tr>
+<tr>
+<td><strong>Add a note to this line...</strong> / <strong>Edit the note...</strong></td>
+<td>Superadmins</td>
+<td>A note on any line. Empty removes the note; an empty note on a note line removes that line.</td>
+</tr>
+<tr>
+<td><strong>Take this deposit back...</strong></td>
+<td>Superadmins</td>
+<td>On an admin's deposit: takes that amount back out of the treasury (never more than it has) as a new line, and marks the deposit "(taken back)". Only once per deposit.</td>
+</tr>
+<tr>
+<td><strong>Remove this line...</strong></td>
+<td>Superadmins</td>
+<td>Removes the line from the log. The balance does not change.</td>
+</tr>
+<tr>
+<td><strong>Clear the log...</strong></td>
+<td>Superadmins</td>
+<td>Empties the log and <strong>In today</strong>; one line says who cleared it. The balance does not change.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Removing lines and clearing the log never touch the Money Log: Utilities &gt; Money Log keeps every change (and rollbacks need it). Every superadmin change is in the Action log.</p>
+<h5>Amounts in words</h5>
+<p>Every amount box shows its amount in words, like on a check, always with the cents (v3.6.21): 1000000 is <strong>One Million Dollars and 00/100</strong>, 12.50 is <strong>Twelve Dollars and 50/100</strong>. With another currency it uses its name: "Twelve Euros and 50/100", "Twelve Credits and 50/100". The words are English only.</p>
+<h4 id="help-settings-taxes-and-treasury-how-to-use-it">How to use it</h4>
+<h5>A Mayor who pays bonuses</h5>
+<ol>
+<li>Settings &gt; Jobs: edit the Mayor job and tick the <strong>Treasury</strong> ability. Save.</li>
+<li>Settings &gt; Taxes &amp; Treasury: set <strong>Income tax</strong> to 10 and <strong>Sales tax</strong> to 5. Click <strong>Apply the numbers above</strong>.</li>
+<li>The Mayor types <strong>!treasury</strong>, picks a player, types 200 and "Kept the streets clean", and presses <strong>Pay from the treasury</strong>.</li>
+</ol>
+<h5>A money sink against inflation</h5>
+<ol>
+<li>Untick <strong>Keep taxes and fees in the treasury</strong>.</li>
+<li>Set a <strong>Transfer fee</strong> of 2% and a <strong>Property tax</strong> of 0.5%.</li>
+<li>Money taken this way leaves the economy. Utilities &gt; Money Log shows each charge on the player.</li>
+</ol>
+<h5>Note a big deposit</h5>
+<ol>
+<li>As an admin, type 1000000 in the deposit box: "One Million Dollars" shows under it.</li>
+<li>Type "Server grant" as the reason and press <strong>Deposit</strong>.</li>
+<li>As a superadmin, right-click the new line &gt; <strong>Add a note to this line...</strong> and write what it is for.</li>
+</ol>
+<h4 id="help-settings-taxes-and-treasury-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_tax_income</code>, <code>kgxat_tax_sales</code>, <code>kgxat_tax_transfer</code>, <code>kgxat_tax_transfer_min</code>, <code>kgxat_tax_property</code>, <code>kgxat_tax_property_minutes</code>, <code>kgxat_tax_property_strikes</code></td>
+<td>The taxes (see the panel).</td>
+</tr>
+<tr>
+<td><code>kgxat_treasury</code>, <code>kgxat_treasury_max_pay</code>, <code>kgxat_treasury_pay_cooldown</code>, <code>kgxat_treasury_bank_share</code>, <code>kgxat_bank_vault_only</code>, <code>kgxat_screens</code></td>
+<td>The treasury settings.</td>
+</tr>
+<tr>
+<td><code>kgxat_screen_distance</code></td>
+<td>Per player: how far away (units) treasury and store screens are drawn (200-2000, default 900).</td>
+</tr>
+<tr>
+<td><code>kgxat_treasury_open</code></td>
+<td>Opens the treasury window; in the server console it prints the balance.</td>
+</tr>
+<tr>
+<td>!treasury</td>
+<td>Opens the treasury window (admins, Treasury jobs).</td>
+</tr>
+<tr>
+<td><code>kgxat_treasury_live</code></td>
+<td>1 = your open treasury window updates by itself (per player).</td>
+</tr>
+<tr>
+<td>data/kgx_admin_toolbox/treasury.json</td>
+<td>The treasury's balance and its log (the last 1000 lines).</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-taxes-and-treasury-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Income tax only touches toolbox paychecks; with DarkRP, DarkRP's own salaries are not taxed. DarkRP's own money transfers and doors are not taxed either.</li>
+<li>Taxes the toolbox takes are rounded down, but a sales tax is at least 1 on a paid item. With cents on (Settings &gt; Economy), taxes are kept to the nearest cent and a sales tax is at least $0.01.</li>
+<li>Property tax is not taken? Open the treasury and read the line under the rates: it says why. The first tax of a property comes one period after it was bought; <strong>Charge property tax now</strong> charges at once to test it.</li>
+<li>Every payment and every tax can be undone in Utilities &gt; Money Log (Rollbacks).</li>
+<li>Players see the tax lines in their own language (Settings &gt; Display &gt; Language).</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-spawn-whitelist.html"><small class="mono">Previous</small><strong>Spawn Whitelist</strong></a><a class="help-pager-next" href="settings-tool-visibility.html"><small class="mono">Next</small><strong>Tool Visibility</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

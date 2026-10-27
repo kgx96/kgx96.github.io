@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Server Settings — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="The toolbox&#x27;s main server options: who may use it, immunity, logging, spawn rules, cooldowns, AFK, daily restart, incognito and resets.">
+<meta property="og:title" content="Server Settings — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="The toolbox&#x27;s main server options: who may use it, immunity, logging, spawn rules, cooldowns, AFK, daily restart, incognito and resets.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-server-settings.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-server-settings.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-server-settings-what-it-does">What it does</a><a class="filter" href="#help-settings-server-settings-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-server-settings-the-panel">The panel</a><a class="filter" href="#help-settings-server-settings-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-server-settings-the-reset-window">The reset window</a><a class="filter" href="#help-settings-server-settings-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-server-settings-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Server Settings</span></nav><article class="help-view help-article" aria-labelledby="help-settings-server-settings-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-server-settings-title">Server Settings</h1><p class="help-article-sum">The toolbox&#x27;s main server options: who may use it, immunity, logging, spawn rules, cooldowns, AFK, daily restart, incognito and resets.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-server-settings-what-it-does">What it does</a></li><li><a href="#help-settings-server-settings-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-server-settings-the-panel">The panel</a></li><li><a href="#help-settings-server-settings-how-to-use-it">How to use it</a></li><li><a href="#help-settings-server-settings-the-reset-window">The reset window</a></li><li><a href="#help-settings-server-settings-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-server-settings-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-server-settings-what-it-does">What it does</h4>
+<p>Server Settings holds the toolbox's main server-wide options. Every checkbox and slider here sets a server convar, so the change applies to all players and is kept after a restart.</p>
+<p>The top of the panel shows the toolbox version. It also says how admin access works: with an admin mod installed, the toolbox uses the CAMI privilege "KGX Admin Toolbox"; without one, it uses the admin and superadmin ranks. Every action is written to the server console.</p>
+<p>It also has the incognito buttons, a scan-and-update button, the ATB item pictures and the full reset window.</p>
+<h4 id="help-settings-server-settings-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Server Settings.</p>
+<p>Only superadmins can change these settings. Everyone else sees the controls greyed out, with the line "Only superadmins can change these settings."</p>
+<h4 id="help-settings-server-settings-the-panel">The panel</h4>
+<h5>On/off settings</h5>
+<p>Each checkbox applies as soon as you tick or untick it.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does / convar</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Superadmins only</strong></td>
+<td>Only superadmins can use the toolbox. <code>kgxat_superadmin_only</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Rank immunity (admins cannot target superadmins; with an admin mod, no rank targets a higher one)</strong></td>
+<td>Protects higher ranks from lower ones. <code>kgxat_immunity</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>With rank immunity: players of the same rank may target each other</strong></td>
+<td>Off: same-rank players cannot target each other. <code>kgxat_immunity_same</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Superadmin override: superadmins skip the toolbox's safety checks (immunity, click-twice confirmations, protected things, pocket lists)</strong></td>
+<td>Also skips limits. Never while incognito. <code>kgxat_superadmin_override</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Show every action to admins in chat</strong></td>
+<td><code>kgxat_notify_admins</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Tell players when a tool is used on them</strong></td>
+<td><code>kgxat_notify_target</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Write the action log to data/kgx_admin_toolbox/logs/</strong></td>
+<td>One file per day. <code>kgxat_log_file</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Use custom spawn points (World &gt; Spawn Points)</strong></td>
+<td>Used only if any exist. <code>kgxat_custom_spawns</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Admins can pick up players with the physgun</strong></td>
+<td><code>kgxat_physgun_players</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Every player can use third person (off = admins only)</strong></td>
+<td>Utilities &gt; Third Person. <code>kgxat_thirdperson_all</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Third person also works while sitting in seats and chairs</strong></td>
+<td>Cars keep their own view. <code>kgxat_thirdperson_seats</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Block the spawn menu (Q) and spawning for non-admins</strong></td>
+<td>Also refuses their props, entities, NPCs, vehicles and weapons. <code>kgxat_block_spawnmenu</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Blocked players also lose the context menu (C)</strong></td>
+<td><code>kgxat_block_contextmenu</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Players see the ATB spawn menu tab and ATB weapons (off = admins only)</strong></td>
+<td><code>kgxat_atb_menu_players</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Tool cooldown applies to every tool (not just the toolbox)</strong></td>
+<td><code>kgxat_tool_cooldown_all</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Kick non-admins once they are AFK</strong></td>
+<td><code>kgxat_afk_kick</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Players sitting in a chair are not kicked for AFK</strong></td>
+<td>Still marked AFK; for at most the minutes below. <code>kgxat_afk_seats</code> (v3.6.11.3)</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Any seat or vehicle counts</strong></td>
+<td>Off: only toolbox chairs (Seats tool and bought chairs). <code>kgxat_afk_seats_any</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>New players are frozen until they accept the rules (Utilities &gt; Rules)</strong></td>
+<td>Again after the rules change. <code>kgxat_rules_accept</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Admin chat commands (!bring, !goto, !freeze... type !help)</strong></td>
+<td>Turn off if your admin mod has its own. <code>kgxat_chat_commands</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Show the toolbox version and copyright in chat when a player's game loads</strong></td>
+<td>Also in the server console on map load. <code>kgxat_credit_message</code></td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Incognito</h5>
+<p>Shown to superadmins, toolbox admins, and players who are incognito.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Go incognito (play as a normal player)</strong></td>
+<td>Opens a window where you pick the name and model others see (or keep yours). Your rank becomes "user" for the session.</td>
+</tr>
+<tr>
+<td><strong>Leave incognito</strong></td>
+<td>Gives your rank, name and model back. Enabled only while you are incognito.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Numbers</h5>
+<p>Move a slider (or click its number and type a value), then press the button below it. Values are kept inside each setting's range.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does / convar</th>
+<th>Default</th>
+<th>Slider range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Public warp cooldown (s)</strong> + <strong>Apply cooldown</strong></td>
+<td>Seconds between public warps (<code>!warp</code>). <code>kgxat_warp_cooldown</code></td>
+<td>5</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Kick at warnings (0 = off)</strong> + <strong>Apply warning kick</strong></td>
+<td><code>kgxat_warn_kick</code></td>
+<td>0</td>
+<td>0-20</td>
+</tr>
+<tr>
+<td><strong>Spawn protection (s, 0 = off)</strong> + <strong>Apply spawn protection</strong></td>
+<td>No damage after respawning; attacking ends it. <code>kgxat_spawn_protect</code></td>
+<td>0</td>
+<td>0-30</td>
+</tr>
+<tr>
+<td><strong>Tool cooldown for players (s, 0 = off)</strong> + <strong>Apply tool cooldown for players</strong></td>
+<td>For limited players, 0.1 s steps. <code>kgxat_tool_cooldown</code></td>
+<td>0</td>
+<td>0-10</td>
+</tr>
+<tr>
+<td><strong>Mark AFK after (minutes, 0 = off)</strong> + <strong>Apply mark afk after</strong></td>
+<td>No keys, mouse look or chat. <code>kgxat_afk_minutes</code></td>
+<td>0</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Seated players kept from the AFK kick for at most (minutes, 0 = no limit)</strong></td>
+<td>Counted from when they sat down; still idle after that, they are kicked. <code>kgxat_afk_seat_minutes</code></td>
+<td>60</td>
+<td>0-1440</td>
+</tr>
+<tr>
+<td><strong>Daily map restart: hour, server time (-1 = off)</strong> + <strong>Apply daily map restart: hour, server time</strong></td>
+<td><code>kgxat_restart_hour</code></td>
+<td>-1</td>
+<td>-1-23</td>
+</tr>
+<tr>
+<td><strong>Daily map restart: minute</strong> + <strong>Apply daily map restart: minute</strong></td>
+<td><code>kgxat_restart_minute</code></td>
+<td>0</td>
+<td>0-59</td>
+</tr>
+<tr>
+<td><strong>Remove a leaving player's props after (minutes, 0 = off)</strong> + <strong>Apply remove a leaving player's props after</strong></td>
+<td>Rejoining cancels it. <code>kgxat_dc_cleanup</code></td>
+<td>0</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Reset to defaults</strong></td>
+<td>Puts every checkbox and slider above back to its default.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Scan &amp; update</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scan &amp; update everything (ranks, jobs, warps, world data, logic, sounds, NPCs, licenses, access)</strong></td>
+<td>Sends every toolbox list again, rebuilds toolbox things from their saved data, and reapplies licenses and access rules. Nothing saved is changed. One notice lists what was updated.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use it when a rank, job or anything else made with the toolbox does not show up in a list or picker.</p>
+<h5>ATB item pictures</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pictures of ATB weapons and entities</strong></td>
+<td><strong>ATB: the toolbox's own pictures</strong>, <strong>Custom: your pictures (materials/kgxat_custom/&lt;class&gt;.png)</strong> or <strong>None: a plain icon</strong>. <code>kgxat_atb_icons</code> 0 / 1 / 2.</td>
+<td>ATB</td>
+</tr>
+<tr>
+<td><strong>Copy the list of ATB class names</strong></td>
+<td>Copies every ATB class name to your clipboard.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reset everything / wipe map data...</strong></td>
+<td>Opens the reset window: settings back to default and / or saved data deleted for a blank start (see below).</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-server-settings-how-to-use-it">How to use it</h4>
+<h5>Change an on/off setting</h5>
+<ol>
+<li>Open Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Server Settings as a superadmin.</li>
+<li>Tick or untick the checkbox. It applies at once and is logged as an action.</li>
+</ol>
+<h5>Schedule a daily map restart</h5>
+<ol>
+<li>Set <strong>Daily map restart: hour, server time (-1 = off)</strong> to the hour (server clock), then press its Apply button.</li>
+<li>Set <strong>Daily map restart: minute</strong>, then press its Apply button.</li>
+<li>Players are warned 10 and 5 minutes before, then the normal map change countdown runs.</li>
+</ol>
+<h5>Play as a normal player</h5>
+<ol>
+<li>Press <strong>Go incognito (play as a normal player)</strong>.</li>
+<li>Pick the name and model others see, or keep yours.</li>
+<li>To come back, press <strong>Leave incognito</strong>, type <code>!unincognito</code>, run <code>kgxat_unincognito</code>, or rejoin.</li>
+</ol>
+<h5>Use your own ATB item pictures</h5>
+<ol>
+<li>Make a square PNG (128x128 or 512x512) for each item, named after its class, e.g. <code>kgxat_lockpick.png</code>. Use <strong>Copy the list of ATB class names</strong> for the names.</li>
+<li>Put them in an addon folder: <code>garrysmod/addons/my_atb_icons/materials/kgxat_custom/</code>.</li>
+<li>On a server, add that folder to the server's Workshop collection, or add <code>resource.AddFile("materials/kgxat_custom/kgxat_lockpick.png")</code> lines in a server Lua file.</li>
+<li>Pick <strong>Custom</strong> in <strong>Pictures of ATB weapons and entities</strong>. Items without a picture keep the toolbox's.</li>
+</ol>
+<h4 id="help-settings-server-settings-the-reset-window">The reset window</h4>
+<p><strong>Reset everything / wipe map data...</strong> opens a window for the server owner (superadmins when no owner is set). It cannot be undone except by restoring a backup.</p>
+<ol>
+<li>Press <strong>Make a backup now</strong> (it changes to "Backup saved (check Settings &gt; Backup)"). The server also saves a backup automatically right before it resets or wipes.</li>
+<li>Tick what to reset: <strong>Server settings, limits and caps (every page under Settings)</strong>, <strong>Player Access (untick everything for players and ranks)</strong>, <strong>Paycheck amounts per rank</strong>, <strong>My tool settings and display options (on this computer)</strong>. All four start ticked.</li>
+<li>v3.6.13.1: pick what saved data to delete under <strong>Also delete saved data (for a blank start)</strong>:</li>
+</ol>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>What is deleted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nothing - keep all saved data</strong></td>
+<td>Nothing (the default). Only the ticked settings are reset.</td>
+</tr>
+<tr>
+<td><strong>This map's world data (map name)</strong></td>
+<td>On the current map: warps, zones, signs, spawn points, spawners, teleporters, stores, containers, permanent props, map doors, server keypads, buttons and cameras, chairs, logic, sounds, notes, decals, properties, NPC paths and relations, media screens, robbery spots, vault spots and buy stations (v3.6.17). Other maps, money, players' things and bans stay. Picking it unticks the settings ticks.</td>
+</tr>
+<tr>
+<td><strong>World data of every map</strong></td>
+<td>The same, for every map that has toolbox data.</td>
+</tr>
+<tr>
+<td><strong>Everything the toolbox saved (like a fresh install)</strong></td>
+<td>Every toolbox data file: all map data, money and bank, backpacks, vaults, pockets, stats, XP, licenses, mail, jobs, stores, loot tables, prefabs, rules, reports and the rest. Picking it ticks the settings ticks.</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Keep ranks and staff</strong> (ticked; only for Everything): ranks given in the toolbox, staff ranks, the auto-rank ladder and incognito stay. The owner list is always kept.</li>
+<li><strong>Keep bans, warnings and the join whitelist</strong> (ticked; only for Everything).</li>
+<li><strong>Also delete logs</strong> (unticked): action, kill and money logs. Backups never hold logs, so they cannot be restored.
+4. Type <code>RESET</code> (or <code>WIPE</code> when something is deleted) in the box, then press <strong>Reset to defaults</strong> (or <strong>Back up, wipe and restart the map</strong>).</li>
+</ul>
+<p>With a wipe, nothing is saved again until the map restarts (10 seconds), so nothing still in memory writes the old data back; the map then loads blank. Backups and your own favorites are never deleted. With DarkRP, DarkRP's own money is not the toolbox's and stays. From the server console: <code>kgxat_wipedata map / allmaps / everything confirm</code>.</p>
+<p>Without a wipe, never touched: warps, zones, spawn points, teleporters, stores, containers, loot tables, spawners, money, bans, warnings, reports, logs, prefabs, permanent props, rules, favorites and backups.</p>
+<h4 id="help-settings-server-settings-settings-and-commands">Settings and commands</h4>
+<p>Each option's convar is shown in its row above. Commands:</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_incognito</code> / <code>!incognito</code></td>
+<td>Go incognito (opens the name and model window).</td>
+</tr>
+<tr>
+<td><code>kgxat_unincognito</code> / <code>!unincognito</code></td>
+<td>Leave incognito. From the server console, add a name or SteamID.</td>
+</tr>
+<tr>
+<td><code>kgxat_scanall</code></td>
+<td>Scan &amp; update everything (superadmins).</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-server-settings-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>The console ranges of <code>kgxat_warp_cooldown</code> (0-600) and <code>kgxat_warn_kick</code> (0-50) are wider than the sliders.</li>
+<li><strong>Reset to defaults</strong> on the panel does not change the ATB picture setting. The reset window's "Server settings" option resets every toolbox server setting.</li>
+<li><code>kgxat_pp</code> and <code>kgxat_pp_world</code> appear in the panel's console list but are set in Utilities &gt; Prop Protection.</li>
+<li>Superadmin override never applies while you are incognito.</li>
+<li>Superadmins are never spawn-menu blocked.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-scheduler.html"><small class="mono">Previous</small><strong>Scheduler</strong></a><a class="help-pager-next" href="settings-setup-wizard.html"><small class="mono">Next</small><strong>Setup Wizard</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Game Modes — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Run matches with teams, roles, rounds and win rules: 21 built-in modes from Team Deathmatch to Gun Game, Race, Prop Hunt and Survival (PVE waves), plus your own.">
+<meta property="og:title" content="Game Modes — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Run matches with teams, roles, rounds and win rules: 21 built-in modes from Team Deathmatch to Gun Game, Race, Prop Hunt and Survival (PVE waves), plus your own.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-game-modes.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-game-modes.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html" aria-current="page">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-panels-game-modes-what-it-does">What it does</a><a class="filter" href="#help-panels-game-modes-where-to-find-it">Where to find it</a><a class="filter" href="#help-panels-game-modes-the-panel">The panel</a><a class="filter" href="#help-panels-game-modes-the-built-in-modes">The built-in modes</a><a class="filter" href="#help-panels-game-modes-the-mode-editor">The mode editor</a><a class="filter" href="#help-panels-game-modes-how-to-use-it">How to use it</a><a class="filter" href="#help-panels-game-modes-settings-and-commands">Settings and commands</a><a class="filter" href="#help-panels-game-modes-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-panels.html">Admin panels</a><i aria-hidden="true">/</i><span aria-current="page">Game Modes</span></nav><article class="help-view help-article" aria-labelledby="help-panels-game-modes-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Admin panels &gt; Utilities</p><h1 id="help-panels-game-modes-title">Game Modes</h1><p class="help-article-sum">Run matches with teams, roles, rounds and win rules: 21 built-in modes from Team Deathmatch to Gun Game, Race, Prop Hunt and Survival (PVE waves), plus your own.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-panels-game-modes-what-it-does">What it does</a></li><li><a href="#help-panels-game-modes-where-to-find-it">Where to find it</a></li><li><a href="#help-panels-game-modes-the-panel">The panel</a></li><li><a href="#help-panels-game-modes-the-built-in-modes">The built-in modes</a></li><li><a href="#help-panels-game-modes-the-mode-editor">The mode editor</a></li><li><a href="#help-panels-game-modes-how-to-use-it">How to use it</a></li><li><a href="#help-panels-game-modes-settings-and-commands">Settings and commands</a></li><li><a href="#help-panels-game-modes-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-panels-game-modes-what-it-does">What it does</h4>
+<p>Game Modes is the toolbox's round engine. A mode says how a match is played: teams or free for all, roles with their own gear, a lobby, rounds, a win rule and respawn rules. One match runs at a time.</p>
+<p>A match moves through phases: <strong>Lobby</strong>, <strong>Get ready</strong>, <strong>Live</strong> and <strong>Round over</strong>, repeated for each round. Players keep everything they had: weapons, health, armor, position, model and Build mode are given back when they leave or the match ends.</p>
+<p>There are 21 built-in modes, and superadmins can edit them or build new ones. Spawns, lobby and spectator spots and objectives are placed per map with the World &gt; Mode Spots tool.</p>
+<p>On Sandbox and Build / PvP servers, everyone joins the lobby when it opens. On RP servers (<code>kgxat_playmode 2</code>) a match is an opt-in event round: only players who type <code>!join</code> take part. Players in and out of the match cannot hurt each other.</p>
+<h4 id="help-panels-game-modes-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Utilities &gt; Game Modes.</p>
+<ul>
+<li>Running matches: admins, or players ticked for <strong>Game Modes (start and run matches)</strong> in Player Access. Others see only the player commands.</li>
+<li>Creating, editing, duplicating and deleting modes: superadmins only.</li>
+<li>The server settings at the bottom: shown to everyone with access, changeable by superadmins only.</li>
+<li>Players use chat commands (<code>!join</code>, <code>!leave</code>, <code>!ready</code>, <code>!sitout</code>, <code>!class</code>, <code>!buy</code>, <code>!taunt</code>). The C menu has <strong>Match: pick your class</strong> and <strong>Match: buy menu</strong> while you are in a match that uses them.</li>
+</ul>
+<h4 id="help-panels-game-modes-the-panel">The panel</h4>
+<h5>Running a match</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status line</td>
+<td>The running mode, phase, time left, player count and round, or "No match is running." Shows "(RP event round)" on RP servers.</td>
+</tr>
+<tr>
+<td><strong>Mode</strong></td>
+<td>The mode to open a lobby for.</td>
+</tr>
+<tr>
+<td><strong>Open a lobby for this mode</strong></td>
+<td>Opens the lobby. Fails if a match or an Events round is already running, or <code>kgxat_match_on</code> is 0.</td>
+</tr>
+<tr>
+<td><strong>Start now</strong></td>
+<td>Starts the lobby at once, skipping the wait, the player minimum and ready-up.</td>
+</tr>
+<tr>
+<td><strong>End the round</strong></td>
+<td>Ends the running round as a draw.</td>
+</tr>
+<tr>
+<td><strong>End the match</strong></td>
+<td>Ends the match after a confirm. Everyone gets their things back.</td>
+</tr>
+<tr>
+<td><strong>Balance teams</strong></td>
+<td>Moves the last players to join from the biggest team to the smallest until teams differ by at most one. With <strong>Teams</strong> set to even by level or win rate (v3.6.14), it moves the player whose move evens the teams' skill best.</td>
+</tr>
+<tr>
+<td>Next match line</td>
+<td>v3.6.14: what comes next and when, for example "Next match (vote) in 14 s", "Next match: after this one." or "Next match: off (an admin opens lobbies)."</td>
+</tr>
+<tr>
+<td><strong>Next match now</strong></td>
+<td>v3.6.14: skips the wait and starts the next vote or lobby at once. Only while <strong>Next match</strong> is on and no match or vote is running.</td>
+</tr>
+<tr>
+<td>Player list</td>
+<td>Columns <strong>Player</strong>, <strong>Team</strong>, <strong>Score</strong>, <strong>K / D</strong>. Out players show "(out)". Right-click a player: <strong>Move to</strong> a team, or <strong>Take out of the match</strong>.</td>
+</tr>
+<tr>
+<td><strong>Add a player to the match</strong></td>
+<td>Pick a player who is not in the match to add them. This also clears their sit-out.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Modes</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mode list</td>
+<td>Columns <strong>Mode</strong>, <strong>Id</strong>, <strong>Teams</strong> (FFA for free for all), <strong>Win</strong>. Double-click to edit (superadmins).</td>
+</tr>
+<tr>
+<td>Right-click a mode</td>
+<td><strong>Open a lobby</strong>. Superadmins also get <strong>Edit...</strong>, <strong>Duplicate...</strong> and <strong>Delete</strong>.</td>
+</tr>
+<tr>
+<td><strong>New mode...</strong></td>
+<td>Superadmins: opens the mode editor with two teams, Red and Blue.</td>
+</tr>
+<tr>
+<td><strong>Reset the built-in modes (...)</strong></td>
+<td>Superadmins: puts every built-in mode back to its original settings and re-adds deleted ones. Your own modes stay.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Settings</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Game Modes can run matches</strong></td>
+<td><code>kgxat_match_on</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Admins take part like everyone else</strong></td>
+<td><code>kgxat_match_admins</code>. Off: admins are left out of new lobbies unless they <code>!join</code>.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Match HUD</strong></td>
+<td><code>kgxat_match_hud</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Team mates' names over their heads</strong></td>
+<td><code>kgxat_match_tags</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Match scoreboard on the scoreboard key (v3.6.6)</strong></td>
+<td><code>kgxat_match_scoreboard</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Kill feed: 0 off, 1 matches, 2 every player kill</strong></td>
+<td><code>kgxat_killfeed</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Hit markers: 0 off, 1 matches, 2 every player hit</strong></td>
+<td><code>kgxat_hitmarkers</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>A lobby starts or is cancelled after (s, 0 = never)</strong></td>
+<td><code>kgxat_match_lobbymax</code></td>
+<td>300</td>
+</tr>
+<tr>
+<td><strong>Next match: 0 off, 1 vote, 2 rotation, 3 random</strong></td>
+<td><code>kgxat_match_next</code> (v3.6.14). After a match ends, and when the map starts, the next lobby opens by itself: 1 = players vote between modes, 2 = the next mode in the mode list's order, 3 = a random mode. Only modes with <strong>In the next-mode vote and rotation</strong> ticked, that have enough players online and everything they need on this map (Mode Spots). Not on RP servers, where matches are events.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Next match: wait after a match (s)</strong></td>
+<td><code>kgxat_match_next_wait</code>, 5-600. A lobby nobody came to waits at least 120 s.</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>Next match: modes in the vote</strong></td>
+<td><code>kgxat_match_next_choices</code>, 2-8. The mode just played is left out when there are more than two. Nobody votes: one of the choices at random.</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Next match: vote time (s)</strong></td>
+<td><code>kgxat_match_next_votetime</code>, 10-120</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>Next match: a map vote every N matches (0 = never)</strong></td>
+<td><code>kgxat_match_next_mapvote</code>, 0-50. After N matches the vote is a map vote (Utilities &gt; Voting map pool, with "Stay on this map"). The new map goes on with the next match by itself.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Hub: 0 nobody gets hurt, 1 no PvP, 2 normal damage</strong></td>
+<td><code>kgxat_arena_hub_damage</code> (v3.6.15): players outside a match on a map with a hub (World &gt; Mode Spots, kind Hub).</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Hub gear: 0 Hands only (admins keep theirs), 1 loadouts</strong></td>
+<td><code>kgxat_arena_hub_gear</code>: what players outside a match have in the hub.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Teams: 0 by count, 1 even by level, 2 even by win rate</strong></td>
+<td><code>kgxat_match_balance</code> (v3.6.14). At the match start teams are equal in size either way; 1 and 2 also spread the strong players so the teams' levels (or match win rates) are as even as possible, and say so in a message ("Teams evened by level: Red 12.5, Blue 12"). Not for modes whose sides change every round (Prop Hunt, Hide and Seek, Freeze Tag, Infection) or hidden roles. Win rate leans to 50% for players with few matches.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Match stats: XP, levels, achievements, history (v3.6.11)</strong></td>
+<td><code>kgxat_stats_on</code>. See <a href="basics-match-stats-and-progression.html">Match Stats and Progression</a>.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Announce level-ups and achievements in chat</strong></td>
+<td><code>kgxat_stats_announce</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Show levels, name colors and badges</strong></td>
+<td><code>kgxat_stats_cosmetics</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Players (not bots) a match needs to count</strong></td>
+<td><code>kgxat_stats_min_players</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>XP rate (%, 100 = normal)</strong></td>
+<td><code>kgxat_stats_xp</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><strong>Matches kept in the history</strong></td>
+<td><code>kgxat_stats_history</code></td>
+<td>50</td>
+</tr>
+<tr>
+<td><strong>Trails: 0 off, 1 during matches, 2 always</strong></td>
+<td><code>kgxat_stats_trails</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Season length in days (0 = a superadmin ends it)</strong></td>
+<td><code>kgxat_stats_season_days</code> (v3.6.14), see <a href="basics-match-stats-and-progression.html">Match Stats and Progression</a></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Ended seasons kept</strong></td>
+<td><code>kgxat_stats_season_keep</code>, 1-50</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>Apply the numbers</strong></td>
+<td>Sends the sliders to the server.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Hit marker sound (only you)</strong></td>
+<td>Your own client setting, <code>kgxat_hitmarker_sound</code>.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Open Match stats (...)</strong></td>
+<td>Opens the Match stats leaderboards; superadmins reset stats and clear the history there.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-panels-game-modes-the-built-in-modes">The built-in modes</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Id</th>
+<th>How it plays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team Deathmatch</td>
+<td><code>tdm</code></td>
+<td>Two teams. Kills score; first to 50 or the most after 600 s. Respawn after 4 s.</td>
+</tr>
+<tr>
+<td>Free for All</td>
+<td><code>ffa</code></td>
+<td>Everyone against everyone. First to 25. Respawn after 3 s.</td>
+</tr>
+<tr>
+<td>Team Elimination</td>
+<td><code>elimination</code></td>
+<td>Two teams, one life. Last team standing wins the round; best of 5.</td>
+</tr>
+<tr>
+<td>Team Objectives</td>
+<td><code>objectives</code></td>
+<td>Two teams fight over the objectives placed for this mode. First to 300, or the most after 900 s.</td>
+</tr>
+<tr>
+<td>Class Deathmatch</td>
+<td><code>classes</code></td>
+<td>Two teams pick a class with <code>!class</code>: Assault, Scout, Sniper, Medic (2 per team), Heavy (2 per team). First to 50.</td>
+</tr>
+<tr>
+<td>Buy Rounds</td>
+<td><code>buyrounds</code></td>
+<td>Two teams, one life, best of 9. Earn money and buy gear with <code>!buy</code> while getting ready.</td>
+</tr>
+<tr>
+<td>Traitors</td>
+<td><code>traitors</code></td>
+<td>Hidden traitors among innocents, a known detective, body search, equipment shop. 6 rounds, at least 3 players.</td>
+</tr>
+<tr>
+<td>Murder</td>
+<td><code>murder</code></td>
+<td>One hidden murderer with a knife, one bystander with a hidden gun. 6 rounds, at least 3 players.</td>
+</tr>
+<tr>
+<td>Prop Hunt</td>
+<td><code>prophunt</code></td>
+<td>Props hide as props; hunters wait 30 s blind, then hunt. Teams swap every round; 6 rounds.</td>
+</tr>
+<tr>
+<td>Hide and Seek</td>
+<td><code>hideseek</code></td>
+<td>Seekers wait 40 s blind, then tag hiders by touch. Tagged hiders seek too. 5 rounds.</td>
+</tr>
+<tr>
+<td>Freeze Tag</td>
+<td><code>freezetag</code></td>
+<td>Taggers freeze runners by touch; a free runner by a frozen one for 3 s thaws them. 5 rounds.</td>
+</tr>
+<tr>
+<td>Last One Standing</td>
+<td><code>lms</code></td>
+<td>Free for all, one life. Last player alive wins the round; 3 rounds.</td>
+</tr>
+<tr>
+<td>Capture the Flag</td>
+<td><code>ctf</code></td>
+<td>Two teams. Take the enemy flag to your own flag while yours is home; first to 3 captures. Needs a flag for each team.</td>
+</tr>
+<tr>
+<td>King of the Hill</td>
+<td><code>koth</code></td>
+<td>Two teams. A team scores 1 every second it is alone on the hill; first to 120. Needs a hold zone.</td>
+</tr>
+<tr>
+<td>Domination</td>
+<td><code>domination</code></td>
+<td>Two teams capture and hold points: 10 a capture, 1 per point every 2 s, 1 a kill; first to 250. Needs capture points.</td>
+</tr>
+<tr>
+<td>Gun Game</td>
+<td><code>gungame</code></td>
+<td>Free for all. Every kill gives the next weapon of the ladder; a kill with the last one (the crowbar) wins.</td>
+</tr>
+<tr>
+<td>Infection</td>
+<td><code>infection</code></td>
+<td>Survivors against the infected (20 % at the start). Dead survivors join the infected. 5 rounds, at least 3 players.</td>
+</tr>
+<tr>
+<td>Juggernaut</td>
+<td><code>juggernaut</code></td>
+<td>Free for all with one Juggernaut (1000 health, pulse rifle, RPG). Only the Juggernaut's kills score; kill them to take over. First to 15.</td>
+</tr>
+<tr>
+<td>Duels</td>
+<td><code>duels</code></td>
+<td>One against one, one life; the others watch. The winner stays, the loser goes to the back of the line. 10 rounds.</td>
+</tr>
+<tr>
+<td>Race</td>
+<td><code>race</code></td>
+<td>Run the race checkpoints in order. The first to finish wins; the others get 30 s more. 3 rounds. Needs 2 or more checkpoints.</td>
+</tr>
+<tr>
+<td>Survival</td>
+<td><code>survival</code></td>
+<td>v3.6.17, PVE. Everyone together against waves of zombies that grow and get tougher. Hits and kills give points for wall weapons, doors, the mystery box and perk machines (World &gt; Buy Stations). The fallen come back when a wave is cleared; when everyone is down it is over. Loadouts: Both (server loadouts and custom classes). Needs enemy spawns.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Hidden-role modes (Traitors, Murder)</h5>
+<ul>
+<li>Roles are handed out when the round goes live and stay private. After each round everyone's role is shown.</li>
+<li>Traitors: 25 % of players are traitors (at least one). From 6 players there is one detective per 8, known to all. Team chat reaches only traitors.</li>
+<li>Traitors win when every innocent is dead; innocents when every traitor is dead or time runs out.</li>
+<li>Press <strong>E</strong> on a body to search it: name, role, cause of death and the last person they looked at.</li>
+<li>Traitors and detectives get 2 credits a round, plus 1 per kill of the other side, to spend with <code>!buy</code>.</li>
+<li>Murder: the knife (<code>weapon_crowbar</code>) and the hidden gun (<code>weapon_357</code>) kill in one hit; nothing else hurts. A bystander who shoots a bystander drops the gun for the round.</li>
+<li>During a round: no kill feed, no scores, and the dead cannot be heard or read by the living.</li>
+</ul>
+<h5>Hiding modes (Prop Hunt, Hide and Seek, Freeze Tag)</h5>
+<ul>
+<li>Team 1 hides, team 2 seeks. Seekers wait frozen and blind for the hide time; nobody is hurt meanwhile. Hiders win if one is still free at the end.</li>
+<li>Prop Hunt: as a prop, aim at a prop (up to 96 units wide and high) and left-click to become it. Hits on your disguise hurt you. Hunters lose 5 health per wrong prop hit.</li>
+<li>Hide and Seek and Freeze Tag: 25 % of players seek, picked each round. A seeker's hit is a tag, not damage. Tags and thaws do not work through walls.</li>
+<li><code>!taunt</code> makes a hider play a sound, once every 8 s. The match goes to the player who won the most rounds.</li>
+</ul>
+<h5>Classic modes (v3.6.10)</h5>
+<ul>
+<li>A mode whose <strong>The map needs</strong> setting asks for flags, a hold zone, capture points, bomb sites, an escort path or race checkpoints opens no lobby on a map without them. The message names what to place with World &gt; Mode Spots, for that mode or for every mode.</li>
+<li>Gun Game: everyone starts on the first weapon of the ladder and only holds that weapon. Each kill gives the next one; your score is the levels you gained. A kill with a crowbar, stunstick or fists takes a level from the victim (setting <strong>Gun Game: a melee kill takes a level from the victim</strong>). Dying by yourself costs nothing.</li>
+<li>Infection: team 1 survives, team 2 infects. Players who join late are infected. No survivor left: the infected win. Time up with a survivor alive: the survivors win. The match goes to the player who won the most rounds.</li>
+<li>Juggernaut: a random player becomes the Juggernaut when the round goes live, with the mode's health, 100 armor and the Juggernaut weapons. Everyone sees <strong>JUGGERNAUT</strong> over their head. Kills by others score nothing. Whoever kills the Juggernaut scores and takes over at once. A Juggernaut who falls or leaves is replaced about a second later.</li>
+<li>Duels: the first two of the line fight; everyone else watches them. Newcomers join the end of the line. Time up: the duelist with more health wins (equal health is a draw).</li>
+<li>Race: the checkpoints count in the order they were placed, for the mode's laps; the last checkpoint is the finish. Racers cannot hurt each other unless <strong>Race: racers may hurt each other</strong> is on. Die or fall and you come back at your last checkpoint. With <strong>Race: vehicle</strong> set, every racer gets that vehicle when the round goes live and after each respawn; only its owner can drive it.</li>
+<li>The HUD shows each mode's state above the bottom of the screen: your level and next weapon, survivors left, the Juggernaut, the duel and who is next, and for a race the next checkpoint (a ring on the ground and its distance), lap and position.</li>
+</ul>
+<h5>Waves (PVE, v3.6.17)</h5>
+<ul>
+<li><strong>Special rules</strong> = <strong>Waves (PVE)</strong> makes a mode where everyone plays together against NPCs: no teams, players cannot hurt each other, one long round with no time limit, no respawns during a wave.</li>
+<li>Enemies come from the <strong>Enemy spawn</strong> spots (World &gt; Mode Spots, for that mode or every mode); without one the lobby does not open. Wave 1 has <strong>enemies in the first wave</strong>, each wave <strong>more enemies each wave</strong> on top, at most <strong>most enemies alive at once</strong> at a time, and <strong>% more enemy health each wave</strong> more health. The NPC classes come in order: the first kind from wave 1, one more kind every 3 waves.</li>
+<li>Points are the mode's match money: everyone starts with <strong>points everyone starts with</strong>, a hit gives <strong>points for a hit</strong> (once per enemy per tick, so a shotgun blast is one hit), a kill <strong>points for a kill</strong>. Players spend them at Buy Stations and in the buy menu (always open in Waves). They end with the match.</li>
+<li>A player who goes down watches and comes back when the wave is cleared. Players who join during a wave wait (they cannot hurt the enemies or score) and play from the next wave, or at once when nobody else is left. When nobody is standing the match is over ("reached wave N"). With <strong>waves to survive</strong> above 0, surviving that many waves wins.</li>
+<li>The enemies hate only the players in the match: hub players, spectators and the map's own NPCs are left alone (both ways), and they do not hurt each other. Map NPCs and wave enemies cannot hurt each other. They always hunt the nearest player in the match; the AI Brain and the NPC relationship rules leave them alone (no fleeing, surrendering or calling for help). One stuck far away for 30 s, or that neither hurts nor is hurt for 45 s while not moving (inside a wall, behind a closed door buy), is replaced at an enemy spawn. Headcrabs and torsos that come out of wave zombies count as wave enemies. They are removed when the match ends.</li>
+<li>The enemy list takes NPC classes only: an entity that is no NPC (or no class at all) is skipped for the match with a console message. NPC kills count for points and the match scoreboard, not for Match stats kills, XP or credits.</li>
+<li>NPCs that need a weapon (Combine soldiers, Metro Police, rebels) get <strong>weapon of enemies that need one</strong>.</li>
+<li>The HUD shows the wave, the enemies left and the break countdown; the HUD &amp; Hub token <code>{x:wave}</code> shows the wave number.</li>
+<li>Match stats achievements: <strong>Hold the Line</strong> (standing when wave 10 starts) and <strong>Last One Out</strong> (wave 25).</li>
+</ul>
+<h4 id="help-panels-game-modes-the-mode-editor">The mode editor</h4>
+<p>Superadmins open it with <strong>New mode...</strong>, <strong>Edit...</strong> or <strong>Duplicate...</strong>. Click <strong>Save the mode</strong> to store it, or <strong>Cancel</strong>. The <strong>Id</strong> (letters, digits, <code>_</code>) is used by commands and Logic. It can only be set on a new mode. Saving a mode that is running does not change the running match.</p>
+<h5>Mode settings</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong> / <strong>Description</strong></td>
+<td>New mode / empty</td>
+<td>40 / 200 characters</td>
+</tr>
+<tr>
+<td><strong>Players needed to start</strong></td>
+<td>2</td>
+<td>1-64</td>
+</tr>
+<tr>
+<td><strong>Lobby: wait at least (s)</strong></td>
+<td>20</td>
+<td>0-600</td>
+</tr>
+<tr>
+<td><strong>Ready-up: players type !ready</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Ready-up: percent who must be ready</strong></td>
+<td>60</td>
+<td>10-100</td>
+</tr>
+<tr>
+<td><strong>Get ready time (s, 0 = none)</strong></td>
+<td>10</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Frozen while getting ready</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Round time limit (s, 0 = none)</strong></td>
+<td>300</td>
+<td>0-3600</td>
+</tr>
+<tr>
+<td><strong>After a round (s)</strong></td>
+<td>8</td>
+<td>3-30</td>
+</tr>
+<tr>
+<td><strong>Rounds</strong></td>
+<td>1</td>
+<td>1-50</td>
+</tr>
+<tr>
+<td><strong>Win rule</strong></td>
+<td>Last team / player alive wins the round</td>
+<td>also score limit, or most score when time runs out</td>
+</tr>
+<tr>
+<td><strong>Score limit (score rule)</strong></td>
+<td>25</td>
+<td>0-1000</td>
+</tr>
+<tr>
+<td><strong>Score for a kill</strong> / <strong>team kill</strong> / <strong>dying by yourself</strong></td>
+<td>1 / -1 / -1</td>
+<td>0-100 / -100-0 / -100-0</td>
+</tr>
+<tr>
+<td><strong>Respawn rule</strong></td>
+<td>No respawn: out until the next round</td>
+<td>also at once, after the delay, in waves</td>
+</tr>
+<tr>
+<td><strong>Respawn delay / wave time (s)</strong></td>
+<td>5</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Lives (0 = unlimited)</strong></td>
+<td>0</td>
+<td>0-99</td>
+</tr>
+<tr>
+<td><strong>Late joiners play at once (with respawns)</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Friendly fire</strong></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Auto-balance teams between rounds</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>In the next-mode vote and rotation (Game Modes &gt; Next match)</strong></td>
+<td>On (v3.6.14)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Loadouts: server (Player Loadouts), Armory (custom classes) or both</strong></td>
+<td>Off: the roles' weapons (v3.6.15)</td>
+<td><strong>Server loadouts</strong> (Settings &gt; Player Loadouts made for this mode or any match), v3.6.17: <strong>Armory</strong> (only the players' own custom classes, Settings &gt; Armory), <strong>Both</strong>. A player with nothing to pick gets the role's weapons.</td>
+</tr>
+<tr>
+<td><strong>Loadouts: the loadout screen opens in the lobby and at the start</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Loadouts: players may change it during the match (from their next spawn)</strong></td>
+<td>On. Off: locked once the match is live.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Loadouts: in the lobby players are</strong></td>
+<td>Empty hands while choosing</td>
+<td>Holding the picked loadout</td>
+</tr>
+<tr>
+<td><strong>Loadouts: cost their price in match money, once per match (needs the buy menu)</strong></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>The dead watch</strong></td>
+<td>their own team</td>
+<td>also anyone, or only the spectator spot</td>
+</tr>
+<tr>
+<td><strong>Take everyone's weapons for the match (given back after)</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Weapons / Health / Armor of the default role</strong></td>
+<td>crowbar, pistol, SMG / 100 / 0</td>
+<td>16 classes / 1-1000 / 0-255</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Objective settings</h5>
+<p>Used when the map has objectives placed for the mode.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Objectives: seconds to capture a point</strong></td>
+<td>10</td>
+<td>1-120</td>
+</tr>
+<tr>
+<td><strong>Objectives: score for a capture (point, flag, bomb)</strong></td>
+<td>5</td>
+<td>0-1000</td>
+</tr>
+<tr>
+<td><strong>Objectives: score for holding a point / zone</strong></td>
+<td>1</td>
+<td>0-100</td>
+</tr>
+<tr>
+<td><strong>Objectives: ... every (s)</strong></td>
+<td>5</td>
+<td>1-60</td>
+</tr>
+<tr>
+<td><strong>Objectives: a dropped flag goes home after (s, 0 = when touched)</strong></td>
+<td>20</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Objectives: the attacking team (bomb, escort)</strong></td>
+<td>1</td>
+<td>1-8</td>
+</tr>
+<tr>
+<td><strong>Objectives: bomb timer (s)</strong> / <strong>time to plant</strong> / <strong>time to defuse</strong></td>
+<td>40 / 3 / 6</td>
+<td>10-180 / 1-15 / 1-20</td>
+</tr>
+<tr>
+<td><strong>Objectives: escort speed (units / s)</strong></td>
+<td>60</td>
+<td>10-300</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Classes, buy menu, hidden roles, hiding and classic modes</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classes: players pick their role (!class)</strong></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Buy menu (!buy) with match money</strong></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Buy menu: when</strong></td>
+<td>While getting ready</td>
+<td>also for a while after each spawn, or any time</td>
+</tr>
+<tr>
+<td><strong>Buy menu: seconds after a spawn</strong></td>
+<td>20</td>
+<td>5-120</td>
+</tr>
+<tr>
+<td><strong>Buy menu: starting money</strong> / <strong>money for a kill</strong></td>
+<td>800 / 300</td>
+<td>0-100000 / 0-10000</td>
+</tr>
+<tr>
+<td><strong>Buy menu: money for winning a round</strong> / <strong>losing a round</strong></td>
+<td>1500 / 1000</td>
+<td>0-100000</td>
+</tr>
+<tr>
+<td><strong>Buy menu: most money a player can have (0 = no limit)</strong></td>
+<td>16000</td>
+<td>0-1000000</td>
+</tr>
+<tr>
+<td><strong>Hidden roles</strong></td>
+<td>No hidden roles</td>
+<td>also Traitors, Murder</td>
+</tr>
+<tr>
+<td><strong>Traitors: percent of the players who are traitors</strong></td>
+<td>25</td>
+<td>10-50</td>
+</tr>
+<tr>
+<td><strong>Traitors: players needed for a detective (0 = none)</strong></td>
+<td>6</td>
+<td>0-64</td>
+</tr>
+<tr>
+<td><strong>Traitors: equipment credits</strong> / <strong>credits for killing the other side</strong></td>
+<td>2 / 1</td>
+<td>0-10 / 0-5</td>
+</tr>
+<tr>
+<td><strong>Hiding mode</strong></td>
+<td>No hiding</td>
+<td>also Prop Hunt, Hide and Seek, Freeze Tag</td>
+</tr>
+<tr>
+<td><strong>Hiding: seekers wait blind (s)</strong></td>
+<td>30</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><strong>Hide and Seek / Freeze Tag: percent of seekers</strong></td>
+<td>25</td>
+<td>10-50</td>
+</tr>
+<tr>
+<td><strong>Hide and Seek: tagged hiders seek too (off = out)</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Freeze Tag: seconds to thaw a frozen team mate</strong></td>
+<td>3</td>
+<td>1-15</td>
+</tr>
+<tr>
+<td><strong>Prop Hunt: health a hunter loses per wrong prop hit</strong></td>
+<td>5</td>
+<td>0-50</td>
+</tr>
+<tr>
+<td><strong>The map needs (World &gt; Mode Spots; no lobby without it)</strong></td>
+<td>Nothing (any map)</td>
+<td>also flags, hold zones, capture points, bomb sites, an escort path, race checkpoints, enemy spawns (Waves)</td>
+</tr>
+<tr>
+<td><strong>Special rules (v3.6.10 classic modes)</strong></td>
+<td>No special rules</td>
+<td>also Gun Game, Infection, Juggernaut, Duels, Race, Waves (PVE)</td>
+</tr>
+<tr>
+<td><strong>Gun Game: the weapon ladder, in order (comma separated)</strong></td>
+<td><code>weapon_ar2, weapon_smg1, weapon_shotgun, weapon_357, weapon_crossbow, weapon_pistol, weapon_crowbar</code></td>
+<td>up to 24</td>
+</tr>
+<tr>
+<td><strong>Gun Game: a melee kill takes a level from the victim</strong></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Infection: percent of the players infected at the start</strong></td>
+<td>20</td>
+<td>5-50</td>
+</tr>
+<tr>
+<td><strong>Juggernaut: health</strong></td>
+<td>1000</td>
+<td>100-10000</td>
+</tr>
+<tr>
+<td><strong>Juggernaut: weapons (comma separated)</strong></td>
+<td><code>weapon_ar2, weapon_rpg</code></td>
+<td>up to 8</td>
+</tr>
+<tr>
+<td><strong>Race: laps</strong></td>
+<td>1</td>
+<td>1-20</td>
+</tr>
+<tr>
+<td><strong>Race: vehicle (name in the spawn menu list, e.g. Jeep; empty = on foot)</strong></td>
+<td>Empty</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Race: seconds left for the others after the first finishes (0 = round time)</strong></td>
+<td>30</td>
+<td>0-300</td>
+</tr>
+<tr>
+<td><strong>Race: racers may hurt each other</strong></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Waves: enemy NPC classes, in order (one more kind every 3 waves)</strong></td>
+<td><code>npc_zombie, npc_fastzombie, npc_poisonzombie, npc_zombine</code></td>
+<td>up to 12</td>
+</tr>
+<tr>
+<td><strong>Waves: waves to survive (0 = endless)</strong></td>
+<td>0</td>
+<td>0-200</td>
+</tr>
+<tr>
+<td><strong>Waves: enemies in the first wave</strong></td>
+<td>6</td>
+<td>1-100</td>
+</tr>
+<tr>
+<td><strong>Waves: more enemies each wave</strong></td>
+<td>3</td>
+<td>0-50</td>
+</tr>
+<tr>
+<td><strong>Waves: most enemies alive at once</strong></td>
+<td>24</td>
+<td>1-80</td>
+</tr>
+<tr>
+<td><strong>Waves: seconds between waves</strong></td>
+<td>15</td>
+<td>3-120</td>
+</tr>
+<tr>
+<td><strong>Waves: % more enemy health each wave</strong></td>
+<td>10</td>
+<td>0-100</td>
+</tr>
+<tr>
+<td><strong>Waves: points for a hit</strong> / <strong>points for a kill</strong></td>
+<td>10 / 60</td>
+<td>0-1000 / 0-10000</td>
+</tr>
+<tr>
+<td><strong>Waves: points everyone starts with</strong></td>
+<td>500</td>
+<td>0-100000</td>
+</tr>
+<tr>
+<td><strong>Waves: weapon of enemies that need one</strong></td>
+<td><code>weapon_smg1</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Special rules set what they need when you save: Gun Game, Juggernaut, Duels and Race are free for all; Infection always has two teams; Gun Game's score limit is the length of its ladder; Duels have one life; a race always needs checkpoints; Waves has no teams, one round, no time limit, the buy menu always open with the starting points as match money, and needs enemy spawns.</p>
+<h5>Teams, roles and buy menu items</h5>
+<ul>
+<li><strong>Teams (none = free for all)</strong>: <strong>Add a team</strong> adds up to 8. Right-click a team for <strong>Rename...</strong>, <strong>Color</strong>, <strong>Team weapons (everyone in the team)...</strong> and <strong>Remove</strong>. One team becomes two.</li>
+<li><strong>Roles</strong>: <strong>Add a role</strong> adds up to 12. Each role has an id, a name, a team (or any), <strong>At most per team (0 = no limit)</strong>, weapons, health, armor, speed (0.5-2), a player model and <strong>Spare magazines per weapon</strong> (default 4). Limited roles are handed out first at random; everyone else gets the first role with no limit.</li>
+<li><strong>Buy menu items</strong>: <strong>Add an item...</strong> adds up to 40. Kinds are Weapon, Ammo, Armor, Health, Radar and Disguise; each has a name, price, amount and <strong>Who may buy it (hidden-role modes)</strong>. <strong>Use the default items (HL2 weapons, armor, health, ammo)</strong> and <strong>Use the Traitors equipment (prices in credits)</strong> fill the list.</li>
+</ul>
+<h4 id="help-panels-game-modes-how-to-use-it">How to use it</h4>
+<h5>Run a quick match</h5>
+<ol>
+<li>Open Utilities &gt; Game Modes.</li>
+<li>Pick a mode in <strong>Mode</strong>, for example Team Deathmatch.</li>
+<li>Click <strong>Open a lobby for this mode</strong>. Everyone on the server joins the lobby.</li>
+<li>Players type <code>!ready</code>. The match starts once enough players are in, the lobby wait has passed and enough are ready.</li>
+<li>To skip the wait, click <strong>Start now</strong>. Click <strong>End the match</strong> to stop early.</li>
+</ol>
+<h5>Run an event round on an RP server</h5>
+<ol>
+<li>Open a lobby as above. Everyone sees "Event: &lt;mode&gt;! Type !join to take part."</li>
+<li>Players who want to play type <code>!join</code>. Others get a chat reminder every 30 s while the lobby is open.</li>
+<li>Start the match when enough have joined. Players leave with <code>!leave</code>.</li>
+</ol>
+<h5>Let matches run by themselves</h5>
+<ol>
+<li>In Utilities &gt; Game Modes &gt; Settings, set <strong>Next match</strong> to 1 (vote), 2 (rotation) or 3 (random), and press <strong>Apply the numbers</strong>.</li>
+<li>Untick <strong>In the next-mode vote and rotation</strong> in the editor of modes you do not want to come up.</li>
+<li>Place what modes need on each map with World &gt; Mode Spots; modes a map cannot run are left out there.</li>
+<li>After each match ends, players see "Next mode vote in 20 seconds." and then vote with the number keys. The lobby of the winner opens.</li>
+<li>For a map vote now and then, set <strong>a map vote every N matches</strong>.</li>
+</ol>
+<h5>Run an arena with a hub and loadouts (v3.6.15)</h5>
+<ol>
+<li>With World &gt; Mode Spots, place a few <strong>Hub</strong> spots (where everyone waits between matches) and each mode's spawns.</li>
+<li>In Settings &gt; Player Loadouts, make loadouts with <strong>Game mode</strong> set to a mode or <strong>Any match</strong>, and save.</li>
+<li>Edit the modes: <strong>Loadouts</strong> = <strong>Server loadouts</strong> (or <strong>Both</strong> to add the players' Armory classes, or <strong>Armory</strong> for classes only). Optional: paid loadouts, locked after the start, holding the loadout in the lobby.</li>
+<li>Set <strong>Next match</strong> so matches keep coming, and load <strong>[Built-in] PVP (arena)</strong> in Settings &gt; HUD &amp; Hub.</li>
+<li>Players spawn in the hub with their hands, get the loadout screen when a lobby opens, and come back to the hub after the match. During a match their backpack, pockets, containers and stores wait.</li>
+</ol>
+<h5>Run a Survival (PVE) server (v3.6.17)</h5>
+<ol>
+<li>With World &gt; Mode Spots, place <strong>Hub</strong> spots and, for Survival (or every mode), a few <strong>Enemy spawn</strong> spots away from the players' spawns.</li>
+<li>With World &gt; Buy Stations, place wall weapons, a door buy, a perk machine and a mystery box (see its tutorial).</li>
+<li>In Utilities &gt; Game Modes, take the other modes out of the rotation if you only want Survival, and set <strong>Next match</strong> so a new match follows each one.</li>
+<li>Load <strong>[Built-in] PVE (waves)</strong> in Settings &gt; HUD &amp; Hub: the card shows the points, the hub help explains the waves.</li>
+<li>Optional: set up Settings &gt; Armory; Survival's Loadouts is <strong>Both</strong> (server loadouts and the players' own classes); set it to <strong>Armory</strong> or <strong>Server loadouts</strong> for one kind only.</li>
+</ol>
+<h5>Make your own mode</h5>
+<ol>
+<li>As a superadmin, right-click a built-in mode and pick <strong>Duplicate...</strong>, or click <strong>New mode...</strong>.</li>
+<li>Give it an <strong>Id</strong> and a <strong>Name</strong>, then set rounds, win rule and respawns.</li>
+<li>Add teams, roles and buy menu items as needed.</li>
+<li>Click <strong>Save the mode</strong>. It appears in the <strong>Mode</strong> list.</li>
+<li>Place spawns for it with World &gt; Mode Spots on each map you use.</li>
+</ol>
+<h4 id="help-panels-game-modes-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Who</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!join</code> / <code>kgxat_join</code></td>
+<td>Players</td>
+<td>Join the running match. Refused right after a fight (at least 10 s).</td>
+</tr>
+<tr>
+<td><code>!leave</code> / <code>kgxat_leave</code></td>
+<td>Players</td>
+<td>Leave the match and get your things back.</td>
+</tr>
+<tr>
+<td><code>!ready</code> / <code>kgxat_ready</code></td>
+<td>Players</td>
+<td>Toggle ready in the lobby.</td>
+</tr>
+<tr>
+<td><code>!sitout</code> / <code>kgxat_sitout</code></td>
+<td>Players</td>
+<td>Sit out the next matches, or play again.</td>
+</tr>
+<tr>
+<td><code>!class</code> / <code>kgxat_class</code></td>
+<td>Players in a match</td>
+<td>Open the class menu.</td>
+</tr>
+<tr>
+<td><code>!buy</code> / <code>kgxat_buy</code></td>
+<td>Players in a match</td>
+<td>Open the buy menu.</td>
+</tr>
+<tr>
+<td><code>!taunt</code> / <code>kgxat_taunt</code></td>
+<td>Hiders</td>
+<td>Play a sound, every 8 s.</td>
+</tr>
+<tr>
+<td><code>!stats</code>, <code>!top</code>, <code>!achievements</code>, <code>!history</code></td>
+<td>Everyone</td>
+<td>Open Match stats (v3.6.11).</td>
+</tr>
+<tr>
+<td><code>kgxat_match_start &lt;mode id&gt;</code></td>
+<td>Game Modes access</td>
+<td>Open a lobby.</td>
+</tr>
+<tr>
+<td><code>kgxat_match_force</code></td>
+<td>Game Modes access</td>
+<td>Start the lobby now.</td>
+</tr>
+<tr>
+<td><code>kgxat_match_end</code></td>
+<td>Game Modes access</td>
+<td>End the match.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Chat commands also work with <code>/</code> instead of <code>!</code>. They only work while <code>kgxat_match_on</code> is 1.</p>
+<h4 id="help-panels-game-modes-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>v3.6.17: in the mode editor and its role and item windows, hover an option whose name is cut off to read it in full.</li>
+<li>Modes are saved in <code>data/kgx_admin_toolbox/game_modes.json</code>, at most 64. Built-in modes added by an update appear once; a mode you deleted stays deleted.</li>
+<li>Without Mode Spots, players spawn where the map puts them.</li>
+<li>After <code>kgxat_match_lobbymax</code> seconds a lobby starts with enough players, ready or not, or is cancelled.</li>
+<li>In the lobby players cannot fight each other. Nobody can switch to Build mode during a match.</li>
+<li>A mode whose win rule cannot end a round gets a 600 s time limit.</li>
+<li>Jailed players leave the match. Match deaths drop no backpack, money or pockets.</li>
+<li>v3.6.15: during a match players cannot use their backpack, pockets, containers, vaults, stores, shipments or Talking NPC weapon / armor / health rewards. A mode without get-ready time gives 10 seconds of the live round to pick a loadout; paid loadouts bought in the lobby are taken from the starting match money. Weapons dropped by match players can only be picked up by match players and are removed when the match ends. Modes with their own weapons (Gun Game, Juggernaut, Race, Infection, hiding and hidden-role modes) never use loadouts.</li>
+<li>Dead players spectate: attack and alt attack switch player, jump switches first person and chase.</li>
+<li>Logic has a Match watcher node and a Game mode action, so you can react to rounds or rotate modes. <strong>Next match</strong> (v3.6.14) rotates or votes without logic.</li>
+<li>The rotation remembers its place across map changes (<code>data/kgx_admin_toolbox/match_cycle.json</code>).</li>
+<li>Matches give XP, levels, achievements and unlockable name colors, badges and trails, with leaderboards and a match history: see <a href="basics-match-stats-and-progression.html">Match Stats and Progression</a>.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="panels-events.html"><small class="mono">Previous</small><strong>Events</strong></a><a class="help-pager-next" href="panels-maps.html"><small class="mono">Next</small><strong>Maps</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-panels.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Admin panels</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

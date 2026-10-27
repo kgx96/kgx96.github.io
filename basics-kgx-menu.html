@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>KGX Menu — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="The toolbox&#x27;s page under Q menu &gt; Utilities &gt; KGX, and with KGX Core 1.3.3 one theme and one translation editor for every KGX addon.">
+<meta property="og:title" content="KGX Menu — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="The toolbox&#x27;s page under Q menu &gt; Utilities &gt; KGX, and with KGX Core 1.3.3 one theme and one translation editor for every KGX addon.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/basics-kgx-menu.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/basics-kgx-menu.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html" aria-current="page">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-basics-kgx-menu-what-it-does">What it does</a><a class="filter" href="#help-basics-kgx-menu-where-to-find-it">Where to find it</a><a class="filter" href="#help-basics-kgx-menu-the-panel">The panel</a><a class="filter" href="#help-basics-kgx-menu-how-to-use-it">How to use it</a><a class="filter" href="#help-basics-kgx-menu-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-basics.html">Basics</a><i aria-hidden="true">/</i><span aria-current="page">KGX Menu</span></nav><article class="help-view help-article" aria-labelledby="help-basics-kgx-menu-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Basics</p><h1 id="help-basics-kgx-menu-title">KGX Menu</h1><p class="help-article-sum">The toolbox&#x27;s page under Q menu &gt; Utilities &gt; KGX, and with KGX Core 1.3.3 one theme and one translation editor for every KGX addon.</p><p class="help-article-meta mono">Guide / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-basics-kgx-menu-what-it-does">What it does</a></li><li><a href="#help-basics-kgx-menu-where-to-find-it">Where to find it</a></li><li><a href="#help-basics-kgx-menu-the-panel">The panel</a></li><li><a href="#help-basics-kgx-menu-how-to-use-it">How to use it</a></li><li><a href="#help-basics-kgx-menu-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-basics-kgx-menu-what-it-does">What it does</h4>
+<p>v3.6.21.6.1: the toolbox has a page of its own in <strong>Q menu &gt; Utilities &gt; KGX</strong>, next to KGX Core's pages (KGX Core, KGX Access, KGX Translations). It shows the toolbox's version, what it is, buttons into the toolbox tab, and the main server switches.</p>
+<p>With <strong>KGX Core 1.3.3</strong> or newer (a required item of the toolbox), two more things are shared with every KGX addon:</p>
+<ul>
+<li><strong>One theme.</strong> The toolbox's eight dark-menu themes are KGX themes. Pick one on the KGX Core page and the spawn menu, KGX windows and KGX screens all use it. The dark-menu rows (Dark menus, brightness, colored text) are on the KGX Core page.</li>
+<li><strong>One translation editor.</strong> The toolbox's phrases are on <strong>KGX Translations</strong> with every KGX addon's. An edit there wins in the toolbox at once.</li>
+</ul>
+<p>Without KGX Core, or with an older Core, the toolbox page still shows, and Settings &gt; Display and Settings &gt; Translations work as before.</p>
+<h4 id="help-basics-kgx-menu-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; Utilities &gt; KGX &gt; <strong>KGX's Admin Toolbox</strong>. Everyone can open it. Only superadmins change the server switches; others see them greyed out.</p>
+<h4 id="help-basics-kgx-menu-the-panel">The panel</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version line</td>
+<td><strong>KGX's Admin Toolbox v...</strong> by KGX PRODUCTIONS, and where its tools are.</td>
+</tr>
+<tr>
+<td>KGX Core line</td>
+<td>Whether the language, theme and translations are shared through KGX Core, that Core needs an update to 1.3.3, or that Core is not installed.</td>
+</tr>
+<tr>
+<td><strong>Open the toolbox tab</strong></td>
+<td>Opens the toolbox tab of the spawn menu (Settings &gt; Server Settings, or the first toolbox page you can see). If the server shows the tab to admins only, it says so.</td>
+</tr>
+<tr>
+<td><strong>Setup Wizard</strong></td>
+<td>The server owner only (superadmins while no owner is set): opens the Setup Wizard.</td>
+</tr>
+<tr>
+<td><strong>Read the README and patch notes</strong></td>
+<td>Opens the in-game README (<code>kgxat_readme</code>).</td>
+</tr>
+<tr>
+<td><strong>Translations (KGX Translations)</strong></td>
+<td>With KGX Core 1.3.3: opens KGX Translations on the toolbox's phrases.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Main server settings</h5>
+<p>The same settings as Settings &gt; Server Settings (superadmins):</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Server setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Superadmins only (admins cannot use the toolbox)</strong></td>
+<td><code>kgxat_superadmin_only</code></td>
+</tr>
+<tr>
+<td><strong>Players see the toolbox tab and its weapons (off = admins only)</strong></td>
+<td><code>kgxat_atb_menu_players</code></td>
+</tr>
+<tr>
+<td><strong>Show every action to admins in chat</strong></td>
+<td><code>kgxat_notify_admins</code></td>
+</tr>
+<tr>
+<td><strong>Write the action log to data/kgx_admin_toolbox/logs/</strong></td>
+<td><code>kgxat_log_file</code></td>
+</tr>
+<tr>
+<td><strong>Admin chat commands (!bring, !goto, !freeze... type !help)</strong></td>
+<td><code>kgxat_chat_commands</code></td>
+</tr>
+<tr>
+<td><strong>Block the spawn menu (Q) and spawning for non-admins</strong></td>
+<td><code>kgxat_block_spawnmenu</code></td>
+</tr>
+<tr>
+<td><strong>Show the toolbox version and copyright in chat when a player's game loads</strong></td>
+<td><code>kgxat_credit_message</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Every other server setting is in the toolbox tab &gt; Settings &gt; Server Settings.</p>
+<h4 id="help-basics-kgx-menu-how-to-use-it">How to use it</h4>
+<h5>Pick one theme for every KGX addon</h5>
+<ol>
+<li>Open Q menu &gt; Utilities &gt; KGX &gt; <strong>KGX Core</strong>.</li>
+<li>In <strong>Theme</strong>, pick one of the toolbox's themes (Graphite, Slate blue, Ocean teal, Forest green, Royal purple, Crimson, Amber, Midnight). The dark menus turn on if they were off.</li>
+<li>Under it, set <strong>Dark menus</strong> (Off, Spawn menu (Q) and context menu (C), Every game menu and window), <strong>Brightness (higher = lighter)</strong> and <strong>Colored text</strong>.</li>
+<li>Picking <strong>Dark</strong> or <strong>Light</strong> (KGX Core's own) changes KGX windows only; the dark menus keep the last toolbox theme. Changing the toolbox theme elsewhere (the console, a reset) then leaves Dark or Light alone.</li>
+</ol>
+<h5>Change a toolbox phrase</h5>
+<ol>
+<li>Open Q menu &gt; Utilities &gt; KGX &gt; <strong>KGX Translations</strong> (or press <strong>Translations (KGX Translations)</strong> on the toolbox page).</li>
+<li>In <strong>Addon</strong>, pick <strong>KGX's Admin Toolbox</strong>; pick the <strong>Language</strong>.</li>
+<li>Double-click a phrase and type the new text. Empty = back to the toolbox's own text.</li>
+</ol>
+<h4 id="help-basics-kgx-menu-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>On the first map start with KGX Core 1.3.3, the toolbox's own phrase edits and languages move to KGX Translations; edits already made there win. A copy stays in <code>data/kgx_admin_toolbox/lang_&lt;code&gt;_moved_to_core.json</code> and <code>lang_custom_moved_to_core.json</code>. A language file put in the toolbox's folder later moves at the next start.</li>
+<li>Edits KGX Core has no room for (3000 per language) stay in the toolbox's own file and still work.</li>
+<li>If KGX Core already has 16 languages of the server's own, a toolbox language it cannot take stays with the toolbox: it still works, players pick it in Settings &gt; Display (themes), and the owner edits it under Settings &gt; Translations, below the pointer.</li>
+<li>Who may change phrases stays the toolbox's rule: the server owner (also one without the superadmin rank), or superadmins while no owner is set. With the toolbox installed this applies to every KGX phrase.</li>
+<li>A toolbox theme picked before the update is kept and becomes the KGX theme, once (<code>kgxat_core_theme_linked</code>): a Dark picked afterwards stays Dark.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="basics-phone-book.html"><small class="mono">Previous</small><strong>Phone Book</strong></a><span></span></nav><p class="help-article-end"><a class="text-link" href="help-basics.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Basics</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

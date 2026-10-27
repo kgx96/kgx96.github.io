@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Drugs — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Make and edit RP drugs: what each one does to health, speed, jumps and damage, and the high&#x27;s screen effect.">
+<meta property="og:title" content="Drugs — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Make and edit RP drugs: what each one does to health, speed, jumps and damage, and the high&#x27;s screen effect.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-drugs.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-drugs.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-drugs-what-it-does">What it does</a><a class="filter" href="#help-settings-drugs-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-drugs-the-panel">The panel</a><a class="filter" href="#help-settings-drugs-the-built-in-drugs">The built-in drugs</a><a class="filter" href="#help-settings-drugs-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-drugs-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-drugs-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Drugs</span></nav><article class="help-view help-article" aria-labelledby="help-settings-drugs-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-drugs-title">Drugs</h1><p class="help-article-sum">Make and edit RP drugs: what each one does to health, speed, jumps and damage, and the high&#x27;s screen effect.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-drugs-what-it-does">What it does</a></li><li><a href="#help-settings-drugs-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-drugs-the-panel">The panel</a></li><li><a href="#help-settings-drugs-the-built-in-drugs">The built-in drugs</a></li><li><a href="#help-settings-drugs-how-to-use-it">How to use it</a></li><li><a href="#help-settings-drugs-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-drugs-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-drugs-what-it-does">What it does</h4>
+<p>Drugs are RP items players eat or use. Each drug can heal or hurt, boost speed and jumps, give damage resistance, and give a high with its own screen effect.</p>
+<p>Drugs are buffs of the kind Drug. They live in the same list as World &gt; Create Buffs, and this page edits only the drugs in it.</p>
+<p>Stores sell drugs as item type Food / drink, with the drug id as the class. The Drug Dealer store preset has them. They can also be sold in shipments.</p>
+<h4 id="help-settings-drugs-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Drugs.</p>
+<p>Anyone can open the page. Only superadmins can change drugs and their settings. The <strong>Give me the selected drug (admins, to test)</strong> button works for toolbox admins.</p>
+<p>Players use a drug by left-clicking with the item, or with Alt + E on the drug's prop.</p>
+<h4 id="help-settings-drugs-the-panel">The panel</h4>
+<p>The two checkboxes apply at once. Drug changes are saved when you click <strong>Add as a new drug</strong> or <strong>Update the selected drug</strong>.</p>
+<h5>Settings</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Drugs work</strong></td>
+<td>Master switch for every drug.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Police see HIGH over players who are high nearby</strong></td>
+<td>Jobs with the Police ability see who is high.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Drugs</h5>
+<p>The list shows every drug with the columns <strong>Id</strong>, <strong>Name</strong> and <strong>Does</strong>. Click a drug to load it into the form.</p>
+<h5>Selected / new drug</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id (letters, numbers, _)</strong></td>
+<td>Unique id, also the store class.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Display name.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Prop model (empty = only as an item)</strong></td>
+<td>The prop in the world.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>High: screen effect</strong></td>
+<td><strong>No screen effect</strong>, <strong>Meth: sharp, jittery, cold colors</strong>, <strong>Cocaine: bright, fast, white glow</strong>, <strong>Cannabis: slow, green haze, blur</strong>, <strong>PCP: red, tunnel vision, shaking</strong>, <strong>Trip: rainbow colors, waves</strong>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Health (instant; negative hurts)</strong></td>
+<td>Instant health change.</td>
+<td>-500 to 500</td>
+</tr>
+<tr>
+<td><strong>Armor (instant)</strong></td>
+<td>Instant armor change.</td>
+<td>-500 to 500</td>
+</tr>
+<tr>
+<td><strong>Healing per second</strong> / <strong>Healing for seconds</strong></td>
+<td>Slow healing.</td>
+<td>0-100 / 0-600</td>
+</tr>
+<tr>
+<td><strong>Poison damage per second</strong> / <strong>Poison for seconds</strong></td>
+<td>Slow damage.</td>
+<td>0-100 / 0-600</td>
+</tr>
+<tr>
+<td><strong>Run speed % (100 = normal, 0 = unchanged)</strong> / <strong>Speed for seconds</strong></td>
+<td>Speed boost.</td>
+<td>0-300 / 0-600</td>
+</tr>
+<tr>
+<td><strong>Jump height % (100 = normal, 0 = unchanged)</strong> / <strong>Jump for seconds</strong></td>
+<td>Jump boost.</td>
+<td>0-300 / 0-600</td>
+</tr>
+<tr>
+<td><strong>Drunk for seconds (blurry, swaying)</strong></td>
+<td>Drunk effect.</td>
+<td>0-600</td>
+</tr>
+<tr>
+<td><strong>Sick for seconds (throwing up)</strong></td>
+<td>Sick effect.</td>
+<td>0-600</td>
+</tr>
+<tr>
+<td><strong>High for seconds (screen effect below)</strong></td>
+<td>Length of the high.</td>
+<td>0-900</td>
+</tr>
+<tr>
+<td><strong>Takes % less damage</strong> / <strong>Resistance for seconds</strong></td>
+<td>Damage resistance.</td>
+<td>0-90 / 0-600</td>
+</tr>
+</tbody>
+</table></div>
+<p>All number fields start at 0, which means nothing.</p>
+<p>Below the form: <strong>Add as a new drug</strong>, <strong>Update the selected drug</strong>, <strong>Remove the selected drug</strong> and <strong>Give me the selected drug (admins, to test)</strong>.</p>
+<h4 id="help-settings-drugs-the-built-in-drugs">The built-in drugs</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meth</code></td>
+<td>Meth</td>
+<td>Fast, a little hurt, cold sharp look.</td>
+</tr>
+<tr>
+<td><code>cocaine</code></td>
+<td>Cocaine</td>
+<td>Fast, high jumps, bright glow.</td>
+</tr>
+<tr>
+<td><code>cannabis</code></td>
+<td>Cannabis</td>
+<td>Slow, heals slowly, green haze.</td>
+</tr>
+<tr>
+<td><code>pcp</code></td>
+<td>PCP</td>
+<td>+25 health, half the damage, red tunnel vision.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-drugs-how-to-use-it">How to use it</h4>
+<h5>Make a new drug</h5>
+<ol>
+<li>Type an <strong>Id (letters, numbers, _)</strong> and a <strong>Name</strong>.</li>
+<li>Type a <strong>Prop model</strong>, or leave it empty for an item only.</li>
+<li>Pick a <strong>High: screen effect</strong> and set <strong>High for seconds (screen effect below)</strong>.</li>
+<li>Move the sliders for what the drug does, for example <strong>Run speed %</strong> and <strong>Speed for seconds</strong>.</li>
+<li>Click <strong>Add as a new drug</strong>. An id that is taken is refused.</li>
+</ol>
+<h5>Change a drug</h5>
+<ol>
+<li>Click the drug in the list.</li>
+<li>Change the fields and click <strong>Update the selected drug</strong>.</li>
+</ol>
+<h5>Test a drug</h5>
+<ol>
+<li>Select it in the list.</li>
+<li>Click <strong>Give me the selected drug (admins, to test)</strong>. The item goes to you.</li>
+<li>Use it with left click.</li>
+</ol>
+<h5>Sell drugs in a store</h5>
+<ol>
+<li>Make a store with World &gt; Store Maker and use the Drug Dealer preset, or add items yourself.</li>
+<li>For your own drugs, add an item of type Food / drink with the drug id as the class.</li>
+</ol>
+<h4 id="help-settings-drugs-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting or command</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_drugs</code></td>
+<td>Drugs work</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_drugs_police</code></td>
+<td>Police see who is high</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_buff &lt;player&gt; &lt;id&gt;</code></td>
+<td>Admins: apply a drug or buff to a player</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>kgxat_givefood &lt;id&gt; [count]</code></td>
+<td>Admins: give yourself the item (count 1-50)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-drugs-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>With <strong>Drugs work</strong> off, using a drug says "Drugs are off on this server."</li>
+<li>Removing a drug here removes it from the buff list in World &gt; Create Buffs too.</li>
+<li>Food, drink and buff settings such as stack size are on Settings &gt; Furniture &amp; Buffs.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-display-themes.html"><small class="mono">Previous</small><strong>Display (themes)</strong></a><a class="help-pager-next" href="settings-economy.html"><small class="mono">Next</small><strong>Economy</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

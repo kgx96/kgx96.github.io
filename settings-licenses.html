@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Licenses — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Set the license rules (property, guns, driving, jobs), pick the Tool License&#x27;s tools, and make your own custom licenses.">
+<meta property="og:title" content="Licenses — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Set the license rules (property, guns, driving, jobs), pick the Tool License&#x27;s tools, and make your own custom licenses.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-licenses.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-licenses.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-licenses-what-it-does">What it does</a><a class="filter" href="#help-settings-licenses-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-licenses-the-panel">The panel</a><a class="filter" href="#help-settings-licenses-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-licenses-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-licenses-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Licenses</span></nav><article class="help-view help-article" aria-labelledby="help-settings-licenses-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-licenses-title">Licenses</h1><p class="help-article-sum">Set the license rules (property, guns, driving, jobs), pick the Tool License&#x27;s tools, and make your own custom licenses.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 27, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-licenses-what-it-does">What it does</a></li><li><a href="#help-settings-licenses-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-licenses-the-panel">The panel</a></li><li><a href="#help-settings-licenses-how-to-use-it">How to use it</a></li><li><a href="#help-settings-licenses-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-licenses-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-licenses-what-it-does">What it does</h4>
+<p>Licenses are kept with each player's SteamID. Anyone can buy them at a store that sells them; the F3 hub's Server Store has every built-in one. Admins give and take them in the Player Manager (right-click a player &gt; Licenses).</p>
+<p>This panel sets which actions need a license: buying property, buying guns and ammo, driving, and taking jobs. It lists the built-in licenses.</p>
+<p>It also sets the Tool License: its holders may use the tools you pick, like a Player Access tick. You can make custom licenses too, which can need another license first, be free for some jobs or ranks, and carry their own tools.</p>
+<h4 id="help-settings-licenses-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Licenses.</p>
+<p>Only superadmins can change these settings. Everyone else sees the line "Only superadmins can change these settings." with the controls greyed out. With a server owner set (v3.6.12), only owners change which tools licenses give and the ranks that get them free. Players see their own licenses with the <code>!licenses</code> chat command.</p>
+<h4 id="help-settings-licenses-the-panel">The panel</h4>
+<h5>Rules</h5>
+<p>Each checkbox applies as soon as you tick it.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Buying or renting property needs a Property License</strong></td>
+<td>Property needs the Property License.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Buying guns and ammo (stores, shipments) needs a Gun License</strong></td>
+<td>Weapons and ammo from stores and shipments need the Gun License.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Driving a vehicle needs a Driver's License (not seats or chairs)</strong></td>
+<td>Entering a vehicle needs the Driver's License.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Jobs that ask for a license need it (Settings &gt; Jobs: Needs license)</strong></td>
+<td>Jobs with "Needs license" can only be taken with it.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<p>Any store item can ask for a license too (Store editor &gt; Items: Needs ...). Jobs can also give their members licenses while they are in the job (Settings &gt; Jobs).</p>
+<h5>Built-in</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>License</th>
+<th>Id</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Property License</td>
+<td><code>property</code></td>
+<td>Needed to buy or rent property (<code>kgxat_property_license</code>).</td>
+</tr>
+<tr>
+<td>Gun License</td>
+<td><code>gun</code></td>
+<td>Needed to buy guns and ammo when <code>kgxat_license_gun</code> is on.</td>
+</tr>
+<tr>
+<td>Driver's License</td>
+<td><code>driver</code></td>
+<td>Needed to drive vehicles when <code>kgxat_license_driver</code> is on.</td>
+</tr>
+<tr>
+<td>Food License</td>
+<td><code>food</code></td>
+<td>For cooks and food sellers (store items and jobs can ask for it).</td>
+</tr>
+<tr>
+<td>Medical License</td>
+<td><code>medical</code></td>
+<td>For medics and medical items (store items and jobs can ask for it).</td>
+</tr>
+<tr>
+<td>Business License</td>
+<td><code>business</code></td>
+<td>For shop owners (store items and jobs can ask for it).</td>
+</tr>
+<tr>
+<td>General License</td>
+<td><code>general</code></td>
+<td>A general trade license (store items and jobs can ask for it).</td>
+</tr>
+<tr>
+<td>Tool License</td>
+<td><code>tool</code></td>
+<td>Lets its holder use the tools picked for it.</td>
+</tr>
+<tr>
+<td>Phone License</td>
+<td><code>phone</code></td>
+<td>Lets its holder own and use a phone book (calls, texts, groups) when <code>kgxat_phone_license</code> is on (v3.6.21.2). Phone booths work without it.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Tool License</h5>
+<p>A status line shows how many tools it has, and the ranks that get it for free.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tool License: free for these ranks...</strong></td>
+<td>Pick ranks that have the Tool License without buying it. Saved when you press <strong>Done</strong>.</td>
+</tr>
+<tr>
+<td><strong>Tool License: pick its tools...</strong></td>
+<td>Opens a tool browser with search. Tick the tools, then <strong>Done</strong> saves them.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Tools marked "also: ..." in the browser unlock more than the tool (the same notes as Player Access).</p>
+<h5>Custom licenses</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List: <strong>Id</strong>, <strong>Name</strong>, <strong>Needs</strong></td>
+<td>Every custom license. Click one to load it into the form. A tool count shows after the name.</td>
+</tr>
+<tr>
+<td><strong>Id (letters, digits, _)</strong></td>
+<td>The license id. Built-in ids cannot be used.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>The name players see.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>A short description.</td>
+</tr>
+<tr>
+<td><strong>Needs this license first</strong></td>
+<td><strong>(nothing)</strong>, or a license a player must hold before buying this one.</td>
+</tr>
+<tr>
+<td><strong>Free for these jobs (comma separated)</strong></td>
+<td>Jobs whose members have it without buying it.</td>
+</tr>
+<tr>
+<td><strong>Pick jobs...</strong></td>
+<td>Fills the box above from the list of jobs and teams.</td>
+</tr>
+<tr>
+<td><strong>Free for these ranks...</strong></td>
+<td>Pick ranks that have it without buying it. The button then lists them.</td>
+</tr>
+<tr>
+<td><strong>Tools for this license (makes it a tool license; after the id)...</strong></td>
+<td>Pick tools its holders may use. Type the id first.</td>
+</tr>
+<tr>
+<td><strong>Add / replace (by id) and save</strong></td>
+<td>Saves the form. A license with the same id is replaced.</td>
+</tr>
+<tr>
+<td><strong>Remove the selected one and save</strong></td>
+<td>Deletes the selected license.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-licenses-how-to-use-it">How to use it</h4>
+<h5>Require a Gun License</h5>
+<ol>
+<li>Open Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Licenses as a superadmin.</li>
+<li>Tick <strong>Buying guns and ammo (stores, shipments) needs a Gun License</strong>.</li>
+<li>A player without one now sees "You need a Gun License to buy &lt;item&gt;." at stores and shipments.</li>
+</ol>
+<h5>Hand out tools with the Tool License</h5>
+<ol>
+<li>Press <strong>Tool License: pick its tools...</strong>.</li>
+<li>Search, double-click the tools to tick them, then press <strong>Done</strong>.</li>
+<li>Players who buy the Tool License (or get it in the Player Manager) can use those tools.</li>
+<li>To give it to a rank for free, press <strong>Tool License: free for these ranks...</strong> and pick the rank.</li>
+</ol>
+<h5>Make a custom license</h5>
+<ol>
+<li>Type an <strong>Id (letters, digits, _)</strong>, for example <code>fishing</code>, and a <strong>Name</strong>.</li>
+<li>Optional: pick <strong>Needs this license first</strong>, for example General License.</li>
+<li>Optional: fill <strong>Free for these jobs (comma separated)</strong> or press <strong>Free for these ranks...</strong>.</li>
+<li>Press <strong>Add / replace (by id) and save</strong>.</li>
+<li>Sell it with the Store Maker (item type License), or give it in the Player Manager.</li>
+</ol>
+<h4 id="help-settings-licenses-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Convar / command</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_property_license</code></td>
+<td>1</td>
+<td>Property needs a Property License.</td>
+</tr>
+<tr>
+<td><code>kgxat_license_gun</code></td>
+<td>0</td>
+<td>Guns and ammo need a Gun License.</td>
+</tr>
+<tr>
+<td><code>kgxat_license_driver</code></td>
+<td>0</td>
+<td>Driving needs a Driver's License.</td>
+</tr>
+<tr>
+<td><code>kgxat_license_jobs</code></td>
+<td>1</td>
+<td>Jobs that ask for a license need it.</td>
+</tr>
+<tr>
+<td><code>!licenses</code> / <code>kgxat_mylicenses</code></td>
+<td></td>
+<td>Shows your licenses in chat.</td>
+</tr>
+<tr>
+<td><code>kgxat_licenses [name]</code></td>
+<td></td>
+<td>Admins: lists every license in the console, and which ones a player has.</td>
+</tr>
+</tbody>
+</table></div>
+<p>For server Lua: <code>KGXAT.RegisterLicense({id = "fishing", name = "Fishing License", desc = "Fish at the pier.", check = function(ply) return true end, onGive = function(ply) end, onTake = function(ply) end})</code>, <code>KGXAT.HasLicense(ply, "fishing")</code>, and the hook <code>KGXATLicenseChanged(ply, id, on)</code>. The Logic tool's License action gives or takes one.</p>
+<h4 id="help-settings-licenses-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Admins are not blocked by the gun and driver rules.</li>
+<li>The driver rule does not cover seats and chairs.</li>
+<li>Up to 64 custom licenses. Each can be free for up to 16 jobs and 32 ranks.</li>
+<li>Licenses free for a rank follow rank changes at once.</li>
+<li>Saved in <code>data/kgx_admin_toolbox/license_custom.json</code>.</li>
+<li>A custom license that used the id <code>tool</code> is renamed <code>tool_custom</code>; <code>tool</code> is the built-in Tool License.</li>
+<li>A tool hidden from a player in Settings &gt; Tool Visibility cannot be used, even with a license.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-keybinds.html"><small class="mono">Previous</small><strong>Keybinds</strong></a><a class="help-pager-next" href="settings-lights.html"><small class="mono">Next</small><strong>Lights</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
