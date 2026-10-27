@@ -1,0 +1,92 @@
+name: Bug report
+description: Something in a KGX Garry's Mod addon does not work as it should.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. The more exact the steps, the faster it gets fixed.
+  - type: dropdown
+    id: addon
+    attributes:
+      label: Addon
+      options:
+        - KGX's Admin Toolbox
+        - KGX Core
+        - Throw Equipped
+        - Pickup Equipped
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Addon version
+      description: "Toolbox: shown on its Q menu tab. KGX Core, Throw Equipped, Pickup Equipped: Q menu > Utilities > KGX > KGX Core lists every installed version."
+      placeholder: v3.6.21.6
+    validations:
+      required: true
+  - type: dropdown
+    id: gamemode
+    attributes:
+      label: Gamemode
+      options:
+        - Sandbox
+        - DarkRP (or a DarkRP-based gamemode)
+        - Another gamemode
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does it happen?
+      options:
+        - Singleplayer / listen server
+        - Dedicated server
+    validations:
+      required: true
+  - type: input
+    id: adminmod
+    attributes:
+      label: Admin mod
+      description: ULX, SAM, sAdmin, none...
+  - type: input
+    id: tool
+    attributes:
+      label: Tool, panel or feature
+      placeholder: e.g. Economy > Treasury Node, or Throw Equipped carry
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      placeholder: |
+        1. Hold the Treasury Node tool
+        2. Right click a node
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+  - type: textarea
+    id: errors
+    attributes:
+      label: Console errors
+      description: Lua errors from the game console (client) or the server console. Paste them as they are.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: I am on the newest version of the addon.
+          required: true
+        - label: It still happens with other addons that touch the same thing turned off (if you could try).
