@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Gameplay — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Pick the server mode (Sandbox, Build / PvP or RP) and set the RP rules, movement, poop by a timer, citizens, Build/PvP, anti prop-kill and death screen.">
+<meta property="og:title" content="Gameplay — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Pick the server mode (Sandbox, Build / PvP or RP) and set the RP rules, movement, poop by a timer, citizens, Build/PvP, anti prop-kill and death screen.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-gameplay.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-gameplay.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-gameplay-what-it-does">What it does</a><a class="filter" href="#help-settings-gameplay-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-gameplay-the-panel">The panel</a><a class="filter" href="#help-settings-gameplay-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-gameplay-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-gameplay-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Gameplay</span></nav><article class="help-view help-article" aria-labelledby="help-settings-gameplay-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-gameplay-title">Gameplay</h1><p class="help-article-sum">Pick the server mode (Sandbox, Build / PvP or RP) and set the RP rules, movement, poop by a timer, citizens, Build/PvP, anti prop-kill and death screen.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-gameplay-what-it-does">What it does</a></li><li><a href="#help-settings-gameplay-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-gameplay-the-panel">The panel</a></li><li><a href="#help-settings-gameplay-how-to-use-it">How to use it</a></li><li><a href="#help-settings-gameplay-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-gameplay-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-gameplay-what-it-does">What it does</h4>
+<p>Gameplay is where you choose how the whole server plays. The <strong>Server mode</strong> box switches between Sandbox, Build / PvP and RP. The rest of the page sets the rules that go with each mode.</p>
+<p>It also holds movement speeds, players pooping by themselves on a timer (and what E on a poop does), the citizen rank and spawn weapons, anti prop-kill, the death screen and kill cam, and the on/off switches for item spawners and vehicle pads.</p>
+<p>While DarkRP runs, RP mode uses DarkRP's own jobs, doors and rules instead of the toolbox's.</p>
+<h4 id="help-settings-gameplay-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Gameplay.</p>
+<p>Anyone can open the page, but only superadmins can change the settings. The controls are greyed out for everyone else. The last checkbox, <strong>Show my Build/PvP mode</strong>, is a personal setting every player can change.</p>
+<p>Players switch between Build and PvP with the chat commands <code>!build</code>, <code>!pvp</code> and <code>!mode</code>. Anyone can see the current server mode with <code>!servermode</code>.</p>
+<h4 id="help-settings-gameplay-the-panel">The panel</h4>
+<p>Checkboxes and the three drop-down boxes apply as soon as you change them. Sliders only apply when you click <strong>Apply the numbers above</strong> near the bottom of the page.</p>
+<h5>Server mode</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Server mode</strong></td>
+<td><strong>Sandbox (no modes)</strong>: plain sandbox with no Build/PvP, jobs or property. <strong>Build / PvP</strong>: players pick Build or PvP mode. <strong>RP (jobs, property, RP rules)</strong>: jobs (F4), property and the RP rules below.</td>
+<td>Build / PvP</td>
+</tr>
+</tbody>
+</table></div>
+<h5>RP mode</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Only admins can noclip</strong></td>
+<td>In RP mode, only toolbox admins can noclip. Players already flying are put back on their feet.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Players can only spawn props (no weapons, entities, NPCs or vehicles from the spawn menu)</strong></td>
+<td>In RP mode, players can only spawn props. Keys, Pockets and Hands can still be taken. Admins can spawn anything.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Jobs (Settings &gt; Jobs, F4)</strong></td>
+<td>Turns the toolbox job system on in RP mode.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Job equip (taking a job)</strong></td>
+<td>How a player taking a job (or given one) gets its gear. <strong>Dissolve</strong>: they die dissolving and respawn where they stood (or at the job's spawn). <strong>Instant death</strong>: the same, the body falls. <strong>Instant loadout (Loadout / RP)</strong>: they respawn in place without dying. <strong>Off</strong>: the job's weapons are given at once, no respawn. The death takes nothing: no money, backpack or pocket drop, no death count, death screen, kill cam, kill feed or damage log entry. Weapons bought before come back.</td>
+<td>Dissolve</td>
+</tr>
+<tr>
+<td><strong>Property can be bought and rented (World &gt; Property)</strong></td>
+<td>Turns property buying and renting on in RP mode.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Most properties per player</strong></td>
+<td>How many properties one player may own or rent.</td>
+<td>2 (1-20)</td>
+</tr>
+<tr>
+<td><strong>Buying or renting property needs a Property License (sold at stores: item type Property License)</strong></td>
+<td>Players need a Property License to buy or rent.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Players carrying Keys can use the Door Maker on their own props</strong></td>
+<td>Key holders can turn their own props into doors with the Door Maker.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Movement (every player; 0 = the gamemode's own)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Walk speed (Sandbox 200)</strong></td>
+<td>Walk speed of every player.</td>
+<td>0 (0-1000)</td>
+</tr>
+<tr>
+<td><strong>Run speed (Sandbox 400)</strong></td>
+<td>Run speed of every player.</td>
+<td>0 (0-2000)</td>
+</tr>
+<tr>
+<td><strong>Slow walk speed, Alt (Sandbox 100)</strong></td>
+<td>Slow walk (Alt) speed of every player.</td>
+<td>0 (0-1000)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Set after every spawn and at once when changed, for every player whose speed nothing else changed meanwhile. Player Loadouts and game mode roles set their own speeds; buffs, boosts and handcuffs change it for a while. Back to 0: the gamemode's own speed from the next spawn. Press <strong>Apply the numbers above</strong>.</p>
+<h5>Poop</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Players poop by themselves now and then (timer)</strong></td>
+<td>Every player (or only Hobo jobs, below) drops a poop behind them at a random time between the two times below.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Who poops by themselves</strong></td>
+<td>Every player, or only those who may use Poop (Hobo jobs and admins while Police &amp; Crime limits Poop to hobos).</td>
+<td>Every player</td>
+</tr>
+<tr>
+<td><strong>Shortest time between two poops (seconds)</strong></td>
+<td></td>
+<td>300 (10-7200)</td>
+</tr>
+<tr>
+<td><strong>Longest time between two poops (seconds)</strong></td>
+<td></td>
+<td>600 (10-7200)</td>
+</tr>
+<tr>
+<td><strong>Warn the player 5 seconds before (a rumble)</strong></td>
+<td>A sound and "Your stomach rumbles... you need to go."</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Seconds a poop stays on the ground</strong></td>
+<td>Every poop (by the timer, dropped or thrown). Was always 60 before v3.6.12.1.</td>
+<td>60 (5-3600)</td>
+</tr>
+<tr>
+<td><strong>Most poops on the ground on the map (oldest goes first)</strong></td>
+<td>A cap for the whole map.</td>
+<td>40 (1-500)</td>
+</tr>
+<tr>
+<td><strong>E on a poop</strong></td>
+<td>Everyone chooses (Eat it / Pick it up / Pick it up and hold it / Leave it), only those who may use Poop choose (everyone else eats it), or Eat it (no choice, as before).</td>
+<td>Everyone chooses</td>
+</tr>
+<tr>
+<td><strong>Most poop carried by players with the Poop weapon (job)</strong></td>
+<td>Players whose job (or an admin) gave them the Poop weapon carry up to this many picked-up poops. Everyone else carries one at a time.</td>
+<td>3 (1-20)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nobody pooping is skipped while dead, in a vehicle or seat, noclipping, spectating, ragdolled or in a black box jail; they go when that ends.</p>
+<p>A poop on the ground cannot be thrown: E does not carry it, Pockets do not take it, the gravity gun does not pick it up or punt it, and only toolbox admins move it with the physics gun. <strong>Pick it up</strong> puts it in the Poop weapon (given if the player has none) without switching to it; <strong>Pick it up and hold it</strong> also switches to it. Then left click throws it and right click drops it. A Poop weapon that only came from picking poop up is gone with the last poop. Players with their own Poop weapon throw their picked-up poop first (no wait), then their own as before.</p>
+<p>Press <strong>Apply the numbers above</strong> after changing the sliders. Who may use the Poop weapon, its wait and being sick: Settings &gt; Police &amp; Crime.</p>
+<h5>Citizens</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Citizens</strong></td>
+<td><strong>Off</strong>, <strong>In RP mode</strong> or <strong>In every mode</strong>. New players with the rank <code>user</code> get the citizen rank and the citizen weapons.</td>
+<td>In RP mode</td>
+</tr>
+<tr>
+<td><strong>Citizen rank</strong> text box + <strong>Apply</strong></td>
+<td>The rank new players get. With ULX or SAM it is created if missing (inheriting from user). An admin rank is refused.</td>
+<td><code>citizen</code></td>
+</tr>
+<tr>
+<td><strong>Citizens spawn with</strong> text box + <strong>Apply</strong></td>
+<td>Weapon classes, comma separated. In RP mode everyone without a job gets these.</td>
+<td><code>kgxat_hands</code></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Build / PvP mode</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>New players start in Build mode</strong></td>
+<td>Players join in Build mode instead of PvP mode.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Build mode players may noclip, PvP players may not (admins always may)</strong></td>
+<td>Ties noclip to Build mode.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Seconds between switches</strong></td>
+<td>Cooldown between a player's own switches.</td>
+<td>10 (0-300)</td>
+</tr>
+<tr>
+<td><strong>Seconds after a fight before Build mode is allowed</strong></td>
+<td>Stops players escaping a fight by switching to Build.</td>
+<td>15 (0-120)</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Anti prop-kill</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anti prop-kill on</strong></td>
+<td>Master switch for the two options below and the speed cap.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Props held with the physgun pass through players (solid again once nobody is inside)</strong></td>
+<td>Held props do not collide with players.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Props cannot crush players</strong></td>
+<td>Thrown or pushed props deal no crush damage to players.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Fastest throw for non-admins (0 = no limit)</strong></td>
+<td>Speed cap on physgun throws.</td>
+<td>0 (0-5000)</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Deaths: death screen and kill cam</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Death screen: killer, weapon, distance, headshot, the killer's health left, the damage you took</strong></td>
+<td>Shows players how they died.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>The death screen names the killer (off: weapon and distance only)</strong></td>
+<td>Hides the killer's name when off.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Kill cam</strong></td>
+<td><strong>Off</strong>, <strong>Killer's view (live)</strong>, <strong>Replay of the last seconds</strong>, or <strong>Killer's view, then the replay</strong>.</td>
+<td>Killer's view, then the replay</td>
+</tr>
+<tr>
+<td><strong>Kill cam in RP mode too (it shows where the killer is)</strong></td>
+<td>The kill cam is off in RP mode unless this is ticked.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Seconds of the killer's live view</strong></td>
+<td>Length of the live view.</td>
+<td>4 (1-10)</td>
+</tr>
+<tr>
+<td><strong>Seconds the replay goes back</strong></td>
+<td>Length of the replay.</td>
+<td>5 (2-8)</td>
+</tr>
+</tbody>
+</table></div>
+<h5>World</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Item spawners give out items (World &gt; Item Spawner)</strong></td>
+<td>Turns all item spawners on or off.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Vehicle pads give out vehicles (Economy &gt; Vehicle Pad)</strong></td>
+<td>Turns all vehicle pads on or off.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Apply the numbers above</strong></td>
+<td>Sends every slider on the page to the server.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Your own HUD</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Show my Build/PvP mode</strong></td>
+<td>Shows BUILD MODE or PVP MODE on your HUD. Client setting <code>kgxat_build_hud</code>.</td>
+<td>On</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-gameplay-how-to-use-it">How to use it</h4>
+<h5>Run an RP server</h5>
+<ol>
+<li>Open Settings &gt; Gameplay as a superadmin.</li>
+<li>Set <strong>Server mode</strong> to <strong>RP (jobs, property, RP rules)</strong>. Every player is told the new mode.</li>
+<li>Tick or untick <strong>Only admins can noclip</strong> and <strong>Players can only spawn props</strong> to taste.</li>
+<li>Set <strong>Citizens</strong> to <strong>In RP mode</strong>, then type the weapons citizens get in <strong>Citizens spawn with</strong> and click <strong>Apply</strong>.</li>
+<li>Set up jobs in Settings &gt; Jobs and property in World &gt; Property.</li>
+</ol>
+<h5>Run a Build / PvP server</h5>
+<ol>
+<li>Set <strong>Server mode</strong> to <strong>Build / PvP</strong>. Everyone is put back into the default mode.</li>
+<li>Tick <strong>New players start in Build mode</strong> if builders should be the default.</li>
+<li>Move <strong>Seconds between switches</strong> and <strong>Seconds after a fight before Build mode is allowed</strong>, then click <strong>Apply the numbers above</strong>.</li>
+<li>Tell players to type <code>!build</code> or <code>!pvp</code>. Builders get a blue BUILD tag above their head.</li>
+</ol>
+<h5>Put a player in Build or PvP mode yourself</h5>
+<ol>
+<li>Open the player's menu in the Player Manager.</li>
+<li>Click <strong>Put in Build mode</strong> or <strong>Put in PvP mode</strong>. No cooldown applies.</li>
+</ol>
+<h4 id="help-settings-gameplay-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting or command</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_playmode</code></td>
+<td>0 = Sandbox, 1 = Build / PvP, 2 = RP</td>
+<td>1</td>
+<td>0-2</td>
+</tr>
+<tr>
+<td><code>kgxat_rp_noclip</code></td>
+<td>Only admins noclip in RP mode</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_rp_props_only</code></td>
+<td>Players spawn only props in RP mode</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_jobs</code></td>
+<td>Jobs in RP mode</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_job_equip</code></td>
+<td>Taking a job: 3 = dissolve, 2 = instant death, 1 = instant loadout, 0 = off</td>
+<td>3</td>
+<td>0-3</td>
+</tr>
+<tr>
+<td><code>kgxat_walk_speed</code></td>
+<td>Walk speed of every player (0 = gamemode)</td>
+<td>0</td>
+<td>0-1000</td>
+</tr>
+<tr>
+<td><code>kgxat_run_speed</code></td>
+<td>Run speed of every player (0 = gamemode)</td>
+<td>0</td>
+<td>0-2000</td>
+</tr>
+<tr>
+<td><code>kgxat_slowwalk_speed</code></td>
+<td>Slow walk speed of every player (0 = gamemode)</td>
+<td>0</td>
+<td>0-1000</td>
+</tr>
+<tr>
+<td><code>kgxat_auto_poop</code></td>
+<td>Players poop by themselves on a timer</td>
+<td>0</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_auto_poop_who</code></td>
+<td>0 = every player, 1 = only those who may use Poop</td>
+<td>0</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_auto_poop_min</code>, <code>kgxat_auto_poop_max</code></td>
+<td>Shortest / longest seconds between two poops</td>
+<td>300 / 600</td>
+<td>10-7200</td>
+</tr>
+<tr>
+<td><code>kgxat_auto_poop_warn</code></td>
+<td>Warn 5 seconds before</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_poop_life</code></td>
+<td>Seconds a poop stays on the ground</td>
+<td>60</td>
+<td>5-3600</td>
+</tr>
+<tr>
+<td><code>kgxat_poop_ground_max</code></td>
+<td>Most poops on the map</td>
+<td>40</td>
+<td>1-500</td>
+</tr>
+<tr>
+<td><code>kgxat_poop_pickup</code></td>
+<td>E on a poop: 0 = eat it, 1 = everyone chooses, 2 = only those who may use Poop choose</td>
+<td>1</td>
+<td>0-2</td>
+</tr>
+<tr>
+<td><code>kgxat_poop_carry</code></td>
+<td>Most picked-up poop for players with their own Poop weapon</td>
+<td>3</td>
+<td>1-20</td>
+</tr>
+<tr>
+<td><code>kgxat_property</code></td>
+<td>Property in RP mode</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_property_max</code></td>
+<td>Properties per player</td>
+<td>2</td>
+<td>1-20</td>
+</tr>
+<tr>
+<td><code>kgxat_property_license</code></td>
+<td>Property needs a license</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_keys_doormaker</code></td>
+<td>Key holders may use the Door Maker</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_citizens</code></td>
+<td>0 = off, 1 = RP mode, 2 = always</td>
+<td>1</td>
+<td>0-2</td>
+</tr>
+<tr>
+<td><code>kgxat_citizen_rank</code></td>
+<td>Citizen rank name</td>
+<td><code>citizen</code></td>
+<td>text</td>
+</tr>
+<tr>
+<td><code>kgxat_citizen_weapons</code></td>
+<td>Citizen spawn weapons</td>
+<td><code>kgxat_hands</code></td>
+<td>text</td>
+</tr>
+<tr>
+<td><code>kgxat_build_default</code></td>
+<td>Start in Build mode</td>
+<td>0</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_build_noclip</code></td>
+<td>Builders may noclip</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_build_cooldown</code></td>
+<td>Seconds between switches</td>
+<td>10</td>
+<td>0-300</td>
+</tr>
+<tr>
+<td><code>kgxat_build_combat</code></td>
+<td>Seconds after a fight</td>
+<td>15</td>
+<td>0-120</td>
+</tr>
+<tr>
+<td><code>kgxat_apk</code>, <code>kgxat_apk_ghost</code>, <code>kgxat_apk_nodamage</code></td>
+<td>Anti prop-kill switches</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_apk_maxspeed</code></td>
+<td>Throw speed cap</td>
+<td>0</td>
+<td>0-5000</td>
+</tr>
+<tr>
+<td><code>kgxat_deathscreen</code>, <code>kgxat_deathscreen_killer</code></td>
+<td>Death screen switches</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_killcam</code></td>
+<td>0 off, 1 live, 2 replay, 3 both</td>
+<td>3</td>
+<td>0-3</td>
+</tr>
+<tr>
+<td><code>kgxat_killcam_rp</code></td>
+<td>Kill cam in RP mode</td>
+<td>0</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_killcam_time</code></td>
+<td>Live view seconds</td>
+<td>4</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td><code>kgxat_killcam_replay</code></td>
+<td>Replay seconds</td>
+<td>5</td>
+<td>2-8</td>
+</tr>
+<tr>
+<td><code>kgxat_itemspawners</code>, <code>kgxat_vehiclepads</code></td>
+<td>World switches</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>!build</code>, <code>!pvp</code>, <code>!mode</code></td>
+<td>Players: switch to Build, to PvP, or toggle</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>kgxat_build [0/1]</code></td>
+<td>Console version of the above (no number = toggle)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>!servermode</code></td>
+<td>Shows the current server mode</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-gameplay-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Build mode players cannot hurt players and cannot be hurt by players, their props or their vehicles. NPCs and the world still hurt them.</li>
+<li>Players cannot switch to Build mode while jailed or during a Game Modes match.</li>
+<li>Leaving Build mode ends a player's noclip (admins keep theirs).</li>
+<li>The citizen rank and weapons text boxes only accept letters, numbers, <code>_</code>, <code>-</code> (and commas, spaces and dots for weapons).</li>
+<li>Admins and other ranks are not changed by the Citizens setting. Outside RP mode, a Settings &gt; Player Loadouts entry for the citizen rank wins over the citizen weapons.</li>
+<li>During a kill cam, E changes the view (killer, victim, overview). Respawning ends it. Admins can replay any of the last 60 kills from Utilities &gt; Damage Log (right-click a kill).</li>
+<li>Typed slider values stay unsent until you click <strong>Apply the numbers above</strong>.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-furniture-and-buffs.html"><small class="mono">Previous</small><strong>Furniture &amp; Buffs</strong></a><a class="help-pager-next" href="settings-hud-and-hub.html"><small class="mono">Next</small><strong>HUD &amp; Hub</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

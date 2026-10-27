@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Backup / Restore — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Save every toolbox setting and data file in one backup, restore it later, and move backups between servers.">
+<meta property="og:title" content="Backup / Restore — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Save every toolbox setting and data file in one backup, restore it later, and move backups between servers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-backup-restore.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-backup-restore.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-backup-restore-what-it-does">What it does</a><a class="filter" href="#help-settings-backup-restore-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-backup-restore-the-panel">The panel</a><a class="filter" href="#help-settings-backup-restore-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-backup-restore-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-backup-restore-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Backup / Restore</span></nav><article class="help-view help-article" aria-labelledby="help-settings-backup-restore-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-backup-restore-title">Backup / Restore</h1><p class="help-article-sum">Save every toolbox setting and data file in one backup, restore it later, and move backups between servers.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-backup-restore-what-it-does">What it does</a></li><li><a href="#help-settings-backup-restore-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-backup-restore-the-panel">The panel</a></li><li><a href="#help-settings-backup-restore-how-to-use-it">How to use it</a></li><li><a href="#help-settings-backup-restore-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-backup-restore-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-backup-restore-what-it-does">What it does</h4>
+<p>Backup / Restore saves the whole toolbox state in one file. A backup holds every toolbox data file and every toolbox server setting: Player Access, limits, loadouts, warps, zones, signs, spawn points, teleporters, permanent props, prefabs, rules, bans and the rest.</p>
+<p>Restoring a backup first saves the current state as a new backup. Then it writes the backup's files and settings and restarts the map after 10 seconds. You can also rename, download, upload and delete backups, so you can share one with another server.</p>
+<h4 id="help-settings-backup-restore-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Backup / Restore.</p>
+<p>Superadmins only. Other players see the description and "Only superadmins can make or restore backups." With a server owner set (v3.6.12, <code>kgxat_owner add &lt;SteamID&gt;</code> in the server console), only owners can; see Settings &gt; Permission Report.</p>
+<p>The Reset everything / wipe map data window in Settings &gt; Server Settings also has a <strong>Make a backup now</strong> button, and saves a backup automatically before it resets or wipes. To undo a wipe, restore that backup here.</p>
+<h4 id="help-settings-backup-restore-the-panel">The panel</h4>
+<p>The list shows every backup on the server, newest first.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backup</strong></td>
+<td>The file name, e.g. <code>backup_2026-10-21_14-30-00.json</code>.</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>Size in KB.</td>
+</tr>
+<tr>
+<td><strong>Made</strong></td>
+<td>Date and time of the file.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Make a backup now</strong></td>
+<td>Saves a new backup and tells you its path.</td>
+</tr>
+<tr>
+<td><strong>Restore selected (restarts the map)...</strong></td>
+<td>Asks to confirm, saves the current state as a new backup, restores the selected one, then restarts the map in 10 seconds.</td>
+</tr>
+<tr>
+<td><strong>Delete selected...</strong></td>
+<td>Asks to confirm, then deletes the selected backup.</td>
+</tr>
+<tr>
+<td><strong>Rename selected...</strong></td>
+<td>Asks for a new name: 1-60 letters, digits, <code>_</code> or <code>-</code>. Refused if that name exists.</td>
+</tr>
+<tr>
+<td><strong>Copy the selected backup's path</strong></td>
+<td>Copies <code>garrysmod/data/kgx_admin_toolbox/backups/&lt;name&gt;</code> to your clipboard.</td>
+</tr>
+<tr>
+<td><strong>Download selected to my computer</strong></td>
+<td>Sends the backup to your game. It is saved in your own <code>garrysmod/data/kgx_admin_toolbox_backups/</code> as a <code>.txt</code> file, and the path is copied.</td>
+</tr>
+<tr>
+<td><strong>Upload a backup from my computer...</strong></td>
+<td>Opens a window listing the <code>.txt</code> and <code>.json</code> files in your <code>garrysmod/data/kgx_admin_toolbox_backups/</code>. Pick one and press <strong>Upload the selected file to the server</strong>.</td>
+</tr>
+<tr>
+<td><strong>Refresh</strong></td>
+<td>Reloads the list.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-backup-restore-how-to-use-it">How to use it</h4>
+<h5>Make a backup before a big change</h5>
+<ol>
+<li>Open Settings &gt; Backup / Restore.</li>
+<li>Press <strong>Make a backup now</strong>. The new file appears at the top of the list.</li>
+<li>Optional: select it, press <strong>Rename selected...</strong> and give it a clear name such as <code>before_event</code>.</li>
+</ol>
+<h5>Restore a backup</h5>
+<ol>
+<li>Select the backup in the list.</li>
+<li>Press <strong>Restore selected (restarts the map)...</strong> and confirm with <strong>Restore</strong>.</li>
+<li>The current state is saved as a new backup first. Then the backup's files and settings are written.</li>
+<li>The map restarts after 10 seconds and everything loads from the restored files.</li>
+</ol>
+<h5>Copy a backup to another server</h5>
+<ol>
+<li>On the first server, select the backup and press <strong>Download selected to my computer</strong>.</li>
+<li>The file is saved as <code>garrysmod/data/kgx_admin_toolbox_backups/&lt;name&gt;.txt</code> on your computer. Send that file to the other admin if needed.</li>
+<li>The admin who uploads must have the file in their own <code>garrysmod/data/kgx_admin_toolbox_backups/</code> folder.</li>
+<li>On the other server, press <strong>Upload a backup from my computer...</strong>, select the file and press <strong>Upload the selected file to the server</strong>.</li>
+<li>It is checked and saved as <code>uploaded_&lt;name&gt;.json</code>. Select it in the list and restore it.</li>
+</ol>
+<h4 id="help-settings-backup-restore-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>File or folder</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>garrysmod/data/kgx_admin_toolbox/backups/</code></td>
+<td>Backups on the server.</td>
+</tr>
+<tr>
+<td><code>garrysmod/data/kgx_admin_toolbox_backups/</code></td>
+<td>Downloads and uploads on your own computer.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-backup-restore-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Restore also removes toolbox data files made after the backup, with their <code>_tmp</code> and <code>_bak</code> copies. They are kept in the safety backup made first.</li>
+<li>After a restore the toolbox saves none of its data files until the map changes, so data in memory cannot overwrite the restored files. Logs and backups still save. The console lists each file it held back.</li>
+<li>Backups leave out the <code>logs</code>, <code>backups</code>, <code>_tmp</code>, <code>_bak</code> and <code>_broken</code> folders.</li>
+<li>Only toolbox settings stored in the backup are restored. Settings of other addons are not touched.</li>
+<li>An upload that is not a toolbox backup is refused with "That file is not a toolbox backup."</li>
+<li>Uploaded names get a number added if the name is taken (<code>uploaded_&lt;name&gt;_2.json</code>).</li>
+<li>Very large backups cannot be downloaded in game. Copy them from the server's data folder instead.</li>
+<li>The game cannot open folders. Paste a copied path into your file browser.</li>
+<li>Moving everything by hand also works: copy a backup file into the other server's <code>garrysmod/data/kgx_admin_toolbox/backups/</code> folder.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-backpack-and-storage.html"><small class="mono">Previous</small><strong>Backpack &amp; Storage</strong></a><a class="help-pager-next" href="settings-carrying-e-and-hands.html"><small class="mono">Next</small><strong>Carrying (E &amp; Hands)</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

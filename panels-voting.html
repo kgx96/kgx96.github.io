@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Voting — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Start polls, map votes and server mode votes, manage the map pool, and set rock the vote, nominations, kick and mute votes and elections.">
+<meta property="og:title" content="Voting — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Start polls, map votes and server mode votes, manage the map pool, and set rock the vote, nominations, kick and mute votes and elections.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-voting.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-voting.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html" aria-current="page">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-panels-voting-what-it-does">What it does</a><a class="filter" href="#help-panels-voting-where-to-find-it">Where to find it</a><a class="filter" href="#help-panels-voting-the-panel">The panel</a><a class="filter" href="#help-panels-voting-how-to-use-it">How to use it</a><a class="filter" href="#help-panels-voting-settings-and-commands">Settings and commands</a><a class="filter" href="#help-panels-voting-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-panels.html">Admin panels</a><i aria-hidden="true">/</i><span aria-current="page">Voting</span></nav><article class="help-view help-article" aria-labelledby="help-panels-voting-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Admin panels &gt; Utilities</p><h1 id="help-panels-voting-title">Voting</h1><p class="help-article-sum">Start polls, map votes and server mode votes, manage the map pool, and set rock the vote, nominations, kick and mute votes and elections.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-panels-voting-what-it-does">What it does</a></li><li><a href="#help-panels-voting-where-to-find-it">Where to find it</a></li><li><a href="#help-panels-voting-the-panel">The panel</a></li><li><a href="#help-panels-voting-how-to-use-it">How to use it</a></li><li><a href="#help-panels-voting-settings-and-commands">Settings and commands</a></li><li><a href="#help-panels-voting-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-panels-voting-what-it-does">What it does</h4>
+<p>Voting runs up to three votes at once, tagged A, B and C. Each vote shows as a box on the left of every screen. Map votes show as a row of map thumbnails at the top.</p>
+<p>Players vote with the number keys, which go to the first vote they have not voted in yet. They can also type <code>!vote &lt;number&gt;</code> or <code>!vote &lt;A/B/C&gt; &lt;number&gt;</code>. The box the number keys go to is blue.</p>
+<p>From this panel you start polls, map votes and server mode votes, end or cancel running votes, and keep the map pool. Superadmins also set rock the vote, nominations, automatic map votes, kick and mute votes and job elections.</p>
+<h4 id="help-panels-voting-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Utilities &gt; Voting.</p>
+<ul>
+<li>Starting, ending and cancelling votes: admins, or players ticked for <strong>Voting</strong> in Player Access.</li>
+<li><strong>Map pool</strong> and <strong>Settings</strong>: superadmins only (the controls are greyed out for others).</li>
+<li>Player chat commands work for everyone (see below).</li>
+</ul>
+<h4 id="help-panels-voting-the-panel">The panel</h4>
+<h5>Running votes</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vote list</td>
+<td>Columns <strong>Tag</strong>, <strong>Kind</strong>, <strong>Question</strong>, <strong>Left</strong> (seconds), <strong>Votes</strong>.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>End the selected vote now (count the votes)</strong></td>
+<td>Ends the vote and applies the result. With nothing selected, the newest vote.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Cancel the selected vote (no result)</strong></td>
+<td>Stops the vote without a result.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Vote time (s)</strong></td>
+<td>How long the polls, map votes and mode votes you start from here run.</td>
+<td>30</td>
+<td>10-300</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Poll</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Question</td>
+<td>Up to 120 characters. Required.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>Option 1-6</td>
+<td>Up to 6 answers of 40 characters. Options 3 to 6 are optional. Duplicates are dropped.</td>
+<td>Yes, No</td>
+</tr>
+<tr>
+<td><strong>Start poll</strong></td>
+<td>Starts the poll. The most votes wins; a tie is picked at random.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Map vote</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start a map vote from the map pool (nominations first)</strong></td>
+<td>Nominated maps first, then random pool maps, plus "Stay on &lt;map&gt;".</td>
+<td></td>
+</tr>
+<tr>
+<td>Status line</td>
+<td>Map pool size, nominations, rock the vote count, and the next automatic map vote.</td>
+<td></td>
+</tr>
+<tr>
+<td>Search box and map list</td>
+<td>Columns <strong>Map (Ctrl+click to pick up to 9)</strong>, <strong>Pool</strong>, <strong>Recent</strong>. The current map is not listed.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Add "Stay on this map"</strong></td>
+<td>Adds a stay option to a vote with picked maps.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Start a map vote with the picked maps</strong></td>
+<td>A vote with the maps you selected. Needs 1 map with "Stay", else 2.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Clear the nominations</strong></td>
+<td>Removes every player's nomination.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>The winning map loads after a 10 second countdown. "Stay" or "Extend" keeps the map.</p>
+<h5>Mode vote</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vote on the server mode (Sandbox, Build / PvP, RP)</strong></td>
+<td>Players pick the server mode. The winner sets <code>kgxat_playmode</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Map pool (superadmins)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add the picked maps to the pool</strong></td>
+<td>Adds the selected maps.</td>
+</tr>
+<tr>
+<td><strong>Take the picked maps out of the pool</strong></td>
+<td>Removes the selected maps.</td>
+</tr>
+<tr>
+<td><strong>Empty the pool (every installed map)</strong></td>
+<td>After a confirm, clears the pool. An empty pool means every installed map.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Settings (superadmins)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Setting</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rock the vote (!rtv)</strong></td>
+<td><code>kgxat_rtv</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Rock the vote: percent of players needed</strong></td>
+<td><code>kgxat_rtv_ratio</code></td>
+<td>60</td>
+<td>10-100</td>
+</tr>
+<tr>
+<td><strong>Rock the vote works after (minutes)</strong></td>
+<td><code>kgxat_rtv_wait</code></td>
+<td>5</td>
+<td>0-60</td>
+</tr>
+<tr>
+<td><strong>Nominations (!nominate &lt;map&gt;)</strong></td>
+<td><code>kgxat_nominate</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Maps in a map vote</strong></td>
+<td><code>kgxat_mapvote_maps</code></td>
+<td>6</td>
+<td>2-9</td>
+</tr>
+<tr>
+<td><strong>Recent maps left out (map changes)</strong></td>
+<td><code>kgxat_mapvote_cooldown</code></td>
+<td>3</td>
+<td>0-20</td>
+</tr>
+<tr>
+<td><strong>Map vote time (s)</strong></td>
+<td><code>kgxat_mapvote_time</code></td>
+<td>30</td>
+<td>15-120</td>
+</tr>
+<tr>
+<td><strong>Automatic map vote after (minutes, 0 = never)</strong></td>
+<td><code>kgxat_mapvote_auto</code></td>
+<td>0</td>
+<td>0-600</td>
+</tr>
+<tr>
+<td><strong>"Extend the map" adds (minutes)</strong></td>
+<td><code>kgxat_mapvote_extend</code></td>
+<td>15</td>
+<td>5-120</td>
+</tr>
+<tr>
+<td><strong>Times a map can be extended</strong></td>
+<td><code>kgxat_mapvote_extends</code></td>
+<td>1</td>
+<td>0-5</td>
+</tr>
+<tr>
+<td><strong>Kick votes (!votekick &lt;name&gt; [reason])</strong></td>
+<td><code>kgxat_votekick</code></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Mute votes (!votemute &lt;name&gt; [reason]): voice and chat</strong></td>
+<td><code>kgxat_votemute</code></td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Kick and mute votes only while no admin is online</strong></td>
+<td><code>kgxat_votekick_noadmins</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Yes votes needed (percent)</strong></td>
+<td><code>kgxat_votekick_ratio</code></td>
+<td>60</td>
+<td>50-100</td>
+</tr>
+<tr>
+<td><strong>Fewest yes votes</strong></td>
+<td><code>kgxat_vote_minyes</code></td>
+<td>3</td>
+<td>1-32</td>
+</tr>
+<tr>
+<td><strong>Fewest players online</strong></td>
+<td><code>kgxat_vote_minplayers</code></td>
+<td>4</td>
+<td>2-64</td>
+</tr>
+<tr>
+<td><strong>Ban a vote-kicked player for (minutes, 0 = kick only)</strong></td>
+<td><code>kgxat_votekick_ban</code></td>
+<td>0</td>
+<td>0-1440</td>
+</tr>
+<tr>
+<td><strong>Mute for (minutes)</strong></td>
+<td><code>kgxat_votemute_minutes</code></td>
+<td>10</td>
+<td>1-120</td>
+</tr>
+<tr>
+<td><strong>Seconds between one player's kick or mute votes</strong></td>
+<td><code>kgxat_votekick_cooldown</code></td>
+<td>300</td>
+<td>30-3600</td>
+</tr>
+<tr>
+<td><strong>Elections for jobs set to "Elected by vote" (Settings &gt; Jobs)</strong></td>
+<td><code>kgxat_elections</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Seconds to run for the job</strong></td>
+<td><code>kgxat_election_join</code></td>
+<td>30</td>
+<td>10-120</td>
+</tr>
+<tr>
+<td><strong>Election vote time (s)</strong></td>
+<td><code>kgxat_election_time</code></td>
+<td>30</td>
+<td>15-120</td>
+</tr>
+<tr>
+<td><strong>Apply the numbers above</strong></td>
+<td>Sends the sliders to the server.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-panels-voting-how-to-use-it">How to use it</h4>
+<h5>Ask the players a question</h5>
+<ol>
+<li>Open Utilities &gt; Voting.</li>
+<li>Set <strong>Vote time (s)</strong>.</li>
+<li>Type the question under <strong>Poll</strong> and fill in the options.</li>
+<li>Click <strong>Start poll</strong>. The result is announced on every screen when it ends.</li>
+</ol>
+<h5>Let players pick the next map</h5>
+<ol>
+<li>Click <strong>Start a map vote from the map pool (nominations first)</strong>.</li>
+<li>Players press the number of a thumbnail.</li>
+<li>When time runs out, the winner loads after 10 seconds.</li>
+</ol>
+<h5>Offer a short list of maps</h5>
+<ol>
+<li>Search the map list and Ctrl+click the maps you want.</li>
+<li>Untick <strong>Add "Stay on this map"</strong> if the map must change.</li>
+<li>Click <strong>Start a map vote with the picked maps</strong>.</li>
+</ol>
+<h5>Change maps automatically</h5>
+<ol>
+<li>As a superadmin, set <strong>Automatic map vote after (minutes, 0 = never)</strong>, for example 45.</li>
+<li>Click <strong>Apply the numbers above</strong>.</li>
+<li>After 45 minutes on a map a vote starts by itself with an "Extend the map" option while extends are left.</li>
+</ol>
+<h4 id="help-panels-voting-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Who</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!vote &lt;number&gt;</code></td>
+<td>Everyone</td>
+<td>Vote in the first vote you have not voted in.</td>
+</tr>
+<tr>
+<td><code>!vote &lt;A/B/C&gt; &lt;number&gt;</code></td>
+<td>Everyone</td>
+<td>Vote in a given vote. You can change your vote.</td>
+</tr>
+<tr>
+<td><code>!rtv</code> or <code>!rockthevote</code></td>
+<td>Everyone</td>
+<td>Ask for a map vote. Enough players start one.</td>
+</tr>
+<tr>
+<td><code>!nominate &lt;map&gt;</code></td>
+<td>Everyone</td>
+<td>Put a pool map into the next map vote. One nomination per player.</td>
+</tr>
+<tr>
+<td><code>!nominations</code></td>
+<td>Everyone</td>
+<td>List the nominations.</td>
+</tr>
+<tr>
+<td><code>!maps</code></td>
+<td>Everyone</td>
+<td>List the map pool, with maps on cooldown marked.</td>
+</tr>
+<tr>
+<td><code>!votekick &lt;name&gt; [reason]</code> / <code>!votemute &lt;name&gt; [reason]</code></td>
+<td>Everyone, when on</td>
+<td>Start a kick or mute vote.</td>
+</tr>
+<tr>
+<td><code>kgxat_vote &lt;number&gt;</code> or <code>kgxat_vote &lt;A/B/C&gt; &lt;number&gt;</code></td>
+<td>Everyone</td>
+<td>Console version of <code>!vote</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-panels-voting-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>A fourth vote is refused until one of the three ends. Only one map vote and one mode vote run at a time.</li>
+<li>A map vote with picked maps still holds at most <code>kgxat_mapvote_maps</code> maps.</li>
+<li>Maps played in the last few map changes are left out of map votes and nominations unless there are not enough others.</li>
+<li>When the players choose to stay, or nobody votes, <code>!rtv</code> is blocked for 5 minutes.</li>
+<li>v3.6.14: Utilities &gt; Game Modes &gt; <strong>Next match</strong> runs its own votes between matches: "Which mode next?" (Game Modes modes) and, every N matches, a map vote. They use one of the three vote slots like any vote.</li>
+<li>Kick and mute votes never target toolbox admins, the target cannot vote, and the starter votes yes.</li>
+<li>The time between one player's kick or mute votes is kept by SteamID, so rejoining does not reset it. A mute vote that passes after its target left applies when they come back.</li>
+<li>The map pool and map history are saved in <code>data/kgx_admin_toolbox/mapvote.json</code>. Nominations and rock the vote reset after each map vote.</li>
+<li>Thumbnails come from <code>maps/thumb/&lt;map&gt;.png</code>. Maps without one show a grey box.</li>
+<li>Number keys only vote while a vote is waiting for you; otherwise they switch weapons as usual.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="panels-third-person.html"><small class="mono">Previous</small><strong>Third Person</strong></a><a class="help-pager-next" href="panels-loot-tables.html"><small class="mono">Next</small><strong>Loot Tables</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-panels.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Admin panels</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

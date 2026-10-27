@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Economy — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="The live money overview: every player&#x27;s wallet and bank, give/take/set money, and every store, bank and ATM on the map.">
+<meta property="og:title" content="Economy — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="The live money overview: every player&#x27;s wallet and bank, give/take/set money, and every store, bank and ATM on the map.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-economy.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-economy.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html" aria-current="page">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-panels-economy-what-it-does">What it does</a><a class="filter" href="#help-panels-economy-where-to-find-it">Where to find it</a><a class="filter" href="#help-panels-economy-the-panel">The panel</a><a class="filter" href="#help-panels-economy-how-to-use-it">How to use it</a><a class="filter" href="#help-panels-economy-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-panels.html">Admin panels</a><i aria-hidden="true">/</i><span aria-current="page">Economy</span></nav><article class="help-view help-article" aria-labelledby="help-panels-economy-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Admin panels &gt; Economy</p><h1 id="help-panels-economy-title">Economy</h1><p class="help-article-sum">The live money overview: every player&#x27;s wallet and bank, give/take/set money, and every store, bank and ATM on the map.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-panels-economy-what-it-does">What it does</a></li><li><a href="#help-panels-economy-where-to-find-it">Where to find it</a></li><li><a href="#help-panels-economy-the-panel">The panel</a></li><li><a href="#help-panels-economy-how-to-use-it">How to use it</a></li><li><a href="#help-panels-economy-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-panels-economy-what-it-does">What it does</h4>
+<p>This is the Economy panel in the Economy category. It is the day-to-day view of the server's money. It is not the Economy page under Settings, which holds the server settings (currency, starting money, interest, cash).</p>
+<p>The top list shows every player online with their wallet and bank. Right-click a player to give, take or set money. The bottom list shows every store, bank and ATM on this map, with quick actions to edit, visit, move or remove them.</p>
+<p>A status line at the top tells you if the economy is on, the currency in use, or that DarkRP is running. With DarkRP, wallets are DarkRP money; banks, stores and ATMs still use the toolbox.</p>
+<h4 id="help-panels-economy-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Economy &gt; Economy.</p>
+<p>Toolbox admins can use it. Players can use it if a superadmin ticks <strong>Economy (money of every player, stores list)</strong> in Settings &gt; Player Access. The <strong>Reset everyone's money</strong> button shows only for superadmins.</p>
+<h4 id="help-panels-economy-the-panel">The panel</h4>
+<h5>Players online</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player list</td>
+<td>Columns <strong>Player</strong>, <strong>Wallet</strong> and <strong>Bank</strong>. Click a column header to sort.</td>
+</tr>
+<tr>
+<td>Right-click a player</td>
+<td><strong>Wallet</strong> or <strong>Bank</strong>, then <strong>Give...</strong>, <strong>Take from...</strong> or <strong>Set to...</strong>. A box asks for the amount.</td>
+</tr>
+<tr>
+<td>Saved accounts line</td>
+<td>How many saved accounts there are (players who have joined).</td>
+</tr>
+<tr>
+<td><strong>Refresh players</strong></td>
+<td>Reloads the list.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Stores, banks and ATMs on this map</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Store list</td>
+<td>Columns <strong>Name</strong>, <strong>Type</strong>, <strong>Items</strong>, <strong>Access</strong> and <strong>Owner</strong>.</td>
+</tr>
+<tr>
+<td>Double-click a store</td>
+<td>Teleports you to it.</td>
+</tr>
+<tr>
+<td>Right-click &gt; <strong>Edit...</strong></td>
+<td>Opens the store editor (the same one as Store Maker right-click).</td>
+</tr>
+<tr>
+<td>Right-click &gt; <strong>Go there</strong></td>
+<td>Teleports you to it.</td>
+</tr>
+<tr>
+<td>Right-click &gt; <strong>Move it to where I am looking</strong></td>
+<td>Moves the store to your aim point, facing you. The new spot is saved.</td>
+</tr>
+<tr>
+<td>Right-click &gt; <strong>Remove</strong></td>
+<td>Deletes the store, its items and settings (asks first).</td>
+</tr>
+<tr>
+<td><strong>Refresh stores</strong></td>
+<td>Reloads the list.</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Superadmins</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reset everyone's money (all wallets and banks)...</strong></td>
+<td>Sets every wallet and bank to 0, including offline players. It asks first and cannot be undone.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-panels-economy-how-to-use-it">How to use it</h4>
+<h5>Set a player's bank to an exact amount</h5>
+<ol>
+<li>Find the player in the top list.</li>
+<li>Right-click them and choose <strong>Bank</strong> &gt; <strong>Set to...</strong>.</li>
+<li>Type the amount and press OK. The list updates.</li>
+</ol>
+<h5>Find and fix a store</h5>
+<ol>
+<li>Find the store in the bottom list.</li>
+<li>Double-click it to go there, or right-click &gt; <strong>Edit...</strong> to change it from where you are.</li>
+<li>To move it, look at the new spot, then right-click &gt; <strong>Move it to where I am looking</strong>.</li>
+</ol>
+<h5>Wipe the economy for a new season</h5>
+<ol>
+<li>Log in as a superadmin.</li>
+<li>Click <strong>Reset everyone's money (all wallets and banks)...</strong>.</li>
+<li>Confirm with <strong>Reset all</strong>. Every saved account is cleared and players online drop to 0.</li>
+</ol>
+<h4 id="help-panels-economy-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Give and take are logged in the Action Log. Take never goes below 0.</li>
+<li>You can only change money of players you are allowed to target (not higher ranks).</li>
+<li>Player Manager &gt; Money gives, takes or sets money too; it needs access to this panel.</li>
+<li>Store actions work on stores you may edit: admins can edit every store, other players only their own.</li>
+<li>After a reset, players who were online stay at 0. Offline players have no saved account any more, so they get the starting money again when they next join.</li>
+<li>Make stores with Economy &gt; Store Maker. Give money with a click using Economy &gt; Money.</li>
+<li>Server money settings are in Settings &gt; Economy; paychecks in Settings &gt; Paychecks.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="panels-npc-ai.html"><small class="mono">Previous</small><strong>NPC AI</strong></a><a class="help-pager-next" href="panels-action-log.html"><small class="mono">Next</small><strong>Action Log</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-panels.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Admin panels</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

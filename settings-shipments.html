@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Shipments — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Set up shipments that store-owner jobs buy in the F3 hub and resell, plus the store types that decide which job sells what.">
+<meta property="og:title" content="Shipments — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Set up shipments that store-owner jobs buy in the F3 hub and resell, plus the store types that decide which job sells what.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-shipments.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/settings-shipments.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html" aria-current="page">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-settings-shipments-what-it-does">What it does</a><a class="filter" href="#help-settings-shipments-where-to-find-it">Where to find it</a><a class="filter" href="#help-settings-shipments-the-panel">The panel</a><a class="filter" href="#help-settings-shipments-how-to-use-it">How to use it</a><a class="filter" href="#help-settings-shipments-settings-and-commands">Settings and commands</a><a class="filter" href="#help-settings-shipments-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-settings.html">Settings</a><i aria-hidden="true">/</i><span aria-current="page">Shipments</span></nav><article class="help-view help-article" aria-labelledby="help-settings-shipments-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Settings</p><h1 id="help-settings-shipments-title">Shipments</h1><p class="help-article-sum">Set up shipments that store-owner jobs buy in the F3 hub and resell, plus the store types that decide which job sells what.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-settings-shipments-what-it-does">What it does</a></li><li><a href="#help-settings-shipments-where-to-find-it">Where to find it</a></li><li><a href="#help-settings-shipments-the-panel">The panel</a></li><li><a href="#help-settings-shipments-how-to-use-it">How to use it</a></li><li><a href="#help-settings-shipments-settings-and-commands">Settings and commands</a></li><li><a href="#help-settings-shipments-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-settings-shipments-what-it-does">What it does</h4>
+<p>Shipments let jobs run their own shops. A job buys a shipment in the F3 hub (Shipments tab). It is a box holding several of one item, placed in front of the buyer. The owner sets the price of one, and everyone else buys one with E. The money goes to the owner.</p>
+<p>This page has the shipment rules, the shipment catalog (what can be bought, how many, for how much) and the store types. A store type is a set of classes, such as weapons or food. A job sells the store types ticked for it in Settings &gt; Jobs.</p>
+<h4 id="help-settings-shipments-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Shipments.</p>
+<p>Only superadmins can change these settings. The catalog and store type editors are shown only to superadmins. Others see "Only superadmins can change the shipment list."</p>
+<h4 id="help-settings-shipments-the-panel">The panel</h4>
+<p>Checkboxes and <strong>Owners pay for shipments from</strong> take effect at once. The two sliders take effect when you click <strong>Apply</strong>. Catalog and store type changes are saved straight away, for every map.</p>
+<h5>Rules</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shipments on</strong></td>
+<td>Switches shipments.</td>
+<td>On</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Admins see and may buy every shipment (off: only their job's, like players)</strong></td>
+<td>An admin whose job sells shipments still sees only that job's.</td>
+<td>On</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Items can also be bought one at a time (a box of one)</strong></td>
+<td>Adds a <strong>Buy x1</strong> button in the hub.</td>
+<td>On</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Shipments break when damaged (everything falls out for free)</strong></td>
+<td>Shipments can be broken open.</td>
+<td>On</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Shipments set as a store stay when their owner leaves</strong></td>
+<td>Their sales are mailed to the owner's bank.</td>
+<td>On</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Damage a shipment takes before it breaks</strong></td>
+<td>Shipment health.</td>
+<td>150</td>
+<td>10-5,000</td>
+</tr>
+<tr>
+<td><strong>Most shipments out per player</strong></td>
+<td>Overall limit per player.</td>
+<td>4</td>
+<td>1-20</td>
+</tr>
+<tr>
+<td><strong>Apply</strong></td>
+<td>Saves the two sliders.</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Owners pay for shipments from</strong></td>
+<td>Their wallet, Their bank, or Their bank, the wallet pays the rest.</td>
+<td>Their bank</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<h5>Shipment catalog (superadmins)</h5>
+<p>The list shows <strong>Shipment</strong>, <strong>Units</strong>, <strong>Price</strong>, <strong>Class</strong> and <strong>Jobs</strong>. Click a row to load it into the fields below.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Item type</strong></td>
+<td>Weapon, Ammo, Entity, Prop, Health, Armor, Speed boost (x1.5), Jump boost (x1.5), or Food / drink (a buff id, Create Buffs).</td>
+<td>Weapon</td>
+</tr>
+<tr>
+<td><strong>Class (weapon / entity class, ammo type, or prop model)</strong></td>
+<td>What the shipment holds.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Name shown to players.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Amount per unit (ammo rounds, health / armor points, boost seconds)</strong></td>
+<td>1 to 500.</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Units in one shipment</strong></td>
+<td>1 to 100.</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>Shipment price (admin set)</strong></td>
+<td>What the job pays for the whole shipment, 0 to 100,000.</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td><strong>Price of a box of one (0 = shipment price split up + 10%)</strong></td>
+<td>0 to 100,000.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Shipment prop model (empty = the item's own model)</strong></td>
+<td>The box model. A small preview shows it.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Only these jobs (comma separated; empty = every job that buys this kind)</strong></td>
+<td>Job names.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>A label shown in the hub.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Food: health it gives when eaten (props only; 0 = not food)</strong></td>
+<td>0 to 200. A food prop is eaten when bought or taken.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Sold as</strong></td>
+<td>Normal (store types with its class sell it), or Black market only.</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td><strong>Only these ranks (comma separated; empty = any rank)</strong></td>
+<td>Job rule.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Needs license</strong></td>
+<td>A license the buyer must hold.</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><strong>Most of this one a player has out (0 = only the overall limit)</strong></td>
+<td>0 to 50.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Minutes before the same player buys it again (0 = no wait)</strong></td>
+<td>0 to 1,440.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Buttons: <strong>Add as a new shipment</strong>, <strong>Update the selected shipment</strong> and <strong>Remove the selected shipment</strong>. The catalog holds up to 100 shipments.</p>
+<h5>Store types (superadmins)</h5>
+<p>The list shows <strong>Store type</strong> and <strong>Sells</strong>. Six come by default: General store, Gun store, Food store, Hardware store, Pharmacy and Black market.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Name of the store type.</td>
+</tr>
+<tr>
+<td>Class boxes</td>
+<td>Weapons, Ammo, Food (props set as food), Props, Entities / items, Health &amp; armor, Boosts (speed, jump), Black market.</td>
+</tr>
+<tr>
+<td><strong>Add as a new store type</strong></td>
+<td>Adds the name and ticked classes as a new type.</td>
+</tr>
+<tr>
+<td><strong>Update the selected store type</strong></td>
+<td>Saves changes to the selected type.</td>
+</tr>
+<tr>
+<td><strong>Remove the selected store type</strong></td>
+<td>Deletes it.</td>
+</tr>
+<tr>
+<td><strong>Reset the store types to the defaults</strong></td>
+<td>Back to the six defaults (asks first). Jobs keep their ticks for types that still exist.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-shipments-how-to-use-it">How to use it</h4>
+<h5>Add a pistol shipment for a gun store job</h5>
+<ol>
+<li>Set <strong>Item type</strong> to Weapon and <strong>Class</strong> to <code>weapon_pistol</code>. Type a <strong>Name</strong>.</li>
+<li>Set <strong>Units in one shipment</strong> and <strong>Shipment price (admin set)</strong>.</li>
+<li>Click <strong>Add as a new shipment</strong>.</li>
+<li>In Settings &gt; Jobs, tick Gun store (or General store) for the job.</li>
+</ol>
+<h5>Sell food</h5>
+<ol>
+<li>Set <strong>Item type</strong> to Prop and put a food prop model in <strong>Class</strong>.</li>
+<li>Set <strong>Food: health it gives when eaten</strong> above 0.</li>
+<li>Click <strong>Add as a new shipment</strong>. It is sold by store types with the Food class.</li>
+</ol>
+<h5>Run a shipment as an owner</h5>
+<ol>
+<li>Buy it in the F3 hub, Shipments tab.</li>
+<li>Press Alt + E on it for its window.</li>
+<li>Pick how it works: <strong>Closed shipment</strong>, <strong>Dedicated box (free)</strong> or <strong>Store</strong>. Use <strong>Set the price of one...</strong> to set your price.</li>
+</ol>
+<h4 id="help-settings-shipments-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_shipments</code></td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_admin_all</code></td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_single</code></td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_breakable</code></td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_store_keep</code></td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_health</code></td>
+<td>150</td>
+<td>10-5,000</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_max</code></td>
+<td>4</td>
+<td>1-20</td>
+</tr>
+<tr>
+<td><code>kgxat_shipments_pay</code></td>
+<td>1</td>
+<td>0 = wallet, 1 = bank, 2 = bank first, then wallet</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-settings-shipments-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Shipments need the economy on.</li>
+<li>The catalog and store types are saved in <code>data/kgx_admin_toolbox/shipments.json</code>, for every map.</li>
+<li>Owners take their shipments with them when they leave, except shipments set as a store when <strong>Shipments set as a store stay...</strong> is on.</li>
+<li>In <strong>Store</strong> mode, each sale is mailed to the owner's bank. Only stores can be frozen with the physgun.</li>
+<li>A broken shipment spills everything on the ground for free.</li>
+<li>The owner's window also has <strong>Take one for myself</strong>, <strong>Unpack: everything falls out on the ground</strong> and <strong>Throw the shipment away</strong>.</li>
+<li>Jobs made before v3.5.20 without store type ticks: Store owner sells General store, Black market dealer sells Black market.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="settings-setup-wizard.html"><small class="mono">Previous</small><strong>Setup Wizard</strong></a><a class="help-pager-next" href="settings-spawn-whitelist.html"><small class="mono">Next</small><strong>Spawn Whitelist</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-settings.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Settings</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Getting Started — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Install KGX&#x27;s Admin Toolbox, find its Q menu tab, learn who counts as an admin, and give players tools.">
+<meta property="og:title" content="Getting Started — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Install KGX&#x27;s Admin Toolbox, find its Q menu tab, learn who counts as an admin, and give players tools.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/basics-getting-started.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/basics-getting-started.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html" aria-current="page">Basics <span class="filter-count">07</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.0.0</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-basics-getting-started-what-it-does">What it does</a><a class="filter" href="#help-basics-getting-started-where-to-find-it">Where to find it</a><a class="filter" href="#help-basics-getting-started-who-is-an-admin">Who is an admin</a><a class="filter" href="#help-basics-getting-started-the-panels">The panels</a><a class="filter" href="#help-basics-getting-started-how-to-use-it">How to use it</a><a class="filter" href="#help-basics-getting-started-settings-and-commands">Settings and commands</a><a class="filter" href="#help-basics-getting-started-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-basics.html">Basics</a><i aria-hidden="true">/</i><span aria-current="page">Getting Started</span></nav><article class="help-view help-article" aria-labelledby="help-basics-getting-started-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Basics</p><h1 id="help-basics-getting-started-title">Getting Started</h1><p class="help-article-sum">Install KGX&#x27;s Admin Toolbox, find its Q menu tab, learn who counts as an admin, and give players tools.</p><p class="help-article-meta mono">Guide / Covers v3.6.21.6 / Updated Oct 26, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-basics-getting-started-what-it-does">What it does</a></li><li><a href="#help-basics-getting-started-where-to-find-it">Where to find it</a></li><li><a href="#help-basics-getting-started-who-is-an-admin">Who is an admin</a></li><li><a href="#help-basics-getting-started-the-panels">The panels</a></li><li><a href="#help-basics-getting-started-how-to-use-it">How to use it</a></li><li><a href="#help-basics-getting-started-settings-and-commands">Settings and commands</a></li><li><a href="#help-basics-getting-started-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-basics-getting-started-what-it-does">What it does</h4>
+<p>KGX's Admin Toolbox adds admin tools for the Sandbox tool gun on their own Q menu tab. It works in Sandbox and Sandbox-derived gamemodes (DarkRP and others) that use the tool gun.</p>
+<p>The tab holds tools (used with the tool gun) and panels (settings and lists that open on the right of the menu). Admins can use everything. Superadmins decide which tools and panels non-admin players may use.</p>
+<p>This guide covers the install, the tab and its categories, permissions, Player Access, Find a tool and favorites, and where the toolbox saves its data.</p>
+<h4 id="help-basics-getting-started-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox. The tab label shows the installed version, for example <strong>KGX's Admin Toolbox (v3.6.9.4)</strong>. It sits next to the game's own Tools, Utilities and Options tabs.</p>
+<p>The categories, in order:</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>What is in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Favorites</strong></td>
+<td><strong>Find a tool</strong> and the tools and panels you marked as favorites</td>
+</tr>
+<tr>
+<td><strong>Cheats</strong></td>
+<td>God Mode, Noclip, Health &amp; Armor, Movement, Give Weapon and similar</td>
+</tr>
+<tr>
+<td><strong>Fun</strong></td>
+<td>Explosion, Launch, Rocket, Smite, Ragdoll, Player Effects</td>
+</tr>
+<tr>
+<td><strong>Functions</strong></td>
+<td>Teleport, Freeze, Moderation, Jail, Spectate, Warp Points, Ranks, Keys</td>
+</tr>
+<tr>
+<td><strong>Building</strong></td>
+<td>Door Maker, Button, Keypad, Precision Move, Stacker, Prefabs, Cameras</td>
+</tr>
+<tr>
+<td><strong>World</strong></td>
+<td>Zones, NPC Spawner, Spawn Points, Storage, Talking NPC, Logic</td>
+</tr>
+<tr>
+<td><strong>Properties</strong></td>
+<td>Inspector, Entity Properties, Ownership, Appearance, Paint Brush</td>
+</tr>
+<tr>
+<td><strong>Economy</strong></td>
+<td>Store Maker, Money Printer, Money, Vehicle Pad, Economy</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td>Commander, NPC Relationships, Patrol &amp; Guard, NPC Editor, AI Brain</td>
+</tr>
+<tr>
+<td><strong>Utilities</strong></td>
+<td>Player Manager, Server Tools, Reports, Bans, Voting, Diagnostics</td>
+</tr>
+<tr>
+<td><strong>Settings</strong></td>
+<td>Server Settings, Player Access, Keybinds, Backup / Restore, Patch Notes &amp; README</td>
+</tr>
+</tbody>
+</table></div>
+<p>Admins also get the <strong>ATB</strong> window in the C menu (hold C). See the C Menu and the ATB Window guide.</p>
+<h4 id="help-basics-getting-started-who-is-an-admin">Who is an admin</h4>
+<p>The toolbox checks these in order:</p>
+<ol>
+<li>A player who is incognito is treated as a normal player.</li>
+<li>With <code>kgxat_superadmin_only 1</code>, only superadmins can use the toolbox.</li>
+<li>A whitelisted player in a staff job that gives toolbox admin access can use it.</li>
+<li>With an admin mod that supports CAMI (ULX, SAM, sAdmin and others), the privilege <strong>KGX Admin Toolbox</strong> decides. Its default minimum rank is <code>admin</code>. Grant or revoke it per rank in your admin mod.</li>
+<li>Without such an admin mod, <code>admin</code> and <code>superadmin</code> can use it.</li>
+</ol>
+<p>A non-admin who uses a toolbox tool gets "This tool is admin only." and nothing happens. Other tools are not affected.</p>
+<p>Rank immunity (<code>kgxat_immunity</code>, on by default) stops admins from targeting superadmins. Non-admins can never target admins. With an admin mod, a rank cannot act on a rank that inherits from it. Players of the same rank may target each other while <code>kgxat_immunity_same</code> is 1.</p>
+<p>Toolbox tools ignore prop protection ownership, so admins can act on anyone's props.</p>
+<h4 id="help-basics-getting-started-the-panels">The panels</h4>
+<h5>Player Access</h5>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Player Access. Only superadmins can change it; for others the checkboxes are greyed out.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td><strong>All non-admin players</strong>, or <strong>Rank:</strong> plus a rank name, for one rank (for example VIP)</td>
+</tr>
+<tr>
+<td><strong>Refresh rank list</strong></td>
+<td>Reloads the ranks in <strong>Applies to</strong></td>
+</tr>
+<tr>
+<td>Tool checkboxes</td>
+<td>One per toolbox tool, grouped by category (<code>--- Cheats ---</code> and so on)</td>
+</tr>
+<tr>
+<td>Panel checkboxes</td>
+<td>Panels such as <strong>Player Manager (panel)</strong> and <strong>Reports (read and resolve) (panel)</strong>, under Utilities</td>
+</tr>
+<tr>
+<td>Orange notes</td>
+<td>What a tick unlocks besides the tool itself, for example Keys also gives Admin Keys</td>
+</tr>
+<tr>
+<td><strong>Allow everything (for the selection above)</strong></td>
+<td>Ticks every tool and panel for the selection, after a Yes/No question</td>
+</tr>
+<tr>
+<td><strong>Untick everything (for the selection above)</strong></td>
+<td>Clears every tick for the selection</td>
+</tr>
+</tbody>
+</table></div>
+<p>A player may use a tool or panel when it is ticked for all players or for their rank. Admins can always use everything. With rank immunity on, players can never target admins with these tools.</p>
+<p>Access is saved on the server for all maps, in <code>data/kgx_admin_toolbox/access.json</code>. Two other panels also control access. Settings &gt; Tool Visibility hides tools and panels. Settings &gt; Licenses can hand out tools with a Tool License.</p>
+<h5>Find a tool</h5>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Favorites &gt; Find a tool. It lists every tool and panel you can see, with a search box.</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search box</td>
+<td>Searches names, categories and what each tool does, e.g. "freeze, door, ban, money"</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Search every tab, not just the toolbox</strong></td>
+<td>Includes tools from the other Q menu tabs</td>
+<td>off</td>
+</tr>
+<tr>
+<td><strong>Show favorites only</strong></td>
+<td>Lists only your favorites</td>
+<td>off</td>
+</tr>
+<tr>
+<td>Result list</td>
+<td>Columns: star, NEW icon or UPDATE (refresh) icon, <strong>Name</strong>, <strong>Category</strong>. NEW names are green, UPDATE names yellow, until opened.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Open</strong></td>
+<td>Opens the selected tool or panel</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Add to favorites</strong> / <strong>Remove from favorites</strong></td>
+<td>Stars or unstars the selected entry</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Update the Favorites list now</strong></td>
+<td>Reloads the menu so new favorites appear</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Clear all favorites</strong></td>
+<td>Removes every favorite, after a question</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Clear the NEW and UPDATE tags (mark everything as seen)</strong></td>
+<td>Hides every NEW and UPDATE tag</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Show NEW and UPDATE tags on tools and panels from recent updates</strong></td>
+<td><code>kgxat_new_badges</code></td>
+<td>on</td>
+</tr>
+</tbody>
+</table></div>
+<p>Click a result to see what it does. Double-click it, or press Enter in the search box, to open it.</p>
+<p>Inside panels and tool windows (v3.6.21.2), a single setting added in a recent update has a green name and one changed in a recent update a yellow name, until you move the mouse over it once (its tooltip says NEW or UPDATED in this update). <strong>Clear the NEW and UPDATE tags</strong> clears these too; <code>kgxat_new_badges 0</code> turns them off.</p>
+<h4 id="help-basics-getting-started-how-to-use-it">How to use it</h4>
+<h5>Install the toolbox</h5>
+<ol>
+<li>On your own game, subscribe to the toolbox on the Steam Workshop (item 3817351592).</li>
+<li>On a dedicated server, extract the <code>kgx_admin_toolbox</code> folder into <code>GarrysMod/garrysmod/addons/</code>.</li>
+<li>Restart the server. Clients download the Lua automatically.</li>
+<li>Join and open the Q menu. Check that the <strong>KGX's Admin Toolbox</strong> tab shows the version you installed.</li>
+</ol>
+<h5>Let VIPs use a tool</h5>
+<ol>
+<li>Open Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Player Access as a superadmin.</li>
+<li>In <strong>Applies to</strong>, pick <strong>Rank: vip</strong> (use <strong>Refresh rank list</strong> if it is missing).</li>
+<li>Tick the tools and panels VIPs may use. Read any orange note under a tick first.</li>
+<li>Players of that rank can now use those tools. Admins keep full access.</li>
+</ol>
+<h5>Add a tool to your favorites</h5>
+<ol>
+<li>Right-click any entry in the Q menu tool list, on any tab.</li>
+<li>Pick <strong>Add to favorites</strong>. A star marks the entry.</li>
+<li>Close the Q menu. The favorite now appears under the <strong>Favorites</strong> category.</li>
+<li>To remove it, right-click it again and pick <strong>Remove from favorites</strong>.</li>
+</ol>
+<p>The right-click menu also has <strong>Open</strong>. An entry that already had its own right-click menu keeps it under <strong>More...</strong>.</p>
+<h5>Read the in-game README</h5>
+<ol>
+<li>Open Q menu &gt; KGX's Admin Toolbox &gt; Settings &gt; Patch Notes &amp; README.</li>
+<li>Click <strong>Patch notes</strong> for what changed in each version, or <strong>README (everything)</strong> for every tool, setting and test.</li>
+<li>Use the <strong>Search</strong> box on the left of the window to filter the sections.</li>
+</ol>
+<h4 id="help-basics-getting-started-settings-and-commands">Settings and commands</h4>
+<p>Server settings (Settings &gt; Server Settings, superadmins):</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_superadmin_only</code></td>
+<td>1 = only superadmins can use the toolbox</td>
+<td>0</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_immunity</code></td>
+<td>1 = admins cannot target superadmins; non-admins are never targeted above their rank</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_immunity_same</code></td>
+<td>1 = players of the same rank may target each other</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_superadmin_override</code></td>
+<td>1 = superadmins skip immunity, click-twice confirmations, protected things, pocket lists and limits</td>
+<td>0</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_notify_admins</code></td>
+<td>1 = every toolbox action is shown to all admins in chat</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_notify_target</code></td>
+<td>1 = players are told when a toolbox action is used on them</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_log_file</code></td>
+<td>1 = also write every action to <code>data/kgx_admin_toolbox/logs/</code> (one file per day)</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><code>kgxat_credit_message</code></td>
+<td>1 = players see the toolbox version in chat when their game has loaded</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Client settings and commands:</p>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_tool_tips</code></td>
+<td>1 = hovering a tool in the tool list shows what it does (Settings &gt; Display (themes)); default 1</td>
+</tr>
+<tr>
+<td><code>kgxat_new_badges</code></td>
+<td>1 = NEW tags on recently added tools and panels and UPDATE tags on recently changed ones; default 1</td>
+</tr>
+<tr>
+<td><code>kgxat_readme</code></td>
+<td>Opens the README window</td>
+</tr>
+<tr>
+<td><code>kgxat_patchnotes</code></td>
+<td>Opens the patch notes window</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-basics-getting-started-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Server data is saved in <code>garrysmod/data/kgx_admin_toolbox/</code> on the server. Back it up from Settings &gt; Backup / Restore.</li>
+<li>A data file that cannot be read is moved to <code>_broken/</code>, and the last good copy in <code>_bak/</code> is used instead.</li>
+<li>Favorites and seen NEW / UPDATE tags are saved on your own computer, in <code>data/kgx_admin_toolbox/favorites.json</code> and <code>seen_new.json</code>.</li>
+<li>New favorites show in the Favorites category only after you close the Q menu or click <strong>Update the Favorites list now</strong>.</li>
+<li>A favorite panel that no longer exists shows "This panel is not available any more. Remove it with Find a tool."</li>
+<li>Every action is always written to the server console and log as <code>[KGX's Admin Toolbox] Name [SteamID] action target [SteamID]</code>.</li>
+<li>Every tool panel with sliders or values has a <strong>Reset to defaults</strong> button.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><span></span><a class="help-pager-next" href="basics-keys-and-menus.html"><small class="mono">Next</small><strong>Keys and Menus</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-basics.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Basics</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
