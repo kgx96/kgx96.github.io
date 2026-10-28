@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Cameras — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Watch placed security cameras in a live viewport on your screen, switch between them, and turn them with the remote control.">
+<meta property="og:title" content="Cameras — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Watch placed security cameras in a live viewport on your screen, switch between them, and turn them with the remote control.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-cameras.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-cameras.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html" aria-current="page">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-panels-cameras-what-it-does">What it does</a><a class="filter" href="#help-panels-cameras-where-to-find-it">Where to find it</a><a class="filter" href="#help-panels-cameras-the-panel">The panel</a><a class="filter" href="#help-panels-cameras-how-to-use-it">How to use it</a><a class="filter" href="#help-panels-cameras-settings-and-commands">Settings and commands</a><a class="filter" href="#help-panels-cameras-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-panels.html">Admin panels</a><i aria-hidden="true">/</i><span aria-current="page">Cameras</span></nav><article class="help-view help-article" aria-labelledby="help-panels-cameras-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Admin panels &gt; Utilities</p><h1 id="help-panels-cameras-title">Cameras</h1><p class="help-article-sum">Watch placed security cameras in a live viewport on your screen, switch between them, and turn them with the remote control.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 28, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-panels-cameras-what-it-does">What it does</a></li><li><a href="#help-panels-cameras-where-to-find-it">Where to find it</a></li><li><a href="#help-panels-cameras-the-panel">The panel</a></li><li><a href="#help-panels-cameras-how-to-use-it">How to use it</a></li><li><a href="#help-panels-cameras-settings-and-commands">Settings and commands</a></li><li><a href="#help-panels-cameras-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-panels-cameras-what-it-does">What it does</h4>
+<p>The Cameras panel shows a live picture from a placed camera in a small viewport on your screen. The viewport has the camera's name, a blinking REC mark and the time. You can show and hide it with keys and step through every camera you may view.</p>
+<p>The remote control lets you turn the shown camera with the arrow keys, 360 degrees left and right and up and down. The camera itself does not move, only where it looks. Camera TVs that show the same camera turn with it.</p>
+<p>Cameras are placed with the Cameras tool (Q menu &gt; KGX's Admin Toolbox &gt; Building &gt; Cameras). This page covers the viewing panel, not the tool.</p>
+<h4 id="help-panels-cameras-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Utilities &gt; Cameras.</p>
+<p>Everyone can open the panel. Which cameras you see depends on each camera's access:</p>
+<ul>
+<li>Private: its owner and admins.</li>
+<li>Public: everyone.</li>
+<li>Police: police and admins.</li>
+<li>Admins only: admins.</li>
+<li>A camera with ranks or jobs set in its Access window follows that list.</li>
+</ul>
+<p>Who may turn a camera with the remote: its owner and admins. For police cameras, every officer too. The server setting <code>kgxat_cam_remote</code> must be 1.</p>
+<p>You can also use your keys (set here or in Settings &gt; Keybinds) and the console commands below.</p>
+<h4 id="help-panels-cameras-the-panel">The panel</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera list</td>
+<td>Columns <strong>#</strong>, <strong>Name</strong> and <strong>Owner</strong>. Double-click a camera to show it.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show selected camera</strong></td>
+<td>Shows the selected camera in the viewport.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Hide viewport</strong></td>
+<td>Hides the viewport.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Refresh list</strong></td>
+<td>Reloads the list of cameras you may view.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show/hide viewport key (recommended: N)</strong></td>
+<td>Key that shows or hides the viewport. <strong>Clear key</strong> removes it.</td>
+<td>none</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Next camera key (recommended: M)</strong></td>
+<td>Key that shows the next camera you may view.</td>
+<td>none</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Remote control on/off key: arrow keys turn the shown camera (recommended: J)</strong></td>
+<td>Key that turns the remote control on and off.</td>
+<td>none</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Remote control on / off</strong></td>
+<td>Turns the remote control on or off.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Turn the shown camera straight again</strong></td>
+<td>Points the shown camera straight ahead again.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Viewport width (px)</strong></td>
+<td>Width of the viewport. Height follows at 16:9.</td>
+<td>400</td>
+<td>160-1000</td>
+</tr>
+<tr>
+<td><strong>Viewport position</strong></td>
+<td><strong>Top right</strong>, <strong>Top left</strong>, <strong>Bottom right</strong> or <strong>Bottom left</strong>.</td>
+<td>Top right</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reset to defaults</strong></td>
+<td>Clears the three keys and resets the size and position.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-panels-cameras-how-to-use-it">How to use it</h4>
+<h5>Watch a camera</h5>
+<ol>
+<li>Open Utilities &gt; Cameras.</li>
+<li>Double-click a camera in the list, or select it and click <strong>Show selected camera</strong>.</li>
+<li>The picture appears in the corner of your screen.</li>
+<li>Click <strong>Hide viewport</strong> to close it.</li>
+</ol>
+<h5>Flip through cameras with keys</h5>
+<ol>
+<li>Bind <strong>Show/hide viewport key</strong> to N and <strong>Next camera key</strong> to M.</li>
+<li>Press N to show the viewport, and M to go to the next camera.</li>
+</ol>
+<h5>Turn a camera</h5>
+<ol>
+<li>Show a camera you may control.</li>
+<li>Bind the remote key to J, or click <strong>Remote control on / off</strong>.</li>
+<li>The viewport shows "REMOTE: arrow keys turn". Use the arrow keys to look around.</li>
+<li>While the remote is on, the arrow keys do nothing else.</li>
+<li>Click <strong>Turn the shown camera straight again</strong> to reset the view.</li>
+</ol>
+<h4 id="help-panels-cameras-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting or command</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_cam_remote</code></td>
+<td>1</td>
+<td>Server: 1 = cameras can be turned with the remote control by who may control them.</td>
+</tr>
+<tr>
+<td><code>kgxat_camera_toggle</code></td>
+<td></td>
+<td>Console: show or hide the viewport.</td>
+</tr>
+<tr>
+<td><code>kgxat_camera_next</code></td>
+<td></td>
+<td>Console: show the next camera.</td>
+</tr>
+<tr>
+<td><code>kgxat_camera_remote</code></td>
+<td></td>
+<td>Console: remote control on or off.</td>
+</tr>
+<tr>
+<td><code>kgxat_cam_key</code>, <code>kgxat_cam_nextkey</code>, <code>kgxat_cam_remotekey</code>, <code>kgxat_cam_size</code>, <code>kgxat_cam_corner</code></td>
+<td>see above</td>
+<td>Your own settings from this panel.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-panels-cameras-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>With no camera to show you get "No camera to show. Place one with Building &gt; Cameras."</li>
+<li>If you may view but not turn a camera, the viewport shows "REMOTE: you cannot turn this camera".</li>
+<li>Up and down turning stops at 80 degrees.</li>
+<li>The viewport hides itself when the camera is removed.</li>
+<li>Arrow keys do not turn the camera while you type in a text box or the game menu is open.</li>
+<li>The server's camera settings (camera TVs, police Security Monitors, the remote control) are in Settings &gt; Police &amp; Crime.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="panels-bans.html"><small class="mono">Previous</small><strong>Bans</strong></a><a class="help-pager-next" href="panels-chat-filter.html"><small class="mono">Next</small><strong>Chat Filter</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-panels.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Admin panels</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

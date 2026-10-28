@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Media &amp; Radio — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Set your own volume for screens and radios, mute or hide them, and (superadmins) set Internet to Full or Restricted, control what screens and radios may play, and set up the TV Remote.">
+<meta property="og:title" content="Media &amp; Radio — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Set your own volume for screens and radios, mute or hide them, and (superadmins) set Internet to Full or Restricted, control what screens and radios may play, and set up the TV Remote.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-media-and-radio.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/panels-media-and-radio.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html" aria-current="page">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-panels-media-and-radio-what-it-does">What it does</a><a class="filter" href="#help-panels-media-and-radio-where-to-find-it">Where to find it</a><a class="filter" href="#help-panels-media-and-radio-the-panel">The panel</a><a class="filter" href="#help-panels-media-and-radio-how-to-use-it">How to use it</a><a class="filter" href="#help-panels-media-and-radio-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-panels.html">Admin panels</a><i aria-hidden="true">/</i><span aria-current="page">Media &amp; Radio</span></nav><article class="help-view help-article" aria-labelledby="help-panels-media-and-radio-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Admin panels &gt; Utilities</p><h1 id="help-panels-media-and-radio-title">Media &amp; Radio</h1><p class="help-article-sum">Set your own volume for screens and radios, mute or hide them, and (superadmins) set Internet to Full or Restricted, control what screens and radios may play, and set up the TV Remote.</p><p class="help-article-meta mono">Panel / Covers v3.6.21.6.1 / Updated Oct 28, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-panels-media-and-radio-what-it-does">What it does</a></li><li><a href="#help-panels-media-and-radio-where-to-find-it">Where to find it</a></li><li><a href="#help-panels-media-and-radio-the-panel">The panel</a></li><li><a href="#help-panels-media-and-radio-how-to-use-it">How to use it</a></li><li><a href="#help-panels-media-and-radio-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-panels-media-and-radio-what-it-does">What it does</h4>
+<p>Screens and radios play what Cinema Owners, DJs and admins put on: YouTube, YouTube Music, Spotify, and (by the server's Internet setting) web pages, video and audio files and internet radio streams. This panel has two parts.</p>
+<p>The top part is yours. It sets your volume, mutes screens and radios for you, hides videos, or stops everything playing for you right now. These settings are saved on your computer and affect nobody else.</p>
+<p>The bottom part is the server's settings. Superadmins set <strong>Internet</strong> for screens and for radios (Full or Restricted, with a list of allowed sites), turn screens, radios and each source on or off, and set the range and the device limits.</p>
+<p><strong>Internet: Restricted</strong> plays YouTube, YouTube Music and Spotify (each with its own switch) and the sites on the server's list. <strong>Internet: Full</strong> plays any public website: screens show any web page (Twitch, Vimeo, a site's own player) or a video / audio file (mp4, webm, ogv, mov, mp3, ogg, wav, m4a, flac...) in a player of their own, and radios play any stream or audio link. Every nearby player's game opens the link, so the site sees their address: use Full on servers where you trust your Cinema Owners and DJs. Links to local or private addresses (localhost, 192.168..., 10..., router names) never play, in either mode.</p>
+<h4 id="help-panels-media-and-radio-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Utilities &gt; Media &amp; Radio.</p>
+<ul>
+<li>Your own settings: everyone.</li>
+<li><strong>Server (superadmins)</strong> section: shown to everyone, changeable by superadmins only.</li>
+</ul>
+<p>Screens and radios are placed with Building &gt; Media Player and Building &gt; Radio (admins, plus Cinema Owner and DJ jobs), or bought in stores.</p>
+<h4 id="help-panels-media-and-radio-the-panel">The panel</h4>
+<h5>Your settings</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Volume</strong></td>
+<td>Your volume for screens and radios.</td>
+<td>0.8</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><strong>Mute screens and radios</strong></td>
+<td>No sound from screens and radios for you.</td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show no videos on screens (and play nothing from them)</strong></td>
+<td>Screens show no video and play nothing for you.</td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Screens volume (times the volume above)</strong></td>
+<td><code>kgxat_media_volume_video</code>.</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><strong>Radios volume (times the volume above)</strong></td>
+<td><code>kgxat_media_volume_audio</code>.</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td><strong>See where others point on screens</strong></td>
+<td><code>kgxat_media_show_cursors</code>: others' cursors (with their names) on screens they use.</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Screens show YouTube's whole page (not only its player)</strong></td>
+<td><code>kgxat_media_youtube_page</code>: YouTube as its normal page (header, title, suggestions) instead of only the player filling the screen.</td>
+<td>Off</td>
+<td></td>
+</tr>
+<tr>
+<td>Key to use the screen you look at</td>
+<td><code>kgxat_media_cursor_key</code>: starts / stops using the aimed screen with the cursor (E works too).</td>
+<td>none</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show the screens I hid and unmute the ones I muted</strong></td>
+<td>Undoes <strong>Hide for me</strong> / <strong>Mute for me</strong> (they last until you leave).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Adjust the TV Remote in my hand</strong></td>
+<td>Sliders that move, turn and size the remote you hold (first person and as others see it), live.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Stop everything now</strong></td>
+<td>Stops everything screens and radios are playing for you.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h5>Server (superadmins)</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Setting</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Media players (screens) work</strong></td>
+<td><code>kgxat_media</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Radios work</strong></td>
+<td><code>kgxat_radio</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Screens: Internet</strong></td>
+<td><code>kgxat_media_internet</code>: 0 = Restricted, 1 = Full</td>
+<td>Restricted</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td>Screens' sites, then <strong>Apply</strong></td>
+<td><code>kgxat_media_sites</code>: other sites screens may play from while Restricted, comma separated (a site allows its subdomains).</td>
+<td>vimeo.com, twitch.tv, dailymotion.com, archive.org</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Radios: Internet</strong></td>
+<td><code>kgxat_radio_internet</code>: 0 = Restricted, 1 = Full, -1 = as before v3.6.12.1 (Full while the radio sites box is empty, Restricted when it lists sites)</td>
+<td>-1</td>
+<td>-1-1</td>
+</tr>
+<tr>
+<td><strong>YouTube</strong></td>
+<td><code>kgxat_media_youtube</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>YouTube Music</strong></td>
+<td><code>kgxat_media_ytmusic</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>YouTube Movies in the browser</strong></td>
+<td><code>kgxat_media_ytmovies</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Radios: internet radio streams / audio links (and Stations)</strong></td>
+<td><code>kgxat_radio_stream</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Spotify (30 second previews without an account)</strong></td>
+<td><code>kgxat_radio_spotify</code> (screens too since v3.6.12.1)</td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Radios: the sound of YouTube links</strong></td>
+<td><code>kgxat_radio_youtube</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Players may use pages with the cursor (shared live; who: each device's setting)</strong></td>
+<td><code>kgxat_media_input</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Who may use a new device's page</strong></td>
+<td><code>kgxat_media_click_default</code>: 0 only its owner, 1 owner and admins, 2 also the owner's job, 3 everyone</td>
+<td>Me and admins</td>
+<td>0-3</td>
+</tr>
+<tr>
+<td><strong>The most an owner may allow</strong></td>
+<td><code>kgxat_media_click_max</code> (superadmins may always)</td>
+<td>Everyone</td>
+<td>0-3</td>
+</tr>
+<tr>
+<td><strong>Farthest range an owner may set</strong></td>
+<td><code>kgxat_media_range_max</code> (units)</td>
+<td>4000</td>
+<td>300-10000</td>
+</tr>
+<tr>
+<td><strong>Sharpest page a screen may use</strong></td>
+<td><code>kgxat_media_res_max</code>: 0 = 960 x 540, 1 = 1280 x 720, 2 = 1920 x 1080</td>
+<td>1920 x 1080</td>
+<td>0-2</td>
+</tr>
+<tr>
+<td><strong>Only Cinema Owner / DJ jobs (and admins) play their own things</strong></td>
+<td><code>kgxat_media_jobs_only</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>The TV Remote works</strong></td>
+<td><code>kgxat_remote</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>It shows a laser pointer (everyone sees it)</strong></td>
+<td><code>kgxat_remote_laser</code></td>
+<td>On</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>How far it reaches</strong></td>
+<td><code>kgxat_remote_range</code> (units)</td>
+<td>3000</td>
+<td>200-10000</td>
+</tr>
+<tr>
+<td><strong>Who may have one</strong></td>
+<td><code>kgxat_remote_who</code>: 0 every player (not those blocked), 1 toolbox admins only</td>
+<td>Every player</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td>Blocked list, <strong>Block a player...</strong>, <strong>Unblock the selected player</strong></td>
+<td>Toolbox admins: players who may not have a TV Remote (<code>remote_blocked.json</code>). They lose it at once and cannot spawn, buy, be given or pick one up. Superadmins cannot be blocked.</td>
+<td>empty</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>How far away screens show and are heard</strong></td>
+<td><code>kgxat_media_range</code> (units)</td>
+<td>1500</td>
+<td>300-6000</td>
+</tr>
+<tr>
+<td><strong>Screens (and radios) per player</strong></td>
+<td><code>kgxat_media_max_user</code></td>
+<td>1</td>
+<td>0-20</td>
+</tr>
+<tr>
+<td><strong>Per admin</strong></td>
+<td><code>kgxat_media_max_admin</code></td>
+<td>2</td>
+<td>0-50</td>
+</tr>
+<tr>
+<td><strong>Per superadmin</strong></td>
+<td><code>kgxat_media_max_super</code></td>
+<td>10</td>
+<td>0-100</td>
+</tr>
+<tr>
+<td><strong>Apply the numbers above</strong></td>
+<td>Sends the four sliders to the server.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Radio sites, then <strong>Apply</strong></td>
+<td><code>kgxat_radio_hosts</code>: sites streams and audio links may come from while radios are Restricted, comma separated. A site also allows its subdomains.</td>
+<td>empty</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>The device limits count screens and radios separately.</p>
+<h4 id="help-panels-media-and-radio-how-to-use-it">How to use it</h4>
+<h5>Turn screens down or off for yourself</h5>
+<ol>
+<li>Open Utilities &gt; Media &amp; Radio.</li>
+<li>Drag <strong>Volume</strong> down, or tick <strong>Mute screens and radios</strong>.</li>
+<li>To also hide the picture, tick <strong>Show no videos on screens (and play nothing from them)</strong>.</li>
+</ol>
+<h5>Let screens play any site</h5>
+<ol>
+<li>As a superadmin, set <strong>Screens: Internet</strong> to <strong>Full</strong>.</li>
+<li>A Cinema Owner (or admin) presses E on their screen and pastes any link: a Twitch channel, a Vimeo video, <code>https://example.com/movie.mp4</code>. Or opens <strong>Browser</strong>, goes to the page and clicks <strong>Play this here</strong>.</li>
+<li>Files play in a plain player that follows the channel's play / pause / seek. Web pages play as they are (the page's own video follows play / pause and volume).</li>
+</ol>
+<h5>Allow only some sites</h5>
+<ol>
+<li>Set <strong>Screens: Internet</strong> (or <strong>Radios: Internet</strong>) to <strong>Restricted</strong>.</li>
+<li>Type the sites in the box below it, for example <code>vimeo.com, twitch.tv</code> (radios: <code>somafm.com, radio.co</code>), and click <strong>Apply</strong>.</li>
+<li>Links from those sites (and their subdomains, e.g. <code>ice1.somafm.com</code>) play; others are refused with the list of what is allowed. YouTube, YouTube Music and Spotify follow their own switches.</li>
+</ol>
+<h5>Use a screen with the cursor (everyone sees it)</h5>
+<ol>
+<li>Press E on a screen that plays something (or your own key, if you set one).</li>
+<li>Your cursor appears. Over the screen it is drawn on the screen itself, exactly where a click lands (a ring shows each click). Others see your cursor with your name. Click links and buttons, scroll with the mouse wheel, click a text box and type. Everyone watching that channel sees the same thing, live.</li>
+<li>While you use it, a toolbar along the bottom of the screen has Back, Forward, Reload and Home (back to what the owner put on), and an address bar if the owner allowed it.</li>
+<li>Clicking another video, pausing or seeking on the page changes the channel for everyone: the server follows what the page did.</li>
+<li>Your own bar at the bottom: <strong>Stop (Esc)</strong>, <strong>Fullscreen video</strong> (the page's biggest video fills the screen, for everyone; again to go back), <strong>Mute for me</strong>, <strong>Hide for me</strong>, and <strong>Controls</strong> if it is yours. Esc, a click off the screen, or walking away stops.</li>
+<li>A page's own fullscreen button (YouTube, Vimeo, Twitch...) also works: the video fills the screen. In the Browser window it fills the window.</li>
+<li>If the owner did not let you, you get "View only": you can still mute or hide it for yourself.</li>
+</ol>
+<h5>Change a device's settings (owners and admins)</h5>
+<ol>
+<li>Press E on your screen or radio and click <strong>Settings</strong> in the control bar.</li>
+<li><strong>General</strong>: the channel / station name, the screen size.</li>
+<li><strong>Picture</strong> (screens): brightness, page sharpness (960 x 540 / 1280 x 720 / 1920 x 1080), Fit (16:9 with bars) or fill, <strong>Web pages: their video fills the screen</strong>, the title along the top, Glow (lights the room in front of it).</li>
+<li><strong>Sound</strong>: volume, range (0 = the server's), and loudness by distance: Smooth, Even, Close only, or Full volume to the edge.</li>
+<li><strong>Interaction</strong>: who may use the page (only me / me and admins / my job / everyone, up to the server's limit), typing, scrolling, the buttons and address bar, others' cursors.</li>
+<li>Changes wait until you click <strong>Apply</strong> (or <strong>Apply and close</strong>); the bottom line counts the changes not applied yet. Then they apply at once for everyone. <strong>Close</strong> without applying drops them. Kept devices (admin tools, "Keep for this map") keep their settings.</li>
+</ol>
+<h5>Use the TV Remote</h5>
+<ol>
+<li>Get it from the spawn menu (Weapons &gt; ATB &gt; TV Remote), a store selling it, or a job's weapons.</li>
+<li>You hold it like a pistol (only the remote shows). A red laser goes from it to where you aim; others see it. Right click turns your laser on / off.</li>
+<li>Point at a TV, screen or radio up to the remote's range and left click: it is the same as pressing E on it. On a screen playing something you get the cursor on the screen; the owner gets the control bar; on a radio its window opens.</li>
+<li>The same rules as E apply: who may use the page, who may change things. You stay in reach while you hold the remote.</li>
+</ol>
+<h5>Block a player from having a TV Remote</h5>
+<ol>
+<li>Open Utilities &gt; Media &amp; Radio as a toolbox admin.</li>
+<li>Under <strong>TV Remote</strong>, pick the player in <strong>Block a player...</strong>. They lose their remote at once.</li>
+<li>Select them in the list and click <strong>Unblock the selected player</strong> to allow it again.</li>
+</ol>
+<h5>Find a radio station</h5>
+<ol>
+<li>Press E on your radio (as a DJ or admin) and click <strong>Stations</strong> (also in the Browser's top bar).</li>
+<li>The most played stations are listed. Type a name or a style (rock, jazz, news) and press <strong>Search</strong>.</li>
+<li>Double-click a station: it plays on your radio. While radios are Restricted, only stations from the allowed sites are listed.</li>
+</ol>
+<h5>Let only jobs broadcast</h5>
+<ol>
+<li>Keep <strong>Only Cinema Owner / DJ jobs (and admins) play their own things</strong> ticked.</li>
+<li>Give a job the Cinema Owner or DJ ability in Settings &gt; Jobs. Other players' screens and radios tune in to their channels.</li>
+</ol>
+<h4 id="help-panels-media-and-radio-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>YouTube and most video sites need the game's newer browser (Chromium, with video codecs). If videos stay black or silent, switch Garry's Mod to the x86-64 branch (Steam &gt; Garry's Mod &gt; Properties &gt; Betas). The end of the version line at the bottom right shows each player's game build and branch.</li>
+<li>Since v3.6.12.1 YouTube plays from its watch page made to fill the screen: YouTube's embedded player refuses pages a game browser opens ("Error 153"). Skippable ads are skipped; while an ad plays, the channel's time is not forced. At the end, YouTube does not go on to another video.</li>
+<li>A radio link that is not an audio stream (a station's web player, a page) plays as a hidden web page in each player's game; its sound is not 3D (it gets quieter with distance).</li>
+<li>Pressing E on a radio that plays something opens its window: its page (YouTube, Spotify, a station's web player) to use like a screen, or what the stream plays. Back / Forward / Reload / Home and Address are there when the owner allows them.</li>
+<li>Nothing keeps playing once a device is turned off, removed or out of range: every page and stream is checked ten times a second, also after a Lua reload; if the media code hits an error, everything stops and the error is shown in the console.</li>
+<li>A window that cannot open (settings, radio window, browser, Stations) says so and puts the details in the console.</li>
+<li>Shared clicks are replayed on each player's own copy of the page, so a page that differs per player (signed in, ads, cookies) can end up in a different state; Home or the owner's control bar puts everyone back. Dragging (sliders, drawing) and pages inside other pages' frames may not respond.</li>
+<li>The remote points where you aim, buttons up, its back end in your palm. Each player can adjust it with <strong>Adjust the TV Remote in my hand</strong> (or the console command <code>kgxat_remote_adjust</code>): sliders for first person and for how others see it (forward / right / up, pitch / yaw / roll, size), shown at once. Saved as <code>kgxat_remote_fp_pos</code>, <code>_fp_ang</code>, <code>_fp_scale</code>, <code>kgxat_remote_tp_pos</code>, <code>_tp_ang</code>, <code>_tp_scale</code>.</li>
+<li>A screen farther away than its range shows no picture, so the remote works on screens within their range (radios: anywhere within the remote's range).</li>
+<li>The Stations list comes from radio-browser.info, a free public station list; if it cannot be reached, paste a stream link instead.</li>
+<li>Without an account, Spotify plays 30 second previews.</li>
+<li>Bought or rented movies, and sites that need you to sign in or click first, may not play.</li>
+<li>Screens farther away than the range show no picture and are not heard.</li>
+<li>Store devices are sold through the Electronics Store preset (TV, Cinema Screen, Radio).</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="panels-maps.html"><small class="mono">Previous</small><strong>Maps</strong></a><a class="help-pager-next" href="panels-money-log.html"><small class="mono">Next</small><strong>Money Log</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-panels.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Admin panels</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>

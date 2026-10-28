@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Match Stats and Progression — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="XP, levels, achievements, leaderboards, the match history and the name colors, badges and trails you unlock by playing Game Modes matches.">
+<meta property="og:title" content="Match Stats and Progression — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="XP, levels, achievements, leaderboards, the match history and the name colors, badges and trails you unlock by playing Game Modes matches.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/basics-match-stats-and-progression.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/basics-match-stats-and-progression.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html" aria-current="page">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-basics-match-stats-and-progression-what-it-does">What it does</a><a class="filter" href="#help-basics-match-stats-and-progression-where-to-find-it">Where to find it</a><a class="filter" href="#help-basics-match-stats-and-progression-the-match-stats-tabs">The Match stats tabs</a><a class="filter" href="#help-basics-match-stats-and-progression-xp-and-levels">XP and levels</a><a class="filter" href="#help-basics-match-stats-and-progression-achievements">Achievements</a><a class="filter" href="#help-basics-match-stats-and-progression-seasons">Seasons</a><a class="filter" href="#help-basics-match-stats-and-progression-cosmetics">Cosmetics</a><a class="filter" href="#help-basics-match-stats-and-progression-settings">Settings</a><a class="filter" href="#help-basics-match-stats-and-progression-tips-and-limits">Tips and limits</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-basics.html">Basics</a><i aria-hidden="true">/</i><span aria-current="page">Match Stats and Progression</span></nav><article class="help-view help-article" aria-labelledby="help-basics-match-stats-and-progression-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Basics</p><h1 id="help-basics-match-stats-and-progression-title">Match Stats and Progression</h1><p class="help-article-sum">XP, levels, achievements, leaderboards, the match history and the name colors, badges and trails you unlock by playing Game Modes matches.</p><p class="help-article-meta mono">Guide / Covers v3.6.21.6.1 / Updated Oct 28, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-basics-match-stats-and-progression-what-it-does">What it does</a></li><li><a href="#help-basics-match-stats-and-progression-where-to-find-it">Where to find it</a></li><li><a href="#help-basics-match-stats-and-progression-the-match-stats-tabs">The Match stats tabs</a></li><li><a href="#help-basics-match-stats-and-progression-xp-and-levels">XP and levels</a></li><li><a href="#help-basics-match-stats-and-progression-achievements">Achievements</a></li><li><a href="#help-basics-match-stats-and-progression-seasons">Seasons</a></li><li><a href="#help-basics-match-stats-and-progression-cosmetics">Cosmetics</a></li><li><a href="#help-basics-match-stats-and-progression-settings">Settings</a></li><li><a href="#help-basics-match-stats-and-progression-tips-and-limits">Tips and limits</a></li></ol></nav><h4 id="help-basics-match-stats-and-progression-what-it-does">What it does</h4>
+<p>Every Game Modes match that counts gives the players in it XP and adds to their stats: matches played and won, rounds, kills, deaths, score, time played, and the same per mode. XP raises your level (up to 100). Achievements unlock as you play, and levels and achievements unlock cosmetics: name colors, badges and trails.</p>
+<p>The server keeps a history of the last matches (who played, the result, each player's score and XP) and leaderboards for every stat, overall or per mode.</p>
+<p>A match counts when it ends by its own rules (not ended early by an admin) with at least <code>kgxat_stats_min_players</code> players in it (2 by default; bots do not count) and at least one round played. Players still in the match when it ends get its totals and XP. Things that happen during a match (a captured flag, a kill streak, a round won as a traitor) count right away.</p>
+<h4 id="help-basics-match-stats-and-progression-where-to-find-it">Where to find it</h4>
+<ul>
+<li><strong>F3 &gt; Match stats</strong> (the server hub). Type <code>!stats</code> to open it, <code>!top</code> for the leaderboards, <code>!achievements</code> or <code>!history</code> for those tabs.</li>
+<li>When the hub is off, the same commands open a Match stats window. Client console: <code>kgxat_stats [me|top|history|ach|cosmetics]</code>.</li>
+<li>Settings: Q menu &gt; KGX's Admin Toolbox &gt; Utilities &gt; Game Modes, at the bottom (superadmins change them).</li>
+</ul>
+<h4 id="help-basics-match-stats-and-progression-the-match-stats-tabs">The Match stats tabs</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>My stats</strong></td>
+<td>Your level and the XP to the next one, your totals (matches and rounds played / won, kills / deaths and K/D, score, best kill streak, time in matches, achievements, first and last match) and a row per mode. Another player's stats show here when you open them from the leaderboards; <strong>Back to my stats</strong> returns.</td>
+</tr>
+<tr>
+<td><strong>Leaderboards</strong></td>
+<td>The top 50 for a stat: Level (XP), Matches won, Matches played, Kills, Kills per death (10 kills or more), Rounds won, Best match score, Best kill streak, Achievements, Time in matches. Most can be narrowed to one mode. Your own rank is shown under the list. Double-click a player to see their stats. v3.6.14: the third box picks <strong>All time</strong>, <strong>Season N (now)</strong> or an ended season (its top 25).</td>
+</tr>
+<tr>
+<td><strong>History</strong></td>
+<td>The last matches: when, mode, result, map, rounds, length and players. "(did not count)" marks matches that gave no stats. Click a match to see each player's team, score, kills, deaths, rounds won, whether they won and the XP they got.</td>
+</tr>
+<tr>
+<td><strong>Achievements</strong></td>
+<td>Every achievement with its progress, or the date you got it, and the badge it unlocks.</td>
+</tr>
+<tr>
+<td><strong>Cosmetics</strong></td>
+<td>Name colors, badges and trails: what is unlocked, what is locked and how to unlock it. Click one to wear it; <strong>None</strong> takes it off.</td>
+</tr>
+</tbody>
+</table></div>
+<p>During and after a match:</p>
+<ul>
+<li>The match scoreboard and the final standings show each player's level before their name, their name color and their badge after it. The final standings also show the XP each player got.</li>
+<li>After a match that counts, a box shows the XP you got and your progress to the next level.</li>
+<li>Level-ups and achievements pop up at the top of your screen and, when <code>kgxat_stats_announce</code> is on, are announced in chat.</li>
+<li>In free-for-all modes the kill feed shows names in their name color; team modes keep the team colors.</li>
+</ul>
+<h4 id="help-basics-match-stats-and-progression-xp-and-levels">XP and levels</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Part of a match</th>
+<th>XP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finishing a match</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Each round played</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Each round won (your team, your side or you)</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Each kill of a player (up to 60 a match; bots do not count)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Each objective (flag capture, capture point, bomb planted or defused; up to 20 a match)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Winning the match</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Each achievement</td>
+<td>50</td>
+</tr>
+</tbody>
+</table></div>
+<p>The server's XP rate (<code>kgxat_stats_xp</code>, in percent) scales all of it. Level L takes 50 x (L - 1) x L XP in total: level 2 at 100 XP, level 5 at 1,000, level 10 at 4,500, level 50 at 122,500, level 100 at 495,000.</p>
+<h4 id="help-basics-match-stats-and-progression-achievements">Achievements</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Achievement</th>
+<th>How</th>
+<th>Badge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First Match / Regular / Veteran</td>
+<td>Finish 1 / 25 / 100 matches</td>
+<td>Regular, Veteran</td>
+</tr>
+<tr>
+<td>First Win / Champion / Legend</td>
+<td>Win 1 / 10 / 50 matches</td>
+<td>Champion, Legend</td>
+</tr>
+<tr>
+<td>Hunter / Slayer</td>
+<td>100 / 1,000 kills</td>
+<td>Hunter, Slayer</td>
+</tr>
+<tr>
+<td>Rampage / Unstoppable</td>
+<td>5 / 10 kills in a row without dying</td>
+<td>Rampage, Unstoppable</td>
+</tr>
+<tr>
+<td>Flawless</td>
+<td>Win a match without dying</td>
+<td>Flawless</td>
+</tr>
+<tr>
+<td>All-Rounder</td>
+<td>Finish matches in 5 different modes</td>
+<td>All-Rounder</td>
+</tr>
+<tr>
+<td>Star Player</td>
+<td>Be the best player of 10 rounds</td>
+<td>Star</td>
+</tr>
+<tr>
+<td>Flag Runner</td>
+<td>Capture 10 flags</td>
+<td>Flag Runner</td>
+</tr>
+<tr>
+<td>Conqueror</td>
+<td>Help capture 25 capture points</td>
+<td>Conqueror</td>
+</tr>
+<tr>
+<td>Bomb Squad</td>
+<td>Plant or defuse 10 bombs</td>
+<td>Bomb Squad</td>
+</tr>
+<tr>
+<td>Gun Master / Titan / Speed Demon</td>
+<td>Win a Gun Game / Juggernaut / Race match</td>
+<td>Gun Master, Titan, Racer</td>
+</tr>
+<tr>
+<td>Duelist</td>
+<td>Win 3 Duels matches</td>
+<td>Duelist</td>
+</tr>
+<tr>
+<td>Giant Slayer</td>
+<td>Kill the Juggernaut 10 times</td>
+<td>Giant Slayer</td>
+</tr>
+<tr>
+<td>Last Survivor</td>
+<td>Win 5 Infection rounds as a survivor</td>
+<td>Survivor</td>
+</tr>
+<tr>
+<td>Backstabber / Sleuth / Killer Instinct</td>
+<td>Win 5 rounds as a traitor / 5 as a detective / 3 as the murderer</td>
+<td>Traitor, Detective, Murderer</td>
+</tr>
+<tr>
+<td>Master of Disguise / Bloodhound</td>
+<td>Win 10 rounds on the hiding / hunting team (Prop Hunt, Hide and Seek, Freeze Tag)</td>
+<td>Hidden, Seeker</td>
+</tr>
+<tr>
+<td>Level 10 / 25 / 50</td>
+<td>Reach the level</td>
+<td>Elite (25), Master (50)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Who wins the match, for stats:</p>
+<ul>
+<li>Team modes: every player of the team with the most rounds won.</li>
+<li>Free for all: the player with the most rounds won.</li>
+<li>Hidden-role modes, Infection and the hiding modes (sides change between rounds): everyone tied with the most rounds won.</li>
+<li>A draw has no winner, and you must have played at least half of the rounds to get the win.</li>
+</ul>
+<p>| Season Champion | End a season with the most XP (v3.6.14) | Season Champion |
+| Podium | End a season in the top 3 for XP (v3.6.14) | Podium |</p>
+<h4 id="help-basics-match-stats-and-progression-seasons">Seasons</h4>
+<p>v3.6.14. Leaderboards have seasons on top of the all-time boards:</p>
+<ul>
+<li><strong>This season</strong> counts only the matches of the season: XP earned, matches played and won, kills, K/D, rounds won and time. Best score, best streak and achievements are all-time only; picking them for a season shows the season XP.</li>
+<li>When a season ends, its top 25 of each board are archived, the player with the most season XP gets <strong>Season Champion</strong> and the top three <strong>Podium</strong>, chat announces the champion, and the season counts start again. Levels, achievements and cosmetics are never reset by a season.</li>
+<li>A season ends after <code>kgxat_stats_season_days</code> days, or when a superadmin presses <strong>End the season...</strong> above the leaderboards. With 0 days it only ends that way. A season nobody played in is not archived; it just starts again.</li>
+<li><code>kgxat_stats_season_keep</code> ended seasons are kept (<code>data/kgx_admin_toolbox/match_seasons.json</code>). The season number is kept in <code>match_stats.json</code>; the first season starts when the server first runs v3.6.14.</li>
+<li><strong>My stats</strong> shows your XP, matches and wins this season.</li>
+</ul>
+<h4 id="help-basics-match-stats-and-progression-cosmetics">Cosmetics</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Unlocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name colors</td>
+<td>Sky (level 3), Mint (6), Gold (10), Orange (15), Pink (20), Violet (30), Crimson (40); Ice (Flawless), Emerald (Champion), Royal (Legend)</td>
+</tr>
+<tr>
+<td>Badges</td>
+<td>One for most achievements (see the table above)</td>
+</tr>
+<tr>
+<td>Trails</td>
+<td>Smoke (level 5), Plasma (10), Tube (15), Laser (20), Electric (30), Physics beam (40); Hearts (Legend), LOL (Veteran)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Trails take your name color. <code>kgxat_stats_trails</code> sets when they show: 0 = never, 1 = while you play a match (default), 2 = always. They never show in hiding modes (Prop Hunt, Hide and Seek, Freeze Tag) or hidden-role modes (Traitors, Murder), on cloaked players, or on players who are dead, out or waiting.</p>
+<h4 id="help-basics-match-stats-and-progression-settings">Settings</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Match stats: XP, levels, achievements, history</strong></td>
+<td><code>kgxat_stats_on</code>. Off: nothing is recorded and the hub tab is hidden.</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Announce level-ups and achievements in chat</strong></td>
+<td><code>kgxat_stats_announce</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Show levels, name colors and badges</strong></td>
+<td><code>kgxat_stats_cosmetics</code> (match scoreboard, kill feed, final standings)</td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Players (not bots) a match needs to count</strong></td>
+<td><code>kgxat_stats_min_players</code>, 1-32</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>XP rate (%, 100 = normal)</strong></td>
+<td><code>kgxat_stats_xp</code>, 0-1000</td>
+<td>100</td>
+</tr>
+<tr>
+<td><strong>Matches kept in the history</strong></td>
+<td><code>kgxat_stats_history</code>, 0-200</td>
+<td>50</td>
+</tr>
+<tr>
+<td><strong>Trails: 0 off, 1 during matches, 2 always</strong></td>
+<td><code>kgxat_stats_trails</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Season length in days (0 = a superadmin ends it)</strong></td>
+<td><code>kgxat_stats_season_days</code>, 0-365 (v3.6.14)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Ended seasons kept</strong></td>
+<td><code>kgxat_stats_season_keep</code>, 1-50</td>
+<td>12</td>
+</tr>
+</tbody>
+</table></div>
+<p>Superadmins also get, in Match stats: right-click a player on the <strong>Leaderboards</strong> &gt; <strong>Reset this player's stats...</strong>, <strong>End the season...</strong> and <strong>Reset everyone's stats...</strong> above the leaderboard, and <strong>Clear the match history...</strong> on the History tab. Each asks first and is written to the action log.</p>
+<h4 id="help-basics-match-stats-and-progression-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>Stats are saved in <code>data/kgx_admin_toolbox/match_stats.json</code> and the history in <code>match_history.json</code>, both for every map. They are part of Backup / Restore like the rest of the toolbox data.</li>
+<li>Set <strong>Players a match needs</strong> to 1 to let a match with one player count, for example to test it.</li>
+<li>A player who leaves before the end of a match keeps what they earned during it (achievements, streaks, captures) but gets no totals or XP for it. Leaving and joining the same match again keeps your kills, deaths and rounds.</li>
+<li>Kills of your own team or side are no kills. Any death ends a kill streak.</li>
+<li>Lua: <code>hook.Add("KGXAT_StatsLevelUp", ...)</code> (ply, level), <code>KGXAT_StatsAchievement</code> (ply, id) and <code>KGXAT_MatchEnded</code> (the history entry). The networked value <code>KGXAT_Level</code> holds a player's level, so the HUD token <code>{nw:KGXAT_Level}</code> shows it.</li>
+</ul><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="basics-console-commands.html"><small class="mono">Previous</small><strong>Console Commands</strong></a><a class="help-pager-next" href="basics-phone-book.html"><small class="mono">Next</small><strong>Phone Book</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-basics.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Basics</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
