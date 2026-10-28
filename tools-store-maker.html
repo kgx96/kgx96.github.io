@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>Store Maker — KGX&#x27;s Admin Toolbox tutorial</title>
+<meta name="description" content="Turn NPCs and props into stores, banks or ATMs, or place new ones (with a preset).">
+<meta property="og:title" content="Store Maker — KGX&#x27;s Admin Toolbox tutorial">
+<meta property="og:description" content="Turn NPCs and props into stores, banks or ATMs, or place new ones (with a preset).">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Admin Toolbox">
+<meta property="og:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="KGX's Admin Toolbox releases" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M15 19h18v15H15zM20 19v-5h8v5M15 25h18M22 24v4h4v-4' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/tools-store-maker.html">
+<meta property="og:url" content="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/tools-store-maker.html">
+</head>
+<body id="top">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Admin Toolbox home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-toolbox"/></svg></span><span class="brand-name">KGX'S ADMIN TOOLBOX<small>GARRY'S MOD ADDON</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html#roadmap">Roadmap</a><a href="releases.html">Releases</a><a href="help.html" aria-current="page">Help</a><a href="faq.html">FAQ</a><a href="index.html#about">About</a><a class="nav-library" href="https://kgx96.github.io/" title="KGX's Dev Library: every KGX project">Dev Library</a><a class="nav-mobile-only" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">Steam Workshop</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer"><span>Steam Workshop</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="help help-page is-article" id="help" aria-label="Help"><div class="roadmap-layout"><aside class="roadmap-sidebar" aria-label="Help navigation"><p class="eyebrow sidebar-label">Help</p><nav class="filters help-nav" aria-label="Help pages"><a class="filter" href="help.html">Help home</a><a class="filter" href="help-basics.html">Basics <span class="filter-count">08</span></a><a class="filter" href="help-tools.html" aria-current="page">Tools <span class="filter-count">95</span></a><a class="filter" href="help-settings.html">Settings <span class="filter-count">45</span></a><a class="filter" href="help-panels.html">Admin panels <span class="filter-count">32</span></a><a class="filter" href="kgx-core.html">KGX Core <span class="filter-count">v1.3.3</span></a></nav><nav class="help-toc" aria-label="On this page"><p class="eyebrow sidebar-label">On this page</p><div class="filters"><a class="filter" href="#help-tools-store-maker-what-it-does">What it does</a><a class="filter" href="#help-tools-store-maker-where-to-find-it">Where to find it</a><a class="filter" href="#help-tools-store-maker-controls">Controls</a><a class="filter" href="#help-tools-store-maker-options">Options</a><a class="filter" href="#help-tools-store-maker-the-store-editor">The store editor</a><a class="filter" href="#help-tools-store-maker-how-to-use-it">How to use it</a><a class="filter" href="#help-tools-store-maker-settings-and-commands">Settings and commands</a><a class="filter" href="#help-tools-store-maker-tips-and-limits">Tips and limits</a><a class="filter" href="#help-tools-store-maker-alt-e-admins-v3-6-21-5-1">Alt + E (admins, v3.6.21.5.1)</a><a class="filter" href="#help-tools-store-maker-store-screens-v3-6-21-5">Store screens (v3.6.21.5)</a><a class="filter" href="#help-tools-store-maker-bank-vaults-and-e-v3-6-21-3">Bank vaults and E (v3.6.21.3)</a></div></nav></aside><div class="help-main"><nav class="help-crumbs mono" aria-label="Breadcrumb"><a href="help.html">Help</a><i aria-hidden="true">/</i><a href="help-tools.html">Tools</a><i aria-hidden="true">/</i><span aria-current="page">Store Maker</span></nav><article class="help-view help-article" aria-labelledby="help-tools-store-maker-title"><header class="help-article-head"><p class="eyebrow">Tutorial / Tools &gt; Economy</p><h1 id="help-tools-store-maker-title">Store Maker</h1><p class="help-article-sum">Turn NPCs and props into stores, banks or ATMs, or place new ones (with a preset).</p><p class="help-article-meta mono">Tool / Covers v3.6.21.6.1 / Updated Oct 28, 2026</p></header><nav class="help-article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#help-tools-store-maker-what-it-does">What it does</a></li><li><a href="#help-tools-store-maker-where-to-find-it">Where to find it</a></li><li><a href="#help-tools-store-maker-controls">Controls</a></li><li><a href="#help-tools-store-maker-options">Options</a></li><li><a href="#help-tools-store-maker-the-store-editor">The store editor</a></li><li><a href="#help-tools-store-maker-how-to-use-it">How to use it</a></li><li><a href="#help-tools-store-maker-settings-and-commands">Settings and commands</a></li><li><a href="#help-tools-store-maker-tips-and-limits">Tips and limits</a></li><li><a href="#help-tools-store-maker-alt-e-admins-v3-6-21-5-1">Alt + E (admins, v3.6.21.5.1)</a></li><li><a href="#help-tools-store-maker-store-screens-v3-6-21-5">Store screens (v3.6.21.5)</a></li><li><a href="#help-tools-store-maker-bank-vaults-and-e-v3-6-21-3">Bank vaults and E (v3.6.21.3)</a></li></ol></nav><h4 id="help-tools-store-maker-what-it-does">What it does</h4>
+<p>The Store Maker creates stores, banks and ATMs. Left-click an NPC or a prop you spawned to turn it into one; it keeps its model, skin, color and spot. Left-click the ground to place a new one facing you.</p>
+<p>Stores sell weapons, ammo, entities, props, vehicles, health, armor, boosts, food, chairs, licenses and the main money printer, each with a price. Banks and ATMs let players deposit, withdraw and send money. Players open any of them with E.</p>
+<p>Presets save a whole store (type, model, items, look, character and voice). Place new stores from a preset, put a preset on an existing store, or push preset changes to every store on the map.</p>
+<h4 id="help-tools-store-maker-where-to-find-it">Where to find it</h4>
+<p>Q menu &gt; KGX's Admin Toolbox &gt; Economy &gt; Store Maker.</p>
+<p>Toolbox admins can use it on every store. Players can use it only if a superadmin ticks it in Settings &gt; Player Access. They can then edit and remove only their own stores.</p>
+<p>The store list in Economy &gt; Economy also has <strong>Edit...</strong> for every store.</p>
+<p><strong>Given to a player (v3.6.11.3):</strong> Their own stores (no licenses, printers or vault spots for sale).</p>
+<h4 id="help-tools-store-maker-controls">Controls</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left click</td>
+<td>Make the aimed NPC/prop a store, or place a new one where you aim (with the selected preset)</td>
+</tr>
+<tr>
+<td>Right click</td>
+<td>Edit the aimed store: items, look, character, voice, access</td>
+</tr>
+<tr>
+<td>E + right click</td>
+<td>Apply the selected preset to the aimed store</td>
+</tr>
+<tr>
+<td>Reload</td>
+<td>Remove the aimed store (click twice within 3 seconds)</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-tools-store-maker-options">Options</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Make a</strong></td>
+<td>Store, Bank or ATM.</td>
+<td>Store</td>
+</tr>
+<tr>
+<td><strong>Model for new ones</strong></td>
+<td>Default for the type (a store: a citizen; a bank: a vault-like fridge (v3.6.21.1); an ATM: the downtown ATM), or a list of citizens, characters, an ATM, a vending machine, a cash register, and (v3.6.21.1) a vault (fridge), servers, a receiver cart and two silo servers.</td>
+<td>Default for the type</td>
+</tr>
+<tr>
+<td><strong>Or any model</strong></td>
+<td>Type any model path.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td><strong>Use the model I am looking at</strong></td>
+<td>Copies the aimed entity's model into the field.</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Default models: store and bank are citizens, ATM is the downtown ATM (a vending machine if that model is missing). Person models stand, idle, turn to players and talk. Other models are solid props.</p>
+<h5>Presets</h5>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preset</strong></td>
+<td>The preset for new stores and for E + right-click. <strong>(none: an empty store of the type above)</strong> uses no preset.</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><strong>Saved store presets (every map)</strong></td>
+<td>List of presets. Double-click to select one. Right-click for <strong>Use this preset</strong> or <strong>Delete (admins)</strong>.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Refresh presets</strong></td>
+<td>Reloads the list.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Update all stores from their presets</strong></td>
+<td>Puts each store's preset on it again (asks first).</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Reset to defaults</strong></td>
+<td>Sets <strong>Make a</strong> and <strong>Model for new ones</strong> back to the defaults.</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Four presets come with the toolbox: Medic (health and armor), License Office (Property Licenses), Gun Shop and Black Market Dealer (Money Printers, printer upgrades and tools, Lockpick, Keypad Hacker).</p>
+<h4 id="help-tools-store-maker-the-store-editor">The store editor</h4>
+<p>Right-click a store to open its editor. It has these tabs:</p>
+<ul>
+<li><strong>General</strong>: <strong>Name above it</strong>, <strong>Type</strong>, <strong>Welcome text (window)</strong>, <strong>Model</strong>, <strong>Skin</strong>, <strong>Animated person</strong>, <strong>Updates from preset</strong>, three colors (accent, window background, text), <strong>Go to it</strong> and <strong>Move it to where I am looking (facing me)</strong>.</li>
+<li><strong>Character &amp; voice</strong>: hide the name, animation, <strong>Turn to face players nearby and whoever uses it</strong>, voice, and when it speaks (greets, on a purchase, goodbye). <strong>Test the voice</strong> plays a line.</li>
+<li><strong>Items</strong>: the item list (<strong>Type</strong>, <strong>Name</strong>, <strong>Class / model</strong>, <strong>Price</strong>, <strong>Amount</strong>). Pick a type, use <strong>Pick...</strong> to choose from a searchable list, set a price and amount, and an optional license the buyer needs. Buttons: <strong>Add as new item</strong>, <strong>Update selected</strong>, <strong>Remove selected</strong>, <strong>Move up</strong>, <strong>Move down</strong>.</li>
+<li><strong>Access</strong>: <strong>Everyone can use it</strong>, a whitelist or a blacklist of players and ranks, and a jobs list. Toolbox admins can always use it; jailed players never can.</li>
+<li><strong>Buy back</strong>: <strong>Players can sell weapons back to this store</strong> at a set percent of the price. An extra box also buys back licenses and things bought here that are near the player. A weapon is bought back for this store's price or the price paid for it, whichever is less. A store a player made buys back no licenses, and only weapons bought since v3.6.11.1.</li>
+<li><strong>Bank vault</strong> (admins, v3.6.21): <strong>A bank vault: it holds a share of every tax and fee, and can be robbed</strong> (banks and ATMs), <strong>Its share of the bank money (%, split with the other vaults)</strong> and <strong>The most it holds (the rest goes to the treasury)</strong>. How much of every tax goes to the vaults is set in Settings &gt; Taxes &amp; Treasury &gt; <strong>Bank vaults %</strong>. How the vault is robbed (Bypass, time, chance, cooldown, who may rob it): Economy &gt; Money Generator on the bank. Turning it off, or removing the bank, gives its money back to the treasury.</li>
+<li><strong>Window</strong>: show only the categories the store sells, hover tips and warnings, and up to 8 extra lines of text under the welcome.</li>
+<li><strong>Screen</strong> (v3.6.21.5): a screen with the store's items. <strong>Screen</strong>: <strong>No screen</strong>, <strong>The store is a screen</strong> (drawn on its model's screen; on a model without one, on the front of its box) or <strong>A screen beside the store</strong>. <strong>Make the store a screen model</strong> picks a monitor, TV or cash register model (it sets <strong>Model</strong> on the General tab and turns off <strong>Animated person</strong>). <strong>Beside: where</strong> (right, left or above) and <strong>Beside: size</strong>. <strong>A HIDE / SHOW button</strong> at the bottom right (E on it hides the screen for everyone; only admins and whoever may edit the store; for others E there opens the store) and <strong>Hidden now</strong>. A store that turns to players keeps a screen beside it facing the way it was placed; a prop store's screen turns with it.</li>
+</ul>
+<p>At the bottom: <strong>Save as preset...</strong> (admins), <strong>Load a preset...</strong>, <strong>Close without saving</strong> and <strong>Save</strong>.</p>
+<h4 id="help-tools-store-maker-how-to-use-it">How to use it</h4>
+<h5>Turn an NPC into a gun store</h5>
+<ol>
+<li>Set <strong>Make a</strong> to Store and the <strong>Preset</strong> to Gun Shop.</li>
+<li>Left-click the NPC. It becomes a store with the preset's items and keeps the NPC's model.</li>
+<li>Right-click it to change prices on the <strong>Items</strong> tab, then click <strong>Save</strong>.</li>
+</ol>
+<h5>Place an ATM</h5>
+<ol>
+<li>Set <strong>Make a</strong> to ATM and <strong>Preset</strong> to (none).</li>
+<li>Leave <strong>Model for new ones</strong> on Default for the type.</li>
+<li>Left-click the ground. Players press E on it to open their bank.</li>
+</ol>
+<h5>Make a bank that can be robbed</h5>
+<ol>
+<li>Settings &gt; Taxes &amp; Treasury: set <strong>Bank vaults: % of every tax and fee</strong> to, for example, 25, and click <strong>Apply the numbers above</strong>.</li>
+<li>Right-click a bank, open the <strong>Bank vault</strong> tab, tick <strong>A bank vault</strong>, set the most it holds (for example 50,000) and click <strong>Save</strong>.</li>
+<li>A quarter of every tax and fee now goes into the bank. Its window shows the money in it. Robbers with the right tool (by default the Bypass, both locks) take half of it; police and admins are alerted.</li>
+</ol>
+<h5>Make your own preset</h5>
+<ol>
+<li>Right-click a finished store to open the editor.</li>
+<li>Click <strong>Save as preset...</strong> and type a name. An existing name is replaced.</li>
+<li>Select the preset in the tool panel and left-click to place copies.</li>
+</ol>
+<h5>Push preset changes to placed stores</h5>
+<ol>
+<li>Change the store that the preset came from, and save it as the preset again.</li>
+<li>Click <strong>Update all stores from their presets</strong> and confirm.</li>
+<li>Stores keep their place, type, model, owner and player list. Edits made to them in the editor are replaced.</li>
+</ol>
+<h4 id="help-tools-store-maker-settings-and-commands">Settings and commands</h4>
+<div class="help-table"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kgxat_limit_stores</code></td>
+<td>Most stores, banks and ATMs one non-admin player can make (0 = not allowed).</td>
+<td>2</td>
+<td>0-50</td>
+</tr>
+<tr>
+<td><code>kgxat_store_owner_limits</code></td>
+<td>1 = stores made by players only sell weapons, entities and vehicles that players may spawn.</td>
+<td>1</td>
+<td>0-1</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="help-tools-store-maker-tips-and-limits">Tips and limits</h4>
+<ul>
+<li>
+<p>Players given this tool turn only their own props and NPCs into stores (not permanent or server-owned ones).</p>
+</li>
+<li>
+<p>Making a store needs the economy on (<code>kgxat_economy</code>). Players cannot open a store while it is off.</p>
+</li>
+<li>You cannot turn players, vehicles, weapons or map-created entities into stores.</li>
+<li>Stores are saved per map in <code>data/kgx_admin_toolbox/stores_&lt;map&gt;.json</code>. Presets are saved in <code>storepresets.json</code> and work on every map.</li>
+<li>A store updates from the preset it was placed with, or the one put on it with E + right-click. Older stores update from the preset with the same name. Set <strong>Updates from preset</strong> to (none) to keep a store's own edits.</li>
+<li>Players who are not admins update only their own stores with <strong>Update all stores from their presets</strong>.</li>
+<li>Admins can move prop stores with the physgun; the new spot is saved. Players cannot move stores.</li>
+<li>Other tools cannot change a store. The exceptions are the Money Generator and the Admin Remover, and superadmins with <code>kgxat_superadmin_override</code> on.</li>
+<li>Only admins can save or delete presets.</li>
+</ul>
+<h4 id="help-tools-store-maker-alt-e-admins-v3-6-21-5-1">Alt + E (admins, v3.6.21.5.1)</h4>
+<p>Alt + E on a store, bank or ATM opens a small window: <strong>Store editor</strong>, <strong>Open it (as a player)</strong> and <strong>Money Generator (robbery settings)</strong>. E opens the store as before.</p>
+<h4 id="help-tools-store-maker-store-screens-v3-6-21-5">Store screens (v3.6.21.5)</h4>
+<p>A store screen shows the store's name, its welcome text and every item with the price players pay (sales tax included). When the items do not fit, it shows them a page at a time (a new page every 6 seconds, "Page 1 of 3"). Banks and ATMs show the welcome and the extra lines of the Window tab; a vault-only bank says it only holds the bank's money. Players who may not use the store see <strong>Closed to you</strong> with the reason. E on the store (not on the button) opens it as before.</p>
+<h5>A gun store on a monitor</h5>
+<ol>
+<li>Right-click the store, open the <strong>Screen</strong> tab.</li>
+<li><strong>Make the store a screen model</strong>: White CRT monitor. <strong>Screen</strong> switches to <strong>The store is a screen</strong>.</li>
+<li><strong>Save</strong>. The monitor shows the guns and prices.</li>
+</ol>
+<h5>A menu board beside an NPC</h5>
+<ol>
+<li>On the <strong>Screen</strong> tab pick <strong>A screen beside the store</strong>, <strong>To the right</strong>, size 1.5.</li>
+<li><strong>Save</strong>. A board stands next to the NPC, facing the way the store was placed (it does not turn with the NPC).</li>
+</ol>
+<h4 id="help-tools-store-maker-bank-vaults-and-e-v3-6-21-3">Bank vaults and E (v3.6.21.3)</h4>
+<p>With Settings &gt; Taxes &amp; Treasury &gt; <strong>Bank vaults only hold money</strong> on, E on a bank or ATM set as a bank vault opens a small window: the vault's name, the money inside (unless its sign hides the amount), and whether it can be robbed now (or when it is safe again, or that its mechanical lock is open). Nobody deposits or withdraws there. Admins also get <strong>Admins: change this vault (Money Generator)</strong>.</p><nav class="help-pager" aria-label="More tutorials"><a class="help-pager-prev" href="tools-money-printer.html"><small class="mono">Previous</small><strong>Money Printer</strong></a><a class="help-pager-next" href="tools-treasury-node.html"><small class="mono">Next</small><strong>Treasury Node</strong></a></nav><p class="help-article-end"><a class="text-link" href="help-tools.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Back to Tools</a></p></article></div></div></section>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3817351592" target="_blank" rel="noopener noreferrer">KGX&#x27;s Admin Toolbox</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX&#x27;s Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://kgx96.github.io/" target="_blank" rel="noopener noreferrer">KGX&#x27;s Dev Library</a><a href="faq.html">FAQ</a><a href="https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report a bug</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search tutorials, FAQ and releases..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every tool, panel, setting, FAQ answer and release.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
