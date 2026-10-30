@@ -12,6 +12,7 @@ The website of every KGX PRODUCTIONS project: Garry's Mod addons, programs for m
 | Pickup Equipped | Pick up weapons only when you mean it | [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3816930283) |
 | gmpub-tool | Package and publish Garry's Mod addons to the Workshop | [GitHub](https://github.com/kgx96/gmpub-tool) (open source, MIT) |
 | Steam Library Exporter | Export your Steam library to TXT or CSV | [GitHub](https://github.com/kgx96/steam-library-exporter) (free download) |
+| KGX DriveKit | See what fills your drives and free space safely | [GitHub](https://github.com/kgx96/kgx-drivekit) (free download) |
 | SYS//BREAK | A command-prompt hacking game | Coming soon |
 
 ## What is in this repository
@@ -37,5 +38,6 @@ The one open-source KGX project is **gmpub-tool**, under the MIT License in [its
 - KGX's Admin Toolbox, KGX Core, Throw Equipped, Pickup Equipped: [report a bug](https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml)
 - gmpub-tool: [issues](https://github.com/kgx96/gmpub-tool/issues/new/choose)
 - Steam Library Exporter: [issues](https://github.com/kgx96/steam-library-exporter/issues/new)
+- KGX DriveKit: [issues](https://github.com/kgx96/kgx-drivekit/issues/new)
 
 Not affiliated with Facepunch Studios or Valve. Garry's Mod, Steam and the Steam Workshop are trademarks of their owners.
