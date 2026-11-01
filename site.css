@@ -171,6 +171,7 @@ body:not(.page-home){--bg-fade:rgba(242,244,247,.9)}
 .library-single .roadmap-heading{flex-direction:column;align-items:flex-start;gap:10px}
 .library-single .roadmap-heading p{max-width:none}
 .library-single .project-grid{grid-template-columns:1fr;flex:1}
+.game-block+.game-block{margin-top:48px}
 .game-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--line)}
 .game-head h3{font:600 26px/1.1 'Barlow Semi Condensed',sans-serif;margin:0}
 .game-head .mono{font-size:10px;color:var(--muted);letter-spacing:.08em}
