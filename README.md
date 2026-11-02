@@ -2,7 +2,7 @@
 
 **https://kgx96.github.io/**
 
-The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3 mods, programs for modders and games in development, each with its own roadmap.
+The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3 and Oblivion mods, programs for modders and games in development, each with its own roadmap.
 
 | Project | What it is | Where |
 |---|---|---|
@@ -11,6 +11,7 @@ The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3 mods
 | Throw Equipped | Throw or carry the weapon in your hands | [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3816926153) |
 | Pickup Equipped | Pick up weapons only when you mean it | [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3816930283) |
 | Cheat Room | Fallout 3 mod: a hidden room with a Cheat Terminal, a Fast Travel Terminal and a companion | [Nexus Mods](https://www.nexusmods.com/fallout3/mods/25488?tab=files) · [roadmap](https://kgx96.github.io/fallout3-cheat-room.html) |
+| Mystic's Cheat Room | Oblivion mod: a cheat room with every item, a portable Cheat Menu and a companion | [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317?tab=files) · [roadmap](https://kgx96.github.io/oblivion-mystics-cheat-room.html) |
 | gmpub-tool | Package and publish Garry's Mod addons to the Workshop | [GitHub](https://github.com/kgx96/gmpub-tool) (open source, MIT) |
 | Steam Library Exporter | Export your Steam library to TXT or CSV | [GitHub](https://github.com/kgx96/steam-library-exporter) (free download) |
 | KGX DriveKit | See what fills your drives and free space safely | [GitHub](https://github.com/kgx96/kgx-drivekit) (free download) |
@@ -41,5 +42,6 @@ The one open-source KGX project is **gmpub-tool**, under the MIT License in [its
 - Steam Library Exporter: [issues](https://github.com/kgx96/steam-library-exporter/issues/new)
 - KGX DriveKit: [issues](https://github.com/kgx96/kgx-drivekit/issues/new)
 - Cheat Room: [Nexus Mods](https://www.nexusmods.com/fallout3/mods/25488)
+- Mystic's Cheat Room: [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317)
 
-Not affiliated with Facepunch Studios, Valve or Bethesda. Garry's Mod, Steam, the Steam Workshop and Fallout are trademarks of their owners.
+Not affiliated with Facepunch Studios, Valve or Bethesda. Garry's Mod, Steam, the Steam Workshop, Fallout and The Elder Scrolls are trademarks of their owners.
