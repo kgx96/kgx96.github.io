@@ -16,6 +16,7 @@ The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3, Obl
 | Mystic's Cheat Room | Oblivion mod: a cheat room with every item, a portable Cheat Menu and a companion | [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317?tab=files) · [roadmap](https://kgx96.github.io/oblivion-mystics-cheat-room.html) |
 | KGX Core (7DTD) | 7 Days to Die framework mod required by every KGX 7 Days to Die mod | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13724) · [roadmap](https://kgx96.github.io/7daystodie-kgx-core.html) |
 | KGX Contract Board | 7 Days to Die mod: build a Contract Board and take daily contracts for Dukes, XP and items | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13725) · [roadmap](https://kgx96.github.io/7daystodie-contract-board.html) |
+| KGX Dukes Bank | 7 Days to Die mod: build an ATM and keep your Dukes in the bank | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13727) · [roadmap](https://kgx96.github.io/7daystodie-dukes-bank.html) |
 | gmpub-tool | Package and publish Garry's Mod addons to the Workshop | [GitHub](https://github.com/kgx96/gmpub-tool) (open source, MIT) |
 | Steam Library Exporter | Export your Steam library to TXT or CSV | [GitHub](https://github.com/kgx96/steam-library-exporter) (free download) |
 | KGX DriveKit | See what fills your drives and free space safely | [GitHub](https://github.com/kgx96/kgx-drivekit) (free download) |
@@ -51,5 +52,6 @@ The one open-source KGX project is **gmpub-tool**, under the MIT License in [its
 - Mystic's Cheat Room: [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317)
 - KGX Core (7DTD): [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13724)
 - KGX Contract Board: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13725)
+- KGX Dukes Bank: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13727)
 
 Not affiliated with Facepunch Studios, Valve, Bethesda or The Fun Pimps. Garry's Mod, Steam, the Steam Workshop, Fallout, The Elder Scrolls and 7 Days to Die are trademarks of their owners.
