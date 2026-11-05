@@ -2,7 +2,7 @@
 
 **https://kgx96.github.io/**
 
-The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3 and Oblivion mods, programs for modders and games in development, each with its own roadmap.
+The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3, Oblivion and 7 Days to Die mods, programs for modders and games in development, each with its own roadmap.
 
 | Project | What it is | Where |
 |---|---|---|
@@ -14,6 +14,8 @@ The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3 and 
 | Wasteland Settlement Kit | Fallout 3 mod: build your own place anywhere, placed live with the number pad | [Nexus Mods](https://www.nexusmods.com/fallout3/mods/27782) · [roadmap](https://kgx96.github.io/fallout3-wasteland-settlement-kit.html) |
 | Bounty System | Fallout 3 mod: bounty board in Megaton, outlaw hunts, kill orders and a bounty on you | [Nexus Mods](https://www.nexusmods.com/fallout3/mods/27783) · [roadmap](https://kgx96.github.io/fallout3-bounty-system.html) |
 | Mystic's Cheat Room | Oblivion mod: a cheat room with every item, a portable Cheat Menu and a companion | [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317?tab=files) · [roadmap](https://kgx96.github.io/oblivion-mystics-cheat-room.html) |
+| KGX Core (7DTD) | 7 Days to Die framework mod required by every KGX 7 Days to Die mod | [Nexus Mods](https://www.nexusmods.com/profile/KGX96) · [roadmap](https://kgx96.github.io/7daystodie-kgx-core.html) |
+| KGX Contract Board | 7 Days to Die mod: build a Contract Board and take daily contracts for Dukes, XP and items | [Nexus Mods](https://www.nexusmods.com/profile/KGX96) · [roadmap](https://kgx96.github.io/7daystodie-contract-board.html) |
 | gmpub-tool | Package and publish Garry's Mod addons to the Workshop | [GitHub](https://github.com/kgx96/gmpub-tool) (open source, MIT) |
 | Steam Library Exporter | Export your Steam library to TXT or CSV | [GitHub](https://github.com/kgx96/steam-library-exporter) (free download) |
 | KGX DriveKit | See what fills your drives and free space safely | [GitHub](https://github.com/kgx96/kgx-drivekit) (free download) |
@@ -47,5 +49,6 @@ The one open-source KGX project is **gmpub-tool**, under the MIT License in [its
 - Wasteland Settlement Kit: [Nexus Mods](https://www.nexusmods.com/fallout3/mods/27782)
 - Bounty System: [Nexus Mods](https://www.nexusmods.com/fallout3/mods/27783)
 - Mystic's Cheat Room: [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317)
+- KGX Core (7DTD), KGX Contract Board: [Nexus Mods](https://www.nexusmods.com/profile/KGX96)
 
-Not affiliated with Facepunch Studios, Valve or Bethesda. Garry's Mod, Steam, the Steam Workshop, Fallout and The Elder Scrolls are trademarks of their owners.
+Not affiliated with Facepunch Studios, Valve, Bethesda or The Fun Pimps. Garry's Mod, Steam, the Steam Workshop, Fallout, The Elder Scrolls and 7 Days to Die are trademarks of their owners.
