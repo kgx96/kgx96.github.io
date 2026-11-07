@@ -19,6 +19,7 @@ The website of every KGX PRODUCTIONS project: Garry's Mod addons, Fallout 3, Obl
 | KGX Dukes Bank | 7 Days to Die mod: build an ATM and keep your Dukes in the bank | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13727) · [roadmap](https://kgx96.github.io/7daystodie-dukes-bank.html) |
 | KGX Server Info | 7 Days to Die mod: welcome window and server rules players accept, message of the day and announcements | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13732) · [roadmap](https://kgx96.github.io/7daystodie-server-info.html) |
 | KGX Trade Post | 7 Days to Die mod: buy orders, listings and a Collect box; trade with players, even offline | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13797) · [roadmap](https://kgx96.github.io/7daystodie-trade-post.html) · [item catalog](https://kgx96.github.io/7daystodie-trade-post-items.html) |
+| KGX Wildlife | 7 Days to Die mod: deer herds, hunting packs and animal populations per biome | [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13799) · [roadmap](https://kgx96.github.io/7daystodie-wildlife.html) |
 | 7 Days to Die tutorials | Step-by-step guides for every KGX 7 Days to Die mod | [tutorials](https://kgx96.github.io/7daystodie-tutorials.html) |
 | gmpub-tool | Package and publish Garry's Mod addons to the Workshop | [GitHub](https://github.com/kgx96/gmpub-tool) (open source, MIT) |
 | Steam Library Exporter | Export your Steam library to TXT or CSV | [GitHub](https://github.com/kgx96/steam-library-exporter) (free download) |
@@ -58,5 +59,6 @@ The one open-source KGX project is **gmpub-tool**, under the MIT License in [its
 - KGX Dukes Bank: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13727)
 - KGX Server Info: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13732)
 - KGX Trade Post: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13797)
+- KGX Wildlife: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13799)
 
 Not affiliated with Facepunch Studios, Valve, Bethesda or The Fun Pimps. Garry's Mod, Steam, the Steam Workshop, Fallout, The Elder Scrolls and 7 Days to Die are trademarks of their owners.
