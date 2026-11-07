@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4f7">
+<title>7 Days to Die Tutorials | KGX&#x27;s Dev Library</title>
+<meta name="description" content="Step-by-step guides for every KGX 7 Days to Die mod: KGX Core, Contract Board, Dukes Bank, Server Info and Trade Post.">
+<meta property="og:title" content="7 Days to Die Tutorials | KGX&#x27;s Dev Library">
+<meta property="og:description" content="Step-by-step guides for every KGX 7 Days to Die mod: KGX Core, Contract Board, Dukes Bank, Server Info and Trade Post.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KGX's Dev Library">
+<meta property="og:image" content="https://kgx96.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kgx96.github.io/og.jpg">
+<meta name="google-site-verification" content="MKsWw8WM1RtAb3UfFLZyFe7Z_zVenUyCMtq20ObM6JQ">
+<link rel="apple-touch-icon" href="https://kgx96.github.io/apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%232469eb'/%3E%3Cpath d='M11 12h7v24h-7zM21 12h7v24h-7zM30.5 13.5l6-1.6 5.6 21.6-6 1.6' fill='none' stroke='white' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){try{var t=localStorage.getItem('kgx-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="site.css">
+<meta name="kgx-stats" content="https://kgx96.goatcounter.com">
+<script data-goatcounter="https://kgx96.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://kgx96.github.io/7daystodie-tutorials.html">
+<meta property="og:url" content="https://kgx96.github.io/7daystodie-tutorials.html">
+<style>
+.tu-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start;margin:0 0 72px}
+.tu-toc{position:sticky;top:96px;display:grid;gap:4px;padding:16px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.tu-toc p{margin:0 0 6px}
+.tu-toc a{display:grid;grid-template-columns:28px 1fr;gap:6px;padding:6px 8px;border-radius:4px;color:var(--ink);text-decoration:none;font-size:15px;line-height:1.35}
+.tu-toc a span{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);padding-top:3px}
+.tu-toc a:hover{background:var(--blue-light);color:var(--blue)}
+.tu-list{display:grid;gap:22px;min-width:0}
+.tu-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px 24px;scroll-margin-top:96px;min-width:0}
+.tu-card h2{font-family:'Barlow Semi Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1.15;margin:6px 0 4px;text-wrap:balance}
+.tu-card .tu-sum{color:var(--muted);margin:0 0 14px;font-size:17px}
+.tu-steps{margin:0;padding:0;list-style:none;counter-reset:step;display:grid;gap:10px}
+.tu-steps li{counter-increment:step;display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;line-height:1.55;font-size:16px}
+.tu-steps li::before{content:counter(step);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--blue-light);color:var(--blue);font:600 13px 'IBM Plex Mono',monospace;margin-top:1px}
+.tu-steps code,.tu-tip code,.tu-start code{font-family:'IBM Plex Mono',monospace;font-size:.88em;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:1px 5px;overflow-wrap:anywhere}
+.tu-steps kbd,.tu-tip kbd{font-family:'IBM Plex Mono',monospace;font-size:.85em;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface)}
+.tu-tip{margin:16px 0 0;padding:12px 14px;border-left:3px solid var(--green);background:var(--green-light);border-radius:0 6px 6px 0;font-size:15px;line-height:1.5}
+.tu-tip strong{color:var(--green)}
+.tu-start{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 24px;margin:0 0 22px;font-size:17px;line-height:1.55}
+.tu-hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:0 0 72px}
+.tu-mod{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 22px;display:grid;gap:10px;align-content:start}
+.tu-mod h2{font-family:'Barlow Semi Condensed',sans-serif;font-size:26px;font-weight:700;margin:0;display:flex;gap:10px;align-items:center}
+.tu-mod h2 svg{width:26px;height:26px;fill:none;stroke:var(--blue);stroke-width:1.6}
+.tu-mod p{margin:0;color:var(--muted)}
+.tu-mod ol{margin:0;padding-left:20px;display:grid;gap:4px}
+.tu-mod a{color:var(--blue)}
+.tu-more{margin:0 0 72px}
+.tu-start a,.tu-steps a,.tu-tip a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+@media (max-width:860px){.tu-layout{grid-template-columns:1fr}.tu-toc{position:static}}
+</style>
+</head>
+<body id="top" class="page-home page-project page-tutorial">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-library" viewBox="0 0 32 32"><path d="M5 6h5v20H5zM12 6h5v20h-5zM19.5 7.2l4.8-1.3 4.6 17.6-4.8 1.3zM5 11h5M12 11h5M5 21h5M12 21h5"/></symbol>
+<symbol id="i-toolbox" viewBox="0 0 32 32"><path d="M5 12h22v16H5zM11 12V6h10v6M5 19h22M13 18v4h6v-4"/></symbol>
+<symbol id="i-gear" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/><circle cx="16" cy="16" r="9"/></symbol>
+<symbol id="i-throw" viewBox="0 0 32 32"><path d="M4 26c6-1 10-6 12-12"/><path d="M14 9l6-4 2 3-6 4z"/><path d="M21 14l3 1M23 10l4 0M22 18l3 3"/></symbol>
+<symbol id="i-hand" viewBox="0 0 32 32"><path d="M10 17V8a2 2 0 0 1 4 0v7M14 15V6a2 2 0 0 1 4 0v9M18 15V8a2 2 0 0 1 4 0v9M22 17v-4a2 2 0 0 1 4 0v6c0 6-4 10-9 10h-1c-4 0-6-2-8-5l-3-5a2 2 0 0 1 3-2l2 2"/></symbol>
+<symbol id="i-blueprint" viewBox="0 0 32 32"><rect x="4" y="6" width="22" height="20" rx="1"/><path d="M26 8.5c2.2 0 2.2 15 0 15M8 10h14v12H8zM15 10v6h4M8 18h3.5M11.5 18a3.5 3.5 0 0 1 3.5 3.5"/></symbol>
+<symbol id="i-target" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10"/><circle cx="16" cy="16" r="3.5"/><path d="M16 3v7M16 22v7M3 16h7M22 16h7"/></symbol>
+<symbol id="i-vault" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="4.5"/><path d="M16 4v7.5M16 20.5V28M4 16h7.5M20.5 16H28M7.5 7.5l5.3 5.3M19.2 19.2l5.3 5.3M7.5 24.5l5.3-5.3M19.2 12.8l5.3-5.3"/></symbol>
+<symbol id="i-terminal" viewBox="0 0 32 32"><rect x="3" y="6" width="26" height="20" rx="2"/><path d="m8 13 4 3-4 3M15 20h8"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M10 4H4v16h16v-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><path d="M3 20h6v-6h6V8h6V3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16M9 15h6"/></symbol>
+<symbol id="i-hexcore" viewBox="0 0 32 32"><path d="M16 3 27 9.5v13L16 29 5 22.5v-13z"/><circle cx="16" cy="16" r="4.5"/><path d="M16 7.5v4M16 20.5v4M8.5 16h3M20.5 16h3"/></symbol><symbol id="i-board" viewBox="0 0 32 32"><rect x="4" y="5" width="24" height="20" rx="1.5"/><path d="M8 9h7v8H8zM18 9h6v5h-6zM18 17h6v5h-6z"/><path d="M11.5 9V7.5M21 9V7.5M21 17v-1.5M9 27l2-2M23 27l-2-2"/></symbol><symbol id="i-clipboard" viewBox="0 0 32 32"><rect x="7" y="5" width="18" height="23" rx="2"/><path d="M12 5V3h8v2M11 12h10M11 17h10M11 22h6"/></symbol><symbol id="i-trade" viewBox="0 0 32 32"><rect x="3" y="9" width="10" height="10" rx="1"/><path d="M3 12h10M5 15l6 4M11 15l-6 4"/><circle cx="24" cy="21" r="5"/><path d="M15 8h9l-3-3M17 14h-2l3 3"/><path d="M24 8v4"/></symbol><symbol id="i-bank" viewBox="0 0 32 32"><path d="M4 12 16 5l12 7z"/><path d="M8 14.5v8.5M13 14.5v8.5M19 14.5v8.5M24 14.5v8.5"/><path d="M4 26h24M6 23h20"/></symbol></defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="index.html" aria-label="KGX's Dev Library home"><span class="brand-icon"><svg aria-hidden="true"><use href="#i-library"/></svg></span><span class="brand-name">KGX'S DEV LIBRARY<small>KGX PRODUCTIONS</small></span></a>
+  <div class="nav-right"><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="index.html">Home</a><a href="atb.html">ATB</a><a href="index.html#mods" class="is-section">Mods</a><a href="index.html#programs">Programs</a><a href="index.html#games">Games</a><a href="index.html#about">About</a><a class="nav-mobile-only" href="https://www.nexusmods.com/profile/KGX96" target="_blank" rel="noopener noreferrer">Nexus Mods</a></nav><span class="nav-divider" aria-hidden="true"></span><button class="icon-button menu-button" id="menu-toggle" aria-label="Open the menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><button class="icon-button" id="search-open" aria-label="Search the site" title="Search the site (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg></button><a class="nav-workshop" href="https://www.nexusmods.com/profile/KGX96" target="_blank" rel="noopener noreferrer"><span>Nexus Mods</span> <svg aria-hidden="true"><use href="#i-external"/></svg></a></div>
+</div></header>
+<main class="container" id="main">
+<section class="hero" aria-labelledby="hero-title"><div class="hero-topline"><p class="eyebrow hero-label">KGX'S DEV LIBRARY / 7 DAYS TO DIE / TUTORIALS</p><span class="mono hero-number">32 GUIDES.</span></div>
+    <div class="hero-grid"><div><p class="project-kicker mono"><svg aria-hidden="true"><use href="#i-steps"/></svg> 7 DAYS TO DIE MODS</p><h1 id="hero-title">7 Days to Die tutorials.<span>Learn the KGX mods.</span></h1><p class="hero-description">Step-by-step guides for every KGX mod for 7 Days to Die, for players and for server owners.</p></div></div>
+  </section>
+<div class="tu-start"><p class="eyebrow">Start here</p>All KGX mods need <b>KGX Core (7DTD)</b> and 7 Days to Die V 3.4 (b10) on PC, with EasyAntiCheat off. In multiplayer every KGX mod goes on the server <b>and</b> on every player's game. Begin with <a href="7daystodie-kgx-core-tutorial.html#install">installing KGX Core and KGX mods</a>.</div><div class="tu-hub"><section class="tu-mod"><h2><svg aria-hidden="true"><use href="#i-hexcore"/></svg><a href="7daystodie-kgx-core-tutorial.html">KGX Core (7DTD)</a></h2><p>KGX Core is the framework every KGX mod runs on. These guides cover installing KGX mods, the KGX Settings window, themes, the HUD tracker and the admin tools.</p><ol><li><a href="7daystodie-kgx-core-tutorial.html#install">Install KGX Core and KGX mods</a></li><li><a href="7daystodie-kgx-core-tutorial.html#settings">Use the KGX Settings window</a></li><li><a href="7daystodie-kgx-core-tutorial.html#themes">Change the colour theme</a></li><li><a href="7daystodie-kgx-core-tutorial.html#tracker">Use the HUD tracker and toasts</a></li><li><a href="7daystodie-kgx-core-tutorial.html#admin">Server admin: settings, permissions and mods</a></li><li><a href="7daystodie-kgx-core-tutorial.html#troubleshoot">When something does not work</a></li></ol></section><section class="tu-mod"><h2><svg aria-hidden="true"><use href="#i-board"/></svg><a href="7daystodie-contract-board-tutorial.html">KGX Contract Board</a></h2><p>KGX Contract Board gives every player daily contracts for Dukes, XP and items. These guides cover building the board, taking and finishing contracts, parties and setting it up on a server.</p><ol><li><a href="7daystodie-contract-board-tutorial.html#build">Build and open the Contract Board</a></li><li><a href="7daystodie-contract-board-tutorial.html#take">Take a contract</a></li><li><a href="7daystodie-contract-board-tutorial.html#types">The kinds of contracts</a></li><li><a href="7daystodie-contract-board-tutorial.html#turnin">Turn in and get paid</a></li><li><a href="7daystodie-contract-board-tutorial.html#party">Play contracts with a party</a></li><li><a href="7daystodie-contract-board-tutorial.html#server">Server owner: settings, commands and your own contracts</a></li></ol></section><section class="tu-mod"><h2><svg aria-hidden="true"><use href="#i-bank"/></svg><a href="7daystodie-dukes-bank-tutorial.html">KGX Dukes Bank</a></h2><p>KGX Dukes Bank keeps your Dukes safe in a bank account. These guides cover the ATM, deposits, sending Dukes, interest, party accounts and paying at the Trade Post.</p><ol><li><a href="7daystodie-dukes-bank-tutorial.html#build">Build the ATM and open your account</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#deposit">Deposit and withdraw</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#send">Send Dukes to another player</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#interest">Earn interest</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#party">Share a party account</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#mods">Use the bank with Contract Board and Trade Post</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#history">Read and clear your history</a></li><li><a href="7daystodie-dukes-bank-tutorial.html#server">Server owner: settings and commands</a></li></ol></section><section class="tu-mod"><h2><svg aria-hidden="true"><use href="#i-clipboard"/></svg><a href="7daystodie-server-info-tutorial.html">KGX Server Info</a></h2><p>KGX Server Info shows your welcome text and server rules to players as they join. These guides cover the player side, writing your texts and choosing how strict the rules are.</p><ol><li><a href="7daystodie-server-info-tutorial.html#player">As a player: the welcome window and the rules</a></li><li><a href="7daystodie-server-info-tutorial.html#write">Admin: write the welcome text and rules</a></li><li><a href="7daystodie-server-info-tutorial.html#mode">Admin: choose how strict the rules are</a></li><li><a href="7daystodie-server-info-tutorial.html#announce">Admin: message of the day and announcements</a></li><li><a href="7daystodie-server-info-tutorial.html#server">Admin: commands</a></li></ol></section><section class="tu-mod"><h2><svg aria-hidden="true"><use href="#i-trade"/></svg><a href="7daystodie-trade-post-tutorial.html">KGX Trade Post</a></h2><p>KGX Trade Post lets players trade with each other, even when they are offline. These guides cover buying, selling, the Collect box and the tools for server owners.</p><ol><li><a href="7daystodie-trade-post-tutorial.html#build">Build and open the Trade Post</a></li><li><a href="7daystodie-trade-post-tutorial.html#buyorder">Post a buy order</a></li><li><a href="7daystodie-trade-post-tutorial.html#sell">Sell your items</a></li><li><a href="7daystodie-trade-post-tutorial.html#trade">Buy from listings and deliver to buy orders</a></li><li><a href="7daystodie-trade-post-tutorial.html#mine">Manage your trades and the Collect box</a></li><li><a href="7daystodie-trade-post-tutorial.html#extras">Private offers, watching items and paying from the bank</a></li><li><a href="7daystodie-trade-post-tutorial.html#server">Server owner: server orders, fees and markets</a></li></ol></section></div>
+</main>
+<footer class="container footer"><div><strong>KGX PRODUCTIONS</strong><p>Copyright © KGX PRODUCTIONS 2026. All rights reserved.</p><p class="footer-note">KGX mods and games are not open source; gmpub-tool is (MIT License).</p><p class="footer-visits" id="footer-visits" hidden></p></div><nav class="footer-links" aria-label="KGX links"><a href="https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/" target="_blank" rel="noopener noreferrer">KGX's Admin Toolbox website</a><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192" target="_blank" rel="noopener noreferrer">KGX's Gmod Mod Collection</a><a href="https://steamcommunity.com/id/kgxofficial" target="_blank" rel="noopener noreferrer">KGX on Steam</a><a href="https://github.com/kgx96" target="_blank" rel="noopener noreferrer">KGX on GitHub</a><a href="https://github.com/kgx96/gmpub-tool" target="_blank" rel="noopener noreferrer">gmpub-tool</a></nav><a href="#top">Back to top <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a></footer>
+<dialog class="site-search" id="site-search" aria-label="Search the site" data-root=""><div class="site-search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="site-search-input" placeholder="Search projects, roadmaps and toolbox help..." autocomplete="off" aria-label="Search"><button class="icon-button" id="site-search-close" aria-label="Close">&times;</button></div><p class="site-search-hint mono" id="site-search-hint" aria-live="polite">Type to search every project, roadmap and toolbox tutorial.</p><ol class="site-search-results" id="site-search-results"></ol></dialog>
+<script src="site.js" defer></script>
+</body>
+</html>
