@@ -1,7 +1,7 @@
-name: Bug report
-description: Something in a KGX Garry's Mod addon does not work as it should.
+name: "Bug report: Garry's Mod addons"
+description: Something in KGX's Admin Toolbox, KGX Core, Throw Equipped or Pickup Equipped does not work as it should.
 title: "[Bug] "
-labels: ["bug"]
+labels: ["bug", "Garry's Mod"]
 body:
   - type: markdown
     attributes:

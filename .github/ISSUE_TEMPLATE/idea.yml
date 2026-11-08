@@ -1,0 +1,47 @@
+name: Idea or feature request
+description: Suggest something new for any KGX mod, addon or program.
+title: "[Idea] "
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: Every project has a roadmap on https://kgx96.github.io/ - have a look first, your idea may already be planned.
+  - type: dropdown
+    id: project
+    attributes:
+      label: Project
+      options:
+        - "Garry's Mod: KGX's Admin Toolbox"
+        - "Garry's Mod: KGX Core"
+        - "Garry's Mod: Throw Equipped"
+        - "Garry's Mod: Pickup Equipped"
+        - "Fallout 3: Cheat Room"
+        - "Fallout 3: Wasteland Settlement Kit"
+        - "Fallout 3: Bounty System"
+        - "Oblivion: Mystic's Cheat Room"
+        - "7 Days to Die: KGX Core (7DTD)"
+        - "7 Days to Die: KGX Contract Board"
+        - "7 Days to Die: KGX Dukes Bank"
+        - "7 Days to Die: KGX Server Info"
+        - "7 Days to Die: KGX Trade Post"
+        - "7 Days to Die: KGX Wildlife"
+        - "The website (KGX's Dev Library)"
+        - A new mod or addon
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What should it do, and how would you use it?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it would help
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Examples from other mods or games, screenshots, sketches.

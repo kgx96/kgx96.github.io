@@ -1,0 +1,81 @@
+name: "Bug report: Oblivion mods"
+description: Something in Mystic's Cheat Room does not work as it should.
+title: "[Oblivion Bug] "
+labels: ["bug", "Oblivion"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. The more exact the steps, the faster it gets fixed.
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Mod
+      options:
+        - Mystic's Cheat Room
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      description: The version on the Nexus Mods file you installed.
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Game edition
+      options:
+        - Game of the Year Edition Deluxe (2009)
+        - Game of the Year Edition (other release)
+        - Base game
+    validations:
+      required: true
+  - type: input
+    id: obse
+    attributes:
+      label: OBSE version
+      description: "Write 'not installed' if you don't have it."
+  - type: dropdown
+    id: manager
+    attributes:
+      label: How did you install it?
+      options:
+        - Vortex
+        - Mod Organizer 2
+        - Oblivion Mod Manager (OBMM)
+        - By hand (copied into Data)
+    validations:
+      required: true
+  - type: textarea
+    id: loadorder
+    attributes:
+      label: Load order
+      description: Your plugin list (.esm / .esp files) in load order, or "only this mod".
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: I am on the newest version of the mod.
+          required: true
+        - label: It still happens with my other mods turned off (if you could try).

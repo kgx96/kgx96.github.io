@@ -3,9 +3,21 @@ contact_links:
   - name: Questions and help (toolbox FAQ and tutorials)
     url: https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/faq.html
     about: The FAQ and a tutorial for every tool, setting and panel of KGX's Admin Toolbox.
+  - name: 7 Days to Die tutorials
+    url: https://kgx96.github.io/7daystodie-tutorials.html
+    about: Step-by-step guides for every KGX 7 Days to Die mod.
   - name: gmpub-tool bugs and ideas
     url: https://github.com/kgx96/gmpub-tool/issues/new/choose
     about: gmpub-tool has its own repository.
+  - name: Steam Library Exporter bugs and ideas
+    url: https://github.com/kgx96/steam-library-exporter/issues/new
+    about: Steam Library Exporter has its own repository.
+  - name: KGX DriveKit bugs and ideas
+    url: https://github.com/kgx96/kgx-drivekit/issues/new
+    about: KGX DriveKit has its own repository.
   - name: KGX's Gmod Mod Collection
     url: https://steamcommunity.com/sharedfiles/filedetails/?id=3816932192
     about: Every KGX addon on the Steam Workshop, with comments and the newest versions.
+  - name: KGX on Nexus Mods
+    url: https://next.nexusmods.com/profile/KGX96
+    about: Every KGX Fallout 3, Oblivion and 7 Days to Die mod, with comments and the newest versions.

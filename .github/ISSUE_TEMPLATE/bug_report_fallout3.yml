@@ -1,0 +1,90 @@
+name: "Bug report: Fallout 3 mods"
+description: Something in Cheat Room, Wasteland Settlement Kit or Bounty System does not work as it should.
+title: "[FO3 Bug] "
+labels: ["bug", "Fallout 3"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. The more exact the steps, the faster it gets fixed.
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Mod
+      options:
+        - Cheat Room
+        - Wasteland Settlement Kit
+        - Bounty System
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      description: The version on the Nexus Mods file you installed (also shown in the mod's own terminal or setup page).
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Game edition
+      options:
+        - Game of the Year Edition (Steam)
+        - Game of the Year Edition (GOG)
+        - Game of the Year Edition (Epic Games)
+        - Base game with DLC bought separately
+        - Base game without all DLC
+    validations:
+      required: true
+  - type: input
+    id: fose
+    attributes:
+      label: FOSE version
+      description: "Wasteland Settlement Kit and Bounty System need FOSE. Write 'not installed' if you don't have it."
+  - type: dropdown
+    id: manager
+    attributes:
+      label: How did you install it?
+      options:
+        - Vortex
+        - Mod Organizer 2
+        - Fallout Mod Manager (FOMM)
+        - By hand (copied into Data)
+    validations:
+      required: true
+  - type: textarea
+    id: loadorder
+    attributes:
+      label: Load order
+      description: Your plugin list (.esm / .esp files) in load order, or "only this mod".
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      placeholder: |
+        1. Enter the Cheat Room
+        2. Open the Cheat Terminal > SETTINGS
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: I am on the newest version of the mod.
+          required: true
+        - label: It still happens with my other mods turned off (if you could try).

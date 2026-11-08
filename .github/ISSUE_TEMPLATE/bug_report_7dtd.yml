@@ -1,0 +1,109 @@
+name: "Bug report: 7 Days to Die mods"
+description: Something in a KGX 7 Days to Die mod does not work as it should.
+title: "[7DTD Bug] "
+labels: ["bug", "7 Days to Die"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. The more exact the steps, the faster it gets fixed.
+        Every KGX 7 Days to Die mod needs **KGX Core (7DTD)** in the Mods folder (folder `0_KGX_Core`), with EasyAntiCheat off.
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Mod
+      options:
+        - KGX Core (7DTD)
+        - KGX Contract Board
+        - KGX Dukes Bank
+        - KGX Server Info
+        - KGX Trade Post
+        - KGX Wildlife
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      description: "Type kgx mods in the console (F1): it lists every KGX mod with its version."
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: coreversion
+    attributes:
+      label: KGX Core (7DTD) version
+      description: "Shown by kgx mods as kgx.core. Write 'not installed' if you don't have it."
+      placeholder: "1.2.0"
+    validations:
+      required: true
+  - type: input
+    id: gameversion
+    attributes:
+      label: Game version
+      description: Shown at the bottom of the main menu.
+      placeholder: "V 3.4.0 (b10)"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does it happen?
+      options:
+        - Single player
+        - Hosted game (I host, friends join)
+        - Joined someone's hosted game
+        - Dedicated server
+    validations:
+      required: true
+  - type: textarea
+    id: othermods
+    attributes:
+      label: Other mods installed
+      description: The folder names in your Mods folder, or "none".
+      placeholder: |
+        0_KGX_Core
+        KGX_Wildlife
+        ...
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      placeholder: |
+        1. Open the Trade Post window
+        2. Post a buy order for 100 Scrap Iron
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: |
+        Your Player.log from the session where it happened: C:\Users\<your name>\AppData\LocalLow\The Fun Pimps\7 Days To Die\Player.log (if you started the game again since, Player-prev.log in the same folder).
+        Drag the file into this box, or paste the KGX lines and errors. On a dedicated server, add the server's log too.
+        Tip: kgx debug <mod> on (for example kgx debug kgx.wildlife on) before you make it happen again writes more detail. kgx diag prints a diagnostics report you can paste here.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: KGX Core (7DTD) is installed and EasyAntiCheat is off.
+          required: true
+        - label: I am on the newest version of the mod and of KGX Core (7DTD).
+          required: true
+        - label: It still happens with my other mods removed (if you could try).
