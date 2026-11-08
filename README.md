@@ -35,7 +35,7 @@ Only websites: HTML, CSS, JavaScript, images and search indexes. **No mod or gam
 | `/` (root) | KGX's Dev Library: https://kgx96.github.io/ |
 | `garrysmod-kgxs-admin-toolbox/` | KGX's Admin Toolbox website (roadmap, releases, help, FAQ): https://kgx96.github.io/garrysmod-kgxs-admin-toolbox/ |
 
-The issue forms (bug reports for the KGX Garry's Mod addons) are in `.github/ISSUE_TEMPLATE/`.
+The issue forms (bug reports for every KGX mod and addon, and ideas) are in `.github/ISSUE_TEMPLATE/`.
 
 ## License
 
@@ -46,19 +46,15 @@ The one open-source KGX project is **gmpub-tool**, under the MIT License in [its
 
 ## Bugs and ideas
 
+Report a bug or send an idea in [Issues](https://github.com/kgx96/kgx96.github.io/issues/new/choose), or in the comments of the mod's Nexus Mods page.
+
 - KGX's Admin Toolbox, KGX Core, Throw Equipped, Pickup Equipped: [report a bug](https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report.yml)
+- KGX Core (7DTD), KGX Contract Board, KGX Dukes Bank, KGX Server Info, KGX Trade Post, KGX Wildlife: [report a bug](https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report_7dtd.yml)
+- Cheat Room, Wasteland Settlement Kit, Bounty System: [report a bug](https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report_fallout3.yml)
+- Mystic's Cheat Room: [report a bug](https://github.com/kgx96/kgx96.github.io/issues/new?template=bug_report_oblivion.yml)
+- Ideas for any KGX project: [send an idea](https://github.com/kgx96/kgx96.github.io/issues/new?template=idea.yml)
 - gmpub-tool: [issues](https://github.com/kgx96/gmpub-tool/issues/new/choose)
 - Steam Library Exporter: [issues](https://github.com/kgx96/steam-library-exporter/issues/new)
 - KGX DriveKit: [issues](https://github.com/kgx96/kgx-drivekit/issues/new)
-- Cheat Room: [Nexus Mods](https://www.nexusmods.com/fallout3/mods/25488)
-- Wasteland Settlement Kit: [Nexus Mods](https://www.nexusmods.com/fallout3/mods/27782)
-- Bounty System: [Nexus Mods](https://www.nexusmods.com/fallout3/mods/27783)
-- Mystic's Cheat Room: [Nexus Mods](https://www.nexusmods.com/oblivion/mods/53317)
-- KGX Core (7DTD): [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13724)
-- KGX Contract Board: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13725)
-- KGX Dukes Bank: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13727)
-- KGX Server Info: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13732)
-- KGX Trade Post: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13797)
-- KGX Wildlife: [Nexus Mods](https://www.nexusmods.com/7daystodie/mods/13799)
 
 Not affiliated with Facepunch Studios, Valve, Bethesda or The Fun Pimps. Garry's Mod, Steam, the Steam Workshop, Fallout, The Elder Scrolls and 7 Days to Die are trademarks of their owners.
